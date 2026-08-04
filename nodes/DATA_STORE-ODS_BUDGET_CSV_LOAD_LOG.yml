@@ -1,0 +1,214 @@
+fileVersion: 1
+id: f8c62402-8f15-24d1-a1d5-e7ce892ccb9a
+name: ODS_BUDGET_CSV_LOAD_LOG
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "Log containing load stats for each load"
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f5a17c2-b327-d9dc-e9fc81ce2477
+          stepCounter: f8c62402-8f15-24d1-a1d5-e7ce892ccb9a
+        config: {}
+        dataType: number
+        defaultValue: ""
+        description: R_VERSION.IDX for Budget Version currently being loaded
+        name: FK_R_VERSION_IDX
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2f5a17c2-b327-d9dc-e9fc81ce2477
+                stepCounter: fe96ba33-a4a4-d882-8465-3d8ec41edb23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0ba12d44-0088-79fc-01038ae10fd1
+          stepCounter: f8c62402-8f15-24d1-a1d5-e7ce892ccb9a
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Common ID amungst all csv files (last 14 digits - timestamp)
+        name: FILE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0ba12d44-0088-79fc-01038ae10fd1
+                stepCounter: fe96ba33-a4a4-d882-8465-3d8ec41edb23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bdc91136-d0ba-aeb3-c253b3d5af9d
+          stepCounter: f8c62402-8f15-24d1-a1d5-e7ce892ccb9a
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: ORIG_FILENAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9f7af6ea-3c1e-42cf-9cd9-b49926038b14
+                stepCounter: 9f8e5bb7-a034-4d0f-b3f1-e750af4ea560
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1d51e98c-aa7a-deb4-c78e3aa11560
+          stepCounter: f8c62402-8f15-24d1-a1d5-e7ce892ccb9a
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: LOAD_FILENAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2374bc56-4bdb-4ca4-83a4-baf2eeb74ae6
+                stepCounter: 9f8e5bb7-a034-4d0f-b3f1-e750af4ea560
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9392169c-4802-46d5-93ce470a1d25
+          stepCounter: f8c62402-8f15-24d1-a1d5-e7ce892ccb9a
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Wherescape source object name that wrote log message
+        name: WS_SRC_OBJECT
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 377648ea-de96-2eb8-426de741c91d
+          stepCounter: f8c62402-8f15-24d1-a1d5-e7ce892ccb9a
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: ""
+        name: MSG_TYPE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1b7ef95d-5316-be10-f7090f2d62fa
+          stepCounter: f8c62402-8f15-24d1-a1d5-e7ce892ccb9a
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: MSG
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae4602ef-ed9e-5129-f0e2418b9c9a
+          stepCounter: f8c62402-8f15-24d1-a1d5-e7ce892ccb9a
+        config: {}
+        dataType: number
+        defaultValue: ""
+        description: Record Count
+        name: CNT
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: f8c62402-8f15-24d1-a1d5-e7ce892ccb9a
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_BUDGET_CSV_ATT: 9f8e5bb7-a034-4d0f-b3f1-e750af4ea560
+          STAGE_BUDGET_CSV_FINAL: fe96ba33-a4a4-d882-8465-3d8ec41edb23
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: LOAD
+            nodeName: LOAD_BUDGET_CSV_ATT
+          - locationName: STAGE_BT
+            nodeName: STAGE_BUDGET_CSV_FINAL
+        join:
+          joinCondition: ""
+        name: ODS_BUDGET_CSV_LOAD_LOG
+        noLinkRefs: []
+  name: ODS_BUDGET_CSV_LOAD_LOG
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node
