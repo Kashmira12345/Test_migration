@@ -1,0 +1,1129 @@
+fileVersion: 1
+id: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+name: ODS_CSLAND_CS_ACCOUNTING_PROVISIONS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e683e107-5c2f-4bd8-0f0f6adac910
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: File Number.
+        isBusinessKey: true
+        name: FILE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 23e57889-3631-4e41-ab73-90be8dc48f86
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: "TRIM(LOAD_CSLAND_CS_ACCOUNTING_PROVISIONS.FILE_NUMBER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 066c1c2c-1dee-90c2-6d8218cf2c4f
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Accounting Type.
+        name: ACCOUNTING_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c0142de4-55dd-4cfc-b03b-043fbcd16240
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who created the record.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 14509ca4-1fe1-46de-8215-ee4e9a159dc8
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 12693a26-cdec-4303-9b55-127ef0799a72
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8172489d-4f79-c0fa-a9d172ede316
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who last updated the record.
+        name: LAST_UPDATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d7c672c3-26a2-4861-a887-36dddc8d69b7
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43fce560-63fc-5ee4-6b12bbe12b2c
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was last updated.
+        name: LAST_UPDATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 89af91c6-ae76-40b8-b49f-cd287d988d15
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 04823709-781b-f5eb-e523b7ee65e8
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Effective Date.
+        name: EFFECTIVE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ba046f2a-171b-4b12-8cd1-9eeeb927bf59
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 55fc1cd0-9e78-70bf-11337ea37f40
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Operating Fund Percent.
+        name: OPERATING_FUND_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c719ff5a-bc7b-42ed-8c64-92a26de8d100
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d572ae26-7b92-b8c5-4e07fe72a414
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Approvals Clause.
+        name: APPROVALS_CLAUSE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f6f1b44-0c89-48c1-9658-ac6feb76d680
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 930ec9ae-5a6a-fcbd-057f5ebf5330
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(5,1)
+        defaultValue: ""
+        description: Approvals Parties.
+        name: APPROVALS_PARTIES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eaa16cd7-87d1-4f98-b5cf-ca642d46b369
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 617a9bac-65e9-53f9-038cf733d08b
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Approvals Percent.
+        name: APPROVALS_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 813348ec-3238-48ca-ac4f-a443b2c25857
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30dd4be5-f629-72bf-3306f4dfe66d
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Expenditure Limit A.
+        name: EXPEND_LIMIT_A
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 09c05aae-979b-4901-ba5d-6868269ef353
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fe71a1da-cbd6-c561-4fadd00d990d
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Expenditure Limit B.
+        name: EXPEND_LIMIT_B
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8fbe244f-d952-49ad-a65c-9a4d29c2b24d
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4f4cc25b-05d9-b76d-557b3e5a8e8f
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Employee Benefit Percent.
+        name: EMPLOYEE_BENEFIT_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 47c01c6a-db22-4a7c-9025-b77ec5b1cdcf
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 88810c73-eb40-93bf-298a1fdc1260
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Camp and Housing.
+        name: CAMP_AND_HOUSING
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9f02b4f3-cf17-4891-907b-9d5801abd11f
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1aa5448c-e259-0e95-5f8304cedca3
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: AFE Single Amount.
+        name: AFE_SINGLE_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bead4a95-0bb2-4454-8a86-743327260b6e
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2b489e56-8ebb-762a-b2493060f83a
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: AFE Damage Amount.
+        name: AFE_DAMAGE_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 42b921ad-c945-4737-a3cb-104e326216da
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ea7e4194-257b-6474-b8bc815fa4cd
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: char(1)
+        defaultValue: ""
+        description: AFE Overexpenditure Code.
+        name: AFE_OVEREXPENDITURE_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7b48904f-6b0a-4368-8f7b-5535284dfbd9
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: "TRIM(LOAD_CSLAND_CS_ACCOUNTING_PROVISIONS.AFE_OVEREXPENDITURE_CD)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f796b1de-9ae1-3c99-77c39d7f6f5d
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Labour Percent.
+        name: LABOUR_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb4e7f8f-4d05-4203-b20c-a8923dfac922
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7d9a964c-c5ae-e4ad-252afbc27871
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Cash Call Amount.
+        name: CASH_CALL_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7ba4093a-79eb-4b48-859f-ef648c1537e8
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7df938e8-520e-9468-e150a23536fd
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: char(1)
+        defaultValue: ""
+        description: Labour Supervisors.
+        name: LABOUR_SUPERVISORS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6641ae95-113d-4d75-955a-9a9fd4e1ef62
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: "TRIM(LOAD_CSLAND_CS_ACCOUNTING_PROVISIONS.LABOUR_SUPERVISORS)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ed71e046-6820-8a44-de86f2631cf6
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: char(1)
+        defaultValue: ""
+        description: Labour Technical.
+        name: LABOUR_TECHNICAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0a0576ff-c806-421f-a9d3-ffdb4b614925
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: "TRIM(LOAD_CSLAND_CS_ACCOUNTING_PROVISIONS.LABOUR_TECHNICAL)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eeb4c20a-6388-93d5-3af7dc70a966
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Warehouse Tubular Percent.
+        name: WAREHOUSE_TUBULAR_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 19e7b7a2-2996-4902-ba88-b9afa45440d0
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 66f0922e-8bec-04a1-933f124da9f1
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Warehouse Excess Amount.
+        name: WAREHOUSE_EXCESS_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5d450aca-17ce-44cb-9879-0afc402e4584
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e07e2d92-03c3-7ccc-f3b79f44f5ca
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Warehouse Other Percent.
+        name: WAREHOUSE_OTHER_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 89fa19ff-419e-4fb6-a3e3-4a2a3646c367
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 58500c44-4c69-10ca-ba6371424aef
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Article IV Amount.
+        name: ARTICLE_IV_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9b1a1189-bcdb-4992-a369-4969f036ae16
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4c1b25ae-ef57-41a6-e5dd0a7ff83a
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(4)
+        defaultValue: ""
+        description: Periodic Inventory.
+        name: PERIODIC_INVENTORY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f10bb86-b2d0-481e-819f-4c442bd95b3d
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4319607d-e739-0748-8100bc53dd10
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(3)
+        defaultValue: ""
+        description: Operating Days.
+        name: OPERATING_DAYS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eacf04c1-575e-4668-84cb-1530da6d5242
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d4fa883d-5444-3545-6429ef52e163
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Unpaid Accounts.
+        name: UNPAID_ACCTS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 909ec663-f611-42aa-b31d-4493e4981baf
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 67dcf3ab-3dbd-11b4-13a221660c6b
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Disposition Amount.
+        name: DISPOSITION_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 715eaefa-d917-4b88-86a2-1becf93a8e0e
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3dd0e717-8b6d-9203-03df60ff0591
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Operating Maintenance Applies.
+        name: OPER_MAINT_APPLY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: deafe275-f68e-46f8-a02c-61ebab60be37
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7a18bf19-e771-0894-42247e3e78f1
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Operating Maintenance Indicator.
+        name: OPER_MAINT_OPER_IND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5b225479-d66f-48eb-87ce-8c826914c25b
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3535c6ff-e375-39bb-61c5eeae0bb2
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Operating Maintenance Cost Percent.
+        name: OPER_MAINT_COST_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 40197e58-563d-42b5-a4f7-62147eec7397
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e888df9-2ffe-cca6-28e8f9a709ba
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Operating Maintenance Flat Amount.
+        name: OPER_MAINT_FLAT_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cbc789e2-fb52-46af-9e58-8be02448ba88
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84fef1c7-b408-92ea-b51b0e7e45c7
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Operating Maintenance Producing Well Rate.
+        name: OPER_MAINT_PROD_WELL_RT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 404a5891-2bf8-43b6-bab9-361454bcf8ea
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f2fd29d-5372-f119-6fefa78169bd
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Operating Maintenance Wells Only Percent.
+        name: OPER_MAINT_WELLS_ONLY_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f294fb12-7662-4de5-a1db-f451df92a66f
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2205ba81-55d1-b963-95a4eda70e19
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Operating Maintenance Facilities Percent.
+        name: OPER_MAINT_FACILITIES_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 17872431-aaf3-4d53-8bec-cfba0d13ca98
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4c0695fd-f84e-ded0-77d6cf967c92
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Operating Maintenance Property Tax Percent.
+        name: OPER_MAINT_PROP_TAX_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9e64075b-9b99-49d8-954a-3af9008a1400
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f37c7c9b-5413-880d-3f2793aa355a
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Operating Maintenance Custom Percent.
+        name: OPER_MAINT_CUSTOM_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6e5f1a7b-138b-4a29-8b5b-9ac188b82c01
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 771f8132-244f-a47e-3b39c735e3b2
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Operating Maintnenance Utilities Percent.
+        name: OPER_MAINT_UTILITIES_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 93ac9643-e418-4657-9a98-2d9e8ca90364
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: da0d16ba-d3af-3f9d-adb94e0babd1
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Operating Maintenance Environment Percent.
+        name: OPER_MAINT_ENVIRO_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 62b9d72c-8074-4941-930c-3cb5595e9a22
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a4bb6cec-db41-1cde-5c9f3e69098b
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Operating Maintenance Adjust Rates for 2 and 3.
+        name: OPER_MAINT_ADJ_RATES_2AND3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 50792b60-95f4-4a72-b0dc-0afac6815344
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 60867adb-baf3-4b08-23c660f77591
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Accounting Year
+        name: ACCOUNTING_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6fbc8a84-3159-4633-b5cb-0cf7b904f884
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7f6b048d-e21c-4c72-b9fc-8b70f8f69798
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6abd31c4-fe7a-4166-9157-907f348c7158
+                stepCounter: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 6526ccc2-bdab-b78c-1df0-7abd9d389fc2
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_CS_ACCOUNTING_PROVISIONS: 2dd8e10b-f513-4983-a4e0-bd94db92b4a6
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_CS_ACCOUNTING_PROVISIONS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_CS_ACCOUNTING_PROVISIONS') }} "LOAD_CSLAND_CS_ACCOUNTING_PROVISIONS"
+        name: ODS_CSLAND_CS_ACCOUNTING_PROVISIONS
+        noLinkRefs: []
+  name: ODS_CSLAND_CS_ACCOUNTING_PROVISIONS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node
