@@ -1,0 +1,238 @@
+fileVersion: 1
+id: 2740b2ca-7e4b-b83b-ded6-7740a29fe592
+name: ODS_CSLAND_CS_LOC_FILES
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 75ee0318-60ad-1867-5fef86e10494
+          stepCounter: 2740b2ca-7e4b-b83b-ded6-7740a29fe592
+        config: {}
+        dataType: number(10)
+        defaultValue: ""
+        description: Loc ID
+        isBusinessKey: true
+        name: LOC_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 46b37ec1-1998-4552-9130-42c4de554713
+                stepCounter: a7a3beed-33ac-48fd-acb0-d6d37cd8a3cf
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 44226bbf-6487-d095-5a91fce2cea2
+          stepCounter: 2740b2ca-7e4b-b83b-ded6-7740a29fe592
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Subsystem
+        isBusinessKey: true
+        name: SUBSYSTEM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 003d4bf0-5245-4c9e-9ad8-12926274e475
+                stepCounter: a7a3beed-33ac-48fd-acb0-d6d37cd8a3cf
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e683e107-5c2f-4bd8-0f0f6adac910
+          stepCounter: 2740b2ca-7e4b-b83b-ded6-7740a29fe592
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: File Number
+        isBusinessKey: true
+        name: FILE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2d33f0f-7998-4fc2-a012-62878ffc7514
+                stepCounter: a7a3beed-33ac-48fd-acb0-d6d37cd8a3cf
+            transform: "TRIM(LOAD_CSLAND_CS_LOC_FILES.FILE_NUMBER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8618196b-3a8d-eed6-0a37850d4fce
+          stepCounter: 2740b2ca-7e4b-b83b-ded6-7740a29fe592
+        config: {}
+        dataType: char(2)
+        defaultValue: ""
+        description: File Sub
+        isBusinessKey: true
+        name: FILE_SUB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 02db52ca-e7bb-400c-855f-a895c435fb93
+                stepCounter: a7a3beed-33ac-48fd-acb0-d6d37cd8a3cf
+            transform: "TRIM(LOAD_CSLAND_CS_LOC_FILES.FILE_SUB)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 2740b2ca-7e4b-b83b-ded6-7740a29fe592
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4f771db1-21c9-4ad4-b3e9-8dcad6126dc0
+                stepCounter: a7a3beed-33ac-48fd-acb0-d6d37cd8a3cf
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 2740b2ca-7e4b-b83b-ded6-7740a29fe592
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3516b402-1914-4320-a472-b5d935145806
+                stepCounter: a7a3beed-33ac-48fd-acb0-d6d37cd8a3cf
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 2740b2ca-7e4b-b83b-ded6-7740a29fe592
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 2740b2ca-7e4b-b83b-ded6-7740a29fe592
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 2740b2ca-7e4b-b83b-ded6-7740a29fe592
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 2740b2ca-7e4b-b83b-ded6-7740a29fe592
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_CS_LOC_FILES: a7a3beed-33ac-48fd-acb0-d6d37cd8a3cf
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_CS_LOC_FILES
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_CS_LOC_FILES') }} "LOAD_CSLAND_CS_LOC_FILES"
+        name: ODS_CSLAND_CS_LOC_FILES
+        noLinkRefs: []
+  name: ODS_CSLAND_CS_LOC_FILES
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

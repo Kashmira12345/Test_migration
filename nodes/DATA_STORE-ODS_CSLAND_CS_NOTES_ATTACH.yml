@@ -1,0 +1,196 @@
+fileVersion: 1
+id: 9dac88f5-38c4-1121-1637-e2989ad6b0a1
+name: ODS_CSLAND_CS_NOTES_ATTACH
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 736fef88-9b98-6093-eacb029ff411
+          stepCounter: 9dac88f5-38c4-1121-1637-e2989ad6b0a1
+        config: {}
+        dataType: number(10)
+        defaultValue: ""
+        description: Note ID
+        isBusinessKey: true
+        name: NOTE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3748364a-6223-4bed-a222-219298bb65d0
+                stepCounter: 868c769a-4d9c-445a-ad9d-782d86d67ce9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 357bd74e-a5ca-3898-6b70368e07b5
+          stepCounter: 9dac88f5-38c4-1121-1637-e2989ad6b0a1
+        config: {}
+        dataType: varchar(200)
+        defaultValue: ""
+        description: Attachment
+        isBusinessKey: true
+        name: ATTACHMENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3dc56a05-a893-47af-85af-f36117d28079
+                stepCounter: 868c769a-4d9c-445a-ad9d-782d86d67ce9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 9dac88f5-38c4-1121-1637-e2989ad6b0a1
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d29978b-228a-4590-9884-c65ed1b9cef4
+                stepCounter: 868c769a-4d9c-445a-ad9d-782d86d67ce9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 9dac88f5-38c4-1121-1637-e2989ad6b0a1
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad81bc28-8b1e-4e58-90e9-12f6d078be3f
+                stepCounter: 868c769a-4d9c-445a-ad9d-782d86d67ce9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 9dac88f5-38c4-1121-1637-e2989ad6b0a1
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 9dac88f5-38c4-1121-1637-e2989ad6b0a1
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 9dac88f5-38c4-1121-1637-e2989ad6b0a1
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 9dac88f5-38c4-1121-1637-e2989ad6b0a1
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_CS_NOTES_ATTACH: 868c769a-4d9c-445a-ad9d-782d86d67ce9
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_CS_NOTES_ATTACH
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_CS_NOTES_ATTACH') }} "LOAD_CSLAND_CS_NOTES_ATTACH"
+        name: ODS_CSLAND_CS_NOTES_ATTACH
+        noLinkRefs: []
+  name: ODS_CSLAND_CS_NOTES_ATTACH
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

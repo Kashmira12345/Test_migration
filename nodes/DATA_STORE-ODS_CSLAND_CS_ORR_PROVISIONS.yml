@@ -1,0 +1,898 @@
+fileVersion: 1
+id: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+name: ODS_CSLAND_CS_ORR_PROVISIONS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e683e107-5c2f-4bd8-0f0f6adac910
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: File Number
+        isBusinessKey: true
+        name: FILE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8cfbcc51-e0c3-4e54-ad56-07a3ea669762
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: "TRIM(LOAD_CSLAND_CS_ORR_PROVISIONS.FILE_NUMBER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8ec72d7d-efb9-e3c1-639b323a2c2f
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Overriding Royalty Type Code
+        name: ORR_TYPE_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1243bed9-384c-4bc8-b6fb-5835580ec67e
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 04823709-781b-f5eb-e523b7ee65e8
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: 1.01 - Effective Date
+        name: EFFECTIVE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 22e4c072-c563-47ef-bf20-e07b9a0748df
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 31da1b4b-786d-975b-c8b4a5583389
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 1.02 - (a) 1.01 - Definition of Market Price
+        name: MARKET_PRICE_ELECTION_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 54c0871b-ea01-4d54-9694-f35fcb83ce33
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 642147ba-d652-f6cc-89f5602d2da8
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 1.02 - (c) 18.01 - Confidentiality Requirement
+        name: CONFIDENT_ELECTION_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 93903c3e-91c7-4f47-8946-f57dce728b45
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 210aeea7-1ff2-ef08-21888a0f35c3
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: '2.01A - Quantification of Overrding Royalty: (a) For Crude Oil'
+        name: CRUDE_OIL_ELECTION_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e7b330fc-45f2-4eb6-a49e-a6a0050f4831
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: af617e9f-989b-5684-0e678927d808
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: '2.01A - Quantification of Overrding Royalty: (a) For Crude Oil: Crude Oil Percentage'
+        name: CRUDE_OIL_ALT1_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a28eb386-cbf0-4474-b02c-c5f29c24341c
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8452ff85-fd64-e9b8-a9210e938f98
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: '2.01A - Quantification of Overrding Royalty: (a) For Crude Oil: Crude Oil Divisor to apply'
+        name: CRUDE_OIL_ALT2_DIVISOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a25a2d24-232c-44f8-aec5-5a5c6435d931
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9ff91816-06f2-e6b0-fcb7079f5a06
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: '2.01A - Quantification of Overrding Royalty: (a) For Crude Oil: Crude Oil Minimum percentage allowable'
+        name: CRUDE_OIL_ALT2_MIN_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 16519066-c255-48ce-ba53-bd2519b0632d
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 89840833-7ef7-fb51-b7763a8b562c
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: '2.01A - Quantification of Overrding Royalty: (a) For Crude Oil: Crude Oil Maximum percentage allowable'
+        name: CRUDE_OIL_ALT2_MAX_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 343fa032-1974-4e4f-a5c8-4d8af1d02f68
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1ce9b948-2956-dec9-01c86903bd66
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: '2.01A - Quantification of Overrding Royalty: (b) For all other Petroleum Substances'
+        name: OTHPET_SUBS_ELECTION_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9de625f8-b2a0-415d-967a-faa926fb70a7
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 75331ac1-c5b8-9e12-1c3029a5460a
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: '2.01A - Quantification of Overrding Royalty: (b) For all other Petroleum Substances: Other Petroleum Substances Alt 1 Percentage'
+        name: OTHPET_SUBS_ALT1_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7052539f-2d29-4089-ab2b-5f37b12aa542
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9a3e310f-758e-06a4-c1396b896377
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: '2.01A - Quantification of Overrding Royalty: (b) For all other Petroleum Substances: Other Petroleum Substances Alt 2 Percentage'
+        name: OTHPET_SUBS_ALT2_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c7bc6935-5c37-4f85-aa37-f4de0dd02cc1
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f1ad9139-5555-4bdb-efeccfb55a7e
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: '5.01A - Quantification of Overrding Royalty: (b) For all other Petroleum Substances: Other Petroleum Substances Alt 2 TIK Percentage'
+        name: OTHPET_SUBS_ALT2_TIK_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b77154ce-cd92-4111-9edc-8a5e87fec879
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0e6a589c-b216-2e59-2a8d14e42e97
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 2.03A - Definition of Allocation Ratio
+        name: ALLOC_RATIO_ELECTION_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ed1595ee-0af6-415d-9c19-5def333af7f2
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 38059951-6c11-d1c1-cca3a17ba99d
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 5.05A - Costs through First Point of Measurement
+        name: COSTS_MEASURE_ELECTION_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c3c186bd-007f-4ba8-847f-10f961b144d9
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0e61c2c3-17d4-f693-4c2e99f44bd7
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 2.04 Royalty Payors Allowed Deductions - If Overriding Royalty Not Take in Kind B. Deductions applicable
+        name: ROYPAY_DEDUCT_ELECTION_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c6946693-3744-439b-980f-91dcff39a418
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1afcd062-c8df-e223-70c26a3f0b08
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 2.05 - 5.05C - Limitations on Deductions Alternate 1
+        name: LIMIT_DED_ALT1_IND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c8825c60-83f8-43ec-ae45-cc6de4a3de47
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ab6b577e-8874-10f2-bb2d63b64d6e
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 2.05 - 5.05C - Limitations on Deductions Alternate 2
+        name: LIMIT_DED_ALT2_IND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 045554cb-6e3c-4cf6-815b-5839cb753bb1
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 07375f2c-f458-ddf7-793cd28f85d3
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 2.05 - 5.05C - Limitations on Deductions Alternate 3
+        name: LIMIT_DED_ALT3_IND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 618b85cf-41c5-4fef-afbd-f646ba0c86ec
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 48956396-a667-0ee9-7fd932bcc3f1
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 2.05 - 5.05C - Limitations on Deductions Alternate N/A
+        name: LIMIT_DED_NA_IND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ef800cfd-b056-47f6-93a9-15c9826da51a
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e37c857f-4dc2-0ce4-e5fbf95429c8
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: '5.05C - Limitations on Deductions: Limit on Deductions Alt2 Percentage of Market Price'
+        name: LIMIT_DED_ALT2_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 637b3f54-838b-4fa5-8585-88525af9201f
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 06421cae-746b-db4d-49686e4ea62b
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: '5.05C - Limitations on Deductions: Limit on Deductions Alt3 Price per 103m3'
+        name: LIMIT_DED_ALT3_PRC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d7fefd29-f565-4822-ba7a-c26029a709db
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fd5c8ab6-4322-6091-54ff797cdc77
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 2.09 - Royalty Owners RIghts Upon Surrentder
+        name: ROYOWN_SURR_ELECTION_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7b0228e3-09fa-4ae7-9d86-d80e07095f41
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f6484d4-0663-8cc1-967d4e3f7a09
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 3.01A(b) - Well Information to Royalty Owner
+        name: WELL_INFO_ELECTION_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fae5cbbb-0867-421b-ba8f-46584e381401
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c5e8d6e1-88ea-8659-ede95232df8e
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Revision date
+        name: REVISED_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 752fbbf0-0585-4c2f-9b6a-13614c170bfe
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a7fa143-230e-0f64-0a5b60edac25
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: Revision person
+        name: REVISED_BY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 90283c21-248f-4b3e-af2a-7952393b9b13
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who created the record.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4e590a91-0c11-4eda-b656-561b6c54f8a8
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5665c5e2-c8c9-4d57-9199-90251a52a797
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8172489d-4f79-c0fa-a9d172ede316
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who last updated the record.
+        name: LAST_UPDATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 544d22d6-b474-47c6-a93f-23b5a9971c53
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43fce560-63fc-5ee4-6b12bbe12b2c
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was last updated.
+        name: LAST_UPDATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c345c27b-a212-4f7e-9720-bb9f206d8a74
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b49c69c8-76f1-83d0-6a599ed2961f
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 8.01 Dispute Resolution
+        name: DISPUTE_ELECTION_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 00e045ab-9bae-4ff4-9e44-6e23f47a9e1c
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 761c47b5-d4f2-43d5-87c2-8c7ea0841d43
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a000cbad-5d67-4932-8089-bf63794b25e2
+                stepCounter: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: f39c0405-0d0f-433f-7cf8-ef514e551ecd
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_CS_ORR_PROVISIONS: 4126bacd-afbb-4ef4-a7da-8cbf2871bea5
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_CS_ORR_PROVISIONS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_CS_ORR_PROVISIONS') }} "LOAD_CSLAND_CS_ORR_PROVISIONS"
+        name: ODS_CSLAND_CS_ORR_PROVISIONS
+        noLinkRefs: []
+  name: ODS_CSLAND_CS_ORR_PROVISIONS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node
