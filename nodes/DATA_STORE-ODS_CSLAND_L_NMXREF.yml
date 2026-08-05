@@ -1,0 +1,310 @@
+fileVersion: 1
+id: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+name: ODS_CSLAND_L_NMXREF
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e683e107-5c2f-4bd8-0f0f6adac910
+          stepCounter: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: File Number
+        isBusinessKey: true
+        name: FILE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9e781c33-2ab9-4d74-b443-e1fbaddfcd9f
+                stepCounter: a1083e4d-86d9-43a1-9a40-2ca3b1562b0e
+            transform: "TRIM(LOAD_CSLAND_L_NMXREF.FILE_NUMBER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2ce78ce0-379c-7455-d9cc0b8d86bf
+          stepCounter: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: Name Xref Type
+        isBusinessKey: true
+        name: NAME_XREF_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3926b7db-f11b-4511-a6e8-9eebe91882c1
+                stepCounter: a1083e4d-86d9-43a1-9a40-2ca3b1562b0e
+            transform: "TRIM(LOAD_CSLAND_L_NMXREF.NAME_XREF_TYPE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8bb25569-5cb1-1042-c82bce778bb4
+          stepCounter: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+        config: {}
+        dataType: char(6)
+        defaultValue: ""
+        description: Name Xref Code
+        isBusinessKey: true
+        name: NAME_XREF_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 337b3c75-83b8-43d8-976b-213f11fba0e8
+                stepCounter: a1083e4d-86d9-43a1-9a40-2ca3b1562b0e
+            transform: "TRIM(LOAD_CSLAND_L_NMXREF.NAME_XREF_CODE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 45006100-2557-ac41-7aabbfc51fb6
+          stepCounter: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+        config:
+          is_hd: true
+        dataType: varchar(40)
+        defaultValue: ""
+        description: Comments
+        name: COMMENTS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 282ac4aa-b9a9-4bd2-998d-4ef4fc6067e4
+                stepCounter: a1083e4d-86d9-43a1-9a40-2ca3b1562b0e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d176dc59-dcdb-4337-8125-d56a9dd9bed9
+                stepCounter: a1083e4d-86d9-43a1-9a40-2ca3b1562b0e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f240ec33-02bd-41e9-ae42-c0865363e2ca
+                stepCounter: a1083e4d-86d9-43a1-9a40-2ca3b1562b0e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 4eee9f65-d016-c00f-2901-f59eb3ab1600
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_L_NMXREF: a1083e4d-86d9-43a1-9a40-2ca3b1562b0e
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_L_NMXREF
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_L_NMXREF') }} "LOAD_CSLAND_L_NMXREF"
+        name: ODS_CSLAND_L_NMXREF
+        noLinkRefs: []
+  name: ODS_CSLAND_L_NMXREF
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,289 @@
+fileVersion: 1
+id: 07a4f47f-f081-3cea-d6b1-57b7fb8129fe
+name: ODS_CSLAND_CS_WELL_XREF_SUMMARY
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dea413a1-026a-f6ac-df5467ac791b
+          stepCounter: 07a4f47f-f081-3cea-d6b1-57b7fb8129fe
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: User ID
+        isBusinessKey: true
+        name: USER_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e08c47c1-63e2-45e3-bd7c-febc090b5e6c
+                stepCounter: 3a856068-d21f-490b-9460-f06390d0a85b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5826d299-dd71-b3e2-58ddf8435676
+          stepCounter: 07a4f47f-f081-3cea-d6b1-57b7fb8129fe
+        config: {}
+        dataType: number(8)
+        defaultValue: ""
+        description: Sequence number. Used for sorting.
+        isBusinessKey: true
+        name: SEQ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bf5cec1f-c8ad-448d-99df-6b042ab10d6c
+                stepCounter: 3a856068-d21f-490b-9460-f06390d0a85b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 35ba4a26-2e21-0c23-a00a5601aba3
+          stepCounter: 07a4f47f-f081-3cea-d6b1-57b7fb8129fe
+        config:
+          is_hd: true
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Description
+        name: DESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ed374292-ee2a-423c-b5a6-7614ffac3aef
+                stepCounter: 3a856068-d21f-490b-9460-f06390d0a85b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 07a4f47f-f081-3cea-d6b1-57b7fb8129fe
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1eb63fcd-cd2f-4cdd-98fa-9a60e8d26b4f
+                stepCounter: 3a856068-d21f-490b-9460-f06390d0a85b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 07a4f47f-f081-3cea-d6b1-57b7fb8129fe
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0b6b4ba1-52df-495b-aed7-415d8fa592a8
+                stepCounter: 3a856068-d21f-490b-9460-f06390d0a85b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 07a4f47f-f081-3cea-d6b1-57b7fb8129fe
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 07a4f47f-f081-3cea-d6b1-57b7fb8129fe
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 07a4f47f-f081-3cea-d6b1-57b7fb8129fe
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 07a4f47f-f081-3cea-d6b1-57b7fb8129fe
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 07a4f47f-f081-3cea-d6b1-57b7fb8129fe
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 07a4f47f-f081-3cea-d6b1-57b7fb8129fe
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 07a4f47f-f081-3cea-d6b1-57b7fb8129fe
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 07a4f47f-f081-3cea-d6b1-57b7fb8129fe
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_CS_WELL_XREF_SUMMARY: 3a856068-d21f-490b-9460-f06390d0a85b
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_CS_WELL_XREF_SUMMARY
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_CS_WELL_XREF_SUMMARY') }} "LOAD_CSLAND_CS_WELL_XREF_SUMMARY"
+        name: ODS_CSLAND_CS_WELL_XREF_SUMMARY
+        noLinkRefs: []
+  name: ODS_CSLAND_CS_WELL_XREF_SUMMARY
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

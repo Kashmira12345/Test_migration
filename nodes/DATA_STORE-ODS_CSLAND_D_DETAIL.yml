@@ -1,0 +1,520 @@
+fileVersion: 1
+id: 93a04897-754c-90b0-0b9a-798ce06b1597
+name: ODS_CSLAND_D_DETAIL
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 130a6bc3-caba-004d-9a3c194dfbcb
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config: {}
+        dataType: number(7)
+        defaultValue: ""
+        description: DOI ID
+        isBusinessKey: true
+        name: DOI_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a5635990-5a64-4e0a-bc4b-71a56288c2de
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b796a840-9405-640a-12a3e473ebf9
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config: {}
+        dataType: number(6)
+        defaultValue: ""
+        description: Occurrence
+        isBusinessKey: true
+        name: OCCURRENCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be29a1d9-a961-4cbf-ad0c-b61442530058
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9ed8acdf-aad7-6069-b0b8e256ea4e
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config:
+          is_hd: true
+        dataType: char(6)
+        defaultValue: ""
+        description: Partner
+        name: PARTNER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e1e2c43c-7887-45c8-ab81-133e0178e5f0
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: "TRIM(LOAD_CSLAND_D_DETAIL.PARTNER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb59ea78-ecd0-63b2-4b3d26e3464a
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Company Percent
+        name: PARTNER_PERCENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b112301-38b4-4ed3-b143-aa81cd8e8fce
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c34e2a2d-ac39-547d-073438c836d9
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Silent Partner
+        name: SILENT_PARTNER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb676483-23c8-4f0b-9e73-3a3ec4a9567a
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 040be524-983d-4116-c94ba3a7683b
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Partner Type
+        name: PARTNER_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 354999d3-2f48-4c65-8620-8accccb45b79
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: "TRIM(LOAD_CSLAND_D_DETAIL.PARTNER_TYPE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0e9bc37e-9332-00c9-464b9585415e
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Penalty
+        name: PENALTY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7607ab8e-1009-4ce9-9bac-b93d2f16c38c
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8df794eb-f0b6-0db4-4cbf2471fda5
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config:
+          is_hd: true
+        dataType: char(6)
+        defaultValue: ""
+        description: Silent Owner
+        name: SILENT_OWNER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 96112649-7463-42a9-b88c-f180ce9b645c
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: "TRIM(LOAD_CSLAND_D_DETAIL.SILENT_OWNER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 31d1dc4d-1adf-4814-a6ea6103a3e2
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Take in Kind
+        name: TIK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3f9b12e0-7e79-401d-878d-5011992beb7c
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 23b10e71-53ee-2160-3b1724f73a29
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: External Use
+        name: EXTERNAL_USE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 90740141-0607-4762-aa91-62071dd4b1aa
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 65faccc4-2243-a687-cfe2338ab83d
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: GST YN
+        name: GST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4100f0d3-31af-4749-9b35-2cdaa53e87ed
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0cb70712-aa00-23eb-38363993843a
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Suspended
+        name: SUSPENDED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 05991cfc-2fa3-4834-8ae1-b546bfee939a
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a433dedf-541b-9d14-12a6b64ceade
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: SAP Partner Type
+        name: SAP_PARTNER_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d951e12-20bd-435d-9c12-d1c60cca6ebe
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e12cafbc-6f70-940b-36aed0637426
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: NRI Calc YN
+        name: NRI_CALC_YN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 74fb6b5d-1cd5-4529-abff-0e7824489e01
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f8f99bb0-38a4-485c-a24f-2b036a3e5174
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e5ba944f-3b80-40e6-8f69-b51f2edafc79
+                stepCounter: b79cb802-6d25-4a31-9bc7-65685dc679c2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 93a04897-754c-90b0-0b9a-798ce06b1597
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_D_DETAIL: b79cb802-6d25-4a31-9bc7-65685dc679c2
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_D_DETAIL
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_D_DETAIL') }} "LOAD_CSLAND_D_DETAIL"
+        name: ODS_CSLAND_D_DETAIL
+        noLinkRefs: []
+  name: ODS_CSLAND_D_DETAIL
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,457 @@
+fileVersion: 1
+id: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+name: ODS_CSLAND_LR_INVOICE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c0fba01c-b8c0-369c-87ee742c08c7
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Select Date
+        isBusinessKey: true
+        name: SELECT_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d9f456a-e27b-438e-9018-1169eabda6ef
+                stepCounter: e224340e-d5cd-411b-bf99-ff07dfa7602a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e683e107-5c2f-4bd8-0f0f6adac910
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: File Number
+        isBusinessKey: true
+        name: FILE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 87d51b3f-105b-466a-875b-575b3fa6d3e8
+                stepCounter: e224340e-d5cd-411b-bf99-ff07dfa7602a
+            transform: "TRIM(LOAD_CSLAND_LR_INVOICE.FILE_NUMBER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8618196b-3a8d-eed6-0a37850d4fce
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: char(2)
+        defaultValue: ""
+        description: File Sub
+        isBusinessKey: true
+        name: FILE_SUB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d4c3e2ec-1dd8-4bbf-9b0f-6bb36abd05e7
+                stepCounter: e224340e-d5cd-411b-bf99-ff07dfa7602a
+            transform: "TRIM(LOAD_CSLAND_LR_INVOICE.FILE_SUB)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cdd4a231-496a-b0cd-9069ccaa1f08
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Invoice Number
+        name: INVOICE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a3269239-5d34-4076-8f31-aca436755e69
+                stepCounter: e224340e-d5cd-411b-bf99-ff07dfa7602a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae3dad5b-f1d4-51a6-2919b58a3525
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Invoice Date
+        name: INVOICE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d128b4a-ae64-4db6-a952-b40be289af17
+                stepCounter: e224340e-d5cd-411b-bf99-ff07dfa7602a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 830c2658-2d26-5be6-75c71872e7f3
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: char(6)
+        defaultValue: ""
+        description: WI Partner
+        isBusinessKey: true
+        name: WI_PARTNER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4d03fe31-2ddd-40d7-8ab7-5ba1aa0e080d
+                stepCounter: e224340e-d5cd-411b-bf99-ff07dfa7602a
+            transform: "TRIM(LOAD_CSLAND_LR_INVOICE.WI_PARTNER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2c7fc063-acca-9cdd-2f2f6d9b87a2
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: WI Percent
+        name: WI_PERCENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bedb7b0a-6325-4dc9-9691-5c1eb00c2126
+                stepCounter: e224340e-d5cd-411b-bf99-ff07dfa7602a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1be90ddf-ada9-eddd-800d43856b3a
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Invoice Amount
+        name: INVOICE_AMOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 53659995-b76d-439d-9c89-992575bc2786
+                stepCounter: e224340e-d5cd-411b-bf99-ff07dfa7602a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 06beb89d-76a3-d2b8-941de492387c
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Process Flag
+        name: PROCESS_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7f8b60b8-3b8e-442f-be50-55ba2cba65fb
+                stepCounter: e224340e-d5cd-411b-bf99-ff07dfa7602a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 27afaa8b-a420-e0c1-9e2d28864f8f
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: char(6)
+        defaultValue: ""
+        description: Owner Company
+        isBusinessKey: true
+        name: OWNER_COMPANY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 42abb293-c6b8-4b93-a0de-4fb8fc7ba4d0
+                stepCounter: e224340e-d5cd-411b-bf99-ff07dfa7602a
+            transform: "TRIM(LOAD_CSLAND_LR_INVOICE.OWNER_COMPANY)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 41d5f19f-bd4e-4956-25998c7ad88f
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: Rental Run Code
+        isBusinessKey: true
+        name: RENTAL_RUN_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 33f472a4-79ea-4e2a-b16f-9e2cbc40821a
+                stepCounter: e224340e-d5cd-411b-bf99-ff07dfa7602a
+            transform: "TRIM(LOAD_CSLAND_LR_INVOICE.RENTAL_RUN_CODE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 08645a5c-e592-4874-bf82-f5242b8632b7
+                stepCounter: e224340e-d5cd-411b-bf99-ff07dfa7602a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8d4cfbfa-bafd-4899-99e4-078119dd7c00
+                stepCounter: e224340e-d5cd-411b-bf99-ff07dfa7602a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 71f297ea-8b1a-7c4f-2d7c-27998ebd3162
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_LR_INVOICE: e224340e-d5cd-411b-bf99-ff07dfa7602a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_LR_INVOICE
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_LR_INVOICE') }} "LOAD_CSLAND_LR_INVOICE"
+        name: ODS_CSLAND_LR_INVOICE
+        noLinkRefs: []
+  name: ODS_CSLAND_LR_INVOICE
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node
