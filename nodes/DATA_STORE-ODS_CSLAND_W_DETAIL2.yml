@@ -1,0 +1,835 @@
+fileVersion: 1
+id: ed96fe54-9885-dc4a-01e4-90112f377436
+name: ODS_CSLAND_W_DETAIL2
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e683e107-5c2f-4bd8-0f0f6adac910
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: File Number
+        isBusinessKey: true
+        name: FILE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5661ae7f-ed05-4410-b1b3-362f70c1438b
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: "TRIM(LOAD_CSLAND_W_DETAIL2.FILE_NUMBER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7f5ad75-03e0-8d43-0fe0d1a48145
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: char(6)
+        defaultValue: ""
+        description: Contract Operator
+        name: CONTRACT_OPERATOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b814737b-389c-44e8-a236-d295c1b4d6c5
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: "TRIM(LOAD_CSLAND_W_DETAIL2.CONTRACT_OPERATOR)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 070366bf-2390-b3ac-de984360fed2
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Reserve
+        name: RESERVE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2039120a-fbfa-42e7-b47e-42f8ce15c555
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: "TRIM(LOAD_CSLAND_W_DETAIL2.RESERVE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ad175978-a792-8165-148cd89b3abb
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Facility
+        name: FACILITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bf490ddd-7281-4771-87cb-3c5ae151e7c2
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: "TRIM(LOAD_CSLAND_W_DETAIL2.FACILITY)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 552a5418-9c9f-5352-47f725bd1c0d
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: char(20)
+        defaultValue: ""
+        description: Field
+        name: FIELD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 23c92e98-c24a-4f35-9d4f-470c672f63d7
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: "TRIM(LOAD_CSLAND_W_DETAIL2.FIELD)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3225d082-cb75-2dd4-8b2a836c8998
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: char(20)
+        defaultValue: ""
+        description: Pool
+        name: POOL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4eef9478-a6d9-42bd-b252-17b266c7696f
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: "TRIM(LOAD_CSLAND_W_DETAIL2.POOL)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a9dc79e1-b76c-4937-2364f666d2a5
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Licence Number
+        name: LICENCE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 44f40829-4436-40ef-bebd-fa45bedf2a3e
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: baf73c30-b323-9099-7af83c7b7378
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Licence Date
+        name: LICENCE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3583d66b-1e28-4904-aba3-9d575ecf5ce3
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5f09b072-6844-1e13-c0208b05fed9
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Expiry Date
+        name: EXPIRY_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9f560790-7489-4207-b527-30f03c0aa0f9
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9386802b-e99e-319a-46f4f27b3b1a
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: varchar(20)
+        defaultValue: ""
+        description: Surface Location
+        name: SURFACE_LOCATION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 22619584-9910-4a5d-97b1-ad04de7e37bd
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6615d7c5-5719-f5f6-caa36a48cc19
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: number(6,1)
+        defaultValue: ""
+        description: Metes
+        name: METES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f1885c9-0bd3-4f4a-a55c-de657fc17b32
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2489b2e5-c5f1-7b83-f7487380b159
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Metes Direction
+        name: METES_DIRECTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ce94a95c-f309-4a19-b182-a14fa0bd073b
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 297aa690-4f98-04ad-84b7cba60892
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: number(6,1)
+        defaultValue: ""
+        description: Bounds
+        name: BOUNDS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e6f4f079-845c-4ecb-8d36-c2d8b66eb539
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83c72c0f-c830-af08-0e2c1ebd78f6
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Bounds Direction
+        name: BOUNDS_DIRECTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b22b17d9-7d3b-4874-8047-52064f0e0cca
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3d10b9fd-99fc-e59b-bb6f5cbbf605
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: varchar(20)
+        defaultValue: ""
+        description: LAHEE Classification
+        name: LAHEE_CLASS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 93ed994a-f23a-421f-b656-d7931db5722c
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d315b0b8-aa0c-8e38-857c530e6453
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: number(5,1)
+        defaultValue: ""
+        description: Drilling Spacing Unit
+        name: DSU
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2b9dde13-f1b1-429d-a846-b49638855dfb
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a9dae88f-9d0c-ae57-87eeb5feb0f7
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: DSU Unit of Measure
+        name: DSU_UOM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 33adf071-70d5-4ac1-9cc2-938a22bdf19b
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1105c758-5236-9db5-ac3177ffaaa4
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: varchar(16)
+        defaultValue: ""
+        description: Accounting Project
+        name: ACCOUNTING_PROJECT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5015110c-2b56-49de-b709-dfc63f66319d
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83be8086-8f7b-fe8e-98717c8e2ff6
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: number(7,1)
+        defaultValue: ""
+        description: Projected Depth
+        name: PROJECTED_DEPTH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a2ce2103-36b4-485e-8658-4cf76d32b86b
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee4eac02-4e65-d75c-5b4b9df69514
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: number(7,1)
+        defaultValue: ""
+        description: Total Depth
+        name: TOTAL_DEPTH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 34bf7303-1177-4a25-ad59-621ee8b5f5f5
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc1f168c-03df-69d5-5dd6fbaf2a60
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: number(7,1)
+        defaultValue: ""
+        description: True Vertical Depth
+        name: TRUE_VERT_DEPTH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1444b325-6f2d-4ccf-96cb-6c5c0d2a0984
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fcc879e7-8111-8a78-e6fc51f964bf
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: number(7,1)
+        defaultValue: ""
+        description: Plug Back Depth
+        name: PLUG_BACK_DEPTH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4352efac-fd34-457f-9aa5-12853395b2f7
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd1545a7-45c5-18ff-02c322f3525d
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: number(7,1)
+        defaultValue: ""
+        description: Ground Elevation
+        name: GROUND_ELEVATION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b9b1a1bd-ccb1-42eb-b40f-206f2cf0f543
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d7f23625-3dc4-8c79-4990e020aa9d
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: number(7,1)
+        defaultValue: ""
+        description: Kelly Bushing Elev
+        name: KELLY_BUSHING_ELEV
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 80dd025b-d1a1-426e-9c02-b78c974491ae
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f127b9a-cb33-ee9e-a51cc1dcab2d
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Unit of Measure
+        name: UNIT_OF_MEASURE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d34fea30-afdc-48aa-869a-6391fdd5e4d8
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 549d74c2-ff63-4d80-a2fec97e3a91
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Total Depth Zone
+        name: TOTAL_DEPTH_ZONE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5da07bea-a16a-4856-a453-bd8ab1532d7d
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: "TRIM(LOAD_CSLAND_W_DETAIL2.TOTAL_DEPTH_ZONE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd273ec-c042-ea9a-1a00e7f1c6de
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Producing Zone
+        name: PRODUCING_ZONE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 31c43427-32bd-404a-b84f-cb07abe7daa9
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: "TRIM(LOAD_CSLAND_W_DETAIL2.PRODUCING_ZONE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78e92f71-3ae5-d135-a3d401da0b3e
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Target Zone
+        name: TARGET_ZONE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fff5b615-d149-48ea-8f64-c0a3764e408f
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: "TRIM(LOAD_CSLAND_W_DETAIL2.TARGET_ZONE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9ad032d9-1054-8ead-c871d35010cd
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config:
+          is_hd: true
+        dataType: char(20)
+        defaultValue: ""
+        description: Govt Unit Code
+        name: GOVT_UNIT_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3f8cdb4e-171c-4a21-bae5-f7a1e660bb6c
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: "TRIM(LOAD_CSLAND_W_DETAIL2.GOVT_UNIT_CODE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6702d29d-3930-497b-ae34-01c740066be9
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2f7458e4-5bef-49c8-a628-bc19555ddd7d
+                stepCounter: 2532e152-07a8-4681-aa76-1737c1eb5484
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: ed96fe54-9885-dc4a-01e4-90112f377436
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_W_DETAIL2: 2532e152-07a8-4681-aa76-1737c1eb5484
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_W_DETAIL2
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_W_DETAIL2') }} "LOAD_CSLAND_W_DETAIL2"
+        name: ODS_CSLAND_W_DETAIL2
+        noLinkRefs: []
+  name: ODS_CSLAND_W_DETAIL2
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

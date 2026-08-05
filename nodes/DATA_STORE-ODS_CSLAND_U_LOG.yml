@@ -1,0 +1,1927 @@
+fileVersion: 1
+id: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+name: ODS_CSLAND_U_LOG
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e683e107-5c2f-4bd8-0f0f6adac910
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: File Number
+        isBusinessKey: true
+        name: FILE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4a1002ad-68e9-40d8-be4d-7723ef00f55b
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: "TRIM(LOAD_CSLAND_U_LOG.FILE_NUMBER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8618196b-3a8d-eed6-0a37850d4fce
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config: {}
+        dataType: char(2)
+        defaultValue: ""
+        description: File Sub
+        isBusinessKey: true
+        name: FILE_SUB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ea27e930-0a08-4544-b0ab-2e5463f67857
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: "TRIM(LOAD_CSLAND_U_LOG.FILE_SUB)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d80b2aa6-29a8-7c78-68ab90c9bd70
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Update Date Time
+        isBusinessKey: true
+        name: UPDATE_DATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b9c8839d-a900-4746-910a-126c3a1a26a7
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 80e0f8ff-dccf-f0f8-4c61716c9315
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: Update User
+        isBusinessKey: true
+        name: UPDATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f2ab86cb-213f-4c45-ab3e-fc1fd3b436a0
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f5ccb5a0-4788-49a8-0659178b9f5d
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Update Mode
+        name: UPDATE_MODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bab9aef6-456a-472c-a2ec-ac60624a4c5f
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ddeb18c1-5ef9-c37a-8fbf41ab6999
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Successfull
+        name: SUCCESSFULL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e1983204-f722-4440-8627-61fc1537e592
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7b1a5c8-e0e0-5509-6008cb9883ef
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Base
+        name: BASE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1cdba174-7cb5-4766-8190-7bd01fc89767
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: faf7fdc0-3bbd-0107-d010954d7a42
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Base Selected
+        name: BASE_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 30f15f38-a2df-4b91-a89f-3fe0836d82f9
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 241dd841-e20f-cb27-b8a9f494e1eb
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Sub
+        name: SUB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1f4a5bc1-f377-4960-97f3-cb074bcfb173
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bbba68bf-c5f2-b32f-bab4cf4abb16
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Sub Selected
+        name: SUB_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8549d79-2fc8-4df2-85ef-11e11c881114
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eff325f9-77f0-9d41-67ae43b3e958
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Related Documents
+        name: RELDOC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 693bc5dd-57bc-4cc8-99de-7ef97d1a5c5f
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7048cea-4765-d5c8-0702fd7d2f16
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Rel Docs Selected
+        name: RELDOC_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 30bab161-69d5-4331-8d5b-8020de30557a
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 35a87cdf-fcb5-e516-5803d1fbd7cc
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Related Contracts
+        name: RELCON
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e3a667f0-e195-4a23-88ac-08fea26a8207
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ab3a10d6-65f4-051a-8a66080fba1e
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Rel Con Selected
+        name: RELCON_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0df1e183-1971-457d-b5cf-17306f4685e3
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0e1cacce-2678-119b-57768cc4725c
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Related Mineral
+        name: RELMIN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6bdae143-c76c-46d7-b024-6234ecd10b20
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2ab05164-3fad-0408-811c1f2dc147
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Rel Min Selected
+        name: RELMIN_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7831fdcc-0bda-45a4-bcb3-523ec3f09ee7
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8697584f-4345-efc8-2a17247644ba
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Related Surface
+        name: RELSUR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 243f5f54-141e-4496-984e-167d424db2d5
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a1625358-aa5f-bb09-289107acfbce
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Rel Sur Selected
+        name: RELSUR_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 96f7f2ef-7ee6-4367-b1f8-61e87d9710ec
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d378db23-f235-25f9-74f353133e8a
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Remarks
+        name: RMKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1dbc5561-833f-4b65-b2d1-6e8889b56784
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c95d8fbc-af2d-f38e-d465cd5b3cb4
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Remarks Selected
+        name: RMKS_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 43f541ee-841a-44cd-9ea8-883354cd74bc
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c628790f-b96b-8e31-0fe7e1e874a1
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Operating Provisions
+        name: OPER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c0dadb67-e29d-4121-862b-e33045dd69e6
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1757d3ca-1640-7d89-b7fea38d5321
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Oper Selected
+        name: OPER_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 129dc2e0-6f25-4d49-9614-2861fa26f3f3
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a2c88391-7f41-0bfa-cefb945a162c
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Acct Provisions
+        name: ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 11b2751e-f016-4f5b-9037-847bbdfd0ca2
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a6cad128-c76f-97b5-db55f0c656ad
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Acct Selected
+        name: ACCT_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bcc25869-e2ef-47a9-80a0-e08c7f2cd6ee
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4cfb6e0e-92b3-5f29-abc3800dd491
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Nmxref
+        name: NMXREF
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d18587ef-1ab4-41e3-8a45-196c210a86f8
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1eee61b4-3447-a249-da0fefe368d7
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Nmxref Selected
+        name: NMXREF_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 636c0ca3-f031-4252-a3a8-3a08f8a4a5da
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5a3851b5-ef24-dbb4-d8bf9860cf3c
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Royalty
+        name: ROYAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6252b765-5908-41de-8fd3-5bf934bb3bb3
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cebfcd78-e5d6-122d-1fff78e82d34
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Royalty Selected
+        name: ROYAL_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1c3284fd-3dbd-4736-b7e4-2eaa5087241c
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c3415072-e7fc-09ca-9a1bef3942ac
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Wells
+        name: WELLS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8dbae0d2-ba55-4fe1-899a-29f53f83354a
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b5a26dea-527a-ad65-1fb38132b841
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Wells Selected
+        name: WELLS_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7505f3a0-9ad0-4980-9a59-92407802df4f
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4a8f15a7-825b-c4dd-330086c767ab
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Amend
+        name: AMEND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 89a94f8c-4575-4e73-abff-305a8055ce93
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 31a7f374-d79f-dc6f-e3c579fac1e6
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Amend Selected
+        name: AMEND_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c555c255-21ab-4a96-9e1a-7dbf7ab5e9fe
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 12974bc5-d61d-51f1-aa1faa856dbc
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Oblig
+        name: OBLIG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad752595-fe45-47d2-a808-c4acb4a0495a
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ce925745-85ca-c38e-c60f3b51967b
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Oblig Selected
+        name: OBLIG_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 10e5382c-51d0-4ff7-8045-ca8c31e6e1ca
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b9ace563-d59f-e57a-f842507b8f82
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: DOI
+        name: DOI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 889a05c0-c564-49b4-a8d0-53afea4449da
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4eb5d105-6fa0-2b81-86ee505f8727
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: DOI Selected
+        name: DOI_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f1dec78e-9376-4582-b5f0-721f987db10f
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 479a809c-aaef-d3b1-df16f976df06
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Land
+        name: LAND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 744b43db-578c-4f0c-8738-362250439748
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c866b76e-2778-eda9-233301c63ddf
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Land Selected
+        name: LAND_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ba0a68a5-dd76-4bb0-a3a7-c5aee2ad7cd3
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edc618e5-6453-5d20-c5b007f6a9f7
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Rights
+        name: RIGHTS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c7927f63-c3c3-4987-bdf8-e079cc526ff5
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1aab9477-1e5e-dffb-9909d5460dc1
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Rights Selected
+        name: RIGHTS_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c9477c45-89f1-4f74-b7ea-33f94c09a6e5
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 456d42d0-369e-b233-35d23fb3856a
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Units
+        name: UNITS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 152924b3-b28f-4fc3-9ac4-c3d52e069f4f
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 72e05d0b-23ee-2f46-b0530aff551a
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Units Selected
+        name: UNITS_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ffaae068-0e6a-44c9-959d-2862f8ddbdd0
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c5f0fcd4-cd96-b151-cb150fc4ae5e
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: BCustom
+        name: BCUSTOM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb2a636d-fbb3-45c6-b23b-ef0cd3707a76
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bd6ac239-afcc-9a1f-b70626b01d88
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: BCustom Selected
+        name: BCUSTOM_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 424862cf-1d9f-4c45-90ab-960901e84d8b
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 323654a2-be23-ebe0-9e430a1e26e2
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: SCustom
+        name: SCUSTOM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 65500ef4-3ccf-4244-bdfd-4fc91c0bfa54
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 59f848e4-79f2-af86-e46cb5bfed7c
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: SCustom Selected
+        name: SCUSTOM_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 39e09363-968b-4c72-901c-7875fd37b9bf
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 60279ff7-8b53-2c61-c13deeaf1613
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Related AMI
+        name: RELAMI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ec55a6d9-8824-43c9-90ae-ed46d9e2837c
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7fc401ad-6aad-ccfe-2bfcb6e2e6c0
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Rel AMI Selected
+        name: RELAMI_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 77495b94-de8d-424f-bbbd-7201b79b0f73
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 61474667-384e-abd3-2576c89c61f6
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Related Service
+        name: RELSRV
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c64859ce-1257-45ef-b44e-aac1f59bb2cc
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9cc3f0d1-5d11-076d-34217a6a5321
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Rel Service Selected
+        name: RELSRV_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb7dc025-3998-43d6-b7b9-dda7fb613aea
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 00b7b05c-2e21-9513-abcc175fdd96
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Related Facility
+        name: RELFAC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c08c6b77-7560-4864-99ce-d661e8a1b904
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7fb3cdc9-6429-1b88-648b97fe49e6
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Rel Facility Selected
+        name: RELFAC_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fbbbc9cc-e456-479e-923a-b32f1dd391af
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cef10f0e-b831-ae63-498f7898d4ea
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: BAmend
+        name: BAMEND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 218c4826-de75-48c1-8a19-600f83e18f66
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fe0d9488-74c0-f66d-b0439dda8503
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: BAmend Selected
+        name: BAMEND_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d8d8baec-c6f7-474a-afe9-b7f62ffdc90a
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a08f89da-d03a-ba74-69a2d00891b7
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: UnitTract
+        name: UNITTRACT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9805aeee-af09-4392-8937-1e2665facea3
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ede1a74-dea5-ab87-ec6df9fdc773
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: UnitTract Selected
+        name: UNITTRACT_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cdf64a6f-bf20-4b2e-b3d8-0a4615dd03aa
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ce39a504-8857-9be8-3b1faa68bb10
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ORR
+        name: ORR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d8421f66-1b95-46f8-a82a-b21f405f86f0
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a967c64c-26f0-82f0-d134b057f570
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ORR Selected
+        name: ORR_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a53d40aa-4594-48b6-ad3a-2ef7a0c85da4
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bbaa49e2-5336-5397-bda0bdbba9f5
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: FarmRoy
+        name: FARMROY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 46125821-b681-415a-84ba-b521672c6567
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ed27a602-5cd3-ad41-2b628b2107ae
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: FarmRoy Selected
+        name: FARMROY_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f8b00939-2d40-439e-ba9a-df09b61ee223
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e1b13fb-0b4b-540b-7454d26018b7
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: RelRUse
+        name: RELRUSE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 639b3a99-ca1d-4370-bb77-5ac49fa61a16
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f4209aa4-be34-0df6-b610f329c1ea
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: RelRUse Selected
+        name: RELRUSE_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: df9ff715-3e60-4421-a2fc-2290d66ef0c8
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc1759cc-1efd-edb7-e03a7b7e5401
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: RelEasm
+        name: RELEASM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 73af0889-5526-4503-bba8-1f1d0b9e8f1e
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6e654c6a-2b0c-d71c-68429504ad6a
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: RelEasm Selected
+        name: RELEASM_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f6ea7c36-e9c1-4d52-be1a-3fc091d98078
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 00d097ed-05af-ae55-66ae0bd6ed8c
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ContBRmk
+        name: CONTBRMK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f8b8967c-392f-4045-a91c-d340cf4c4dbb
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7a49e72e-f278-ac24-f9dbee45ae2b
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ContBRmk Selected
+        name: CONTBRMK_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 70f86faa-5d00-41eb-8006-ad317b40666b
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9fd0b5ff-c291-0055-95096950ef21
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ContRmk
+        name: CONTRMK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6dea154f-5c84-431f-a1c6-a73ecf078715
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba74283f-32ea-45ad-b30ae74c4369
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ContRmk Selected
+        name: CONTRMK_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 86fb1545-0b98-435c-92f8-0d000e55d84e
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 25f0ae73-dc8f-13c8-25261b5fa15f
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: BOblig
+        name: BOBLIG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d9c4fb7a-e564-4a76-9fba-f72956728119
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b44127f-86b9-7685-16e5a4f1335b
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: BOblig Selected
+        name: BOBLIG_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a99caf06-fd68-4c53-97ae-5427d91ca107
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cac320-2e7a-b8c4-e8c7311bfb34
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Reason for Lock
+        name: REASON_FOR_LOCK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2423f651-30b5-4bfe-b684-6491601f69a4
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e66773b1-7cf0-8569-32a5eab92649
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: MBallot
+        name: MBALLOT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c3d44885-a5bd-4c5e-aedd-485919019d78
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 27475c9a-1976-7988-46f21a292573
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: MBallot Selected
+        name: MBALLOT_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d5cd07b2-e630-4301-8b97-7cd0ee3f3348
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb0db9f4-4d90-adb1-00b3d1af6ac1
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: UFAC
+        name: UFAC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6471c99d-f242-4324-823c-a403fe630913
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a5db929-1925-f89a-23cb091241bc
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: UFAC Selected
+        name: UFAC_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d431c150-c40d-4c75-a7cc-47b5fe13fcee
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 97d8620d-e7dd-c92e-7990753896f8
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Related Facilities
+        name: RELPRODFAC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf313e97-4322-4b34-b63f-311db08adfb6
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a5ddc837-677b-ca3e-a9d5b3eba6cc
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Related Facilities Selected
+        name: RELPRODFAC_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fa3f9fe5-6329-444a-a8c4-6f0d71929a91
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a3bd4bb9-7e3c-c7fe-8aa8cdbd606c
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Related Pipeline
+        name: RELPIPELINE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 81238dd9-3b59-419b-b719-316b0ad2d64a
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7373459b-b0c4-1b05-927fb0884ef6
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Related Pipeline Selected
+        name: RELPIPELINE_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fe37691d-84e6-45ed-8750-6bd7a89f4d43
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f4044303-0f78-4e79-c08258b624c3
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Client Defined
+        name: CLIENTDEFINED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 83be628f-ddbe-4ec0-af8f-862e05a5981f
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fbe49955-c956-260c-1fac3b56146a
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Client Defined Selected
+        name: CLIENTDEFINED_SELECTED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 10a1725c-9176-4d8b-ba98-55b55dff14f9
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 52f8d124-4628-49a5-888a-bf4ad9b0b251
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b5bb16f6-2fd6-4d03-a17c-5405d0c3180f
+                stepCounter: 881a9eee-9209-40ac-996a-3593e967f11e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 66a639b9-b98f-f0e0-c6f0-4c07f9c3d8e8
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_U_LOG: 881a9eee-9209-40ac-996a-3593e967f11e
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_U_LOG
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_U_LOG') }} "LOAD_CSLAND_U_LOG"
+        name: ODS_CSLAND_U_LOG
+        noLinkRefs: []
+  name: ODS_CSLAND_U_LOG
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node
