@@ -1,0 +1,478 @@
+fileVersion: 1
+id: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+name: ODS_QBYTE_CAPITAL_OVERHEAD_LINKS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 919cc08e-acd1-ccb6-27f55ebc3a08
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The AFE number to which the given overhead calculation method applies.
+        isBusinessKey: true
+        name: AFE_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b33830b2-1103-4cc5-b341-b4c92429f23b
+                stepCounter: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f41dbb57-8c81-e9f1-be60d20cd253
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The Overhead calculation method applied to the given AFE.
+        isBusinessKey: true
+        name: OVERHEAD_METHOD_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 862a26d7-9823-4255-b87b-b3ee66171b13
+                stepCounter: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8b655870-11dd-b68e-bbde61203f33
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates if cum. expenditure of other afes linked to the same CC should be taken into account.
+        name: AFE_GROUP_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 15d32087-29f7-4bfb-a470-406e8cd218ea
+                stepCounter: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the link was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0a78b67e-3566-479c-8b95-4177f569fcff
+                stepCounter: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: The user who created the link.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fd3f33c9-c454-49d2-bc1e-9f3d655089de
+                stepCounter: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d2c95b3-f3fa-677c-8315ce3f59e2
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the link was last updated.
+        name: LAST_UPDT_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e53519e2-1d79-430c-b88e-fbe37cbab977
+                stepCounter: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d504b8bc-a1d6-4e17-eb5f4bd2f9a4
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: The user who last updated the link.
+        name: LAST_UPDT_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7ba8cb7e-5146-435e-bdea-20e9e5496eef
+                stepCounter: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5c948907-1eef-b406-ffcf4d12eb49
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The cost centre to which the expenses should be booked.
+        name: EXPENSE_CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cbee1eaf-08ee-4601-90f4-d849ed6f74e7
+                stepCounter: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e1be4178-10d3-1900-e1c0027db0fe
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config:
+          is_hd: true
+        dataType: number(14,2)
+        defaultValue: ""
+        description: Actual charged overhead since inception.
+        name: CUMULATIVE_OVERHEAD_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 73fbc2d7-fdb8-435b-8cbb-a772ae7dd4ec
+                stepCounter: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee64710c-632d-d697-63b96b415532
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the cumulative amount was last calculated.
+        name: LAST_ACCT_PER_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b18dfd4b-3934-43a1-a452-f81745996b5e
+                stepCounter: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4c048e57-967d-e6ac-b32456301001
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The expense AFE Item Number.
+        name: EXPENSE_AFE_ITEM_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 607f16a1-6559-43cf-991c-40b69ef3e918
+                stepCounter: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d6298608-dc87-d4bd-2d7bd82c657f
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The GL Sub Code.
+        name: GL_SUB_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5df72678-3e89-4be8-b593-5d7beee5c48b
+                stepCounter: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2eba6161-8259-483b-8c99-c9daa65ecc42
+                stepCounter: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b236aa95-d06f-4619-b447-79ebeefaff25
+                stepCounter: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: b183ce17-7bf9-c920-97f8-2cfdf99885fa
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_CAPITAL_OVERHEAD_LINKS: dc3f4407-32e5-4e93-a27d-9d8be71b54ef
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_CAPITAL_OVERHEAD_LINKS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_CAPITAL_OVERHEAD_LINKS') }} "LOAD_QBYTE_CAPITAL_OVERHEAD_LINKS"
+        name: ODS_QBYTE_CAPITAL_OVERHEAD_LINKS
+        noLinkRefs: []
+  name: ODS_QBYTE_CAPITAL_OVERHEAD_LINKS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

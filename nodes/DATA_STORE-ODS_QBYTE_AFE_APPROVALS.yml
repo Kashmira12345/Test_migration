@@ -1,0 +1,499 @@
+fileVersion: 1
+id: 16c8d96b-0bd2-1603-95a6-03441483de64
+name: ODS_QBYTE_AFE_APPROVALS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 919cc08e-acd1-ccb6-27f55ebc3a08
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The AFE being approved.
+        isBusinessKey: true
+        name: AFE_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fa326b50-1685-42eb-bf2a-8d071c4e3f50
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 81c91664-2d99-8ef6-76cab904a77c
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config: {}
+        dataType: number(4)
+        defaultValue: ""
+        description: The AFE supplement being approved (zero if no supplements exist).
+        isBusinessKey: true
+        name: AFE_SUPPLEMENT_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 04f63ef4-dc4a-4171-a2f8-1525147ee594
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eece1f46-f89f-61f2-d269d06b5365
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config: {}
+        dataType: number(4)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: AFE_REVISION_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9b14c2e2-7b8a-40b3-a25f-56b915072970
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 15c710dd-daf6-3b54-479134f48c20
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config: {}
+        dataType: number(6)
+        defaultValue: ""
+        description: The client participating in the AFE.
+        isBusinessKey: true
+        name: CLIENT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 19d9b1bb-832e-46c7-a7c5-935f020425cf
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba8d9803-f62d-225d-afd1abee12c6
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config:
+          is_hd: true
+        dataType: number(14,10)
+        defaultValue: ""
+        description: The percentage of the AFE attributed to the partner (client).
+        name: PARTNER_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9cfbd888-359f-42be-93ee-1b8e1a2c9675
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 29ad7633-d4c8-d8cd-3192db76e501
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the approval was requested from the partner.
+        name: REQUEST_FOR_APPROVAL_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9e5b4bbb-1bc2-4cc8-a423-edee22747825
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c57c94de-b283-5a56-bd605830e70a
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the AFE or supplement was approved by the partner.
+        name: APPROVAL_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 04699dec-625c-428a-84fb-1cbe52602694
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: da055a49-9111-3210-0fb8f9e91aea
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config:
+          is_hd: true
+        dataType: varchar(240)
+        defaultValue: ""
+        description: A one-line remark about the approval.
+        name: APPROVAL_REM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7a762000-6eba-4c72-a60d-968f51bdb6e1
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5b17142b-9eed-0597-8a2ef7e414f9
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: SUSPENSE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e3a5e8f3-9fa3-4615-8699-65a981090a5c
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who created the record.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c8abd18e-9ff5-4055-927d-163c944a3535
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a6bd996c-82d8-430a-acf1-129adac6d4aa
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8172489d-4f79-c0fa-a9d172ede316
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who last updated the record.
+        name: LAST_UPDATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 66880f08-f9e6-426a-8040-9327bb1c21f6
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43fce560-63fc-5ee4-6b12bbe12b2c
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was last updated.
+        name: LAST_UPDATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 979c0146-45b0-4ee6-99dc-668bc7bbe757
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 82d23aa0-f54f-43e8-98dd-a3633c63b09a
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d6e8c42-78bd-4ee8-a050-23cfab65df90
+                stepCounter: 68c22ccf-db41-4e0d-9f36-c26207129d53
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 16c8d96b-0bd2-1603-95a6-03441483de64
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_AFE_APPROVALS: 68c22ccf-db41-4e0d-9f36-c26207129d53
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_AFE_APPROVALS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_AFE_APPROVALS') }} "LOAD_QBYTE_AFE_APPROVALS"
+        name: ODS_QBYTE_AFE_APPROVALS
+        noLinkRefs: []
+  name: ODS_QBYTE_AFE_APPROVALS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

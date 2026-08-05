@@ -1,0 +1,583 @@
+fileVersion: 1
+id: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+name: ODS_QBYTE_BUDGETS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 183b7536-0255-4590-195792676a05
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config: {}
+        dataType: number(10)
+        defaultValue: ""
+        description: The internal, unique identifier for the budget.
+        isBusinessKey: true
+        name: BUDGET_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7205ee6e-a532-47be-91b9-90d57f6fbbbb
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e528ebf2-7fc4-1203-d1ce801ae47f
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: A user-defined identifier for the budget.
+        name: BUDGET_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: af44d4ff-6ee2-4885-9906-1645997363e3
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9212ec3f-1f98-8570-d06d7c0c28f9
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: 'The budget year end date.  Financial year + month of fiscal year end. Example: 1992/09 starts 1991/10/01 and ends 1992/09/30.'
+        name: BUDGET_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b8a36835-38ad-44d7-b3c4-882918d1d39c
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0311282d-f032-c7fa-861479a77ab3
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: number(4)
+        defaultValue: ""
+        description: The version number for the budget.  Zero indicates initial.
+        name: BUDGET_VERSION_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: deee4889-7f54-4069-b255-b6db1746005a
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bf8c1866-d6bd-443d-6e7c7fd681dc
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: A user-defined categorization for the budget.
+        name: BUDGET_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a23d0a71-27a9-4768-824f-16dec29d6fa8
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b81b7cc5-2cb7-aab0-c17181eb0eca
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: varchar(240)
+        defaultValue: ""
+        description: A brief description of the budget, possibly including usage notes
+        name: BUDGET_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1bd43ac2-25e6-4e11-80a2-336ed1be3516
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the budget was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cffdae0b-21a7-405c-8907-38b513316db4
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: The user who created the budget.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 38c2a37c-f3a2-4a12-9f74-16eeaccea38f
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43fce560-63fc-5ee4-6b12bbe12b2c
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the budget was last updated.
+        name: LAST_UPDATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 38581a58-5d12-4220-b960-795a1fc082fe
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8172489d-4f79-c0fa-a9d172ede316
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: The user who last updated the budget.
+        name: LAST_UPDATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 438e726b-a053-41a5-b119-4b5d6402c03a
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b43f784e-3201-0a62-6aca6161ae34
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: varchar(240)
+        defaultValue: ""
+        description: A free-form reason for the new budget version.  May indicate what is different in the new version.
+        name: BUDGET_VERSION_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e6889b4c-02dc-42b0-a407-6164ea528a10
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2189e326-2cb2-acb8-04075491b6f0
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: varchar(40)
+        defaultValue: ""
+        description: The name of the person who approves the budget.
+        name: APPROVAL_AUTHORITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a6508d77-581e-416d-a577-07f124b3f678
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c57c94de-b283-5a56-bd605830e70a
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the budget becomes approved.  A budget must be locked before it may be approved.  Indicates that the budget is final.  Only one version of a budget (ref) in a year may be approved.
+        name: APPROVAL_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c75d9e7c-af8a-44fb-a931-bad47cb479f5
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3bb14b3f-20fd-97bf-d0bae04f9326
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: varchar(40)
+        defaultValue: ""
+        description: The name of the person responsible for the budget (manager).
+        name: BUDGET_RESPONSIBILITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 01e26235-4688-4231-a87b-51039bfdc592
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 40a08f79-9223-5ad2-501c95439839
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the budget is locked.  A budget must be locked before it may be approved.  A budget must be unapproved before it may be unlocked.
+        name: LOCK_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3330d8df-63e7-45df-a5c7-b22be1a0f96d
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a5dd3990-78bb-934e-0cbd21ddb245
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Specifies that the budget will be compared to actuals on the  basis of "A"ccounting or acti"V"ity.
+        name: DATE_BASIS_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6af45279-def0-406a-a04b-17e26990f66f
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 65d452cf-b077-09e1-87e7bbb1b0b4
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Default hierarchy code for the budget.
+        name: DEFAULT_HIERARCHY_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fbc5b1e2-428e-4a64-ba54-da15c7996ac4
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 182a83be-bf04-414f-99b3-d1a77a0d58d1
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a64a4459-4930-40f5-b769-0caac3d50ff4
+                stepCounter: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 9476c51e-c0a9-831f-fee8-1368d72ce55e
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_BUDGETS: ab0f841f-94ef-47aa-a4c2-c0f50fb281b7
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_BUDGETS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_BUDGETS') }} "LOAD_QBYTE_BUDGETS"
+        name: ODS_QBYTE_BUDGETS
+        noLinkRefs: []
+  name: ODS_QBYTE_BUDGETS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

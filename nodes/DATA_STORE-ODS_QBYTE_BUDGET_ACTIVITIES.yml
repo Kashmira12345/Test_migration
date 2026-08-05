@@ -1,0 +1,646 @@
+fileVersion: 1
+id: ba445fbe-92d7-cb26-6a0a-da853fadc785
+name: ODS_QBYTE_BUDGET_ACTIVITIES
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7f748da5-dba1-7236-10356540f730
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: A user-defined identifier for the budget activity.
+        isBusinessKey: true
+        name: BUDGET_ACTIVITY_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ff640b2c-7364-4039-a230-cd9ec75c750e
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7496eae7-c3a0-9d37-a94c25850ee6
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: The year in which the budget activity is carried out.
+        isBusinessKey: true
+        name: BUDGET_ACTIVITY_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 50a4b537-5e43-467b-bbd9-e4d793de2675
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7fc0af67-f841-e763-9470893a8dfa
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: A user-defined classification for the budget activity.
+        name: BUDGET_ACTVY_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 12e5eca2-f657-4242-af67-f55ab58e3f51
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 44658f4f-ea18-477b-e3fc83c49cda
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: varchar(40)
+        defaultValue: ""
+        description: A brief, formal description of the budget activity.
+        name: BUDGET_ACTIVITY_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55d6c71a-e6ad-4940-849b-3ad099d299be
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78249657-653d-623c-42b6c0e11c46
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: number(4)
+        defaultValue: ""
+        description: The organization which is undertaking the budget activity.
+        name: ORG_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b3ca5900-b602-4f64-a703-392bc0dad622
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d4a72f74-c780-9a88-e9422fa4f555
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: A user-defined code for the purpose of the budget activity.
+        name: BUDGET_ACTVY_PURPOSE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0ae886c5-5a46-4b45-881a-1d4106341044
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c7af1ee8-2d2e-fcd2-d11748246e9c
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates whether the activity is capital or expense.
+        name: CAPITAL_OR_EXPENSE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d486365a-a4fc-4ec9-af2d-791e3c0b3485
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the budget activity was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad7050b3-de80-4ccf-a036-0827d1a7f8f2
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: The user who created the budget activity.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2f9f0231-880e-4a27-8a93-5b7c8419ffc2
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43fce560-63fc-5ee4-6b12bbe12b2c
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the budget activity was last updated.
+        name: LAST_UPDATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 28b873c9-9177-4ca3-b569-1fe44d91af37
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8172489d-4f79-c0fa-a9d172ede316
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: The user who last updated the budget activity.
+        name: LAST_UPDATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dd17c602-fe31-4b38-a1e4-861bbfbdcda4
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dc97ad8b-6489-6c68-54d76b0f302d
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The currency used for forecasting the activity.  This has no effect on the budget.  BUDGET_ITEMS associated with this activity will be recorded in the budget currency.
+        name: FORECAST_CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5e4fd05e-90e5-4239-a663-0948f14a8e8c
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f86fcab9-4483-7c5b-00c048a6dce1
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: A user-defined code indicating the program associated with the budget activity.
+        name: BUDGET_PROGRAM_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6faa5aba-5aa2-4367-8220-f5b767259b7b
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a1492fe0-05ce-664f-8c12d933f4c8
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The code for the capital project with which the budget activity is associated.
+        name: CAPITAL_PROJECT_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d3608c4-7256-4e37-8da2-22725288f3cd
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9b09e6c5-f981-e25f-a7eb97edb2b4
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: number(1)
+        defaultValue: ""
+        description: a numeric code indicating the relative priority of the activity.
+        name: PRIORITY_LEVEL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1625e650-e997-40c0-9313-5e571cb5a141
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 17479cbc-d2ea-f07c-a4d23ea3588f
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: varchar(240)
+        defaultValue: ""
+        description: A remark providing usage notes or other detail about the activity.
+        name: BUDGET_ACTIVITY_REM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2ad93d9d-e50a-4af8-8384-8e606feb7b2b
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a66eaac1-2981-3892-ce3cf9a9f544
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates if the activity was created to carry over AFE(s) from the previous year.  Should be Y when attached to an AFE as current when current != original.
+        name: CARRYOVER_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1963fd05-783e-4a57-8a63-aa3375ef06d2
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 517c768f-ac23-7a1b-7b4e2950723c
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: number(14,2)
+        defaultValue: ""
+        description: The total amount allocated to the activity for forecasting purposes.  This is not used by the budget but may be calculated from the budget (denormalization).  For non-budget activities, this amount must be manually entered for forecasting.
+        name: FORECAST_TOTAL_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d07bbc62-4791-454f-b460-4c777605a949
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b0c77351-313d-0de9-54cc0122177c
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Indicates the designated carryover activity for this activity.  A carryover may also be linked to another carryover.
+        name: CARRYOVER_BUD_ACTVY_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1153852-d1e1-4a16-9bb3-b551f9d1c681
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0879c776-2ee5-8331-ae1efcdb41c5
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Indicates the year of the budget activity which will accomodate carryovers.
+        name: CARRYOVER_BUD_ACTVY_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d76bdb32-b0a7-4761-a9fc-00627df61d18
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 64731879-6f97-49ca-b31a-f7becaae3824
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b377e16-eec8-4fc6-bf01-cde98a7ffe8c
+                stepCounter: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: ba445fbe-92d7-cb26-6a0a-da853fadc785
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_BUDGET_ACTIVITIES: 417439fd-5255-4cec-9ec1-e94a6e7cad5e
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_BUDGET_ACTIVITIES
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_BUDGET_ACTIVITIES') }} "LOAD_QBYTE_BUDGET_ACTIVITIES"
+        name: ODS_QBYTE_BUDGET_ACTIVITIES
+        noLinkRefs: []
+  name: ODS_QBYTE_BUDGET_ACTIVITIES
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node
