@@ -1,0 +1,2200 @@
+fileVersion: 1
+id: f753af5a-b951-493e-90c2-14992f460eba
+name: ODS_CSLAND_C_ACCT_PROVISIONS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e683e107-5c2f-4bd8-0f0f6adac910
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: File Number
+        isBusinessKey: true
+        name: FILE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 920dbda5-fde6-4c5b-bcc9-ad7d6e0961f8
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: "TRIM(LOAD_CSLAND_C_ACCT_PROVISIONS.FILE_NUMBER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 066c1c2c-1dee-90c2-6d8218cf2c4f
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Accounting Type
+        name: ACCOUNTING_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dc0587a1-94f5-45ee-baa5-b9d357125d90
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 60867adb-baf3-4b08-23c660f77591
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Accounting Year
+        name: ACCOUNTING_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 161d9d5c-6d2d-4c73-8d28-b4bed9a7f5cb
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 462495a4-b389-05a1-8b6d43d27cd7
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Revision Date
+        name: REVISION_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fbba8291-ae0a-45c8-828a-fc156451c746
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bb112d6b-9d4b-b1a5-8341e9d8cda2
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Exp Rmks
+        name: OH_EXP_RMKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ae21e7e3-86e0-4c37-b6e9-a63919d51e3e
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d08e7855-120c-e857-d9c915d867a2
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Exp Apply
+        name: OH_EXP_APPLY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 10dd1408-fafb-403b-843b-7a967c08468d
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0f0dcb43-d5de-959c-b5ac46cc155b
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Exp Percent
+        name: OH_EXP_PERCENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0efc5cf7-3300-49d6-8e0b-e36f7bca9e97
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9fd13b64-7b38-79f2-fa1c10c09acf
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Exp First Perc
+        name: OH_EXP_FIRST_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 72d82d04-f5bb-4c9c-85a0-95b80bbf251b
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2bbe8a0c-9d5a-a647-da3c620ea36c
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH Exp First Cost
+        name: OH_EXP_FIRST_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2bb73989-a694-4c49-bbfd-d8ee898eca2a
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8aaa7dda-e84f-4612-358c48ca3e69
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Exp Sec Perc
+        name: OH_EXP_SEC_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 77086929-70a8-422c-90ae-7dc7c949872c
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 98434298-45a0-ab28-9f765bf6ef9d
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH Exp Sec Cost
+        name: OH_EXP_SEC_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 71969d92-1fe7-4298-8b3a-268fa719f988
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 690397f7-2e57-cdb8-2abf69c5066c
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Exp Third Perc
+        name: OH_EXP_THIRD_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f927fe93-c41c-4524-8daf-22afd4d4389c
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a4fdec93-f388-7237-a2fb3ed2b936
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Con Rmks
+        name: OH_CON_RMKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7c05641c-813e-4d24-a971-310b29176efc
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2227f2d-cb40-7e7a-e3bc41d23fcf
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Con Apply
+        name: OH_CON_APPLY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bc22fc74-5e94-46c8-9a13-2d854a190aea
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a8aab4d1-7c9a-bc77-2df38e25692a
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Con Percent
+        name: OH_CON_PERCENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a46f8ad1-996e-414e-a941-aaede09b8aef
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57e2a608-5846-7e33-51827639d5de
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Con First Perc
+        name: OH_CON_FIRST_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 598792d4-3b37-479b-a8dd-eefdf6a9fb04
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 292300c3-f182-0c8d-ae0d7d37fd22
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH Con First Cost
+        name: OH_CON_FIRST_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 22a87f6c-465b-4b50-a3a6-1bd84311c789
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4449474f-749f-5a76-8ebd0f7bc9f4
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Con Sec Perc
+        name: OH_CON_SEC_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 38ea64ad-2f1a-409f-9eb9-a6488fc7ba0c
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0694d459-e3b6-71d6-e629a59ece62
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH Con Sec Cost
+        name: OH_CON_SEC_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 51fff9d9-820b-49d9-a112-41d4813882f7
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c9c641e0-962d-6fb1-e4fe2493f0ba
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Con Third Perc
+        name: OH_CON_THIRD_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5a55f8da-d1a9-4bfe-9f46-8a0ef8dc98e0
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f4dbc7d-638b-2d28-5576c89a95da
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Con2 Rmks
+        name: OH_CON2_RMKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8985e42-5184-48f4-8ff2-a9e5082c57bf
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba22b37f-aed5-d54a-5479e6229699
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Con2 Apply
+        name: OH_CON2_APPLY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 853d33aa-19fe-4fe1-8ea4-0280a933a422
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 70ce39b9-a2f2-ab17-fb11b931ca1b
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Con2 Percent
+        name: OH_CON2_PERCENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 49341621-49f6-4577-9029-a4d80eb4d3ec
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8bf66480-725a-dbb9-43a91c2dceed
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Con2 First Perc
+        name: OH_CON2_FIRST_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 69584e2e-7164-4339-ba0f-1f9166759e68
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1ba390eb-6432-158a-13011cd6b45e
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH Con2 First Cost
+        name: OH_CON2_FIRST_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: da6a2f5d-f5b1-487d-b419-2c880e48ea57
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 572cb882-bc5a-92f2-0ed9d26911da
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Con2 Sec Perc
+        name: OH_CON2_SEC_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a61414e2-4610-4398-a0bd-5c476f0406fe
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2bcdda8d-7d9a-d9d7-24cbc46f2c02
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH Con2 Sec Cost
+        name: OH_CON2_SEC_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a36ace9d-67e7-40e8-80cb-2ec059170a82
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5070c3af-d5fd-1947-a87cc0027559
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Con2 Third Perc
+        name: OH_CON2_THIRD_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e327800f-c739-4b8e-8eb0-3f6cff8d2085
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 448c2ef7-8c02-cba7-a6d4db878857
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Drl Rmks
+        name: OH_DRL_RMKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5c3aa0a2-9a4f-41a9-9424-775523afaccb
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3db50b60-5df8-6357-0730c922f1b5
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Drl Apply
+        name: OH_DRL_APPLY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8c745cf8-e68b-4a73-8b04-af6784b393b6
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4f92ffac-db37-41a0-c9d36572dce2
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Drl Percent
+        name: OH_DRL_PERCENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aa8c1500-14ef-42b9-9a94-42209d28b3d7
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8d6e688f-dad8-0560-51206c7430e5
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Drl First Perc
+        name: OH_DRL_FIRST_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 560e6266-86b1-4380-835a-618fd74f3525
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c0c4aa8e-bae6-2826-7df4cafbf240
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH Drl First Cost
+        name: OH_DRL_FIRST_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bfda3810-24af-4521-8a56-8ce15243d673
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 12be4690-22d1-02de-64b76ae1f253
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Drl Sec Perc
+        name: OH_DRL_SEC_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d6afc4f2-8bde-48bf-ae76-d1df4fb2c453
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0fb2bcb6-6ada-3b49-4968575de476
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH Drl Sec Cost
+        name: OH_DRL_SEC_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 58d48a20-fac1-42c6-a096-59e485b0d323
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2f59005-62de-8660-853bbc2df8a1
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Drl Third Perc
+        name: OH_DRL_THIRD_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6ec91d68-fa29-4ebc-9639-db6b5ea53959
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f20531fe-d78b-9abf-dfffbcf4966d
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Oper Rmks
+        name: OH_OPER_RMKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6fa32e34-934b-40a8-a41a-602b3095ec89
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2b77357d-b2e0-c0a1-d32426e1a7e7
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Oper Apply
+        name: OH_OPER_APPLY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9bfd1ab9-01d4-457b-b89c-8d76cd2ae8fa
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9aba1879-bc56-e586-4564cebf3339
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH OPER IND
+        name: OH_OPER_IND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a10a1346-ac4e-4365-a6d2-8cc9d8d8a898
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a8a9871-6c4e-2468-9c94e38795db
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH Oper Perc
+        name: OH_OPER_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a448e970-8a1d-4275-a8b7-b3fe6ab513e3
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d5ecd5eb-e32a-c22d-83afed39226f
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH Oper Flat Rate
+        name: OH_OPER_FLAT_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 77412807-5fc8-4a44-b14c-03334097b46b
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 28e95d45-68f0-5080-3ab8af8555a5
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH Oper Per Well
+        name: OH_OPER_PER_WELL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 719f7fd3-3c56-46fb-8be0-1d820e917606
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9c6f9dae-7d36-0eea-f3f183ee3cae
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Adjust Rates Rmks
+        name: ADJUST_RATES_RMKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9f530053-c9b1-4f9f-94c6-0d077232c5ce
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: da04fbbd-0968-b80d-201500bbf944
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Adjust Rates
+        name: ADJUST_RATES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e84bfa65-d171-46c5-aade-f213355b581a
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6abed86c-2efe-4288-9f30ec57b689
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: PASC96 406 Rmks
+        name: PASC96_406_RMKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2290471-7547-4fa4-b6f7-5d96d019c08a
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 50d344bf-b599-94c5-8ae4c5f36328
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Disposition
+        name: DISPOSITION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a9cdfca6-0b6b-4838-983f-9e94f895c4c7
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 31704bf9-d511-0771-8235272a3bc0
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Election Rmks
+        name: OH_ELECTION_RMKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b5744b88-2bd2-4eb9-b79b-a2eec431d5be
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 06a01950-23f7-02c7-c2ed947c5251
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Election Alt
+        name: OH_ELECTION_ALT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a6e14411-1c0a-4357-9acf-2f8640bf8a4a
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a385ccd-eaa4-e004-293da898042a
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Aband Reclaim Rmks
+        name: OH_ABAND_RECLAIM_RMKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 76090db9-8909-493f-9d6a-a490739c0e17
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0e494b48-b1a6-072f-c4f4ad54d7d8
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Aband Reclaim ALT
+        name: OH_ABAND_RECLAIM_ALT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b41cd23-46b2-456f-b9f4-a512540a4e7f
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d8ab1faf-612e-4ded-433b0660d375
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Catastrophe Rmks
+        name: OH_CATASTROPHE_RMKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f5b57e07-c094-495e-99ab-71b3c1668460
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7a084c26-7a09-5faa-bceb044e440d
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Catastrophe ALT
+        name: OH_CATASTROPHE_ALT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8889eb6a-d09a-415d-994b-34b8aacd22fd
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5644be75-3987-349a-e40279105a0e
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Completion Rmks
+        name: OH_COMPLETION_RMKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d9bfadd3-77a1-4792-9b89-5654682f885e
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0b75a1a0-807e-7a87-f8b2c8c11e3a
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Completion ALT
+        name: OH_COMPLETION_ALT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6eca9ff3-4124-4062-a6df-106c033d06e9
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 29634eea-1a6e-1adb-dc4653989f68
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Equipping Rmks
+        name: OH_EQUIPPING_RMKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c6b21ce0-e398-4cca-ba46-5e6079acfcad
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8905db3c-5481-3b39-514fd58cf9d8
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Equipping ALT
+        name: OH_EQUIPPING_ALT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 409fdce9-bd16-40bb-9a15-512a5ec46fd9
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4f41be2f-8aea-2a01-82ed35d74d58
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Con ALT
+        name: OH_CON_ALT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5eb78a29-5788-4790-9786-914eae50e7a4
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8ceaf514-6147-e0c8-e48092dbdcdf
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Drl ALT
+        name: OH_DRL_ALT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c18e0ed4-1cae-4764-8d4b-228da032ec16
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 37e8dc20-897e-178c-3143169d5af7
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH Exp ALT
+        name: OH_EXP_ALT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 232384c5-b1d0-45f8-b888-08bde9abd265
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f1befee5-045a-d9ab-b3c060308d78
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH C303 H1 Apply
+        name: OH_C303_H1_APPLY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1b51a021-43ce-4398-b408-1e55128995ad
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c0b4a3b8-f1dc-1b01-9194081f1ca3
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH C303 H2 Apply
+        name: OH_C303_H2_APPLY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 32927de6-2b75-4763-a271-f55c00ba9036
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: daec2e94-9fe6-c5a8-c33002ade694
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH C303 H3 Apply
+        name: OH_C303_H3_APPLY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2367d885-51c5-416f-ae39-d6feb77dba39
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7035cb65-00f2-add1-3e336ad2b48e
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH C303 H4 Apply
+        name: OH_C303_H4_APPLY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bfff3006-4de0-456f-bccd-04eba10011a3
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: feb8b0c0-b23a-1a15-b08e80fe11c8
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: OH C303 H5 Apply
+        name: OH_C303_H5_APPLY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0bb806c6-1430-4a65-b3e2-b906d2133a78
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c54a7458-ecbc-5e61-0ed1acc96648
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH ABAND RECLAIM PERCENT
+        name: OH_ABAND_RECLAIM_PERCENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d3c13ce4-05db-4aaf-bd0e-fae935155c03
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa07a588-75ba-5f7d-5ed1cd31ab09
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH ABAND RECLAIM FIRST PERC
+        name: OH_ABAND_RECLAIM_FIRST_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 007fb292-7529-465f-9f68-4c5cb406dd80
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f6e5e0cc-f986-5360-b11fbe64960b
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH ABAND RECLAIM FIRST COST
+        name: OH_ABAND_RECLAIM_FIRST_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: beb15262-dd37-4a19-8a97-775ac0d6a169
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f0c0453b-2fd0-7dd6-06bd26cfdfbc
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH ABAND RECLAIM SEC PERC
+        name: OH_ABAND_RECLAIM_SEC_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a12eb1a-eefd-4e8d-bda2-946962bb922f
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dded399e-6c00-4433-f715976bc259
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH ABAND RECLAIM SEC COST
+        name: OH_ABAND_RECLAIM_SEC_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c9e0436e-9a11-4555-83de-4d9566e483d2
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3284c9a6-aea2-67ef-5f56d6fd3aa9
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH ABAND RECLAIM THIRD PERC
+        name: OH_ABAND_RECLAIM_THIRD_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 64fda25a-0e09-4d62-ba9c-ac471c405926
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bf16220c-3254-9bb4-a013e8eddf4a
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH CATASTROPHE PERCENT
+        name: OH_CATASTROPHE_PERCENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2a6f449f-a2ee-4e35-9089-864e05ea38a9
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eba9425f-ba71-f488-9b2313b7de92
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH CATASTROPHE FIRST PERC
+        name: OH_CATASTROPHE_FIRST_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f832fa4-582d-4ee2-a37c-f945b3f13222
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8501c190-9710-4057-8f2d609aa04d
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH CATASTROPHE FIRST COST
+        name: OH_CATASTROPHE_FIRST_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 52b30ee7-9a57-4a2a-949f-f864f649950a
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a6001ca3-6032-6ba5-c9b66352ad5e
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH CATASTROPHE SEC PERC
+        name: OH_CATASTROPHE_SEC_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a3fbdbc7-6b81-4ba4-bedb-2d4a48242742
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c6002b34-ca96-a411-c28382e73b4f
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH CATASTROPHE SEC COST
+        name: OH_CATASTROPHE_SEC_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3229eb16-c885-472c-9fa6-92ada75c7b3e
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 281d5905-1372-7147-ab7289cefa7b
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH CATASTROPHE THIRD PERC
+        name: OH_CATASTROPHE_THIRD_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e1d2790a-d888-4c44-8827-ae6254918cf8
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 69e86b05-ac3c-7b8c-0bf51b471e4e
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH COMPLETION PERCENT
+        name: OH_COMPLETION_PERCENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9f27863d-1bc7-4fb1-bd92-e77b2d4c819c
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c16d3e69-b35c-52a9-75e7cd5772d5
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH COMPLETION FIRST PERC
+        name: OH_COMPLETION_FIRST_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bf99828e-7357-4e0c-ac6a-78a26ee27b96
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4a8c11f7-d520-9e5a-ba51d70d48e8
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH COMPLETION FIRST COST
+        name: OH_COMPLETION_FIRST_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 22acf4a3-2b4f-49aa-8dca-335985921131
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9dfd3fa3-ab32-2ea0-a579d0e2829b
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH COMPLETION SEC PERC
+        name: OH_COMPLETION_SEC_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 19005c46-bf73-40ec-8c8c-729687e18b29
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 62b2c303-c069-ecdb-7a1a964920ba
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH COMPLETION SEC COST
+        name: OH_COMPLETION_SEC_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9ef63b37-d5c8-44f8-814e-3e01c538f09e
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f3a71085-0785-b4d5-7aad53a410ef
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH COMPLETION THIRD PERC
+        name: OH_COMPLETION_THIRD_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 59ef3eed-b0e8-47e8-978c-53409d387ae3
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2b92a7de-8299-7a8b-d325376c932f
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH EQUIPPING PERCENT
+        name: OH_EQUIPPING_PERCENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 224c7c7e-2150-4396-bede-b612141d3192
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e969d867-6cb2-8371-e7b93560db95
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH EQUIPPING FIRST PERC
+        name: OH_EQUIPPING_FIRST_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bbd4ef73-23ed-4196-8486-0e076ea7aa4a
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 298b1c60-56c4-322f-cf4790865b3f
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH EQUIPPING FIRST COST
+        name: OH_EQUIPPING_FIRST_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 74a818cf-16b7-4756-b567-bfc00fc59e56
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f8c0951b-7deb-2120-e2b6c8392333
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH EQUIPPING SEC PERC
+        name: OH_EQUIPPING_SEC_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6ce77095-b61d-44a5-8f3b-52abbca4ad62
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 164b66aa-0599-20a9-a1cc972249d0
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: OH EQUIPPING SEC COST
+        name: OH_EQUIPPING_SEC_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fdc642ce-8158-4578-9034-b8ceec08e676
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec2342d4-07b8-a892-06f235e14bef
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH EQUIPPING THIRD PERC
+        name: OH_EQUIPPING_THIRD_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f7d5590b-94d8-4f94-ac75-0d3f973176a8
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e5895f5-3ac9-bc2d-31ddb0c44b88
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH OPER PER WELL PERC
+        name: OH_OPER_PER_WELL_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6054863c-9e34-4645-987c-41140308b771
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9cbdb515-0e40-0aa4-d8f062ed2d16
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH OPER FACILITIES PERC
+        name: OH_OPER_FACILITIES_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9bf67113-0f7d-48eb-a1cd-9e22fe31180d
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2dc66f7e-8ef0-fd2c-fc4a688876e5
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH OPER PROPERTY TAX PERC
+        name: OH_OPER_PROPERTY_TAX_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 525f6729-2a01-485d-8efa-784c6e431fed
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 384d879e-3fa6-5566-5daad2ebad5e
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH OPER ACCT CHARGES PERC
+        name: OH_OPER_ACCT_CHARGES_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 349a3e0b-a973-49ee-9b5f-63ffab5bf6d7
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a5a7d592-b2bd-6525-6100865482f2
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH OPER UTILITIES PERC
+        name: OH_OPER_UTILITIES_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c3a453b0-ce54-4651-b24a-16f1afde1ef2
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e4e7a1d4-5f7e-6f24-25bf5d711a16
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: OH OPER LEVY FEES PERC
+        name: OH_OPER_LEVY_FEES_PERC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b21f1d58-a4d8-43ea-80b8-f447b6888440
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4f049d3d-e267-467c-9ea5-0f62a0c4ccad
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 586cb65e-63c9-4a57-9eb9-e7cd36564f48
+                stepCounter: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: f753af5a-b951-493e-90c2-14992f460eba
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_C_ACCT_PROVISIONS: 0125f3c4-45df-44f1-b030-0f5ca7eee2d7
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_C_ACCT_PROVISIONS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_C_ACCT_PROVISIONS') }} "LOAD_CSLAND_C_ACCT_PROVISIONS"
+        name: ODS_CSLAND_C_ACCT_PROVISIONS
+        noLinkRefs: []
+  name: ODS_CSLAND_C_ACCT_PROVISIONS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node
