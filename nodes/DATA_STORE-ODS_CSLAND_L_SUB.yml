@@ -1,0 +1,1024 @@
+fileVersion: 1
+id: bf882e68-bd7a-a722-832e-aaf3e7edab63
+name: ODS_CSLAND_L_SUB
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e683e107-5c2f-4bd8-0f0f6adac910
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: File Number
+        isBusinessKey: true
+        name: FILE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 65d37462-dbc6-46fd-93fe-15b2b8a7d24c
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: "TRIM(LOAD_CSLAND_L_SUB.FILE_NUMBER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8618196b-3a8d-eed6-0a37850d4fce
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config: {}
+        dataType: char(2)
+        defaultValue: ""
+        description: File Sub
+        isBusinessKey: true
+        name: FILE_SUB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 81139515-f95c-4c5c-bc0d-1f1314928958
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: "TRIM(LOAD_CSLAND_L_SUB.FILE_SUB)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ba0c218-ede3-57b3-773bdda36748
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: File Status
+        name: FILE_STATUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7941f731-2ef7-499a-a670-a06e004094c7
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: "TRIM(LOAD_CSLAND_L_SUB.FILE_STATUS)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 88eec076-c04a-5878-4e6d16641b95
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Status Date
+        name: STATUS_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 41fdb5c0-b2f2-43f3-998c-6c76817f5504
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 72bbf163-1bf0-4923-a0975ccd2af5
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Division
+        name: DIVISION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1b866813-869b-484c-a479-0d2c5c98b6de
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: "TRIM(LOAD_CSLAND_L_SUB.DIVISION)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 639aaa22-d5e5-cb03-a522267e79c4
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Area
+        name: AREA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e014538d-e433-4684-bbee-21dc51d74d67
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: "TRIM(LOAD_CSLAND_L_SUB.AREA)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1d1cd00b-75ef-0629-c38d0eb70b4d
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Extension
+        name: EXTENSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 04c65748-a5ab-42de-a31c-f5176e1c25b9
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: "TRIM(LOAD_CSLAND_L_SUB.EXTENSION)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: afc29b27-89c7-9b27-ff0724737d45
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Extension Date
+        name: EXTENSION_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eac6bb18-7ac4-4ef5-b779-0bc13228d3cc
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e54c5f89-6414-d801-f1ec44cfa72c
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Sub Interest Type
+        name: SUB_INTEREST_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5fbae91e-c2d8-43d5-9314-60aeae895825
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: "TRIM(LOAD_CSLAND_L_SUB.SUB_INTEREST_TYPE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4012c8c1-7886-0a19-1346780c497d
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Rental Rate
+        name: RENTAL_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1687414b-1176-43f5-a6f4-01f0b44e8bd6
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8a1f664a-45d0-1af6-ce2b3e57bfa4
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Total Sub Rental
+        name: TOTAL_SUB_RENTAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e0e20b64-7a94-40fc-8b8d-6374f3f0ab28
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 02c4fb27-7489-1b65-fbf5081ce182
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: char(6)
+        defaultValue: ""
+        description: Sub Operator
+        name: SUB_OPERATOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e4664120-add6-4aec-9b08-bba2300ce74f
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: "TRIM(LOAD_CSLAND_L_SUB.SUB_OPERATOR)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 13a499a4-1719-d76c-e879a7699d39
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Count Acreage
+        name: COUNT_ACREAGE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7fc6fd2b-7a69-4fe1-ab11-651bd33923f9
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b2b32708-500a-f115-2c3e277026f7
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: Sub Exp Acres
+        name: SUB_EXP_ACRES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5d25c51f-9039-4ac3-829c-33a3a0232670
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1b48077a-1989-c4f7-6b03c9215779
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: Sub Gross Acres
+        name: SUB_GROSS_ACRES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d1e1a53b-a0c9-4afc-96c3-42165fc8f75f
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 442e6488-ccc4-8ab6-09810bbbe212
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: Sub Exp Hect
+        name: SUB_EXP_HECT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f1a5b6ee-84dd-44e2-8775-ea637a026b80
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0dc9bef9-2b23-9a0f-724d166da4ba
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: Sub Gross Hect
+        name: SUB_GROSS_HECT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 41be9da2-304f-423c-a244-5bdf6bd184bb
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b9d7dc0-7f41-84b6-3ec6a5c04d24
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,8)
+        defaultValue: ""
+        description: Owner Interest
+        name: OWNER_INTEREST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a9d78581-1420-48b5-bf76-b4eb94e0bb7c
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d8c311e9-8928-3987-a8ee84d51e51
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Producing Status
+        name: PRODUCING_STATUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e6e17b14-1f45-460a-bf36-0703cae23807
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: "TRIM(LOAD_CSLAND_L_SUB.PRODUCING_STATUS)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d801696c-4799-30a9-632f43787f93
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: Prod Acres
+        name: PROD_ACRES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d73bc8a9-295c-458d-94f7-26d65560647e
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 17dc3e2e-491f-f55e-c1a67a868d28
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: Prod Hect
+        name: PROD_HECT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8addc306-af54-41b6-8df2-33f8ec64b670
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 580f9ba1-659c-dbba-053bb2fd1561
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: NonProd Acres
+        name: NONPROD_ACRES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4cc02785-130f-4bdb-8dde-541baa3239e6
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 599f1478-dc37-c978-8c0062b1c1cd
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: NonProd Hect
+        name: NONPROD_HECT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 60666d3f-832a-480f-b918-915b38334284
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 600f6ed6-228c-23bc-f2646c2af80f
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Developed Status
+        name: DEVELOPED_STATUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b6eb1a46-2953-4d9b-85aa-dee2435a5f3d
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: "TRIM(LOAD_CSLAND_L_SUB.DEVELOPED_STATUS)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d76fe282-6f4d-8dd5-98c0545b3056
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: Dev Acres
+        name: DEV_ACRES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6dc42640-72cc-49f6-a4ec-dc38bbd4af16
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3865f903-4e09-965e-e5f5ecb6b7c0
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: Dev Hect
+        name: DEV_HECT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 736b94d2-e37e-4031-aef8-20732642bc45
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3b85f953-67ad-f0d6-420e96361cab
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: Undev Acres
+        name: UNDEV_ACRES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 914e9583-20b0-4807-905f-618e6bd9e51e
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9143bc16-f150-def3-3aaf34280791
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: Undev Hect
+        name: UNDEV_HECT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3da77892-1982-4798-82da-0295de80aa65
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: adaa815e-d841-e4bb-1b68586c03ef
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Proven Status
+        name: PROVEN_STATUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d08b4535-25c9-4185-8b99-788e0eef6b2c
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: "TRIM(LOAD_CSLAND_L_SUB.PROVEN_STATUS)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0c7df8ed-646d-dcf1-dee458403598
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: Proven Acres
+        name: PROVEN_ACRES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 63b66bd7-89f3-476a-a6e2-2d12f469c24d
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 64d1cca5-27ed-79ef-464c9ede6cac
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: Proven Hect
+        name: PROVEN_HECT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c102aa57-9311-4dd2-80a3-82af4361549b
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2a492529-881c-a635-9ac18f2e0ab3
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: NonProven Acres
+        name: NONPROVEN_ACRES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8ff9846f-9c3f-492e-b538-f951c506874a
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 908982b3-7635-e642-defdaa6d14a7
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: number(11,3)
+        defaultValue: ""
+        description: NonProven Hect
+        name: NONPROVEN_HECT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2336c0e-5158-40ed-8797-9e060dbc5931
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e34ea989-46b9-bc7c-1488045f943a
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Use Rental DOI
+        name: USE_RENTAL_DOI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a4905a49-ebf7-4f7f-b7d4-50857caccc9c
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 03c01732-0b72-e369-cc85164e9168
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: CUSTOM01
+        name: CUSTOM01
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 19d8285c-d65d-49d3-b91b-623b9c9647d3
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: "TRIM(LOAD_CSLAND_L_SUB.CUSTOM01)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 01e5c1ff-3ae9-7a1f-10444f884c90
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ROFR Flag
+        name: ROFR_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 78da86e0-0250-452c-a8bb-c4de3f3070c9
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 496cd36d-7e2b-a16b-14612a3875f7
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Land District
+        name: LAND_DISTRICT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 212f9e4b-11e5-4954-939f-317f5a4c82d3
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: "TRIM(LOAD_CSLAND_L_SUB.LAND_DISTRICT)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 07a5bc61-0b9f-bdd7-8cf8076d0a82
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config:
+          is_hd: true
+        dataType: char(10)
+        defaultValue: ""
+        description: Exploration District
+        name: EXPLOR_DISTRICT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b8f7242f-b3a1-42c2-b3b7-0eec3b100e12
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: "TRIM(LOAD_CSLAND_L_SUB.EXPLOR_DISTRICT)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 45a908af-00af-46b0-85f9-a7d9becf01f6
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 493f8922-d16b-44e7-93a8-f781c49ff207
+                stepCounter: aa328f6e-1d8d-4a73-881e-677f1de56e63
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: bf882e68-bd7a-a722-832e-aaf3e7edab63
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_L_SUB: aa328f6e-1d8d-4a73-881e-677f1de56e63
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_L_SUB
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_L_SUB') }} "LOAD_CSLAND_L_SUB"
+        name: ODS_CSLAND_L_SUB
+        noLinkRefs: []
+  name: ODS_CSLAND_L_SUB
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

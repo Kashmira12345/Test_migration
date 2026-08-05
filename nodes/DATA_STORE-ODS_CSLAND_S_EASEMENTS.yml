@@ -1,0 +1,415 @@
+fileVersion: 1
+id: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+name: ODS_CSLAND_S_EASEMENTS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e683e107-5c2f-4bd8-0f0f6adac910
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: File Number
+        isBusinessKey: true
+        name: FILE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d023e2c9-aaea-4e54-8daf-4ab301de9484
+                stepCounter: b86b75e1-ba3f-4522-94e6-91e33f3ba14e
+            transform: "TRIM(LOAD_CSLAND_S_EASEMENTS.FILE_NUMBER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a9bb67d1-7037-9ff8-d5871eec7960
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: Easements Type
+        isBusinessKey: true
+        name: EASEMENTS_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b7611387-3aab-426b-b345-17d850677aa7
+                stepCounter: b86b75e1-ba3f-4522-94e6-91e33f3ba14e
+            transform: "TRIM(LOAD_CSLAND_S_EASEMENTS.EASEMENTS_TYPE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8adbc469-95c6-cfa2-f872e7a2d0ae
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Easement Date
+        name: EASEMENT_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 870b565c-41b6-4e2b-baab-785d8a39759a
+                stepCounter: b86b75e1-ba3f-4522-94e6-91e33f3ba14e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a9dc79e1-b76c-4937-2364f666d2a5
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Licence Number
+        isBusinessKey: true
+        name: LICENCE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 45b28e6e-b688-42fe-a41d-fe4328d0af9f
+                stepCounter: b86b75e1-ba3f-4522-94e6-91e33f3ba14e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 08a49a16-55d6-d258-34902bb5293c
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Plan Number
+        isBusinessKey: true
+        name: PLAN_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 19c91094-1d24-4515-8134-403a214d9ea5
+                stepCounter: b86b75e1-ba3f-4522-94e6-91e33f3ba14e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d95ded4b-a30e-9e36-e5a18dda52e7
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config:
+          is_hd: true
+        dataType: char(6)
+        defaultValue: ""
+        description: Grantor
+        name: GRANTOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 005485ea-9279-4f27-94e1-7e72b6ad6ccc
+                stepCounter: b86b75e1-ba3f-4522-94e6-91e33f3ba14e
+            transform: "TRIM(LOAD_CSLAND_S_EASEMENTS.GRANTOR)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1d44ce55-b443-23ba-523cf0cbda7d
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config:
+          is_hd: true
+        dataType: char(6)
+        defaultValue: ""
+        description: Grantee
+        name: GRANTEE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 447d304b-691e-44ec-a5cf-38cafaedebb9
+                stepCounter: b86b75e1-ba3f-4522-94e6-91e33f3ba14e
+            transform: "TRIM(LOAD_CSLAND_S_EASEMENTS.GRANTEE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: addeac40-7789-7b3f-ccba88558f1c
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Length
+        name: LENGTH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a8b78ffd-8f11-4957-9058-401776965954
+                stepCounter: b86b75e1-ba3f-4522-94e6-91e33f3ba14e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f127b9a-cb33-ee9e-a51cc1dcab2d
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Unit of Measure
+        name: UNIT_OF_MEASURE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 16536fd3-f00e-4614-8247-1b93c6c18bd3
+                stepCounter: b86b75e1-ba3f-4522-94e6-91e33f3ba14e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f8cf6842-31dd-42ea-9e84-aaebde6a19fa
+                stepCounter: b86b75e1-ba3f-4522-94e6-91e33f3ba14e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8901f929-cea4-4769-91eb-4a8dec1fceee
+                stepCounter: b86b75e1-ba3f-4522-94e6-91e33f3ba14e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 22582c3e-bf05-c6b3-81b0-a58b739183e5
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_S_EASEMENTS: b86b75e1-ba3f-4522-94e6-91e33f3ba14e
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_S_EASEMENTS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_S_EASEMENTS') }} "LOAD_CSLAND_S_EASEMENTS"
+        name: ODS_CSLAND_S_EASEMENTS
+        noLinkRefs: []
+  name: ODS_CSLAND_S_EASEMENTS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

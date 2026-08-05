@@ -1,0 +1,457 @@
+fileVersion: 1
+id: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+name: ODS_CSLAND_LR_MANUAL_CHEQUES
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e683e107-5c2f-4bd8-0f0f6adac910
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: File Number
+        isBusinessKey: true
+        name: FILE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e60c091d-5e83-44e1-a247-0bd34cc1c3cc
+                stepCounter: e27bf707-5fa9-42f6-b914-ee28abb68a32
+            transform: "TRIM(LOAD_CSLAND_LR_MANUAL_CHEQUES.FILE_NUMBER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 09540690-16f4-090d-731308ab45b0
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Rental Date
+        isBusinessKey: true
+        name: RENTAL_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6049281d-2b17-4e22-b4f4-a2360241a7f3
+                stepCounter: e27bf707-5fa9-42f6-b914-ee28abb68a32
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 04e76247-9d36-2778-cea45f8bba86
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: char(6)
+        defaultValue: ""
+        description: Lessor
+        isBusinessKey: true
+        name: LESSOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9cd89327-b0e8-4bf9-88f6-7d90e24188d7
+                stepCounter: e27bf707-5fa9-42f6-b914-ee28abb68a32
+            transform: "TRIM(LOAD_CSLAND_LR_MANUAL_CHEQUES.LESSOR)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d43b3913-9eaa-87f6-2e162b2d4ec3
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: char(6)
+        defaultValue: ""
+        description: Depository
+        isBusinessKey: true
+        name: DEPOSITORY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 90693620-e076-4aed-8266-59d67cd971f7
+                stepCounter: e27bf707-5fa9-42f6-b914-ee28abb68a32
+            transform: "TRIM(LOAD_CSLAND_LR_MANUAL_CHEQUES.DEPOSITORY)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9000d08f-3394-b107-cd495c7d6196
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Rental Amount
+        name: RENTAL_AMOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eda3a5ba-49b0-45c4-9a81-bee791e90c69
+                stepCounter: e27bf707-5fa9-42f6-b914-ee28abb68a32
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fef966b0-7d61-11e1-4b8d467fa3ff
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: WTAX Amount
+        name: WTAX_AMOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b8036cdf-7e0b-4f63-973e-483a7e9fa04e
+                stepCounter: e27bf707-5fa9-42f6-b914-ee28abb68a32
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 981a0ab0-dfb8-649c-52dbb15f4437
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: GST Amount
+        name: GST_AMOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 45cb8f15-670e-493d-86c7-535620e8788d
+                stepCounter: e27bf707-5fa9-42f6-b914-ee28abb68a32
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 79467bb0-6ad6-aac4-28782f22a178
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config:
+          is_hd: true
+        dataType: number(9,2)
+        defaultValue: ""
+        description: Cheque Amount
+        name: CHEQUE_AMOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f843052-ad23-4d75-aeb3-680f6e754527
+                stepCounter: e27bf707-5fa9-42f6-b914-ee28abb68a32
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bad44ad9-3434-aa23-30607338e7ef
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: varchar(16)
+        defaultValue: ""
+        description: Cheque Number
+        isBusinessKey: true
+        name: CHEQUE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 98eab890-7c0f-42f2-ad28-e58e4f5a8444
+                stepCounter: e27bf707-5fa9-42f6-b914-ee28abb68a32
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 98131c40-ebd5-c4fe-a22f7ceba32c
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Cheque Date
+        name: CHEQUE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a1935263-539a-471e-a6aa-2c0956038e3b
+                stepCounter: e27bf707-5fa9-42f6-b914-ee28abb68a32
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 45006100-2557-ac41-7aabbfc51fb6
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config:
+          is_hd: true
+        dataType: varchar(100)
+        defaultValue: ""
+        description: Comments
+        name: COMMENTS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7cd6aa73-80f5-4aec-8b1d-6a44caf23bd3
+                stepCounter: e27bf707-5fa9-42f6-b914-ee28abb68a32
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e4d8020e-d49f-400a-9215-351835840d06
+                stepCounter: e27bf707-5fa9-42f6-b914-ee28abb68a32
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b2f9046-8851-4419-bf32-a6a3d2bf792d
+                stepCounter: e27bf707-5fa9-42f6-b914-ee28abb68a32
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 452203f3-2bf0-16c0-677c-3e2b474a6b89
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_LR_MANUAL_CHEQUES: e27bf707-5fa9-42f6-b914-ee28abb68a32
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_LR_MANUAL_CHEQUES
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_LR_MANUAL_CHEQUES') }} "LOAD_CSLAND_LR_MANUAL_CHEQUES"
+        name: ODS_CSLAND_LR_MANUAL_CHEQUES
+        noLinkRefs: []
+  name: ODS_CSLAND_LR_MANUAL_CHEQUES
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node
