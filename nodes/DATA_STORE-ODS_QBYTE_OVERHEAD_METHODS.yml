@@ -1,0 +1,898 @@
+fileVersion: 1
+id: cf25bae2-d387-e9b1-d510-b8350509fb15
+name: ODS_QBYTE_OVERHEAD_METHODS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f41dbb57-8c81-e9f1-be60d20cd253
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: A user-defined code to identify this overhead calculation method.
+        isBusinessKey: true
+        name: OVERHEAD_METHOD_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b4064907-63f1-412c-bca6-825dce0c9ce6
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5e5b90f3-8037-2116-d6dbe79fb32c
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates the nature of the overhead method.
+        name: OPERATING_OR_CAPITAL_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 19cff7ed-d441-472e-8cee-c47d7da893bb
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dc322de5-d7d2-f1dc-24ef5e6e524c
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(40)
+        defaultValue: ""
+        description: A description for the overhead calculation method.
+        name: OVERHEAD_METHOD_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 395ee755-001e-4d27-9f6b-5b594dc5354a
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dfdf6597-de5e-ceea-8196f6b9d8f4
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The major account to which recovered overhead is booked.
+        name: RECOVERY_MAJOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c663e003-6b9f-483d-976a-07291d9fbffb
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7640f5e5-140b-c153-3a3d9ccdfe36
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The minor account to which recovered overhead is booked.
+        name: RECOVERY_MINOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: da665607-446b-42d6-81b4-55032a1ab2a9
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1fb40d2b-3104-378b-871036675ba0
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The major account for overhead expenses.
+        name: OVERHEAD_EXP_MAJOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a41e97b5-5016-4ef0-a08d-aa7a91968741
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 559a9220-db49-4ccb-906e3b06e150
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The minor account for overhead expenses.
+        name: OVERHEAD_EXP_MINOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1c2a2546-9f95-4b65-9c4f-d066a22e9945
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the method was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4c0b6169-477b-46af-89c7-1c5508daa4ba
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: The user who created the method.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6abca606-90d8-48c4-8b9d-04e1f8a4b099
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d2c95b3-f3fa-677c-8315ce3f59e2
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the method was last updated.
+        name: LAST_UPDT_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 589bd332-bfa5-4513-b14d-c12caeb1e4f9
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d504b8bc-a1d6-4e17-eb5f4bd2f9a4
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: The user who last updated the method.
+        name: LAST_UPDT_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eab9c656-2dbe-412a-8ada-b249431cf47e
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 61806457-b916-fe86-62e0bb4f73b1
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The cost centre to which recovered overhead is booked.
+        name: RECOVERY_CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5a3f234d-acfd-4bd9-8081-b4eac94220c8
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e6dd8f8b-7643-eca7-00d3c691c9d2
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: number(14,2)
+        defaultValue: ""
+        description: 'For producing well overhead: the base fee to which incremental amounts are added.'
+        name: OVERHEAD_METHOD_BASE_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7be12ffb-c6f1-4a90-81a1-76a65cf5abb5
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3d9066cb-917f-4470-eaf5ca7e664c
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: number(3)
+        defaultValue: ""
+        description: 'For producing well overhead: the number of months after shut-in that overhead may still be calculated.'
+        name: SHUT_IN_MONTHS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 73855e80-3ae2-4df5-af83-fb7bb7743da7
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2eba1baa-39b8-2982-fdda6d1ad43c
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The Recovery GL Sub Code.
+        name: RECOVERY_GL_SUB_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 37e5ab4f-7093-40b2-93de-0d21cd5977ee
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4df735c0-657b-43a1-a029ef47ade4
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The Overhead Exp GL Sub Code.
+        name: OVERHEAD_EXP_GL_SUB_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ef228427-6036-46cc-838d-9a6c8ccb8e93
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f0048b01-7755-90af-a96428fa4e3b
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The employee benefit exp major.
+        name: EMP_BENEFIT_EXP_MAJOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 52b70629-a531-4b16-ba7d-15989b8e1c92
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7bf710a3-f06b-2ba3-2e80ab650055
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The employee benefit exp minor.
+        name: EMP_BENEFIT_EXP_MINOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ff8985c7-834d-4c22-af6c-4634826f6791
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: beaa7b00-24ed-36de-e543fd89f230
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The employee benefit exp GL Sub Code.
+        name: EMP_BENEFIT_EXP_GL_SUB_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 584d6daf-533e-4ee0-999d-8c8e55e0ffd5
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d22c7830-2413-f7a9-358661495a54
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The employee benefit rcvry major.
+        name: EMP_BENEFIT_RCVRY_MAJOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9271fba0-70fe-46c8-827a-93dccbf9d6e9
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b61532a8-3406-da29-19c93a9ecc36
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The employee benefit rcvry minor.
+        name: EMP_BENEFIT_RCVRY_MINOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b62a0170-887e-4a6e-9ecc-835f28c4edda
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 09befbf4-7fde-c81e-11dfb91d43f1
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The employee benefit GL Sub code.
+        name: EMP_BENEFIT_RCVRY_GL_SUB_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4993d1e4-894f-4a55-a3ff-8bead69d8cb4
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aff16ba3-7015-2a1f-c9b95ce8a1dd
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: number(14,10)
+        defaultValue: ""
+        description: The employee benefit Max Non-comp Percent.
+        name: EMP_BENEFIT_MAX_NON_COMP_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 11a93af9-3222-4a92-a2b9-6d848b689af3
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d9b1a756-c6a7-5603-f67419bcd7cb
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The Warehouse Handling Exp Major.
+        name: WH_HNDLG_EXP_MAJOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 282ecf58-3e9a-4548-aa13-d02e592eb617
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 10d39355-5b5c-9f13-aecc794f5c92
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The Warehouse Handling Exp Minor.
+        name: WH_HNDLG_EXP_MINOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8b5caccc-9c29-40b6-8dfd-19189dce21ed
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ea7e7686-de24-c31c-8ec54d2cfacb
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The Warehouse Handling Exp GL Sub Code.
+        name: WH_HNDLG_EXP_GL_SUB_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 023bc672-7504-4bb7-9a0a-36032f81e9c6
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 89bf43e9-e832-8f38-b0b3675fccb3
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The Warehouse Handling Recovery Major Account
+        name: WH_HNDLG_RCVRY_MAJOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a85589b3-a1ac-42e8-8ba4-0e6d75c73865
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b6478d54-c66d-6479-ff99d9c297b2
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The Warehouse Handling Recovery Minor Account
+        name: WH_HNDLG_RCVRY_MINOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 72dfe2e5-1d54-4d33-862b-1434b99d0d3e
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83b5d110-63ae-2993-534c681c9387
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The Warehouse Handling recovery GL Sub Code.
+        name: WH_HNDLG_RCVRY_GL_SUB_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55775b9e-251d-4caa-a8f5-fd14526db8f7
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 34d81c96-8df0-2b75-8c1477a4086c
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: number(14,10)
+        defaultValue: ""
+        description: The Warehouse Handling Lower Percent.
+        name: WH_HNDLG_LOWER_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ba8f270e-1614-477f-989d-2fdfab74b279
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e229e0fa-eab7-794b-bf9920e0eb56
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: number(14,2)
+        defaultValue: ""
+        description: The Warehouse Handling Threshold Amount
+        name: WH_HNDLG_THRESHOLD_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b29c564e-b2b0-44ba-9eab-b23572ee5582
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f88365a3-a4e6-cb19-7bd0d9f8a382
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config:
+          is_hd: true
+        dataType: number(14,10)
+        defaultValue: ""
+        description: The Warehouse Handling Upper Percent.
+        name: WH_HNDLG_UPPER_PCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c9664af5-7d0e-420f-a4f3-93c109ad4189
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 32148045-b77f-4417-8085-0e7b7a95a694
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f74b1494-0793-4199-96d1-cbc70d0d0bac
+                stepCounter: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: cf25bae2-d387-e9b1-d510-b8350509fb15
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_OVERHEAD_METHODS: 4580a87b-b05e-42c6-8707-ea7c682d82b4
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_OVERHEAD_METHODS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_OVERHEAD_METHODS') }} "LOAD_QBYTE_OVERHEAD_METHODS"
+        name: ODS_QBYTE_OVERHEAD_METHODS
+        noLinkRefs: []
+  name: ODS_QBYTE_OVERHEAD_METHODS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,499 @@
+fileVersion: 1
+id: 0331418d-13d5-a5a2-79a4-e08682190161
+name: ODS_QBYTE_RECURRING_VOUCHERS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c0fc42b1-3457-723c-54d5698ef17a
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config: {}
+        dataType: number(10)
+        defaultValue: ""
+        description: Foreign key to recurring entires_control.
+        isBusinessKey: true
+        name: RECURRING_CONTROL_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: de2e1472-cbb6-43d5-bdd7-9e3e9129b0ac
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e6545967-e65e-83c5-835f432538ab
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config: {}
+        dataType: number(10)
+        defaultValue: ""
+        description: The existing voucher we want to set up as a recurring entry.
+        isBusinessKey: true
+        name: VOUCHER_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f7b912bd-e362-4f8a-9789-fc07ac196cfd
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9222e12e-a5bf-c5c3-9d1698d2bd34
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Would tell the system to generate new INVC_NUM if checked.
+        name: NEW_INVC_NUM_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 171b168b-b8eb-42c7-8b09-c43c3ef0527f
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4c433fce-9203-5302-5472c9aa4c32
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Would tell the system to populate INVC_DATE with sysdate if checked.
+        name: NEW_INVC_DATE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9435b961-96ae-4076-9f20-31e086456efb
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cf296014-9b90-88f9-410fca9fe21f
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Would tell the system to populate src_invc_id.
+        name: NEW_SRC_INVC_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2793a98f-d74d-4401-bcea-a18fee449cfc
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb0f55c7-269e-62e0-10b1ec6d9220
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config:
+          is_hd: true
+        dataType: varchar(40)
+        defaultValue: ""
+        description: To specify a new voucher remark.
+        name: NEW_VOUCHER_REM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 15a1839a-8864-4a38-a3dc-94f7bd9f8d42
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0b8c203a-e920-5111-2da5f019a088
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config:
+          is_hd: true
+        dataType: varchar(120)
+        defaultValue: ""
+        description: Used to populate invoices.invc_rem and invoice_descriptions.invc_desc.
+        name: NEW_INVC_REM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 33bac466-7319-490a-a057-4e763d7504b3
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3f8a2295-9f3b-0487-689443971831
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config:
+          is_hd: true
+        dataType: number(1)
+        defaultValue: ""
+        description: Would tell the system how to calculate Activity Period Date by defining the number of months in relation to the account period.
+        name: ACTVY_PER_DATE_RULE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ff8a65cb-51e4-409d-85c1-e60f76f51aa1
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who created the record.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9cb5d866-8280-4720-ac25-67b1610ea63d
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 73881ada-0615-491b-9665-2032a13a566b
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8172489d-4f79-c0fa-a9d172ede316
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who last updated the record.
+        name: LAST_UPDATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 27b9665f-99c2-443f-b751-5c4e457388ef
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43fce560-63fc-5ee4-6b12bbe12b2c
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was last updated.
+        name: LAST_UPDATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a53a395a-fb58-4629-9df7-c719470a9cac
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1cb7db46-cf13-a2db-b81da9826dad
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The last control date.
+        name: LAST_CONTROL_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ff654cd6-6c31-4e72-9e2b-4f3746c8bcd8
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6f3ec4e4-5175-45b8-a8e2-46cc64fcf546
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a4318a9e-7058-4da8-98eb-53536c9d0bda
+                stepCounter: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 0331418d-13d5-a5a2-79a4-e08682190161
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_RECURRING_VOUCHERS: 4ddce53c-3c31-4a6c-8c54-082afb9534a9
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_RECURRING_VOUCHERS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_RECURRING_VOUCHERS') }} "LOAD_QBYTE_RECURRING_VOUCHERS"
+        name: ODS_QBYTE_RECURRING_VOUCHERS
+        noLinkRefs: []
+  name: ODS_QBYTE_RECURRING_VOUCHERS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

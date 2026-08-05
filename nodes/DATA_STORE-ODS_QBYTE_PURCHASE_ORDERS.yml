@@ -1,0 +1,646 @@
+fileVersion: 1
+id: c458508b-91c1-8432-faf2-0da3107de520
+name: ODS_QBYTE_PURCHASE_ORDERS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 34b4ebca-3476-4ea7-543d874ab188
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: The corporately-defined purchase order number.
+        isBusinessKey: true
+        name: PURCHASE_ORDER_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a990587f-c835-4354-8e4d-dc9b5ff803c8
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a10bd8ba-ec0d-8d90-f6ae86257279
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The user-defined type to categorize the purchase order.
+        name: PURCHASE_ORDER_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 42c79d57-0633-42f7-8845-fca90a4b5fda
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 542205fc-7089-9b08-dc92be1c199a
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The currency in which the PO amounts are stated.
+        name: CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: de832d2b-317c-41ff-b284-019132573967
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e9a0d722-f168-08bd-0d2581547572
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: varchar(240)
+        defaultValue: ""
+        description: A brief description for the purchase order.
+        name: PURCHASE_ORDER_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b4fe935-3517-4f08-9062-e51d1e475200
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 31429b41-e7d9-0d81-623dcf1493a1
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: number(14,2)
+        defaultValue: ""
+        description: The approved amount to be committed by the PO.
+        name: PURCHASE_ORDER_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a83260a3-abf6-4d70-800f-51264c05e1d5
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e226f4bf-7ac9-ac03-95f56a6879dc
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: number(14,2)
+        defaultValue: ""
+        description: The amount by which purchases may exceed the PO amount.
+        name: PURCHASE_ORDER_TOLERANCE_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f0de3099-a081-4a12-8d5b-55a8f2c47ee7
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e4d891ea-4a2c-0ddd-ebe19632c74d
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The status of the purchase order.
+        name: PURCHASE_ORDER_STAT_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4dbd03bc-4e84-4ce2-a1b8-dc8827f1afc4
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 402fa26d-4a6d-f920-002c58a99f9f
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the purchase order becomes valid.
+        name: PURCHASE_ORDER_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f399f38d-ffcd-4cfd-bab3-84c7e0a2ffab
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the purchase order was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c3594923-0825-4776-9f28-5d5462820984
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who created the purchase order.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c260a590-12b4-4144-a3c2-74f58519c80a
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 15c710dd-daf6-3b54-479134f48c20
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: number(6)
+        defaultValue: ""
+        description: The client to which the PO applies, blanket if NULL.
+        name: CLIENT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e9ac140c-e01b-4ff4-a742-a17d48d9b943
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6811b7c2-46e8-de66-3bdb7d7df963
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: number(14,2)
+        defaultValue: ""
+        description: The maximum amount of any invoice committing the PO.
+        name: INVOICE_LIMIT_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1fc0a202-c260-4ac1-ab8c-2e60ef24658e
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0d1c6019-b227-2685-b388bf6ea383
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: varchar(20)
+        defaultValue: ""
+        description: The location of the purchase activity.
+        name: PURCHASE_ORDER_LOCATION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 068fe8f5-08c2-405b-b685-5c0246b96f10
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2adecd1a-71ed-bc20-6ad109055af4
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: varchar(20)
+        defaultValue: ""
+        description: The name of the person who originated the PO.
+        name: PURCHASE_ORDER_ORIGINATOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bc3f56f7-8165-431e-8603-6b7010f56f80
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f1c087ca-68e1-0bab-6a5372a14dd7
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the purchase order expires, disallowing further invoices
+        name: PURCHASE_ORDER_EXPIRY_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 18d1173e-0657-4f8a-b9d7-b50151e4ea93
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a8bd844d-31de-0272-0f0851d24f11
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates whether the purchase order is by AFE or not. "Y" - Purchase Order should be split and administered by AFE, "N" - Purchase Order is not by AFE.
+        name: PURCHASE_ORDER_BY_AFE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5b194f21-1b05-46f6-ab74-1b60585b2a7d
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b7e84e9c-9303-72a0-76c065ed9652
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates whether this Purchase Order should be considered the committed dollars. "C" - Should be considered the committed dollars, "I" - The total of all invoices for this purchase should be considered the committed dollars.
+        name: COMMITTED_OR_INVC_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4fa83437-c4db-4dd7-a945-993df1c693b0
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5e2c3fbb-d6b9-632f-ba1f29072f07
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: VALIDATE_INVC_AMT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d4e7db9a-8cc2-429a-bc6c-bc61a6b39153
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8172489d-4f79-c0fa-a9d172ede316
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who last updated the record.
+        name: LAST_UPDATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a791d64-2d6e-43ab-b77b-296ea38d26b0
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43fce560-63fc-5ee4-6b12bbe12b2c
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was last updated.
+        name: LAST_UPDATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e154ebe0-28d9-453c-a7ad-e9c37d04c62e
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 527b8f95-336e-4064-9ca0-1ef0945a7186
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e0e4f8b-99ef-4552-8537-385963381899
+                stepCounter: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: c458508b-91c1-8432-faf2-0da3107de520
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_PURCHASE_ORDERS: 544c8ba6-2ba5-4a88-8737-fdecc1f3b0ae
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_PURCHASE_ORDERS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_PURCHASE_ORDERS') }} "LOAD_QBYTE_PURCHASE_ORDERS"
+        name: ODS_QBYTE_PURCHASE_ORDERS
+        noLinkRefs: []
+  name: ODS_QBYTE_PURCHASE_ORDERS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

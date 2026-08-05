@@ -1,0 +1,688 @@
+fileVersion: 1
+id: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+name: ODS_QBYTE_VOUCHERS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e6545967-e65e-83c5-835f432538ab
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config: {}
+        dataType: number(10)
+        defaultValue: ""
+        description: The internal unique voucher id.
+        isBusinessKey: true
+        name: VOUCHER_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 379397c3-bb4c-4a8c-a20e-fb051765e8b2
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 327871fb-4a08-edcb-803c6f707133
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: number(5)
+        defaultValue: ""
+        description: The user"s voucher number.
+        name: VOUCHER_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c339a609-069a-4756-a9fe-ccb041ac3147
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3c899b04-af2a-f685-d898ebb3f4d2
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: Indicates voucher type.
+        name: VOUCHER_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 39589d9c-d608-4eeb-b7a7-2f1f7ac823be
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78249657-653d-623c-42b6c0e11c46
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: number(4)
+        defaultValue: ""
+        description: The organization owning the voucher.
+        name: ORG_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c17f12b0-0cd0-48a0-9467-b03292b1f2f9
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb7615c6-d006-02b3-b36289893ed8
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The accounting period (end date) when the voucher is entered.  This date is usually expressed as the last day of the month.
+        name: ACCT_PER_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 65644821-a0d9-4ca2-a8c1-ab2fff26f45c
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 542205fc-7089-9b08-dc92be1c199a
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: 'The source currency for line items on the voucher.  Used for all foreign currency methods. For method #3, this is the currency of the amount in reporting curr amt.'
+        name: CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5862fd77-5ae1-4dd2-bdf8-ead2d5be5f74
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa07ff04-9380-6328-3221b5529c2b
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: Originating group or department.
+        name: SRC_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f060740a-716d-496f-800e-7b8ad80c184b
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d7f92bb-792b-0887-2f6504f96a09
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: The voucher status (posted, unposted, deferred, archived).
+        name: VOUCHER_STAT_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 015ffdb1-2915-4795-b43a-e78fbe413dfc
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Date the voucher was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6e732670-d7a7-433b-a377-aa99948cfd61
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: Name or user ID of the person entering the voucher.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1c260944-8fc3-41d7-914c-fe19dfe844e5
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c3ac41c7-3e83-8969-432cfa51796e
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: number(14,2)
+        defaultValue: ""
+        description: Control amount for balancing.
+        name: CTRL_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5934a604-8b34-4624-922c-afbe4f298275
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 87f3a96b-fb05-2a46-62267a5309cb
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: number(12,2)
+        defaultValue: ""
+        description: Control volume for balancing.
+        name: CTRL_VOL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 10fcf19a-a4b9-44da-8c53-94fe9c50dac4
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a25c3e9a-ef1a-33ee-510a9ced2749
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Date voucher line items are posted to the general ledger.
+        name: GL_POSTING_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 619113b9-9aed-4fe8-92cf-a069482d1b20
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4d21db92-126d-e409-001a1e288331
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the currency was converted for all associated line items.  Used for all foreign currency methods.  Indicates that the voucher balances in reporting currency amounts.  Populated on-line and/or by batch restatement processes.
+        name: CURR_CONV_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e12104c0-b21d-46bf-a874-2007318e5a5d
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 06eefc96-9dda-f004-596a5a858cf6
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: varchar(20)
+        defaultValue: ""
+        description: The system module which created the voucher.
+        name: SRC_MODULE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fb7cb982-9e5f-4ea7-bcd2-7ef16a8666d3
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 94e1680b-bd3c-576c-a9dc90a5345a
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: varchar(40)
+        defaultValue: ""
+        description: Voucher description.
+        name: VOUCHER_REM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 32554cac-7207-409b-acbd-1187a8ecb26a
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4974cc12-1596-e000-ea098368b897
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user id that posted a voucher.
+        name: GL_POST_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c14c67d5-5e00-447a-965f-a3c4ecc9100b
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43fce560-63fc-5ee4-6b12bbe12b2c
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Date the voucher was last updated.
+        name: LAST_UPDATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8acd3dde-75a8-44e9-820e-d2cee4722a21
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8172489d-4f79-c0fa-a9d172ede316
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: Name or user ID of the person who last updated the voucher.
+        name: LAST_UPDATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 912695de-cf6f-4f75-8a61-a6f38578778a
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ed9b9df3-9797-2791-90a0f5662125
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: number(10)
+        defaultValue: ""
+        description: Voucher ID that reverses this voucher.
+        name: VOUCHER_REVERSAL_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 365518e9-3251-452a-9657-92aa77ff8d18
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0c6fce9c-717e-b5c0-5868989d7d42
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: number(2)
+        defaultValue: ""
+        description: JIB run number related to this voucher. For JIBU026 vouchers only.
+        name: JIB_RUN_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7271be1f-6067-4df4-8769-da68639573f3
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ce68657a-0f68-43ed-511ad1a986f9
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config:
+          is_hd: true
+        dataType: number(10)
+        defaultValue: ""
+        description: Report ID of the process that created the voucher.
+        name: VOUCHER_REPORT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f12f343-603e-426a-a0b5-e4074a9ab391
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7b84e81e-168d-4e4a-897e-7a5592862b7c
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 20557556-32f4-494d-9b5b-1ce79689b683
+                stepCounter: 0775ea26-7d55-4060-a8ab-98d615e09972
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 90446f49-8d7c-773c-8ab6-4ddae90c7304
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_VOUCHERS: 0775ea26-7d55-4060-a8ab-98d615e09972
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_VOUCHERS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_VOUCHERS') }} "LOAD_QBYTE_VOUCHERS"
+        name: ODS_QBYTE_VOUCHERS
+        noLinkRefs: []
+  name: ODS_QBYTE_VOUCHERS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

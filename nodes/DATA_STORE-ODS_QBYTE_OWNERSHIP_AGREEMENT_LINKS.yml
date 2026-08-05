@@ -1,0 +1,709 @@
+fileVersion: 1
+id: b5c2c7d0-0198-27ea-d264-cc036c492328
+name: ODS_QBYTE_OWNERSHIP_AGREEMENT_LINKS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c283d727-bee3-5164-8e1d7179aa41
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config: {}
+        dataType: number(10)
+        defaultValue: ""
+        description: A unique, system-generated sequential number to identify the link between ownership agreements and billing entities.
+        isBusinessKey: true
+        name: OWNERSHIP_LINK_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: db8546a4-3547-4b4f-a109-0b725d6ccaa9
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a6c83ba3-e3c5-d17b-52748c999963
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: number(10)
+        defaultValue: ""
+        description: The associated agreement id.
+        name: AGREEMENT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fda4e0be-ecbf-4a20-a788-769c1349cbc8
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 04823709-781b-f5eb-e523b7ee65e8
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the link becomes effective.
+        name: EFFECTIVE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 06c75c98-1f05-4416-a27b-a3c1d236e7b0
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the link was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dba007be-acaa-4ce2-9cd3-f30840e32af8
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: The user who created the link.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e829f7e-ddaa-4d7d-9609-15ca8969ea47
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d2c95b3-f3fa-677c-8315ce3f59e2
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the link was last updated.
+        name: LAST_UPDT_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 14aa330f-3509-4feb-a1df-776b4ee3bf9f
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d504b8bc-a1d6-4e17-eb5f4bd2f9a4
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: The user who last updated the link.
+        name: LAST_UPDT_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b3ee9183-a848-46f6-9352-cb0d679fc114
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5f09b072-6844-1e13-c0208b05fed9
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the link expires.
+        name: EXPIRY_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bc65595a-c704-499e-9314-95861b8836df
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 919cc08e-acd1-ccb6-27f55ebc3a08
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The AFE number associated with the given agreement.
+        name: AFE_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 48dced6f-bf01-4ad9-aa6a-65fe291419c9
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The cost centre associated with the given agreement,
+        name: CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 327d501a-e1f6-453f-8ddd-e547793dc48f
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 89f51e74-4bb5-d8fa-cd0f27f802d2
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The major account to which the agreement pertains, if not to all majors.
+        name: MAJOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 649574d3-8df0-47ce-a2ed-848a5a7eecae
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 179a1893-5d6e-1c4b-734fe72cb3ad
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The minor account to which the agreement pertains, if not to all minors within the given major.
+        name: MINOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6c480060-4fa0-4122-81a5-fb95caff4b6f
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1bd2ca43-d2ea-b56d-edaa2f9dec9c
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The revenue burden to which the link pertains.
+        name: BURDEN_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 40fd0172-6e30-453a-96f7-ad4f2443c5c0
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cde62ff5-3e23-8dd5-12c34b459888
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: To allow for the stipulation of different ownership of the same burden, depending on originating royalty agreement.
+        name: ROYALTY_AGREEMENT_REF
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d18a366a-f90e-4900-87ed-0cca04c974f7
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 35be70e0-c6fd-a7d1-8ac950adb7ff
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Indicates whether this DOI is a REVENUE DOI (for sales) or an EXPENSE DOI (burdens) or BOTH.
+        name: PRODUCTION_REVENUE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0fb284dc-8af2-41c2-a284-f02f28ecab59
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 18a5ae0f-0288-b184-50a8598e68d4
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: A user definable identifier of the type of transaction for which the ownership agreement link is applicable.
+        name: BILL_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0a850ac9-8ab8-4cbb-93f9-129f6345bf9f
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 027094e4-4da2-1112-3500eae38cd2
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        name: EXTERNAL_REFERENCE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e773122f-0e61-4a7e-bacc-eade57a5205a
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8790704-a735-ed9f-d63e03aba78a
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: ACCT_GROUP_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3daba494-d73a-42c1-9667-a455e2001172
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b104b2f1-b78b-9f15-2446b02806e2
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: TERMINATE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 47d3a4ff-623e-4d01-950b-c413d9a47afb
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5369504f-739c-18d0-4a888bab5dee
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: TERM_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4bd00a27-e687-4c8e-ae50-98e4650b6ffe
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 281afd9c-ce0c-2e90-640f4d69f669
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: TERM_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fdae24fc-f29c-4a75-a316-7a82b265f00d
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c777ff08-9c63-fe97-21f3cd48cd9e
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: number(10)
+        defaultValue: ""
+        description: ""
+        name: MASS_UPDATE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9118a272-6fc9-4315-a979-585110bfa847
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78249657-653d-623c-42b6c0e11c46
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config:
+          is_hd: true
+        dataType: number(5)
+        defaultValue: ""
+        description: The organization associated with the given agreement for multi-tier JIB
+        name: ORG_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9c958fd5-9b1d-44c4-ad0c-3c1a75a0e8bb
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2f3c7764-a96e-4e39-b763-a1b8e60a911f
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0bf1b481-e0c8-4845-b7cf-45e460e24262
+                stepCounter: 86607ef5-6d6d-42f7-8332-5263baf1789f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: b5c2c7d0-0198-27ea-d264-cc036c492328
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_OWNERSHIP_AGREEMENT_LINKS: 86607ef5-6d6d-42f7-8332-5263baf1789f
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_OWNERSHIP_AGREEMENT_LINKS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_OWNERSHIP_AGREEMENT_LINKS') }} "LOAD_QBYTE_OWNERSHIP_AGREEMENT_LINKS"
+        name: ODS_QBYTE_OWNERSHIP_AGREEMENT_LINKS
+        noLinkRefs: []
+  name: ODS_QBYTE_OWNERSHIP_AGREEMENT_LINKS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node
