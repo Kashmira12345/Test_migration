@@ -1,0 +1,196 @@
+fileVersion: 1
+id: 6e5da03d-f884-2ad9-cc15-ffdc445609d5
+name: ODS_CSLAND_WELL_UNIT_XREF
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 09f2f60e-fbda-4126-31c9707232a8
+          stepCounter: 6e5da03d-f884-2ad9-cc15-ffdc445609d5
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: OLD_FILE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6f04ceb2-0bee-49b1-9461-33620613b356
+                stepCounter: 5fa56576-6374-4685-94f1-1cbc3464467b
+            transform: "TRIM(LOAD_CSLAND_WELL_UNIT_XREF.OLD_FILE_NUMBER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 161507d9-068b-c0dc-3bf350dca6d1
+          stepCounter: 6e5da03d-f884-2ad9-cc15-ffdc445609d5
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: NEW_FILE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 70f247b5-8541-4807-8fc7-e3e91f14a532
+                stepCounter: 5fa56576-6374-4685-94f1-1cbc3464467b
+            transform: "TRIM(LOAD_CSLAND_WELL_UNIT_XREF.NEW_FILE_NUMBER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 6e5da03d-f884-2ad9-cc15-ffdc445609d5
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 12369f31-04fe-4218-9a95-b6c0ab04020d
+                stepCounter: 5fa56576-6374-4685-94f1-1cbc3464467b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 6e5da03d-f884-2ad9-cc15-ffdc445609d5
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a6c27faa-7bc9-4303-b80f-1ed3c94b829c
+                stepCounter: 5fa56576-6374-4685-94f1-1cbc3464467b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 6e5da03d-f884-2ad9-cc15-ffdc445609d5
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 6e5da03d-f884-2ad9-cc15-ffdc445609d5
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 6e5da03d-f884-2ad9-cc15-ffdc445609d5
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 6e5da03d-f884-2ad9-cc15-ffdc445609d5
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_CSLAND_WELL_UNIT_XREF: 5fa56576-6374-4685-94f1-1cbc3464467b
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_CSLAND_WELL_UNIT_XREF
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_CSLAND_WELL_UNIT_XREF') }} "LOAD_CSLAND_WELL_UNIT_XREF"
+        name: ODS_CSLAND_WELL_UNIT_XREF
+        noLinkRefs: []
+  name: ODS_CSLAND_WELL_UNIT_XREF
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node
