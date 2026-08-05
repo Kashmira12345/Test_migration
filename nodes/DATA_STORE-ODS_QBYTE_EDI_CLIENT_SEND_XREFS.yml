@@ -1,0 +1,331 @@
+fileVersion: 1
+id: a789cd52-d00f-9c59-083c-543f12a5563f
+name: ODS_QBYTE_EDI_CLIENT_SEND_XREFS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 15c710dd-daf6-3b54-479134f48c20
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config: {}
+        dataType: number(6)
+        defaultValue: ""
+        description: The UNIQUE client identifier.
+        isBusinessKey: true
+        name: CLIENT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c8429f0c-a5fc-48b6-afcc-460ee24e1952
+                stepCounter: 0876112c-e1fc-4411-90a4-50dac69f22a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 844703ff-17a4-cdc1-df020f2a0e12
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config: {}
+        dataType: varchar(7)
+        defaultValue: ""
+        description: The UNIQUE code representing the EDI CLIENT.
+        isBusinessKey: true
+        name: EDI_CLIENT_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 15c7b6a8-0b23-4b72-ae73-fe3adfb22dae
+                stepCounter: 0876112c-e1fc-4411-90a4-50dac69f22a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5369504f-739c-18d0-4a888bab5dee
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the EDI CLIENT (SEND) Cross Reference was terminated.
+        name: TERM_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ea1d30d8-99bb-4d53-b65b-1bd037d8b76a
+                stepCounter: 0876112c-e1fc-4411-90a4-50dac69f22a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 281afd9c-ce0c-2e90-640f4d69f669
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: The operating system user id that terminated the EDI CLIENT XREF.
+        name: TERM_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 708b34e4-2b59-4338-8afe-e642c72134cd
+                stepCounter: 0876112c-e1fc-4411-90a4-50dac69f22a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f67d5cc6-90ae-c5a6-4fbf3638a47d
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config:
+          is_hd: true
+        dataType: varchar(240)
+        defaultValue: ""
+        description: A comment in the EDI CLIENT (SEND) Cross Reference.
+        name: EDI_CLIENT_SEND_REM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 82eb6a5c-ca8f-41f9-a9ea-72ce3412b732
+                stepCounter: 0876112c-e1fc-4411-90a4-50dac69f22a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2e14bf4f-9fc5-4aa7-aa75-c8e65af674cc
+                stepCounter: 0876112c-e1fc-4411-90a4-50dac69f22a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 32132b66-feb1-4647-8293-9c2c84c716f2
+                stepCounter: 0876112c-e1fc-4411-90a4-50dac69f22a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: a789cd52-d00f-9c59-083c-543f12a5563f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_EDI_CLIENT_SEND_XREFS: 0876112c-e1fc-4411-90a4-50dac69f22a6
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_EDI_CLIENT_SEND_XREFS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_EDI_CLIENT_SEND_XREFS') }} "LOAD_QBYTE_EDI_CLIENT_SEND_XREFS"
+        name: ODS_QBYTE_EDI_CLIENT_SEND_XREFS
+        noLinkRefs: []
+  name: ODS_QBYTE_EDI_CLIENT_SEND_XREFS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

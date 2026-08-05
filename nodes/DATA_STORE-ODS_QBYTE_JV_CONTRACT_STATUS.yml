@@ -1,0 +1,415 @@
+fileVersion: 1
+id: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+name: ODS_QBYTE_JV_CONTRACT_STATUS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 707f1d9a-1eaa-9810-011d25eb7e50
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config: {}
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Short form code to denote a particular Contract Status.
+        isBusinessKey: true
+        name: JV_CONTRACT_STATUS_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 53312bf7-d80d-4c73-81c3-45e6e96ef195
+                stepCounter: c3672d33-67d0-44e9-86e0-a934caa79361
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f3dff4b-1052-7858-e245ae3bae0e
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: A description of the Contract Status that expands the short code. Typically this description is used within the application to help the user understand the code.
+        name: LONG_FORM_TXT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 216e1aed-49e2-43e3-918a-3ca5d4de23bb
+                stepCounter: c3672d33-67d0-44e9-86e0-a934caa79361
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fdf5f883-4212-82cb-343e837199ae
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Inidcates if the status code is a relinquished status code.
+        name: RELINQUISHED_FG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ec15b52e-f432-4d8f-9f88-cd481736f4b7
+                stepCounter: c3672d33-67d0-44e9-86e0-a934caa79361
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c82d763f-e945-3cae-c2f51ca6aa5a
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: A Y indicates the code should be defaulted as the selected item in a drop down list. Only one Y should appear within all the rows of the code table.
+        name: DEFAULT_IND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 945540ae-38a4-4db2-a195-abeebe34a53b
+                stepCounter: c3672d33-67d0-44e9-86e0-a934caa79361
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 35ba4a26-2e21-0c23-a00a5601aba3
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config:
+          is_hd: true
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Another description field for the short form code, but this description is used for more documentation purposes and doesnt usually appear within the application.
+        name: DESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9d685295-3c34-42a9-bfcb-ca7922485440
+                stepCounter: c3672d33-67d0-44e9-86e0-a934caa79361
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who created the record.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f474d20c-3cbb-420e-bc7d-ea6bafa77b34
+                stepCounter: c3672d33-67d0-44e9-86e0-a934caa79361
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e4ab28fb-9543-4764-af2e-d362005a85f6
+                stepCounter: c3672d33-67d0-44e9-86e0-a934caa79361
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8172489d-4f79-c0fa-a9d172ede316
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who last updated the record.
+        name: LAST_UPDATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cb1fa357-6020-4387-80ec-3a33397e0c89
+                stepCounter: c3672d33-67d0-44e9-86e0-a934caa79361
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43fce560-63fc-5ee4-6b12bbe12b2c
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was last updated.
+        name: LAST_UPDATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf6f72ec-3b10-43c8-ab71-eeb2614e8210
+                stepCounter: c3672d33-67d0-44e9-86e0-a934caa79361
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a3fe551e-f2aa-4e4b-9eea-9ec01fbc0fa9
+                stepCounter: c3672d33-67d0-44e9-86e0-a934caa79361
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8bfb74fb-8029-439a-93d1-b331e5e0512f
+                stepCounter: c3672d33-67d0-44e9-86e0-a934caa79361
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 15820ab9-4064-2ef6-6c07-03e4c8f73255
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_JV_CONTRACT_STATUS: c3672d33-67d0-44e9-86e0-a934caa79361
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_JV_CONTRACT_STATUS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_JV_CONTRACT_STATUS') }} "LOAD_QBYTE_JV_CONTRACT_STATUS"
+        name: ODS_QBYTE_JV_CONTRACT_STATUS
+        noLinkRefs: []
+  name: ODS_QBYTE_JV_CONTRACT_STATUS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

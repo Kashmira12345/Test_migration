@@ -1,0 +1,436 @@
+fileVersion: 1
+id: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+name: ODS_QBYTE_DAILY_EXCHANGE_RATES
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: "This is a table without unique tracking keys. It is set to truncate before every load (Full load)"
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 04823709-781b-f5eb-e523b7ee65e8
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: The date for which the exchange rate is valid.
+        isBusinessKey: true
+        name: EFFECTIVE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fa46b8e6-1f0c-4bb3-b2a5-8f59bae1d1db
+                stepCounter: d4e1bc14-fbca-4464-be1d-c9f624450f45
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d15030b1-ceff-ff8b-ca239c3673f8
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The code for the currency from which we are converting.
+        isBusinessKey: true
+        name: FROM_CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2fe941a7-0699-4d19-8f7f-52027ec7a187
+                stepCounter: d4e1bc14-fbca-4464-be1d-c9f624450f45
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 870fa9c6-9558-697e-f23c58197eed
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The code for the currency to which we are converting.
+        isBusinessKey: true
+        name: TO_CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0b630bde-d5fa-450d-b7d8-884f4b5ca7d0
+                stepCounter: d4e1bc14-fbca-4464-be1d-c9f624450f45
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb7615c6-d006-02b3-b36289893ed8
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: The accounting period into which the exchance rate falls.
+        isBusinessKey: true
+        name: ACCT_PER_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 288114f6-17b6-4cee-9635-4b5c8142758f
+                stepCounter: d4e1bc14-fbca-4464-be1d-c9f624450f45
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9947f7c8-7e59-785b-bf2c0a14d24d
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: number(14,10)
+        defaultValue: ""
+        description: The exchange rate used to convert from the FROM_ currency to the TO_ currency.
+        isBusinessKey: true
+        name: EXCHANGE_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 840548ef-7c75-48c8-935e-53801302ed17
+                stepCounter: d4e1bc14-fbca-4464-be1d-c9f624450f45
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78249657-653d-623c-42b6c0e11c46
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config:
+          is_hd: true
+        dataType: number(4)
+        defaultValue: ""
+        description: The organization for which the exchange rate is recorded.
+        name: ORG_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ae0370e7-e2a3-4dbe-843d-60a1d91111cb
+                stepCounter: d4e1bc14-fbca-4464-be1d-c9f624450f45
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who created the record.
+        isBusinessKey: true
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 33f9fc05-be88-4bc5-98d1-ba3a855112d2
+                stepCounter: d4e1bc14-fbca-4464-be1d-c9f624450f45
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was created.
+        isBusinessKey: true
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a1c0dd56-f20b-4f5e-806c-18653cf978e4
+                stepCounter: d4e1bc14-fbca-4464-be1d-c9f624450f45
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8172489d-4f79-c0fa-a9d172ede316
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who last updated the record.
+        isBusinessKey: true
+        name: LAST_UPDATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5267d444-73fe-42c9-9e29-bf7945c8a798
+                stepCounter: d4e1bc14-fbca-4464-be1d-c9f624450f45
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43fce560-63fc-5ee4-6b12bbe12b2c
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was last updated.
+        isBusinessKey: true
+        name: LAST_UPDATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f4b415f8-9f20-493e-af8d-30ebb2595c84
+                stepCounter: d4e1bc14-fbca-4464-be1d-c9f624450f45
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6980bf3a-2554-40b2-84bf-e1419e2a4d81
+                stepCounter: d4e1bc14-fbca-4464-be1d-c9f624450f45
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3687a09c-847d-4ba9-804d-5e37f167bc74
+                stepCounter: d4e1bc14-fbca-4464-be1d-c9f624450f45
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 6812104a-f42e-bc20-06bb-5b2a9b2d3777
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_DAILY_EXCHANGE_RATES: d4e1bc14-fbca-4464-be1d-c9f624450f45
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_DAILY_EXCHANGE_RATES
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_DAILY_EXCHANGE_RATES') }} "LOAD_QBYTE_DAILY_EXCHANGE_RATES"
+        name: ODS_QBYTE_DAILY_EXCHANGE_RATES
+        noLinkRefs: []
+  name: ODS_QBYTE_DAILY_EXCHANGE_RATES
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

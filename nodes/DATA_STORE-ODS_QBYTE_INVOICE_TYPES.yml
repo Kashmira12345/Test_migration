@@ -1,0 +1,520 @@
+fileVersion: 1
+id: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+name: ODS_QBYTE_INVOICE_TYPES
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d98bf9ae-2257-ffa6-1307366be066
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: The valid invoice type.
+        isBusinessKey: true
+        name: INVC_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e57db866-e501-4153-a61c-1f26606b1c7c
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0cbcba4-9585-e7a9-0367670fd632
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates whether the control account pertains to AP or AR.
+        isBusinessKey: true
+        name: PAYABLE_OR_RECEIVABLE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1b1d37c5-2bde-467d-b331-1c573b189482
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 725c8ac3-d26f-f34d-99a74b7cd80e
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The major portion of the control account.
+        name: CTRL_MAJOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 48e00402-f95c-4226-9e8b-603414ab7ea7
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26ad1191-fa14-a2c6-ef36e8406fc2
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The minor portion of the control account.
+        name: CTRL_MINOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f3364e9-e8ae-4a07-897c-fb71714bc7bd
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 35fd41f3-b0f3-fc0f-2cfacb80f990
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config:
+          is_hd: true
+        dataType: varchar(80)
+        defaultValue: ""
+        description: Invoice type description.
+        name: INVC_TYPE_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 09db2164-ca67-4430-8a58-1f200559d4fe
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f850dad7-e034-909a-dda2f1deac96
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates if purchase orders are required with invoices of this type.
+        name: PURCHASE_ORDER_REQD_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8e712d88-f7fd-43d8-b5c4-5f3efd4e7190
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3fe5d77c-3028-4a9e-b1e4-a5c67c19a0f3
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c13d6fb8-4e04-47ea-93e1-c62ce8499406
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d504b8bc-a1d6-4e17-eb5f4bd2f9a4
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: LAST_UPDT_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 50b14554-b581-47f6-987e-7c07e1e49255
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d2c95b3-f3fa-677c-8315ce3f59e2
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: LAST_UPDT_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9121af6f-1cc2-45e5-81a7-f4a141152ca5
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3c2e447f-56ae-5c67-e328b164e270
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config:
+          is_hd: true
+        dataType: number(3)
+        defaultValue: ""
+        description: Number of days to pay on credit.
+        name: CREDIT_DAYS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 66c8294c-9631-4a0b-b6e1-892d8d28b95f
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6e77af6b-2f8b-8548-50a08ee4095c
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config:
+          is_hd: true
+        dataType: varchar(20)
+        defaultValue: ""
+        description: The default analyst for this invoice type.
+        name: CREDIT_ANALYST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fff70ea2-05cb-4acd-8e18-bdd8bb461abf
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f4813d25-8298-e02c-850d576abcaa
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: AUTO_CALC_INVC_GST_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7d30b491-a4ce-41e6-b338-ab74dbb625ed
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2c3ef77-4c00-28a8-5628229b060a
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: A flag to indicate whether or not an invoice may be considered an Organization Cash Call Invoice.
+        name: CASH_CALL_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e7297e30-5565-44fc-be19-6fdddcd7dd96
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8a5f192-4a36-493f-99e0-016b687141ee
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7be390d4-b98e-44fe-92eb-9cc77dceb321
+                stepCounter: b3978e06-c41e-4c85-8b8e-55329e451e23
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 32c359dd-8fe0-0199-1ba0-f00341fad4a1
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_INVOICE_TYPES: b3978e06-c41e-4c85-8b8e-55329e451e23
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_INVOICE_TYPES
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_INVOICE_TYPES') }} "LOAD_QBYTE_INVOICE_TYPES"
+        name: ODS_QBYTE_INVOICE_TYPES
+        noLinkRefs: []
+  name: ODS_QBYTE_INVOICE_TYPES
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

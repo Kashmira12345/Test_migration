@@ -1,0 +1,478 @@
+fileVersion: 1
+id: 8832abe6-ca75-cf8f-0ec6-978759119524
+name: ODS_QBYTE_DOI_INTEREST_TYPE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57457d78-bc5e-f070-3a231a13e526
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config: {}
+        dataType: varchar(8)
+        defaultValue: ""
+        description: The group to which the Interest Type belongs to.
+        isBusinessKey: true
+        name: FK_DOI_INTEREST_GROUP_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 977de7ab-977f-4bfb-8baf-cf23981bea0f
+                stepCounter: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8c034bda-1980-5fc7-47c558a20324
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config: {}
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Short form code to denote a particular Interest Type.
+        isBusinessKey: true
+        name: DOI_INTEREST_TYPE_CD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ffc9d4d5-17bd-4ee5-9a3c-64a840fa624a
+                stepCounter: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f3dff4b-1052-7858-e245ae3bae0e
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: A description of the Interest Type that expands the short code. Typically this description is used within the application to help the user understand the code.
+        name: LONG_FORM_TXT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7d4d177a-cf9d-417c-b3ac-e66a0f298902
+                stepCounter: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5677eda5-b10f-ade6-e0ed1d07cc7d
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config:
+          is_hd: true
+        dataType: number(2)
+        defaultValue: ""
+        description: Specifies in what order the interest types of a particular group are to appear on a pull down list.
+        name: DISPLAY_ORDER_NB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e38ab675-12f8-4e25-835c-ec16612a5c12
+                stepCounter: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e9e05994-c631-7655-d0131561ea6a
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Clients can determine the interest types they wish to manage. This is true except for the WI (Working Interest) interest type, it is mandatory. It is possible to switch that interest type off by turning setting this indicator to N, but this should NEVER be done.
+        name: IMPLEMENTED_FG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 858f1a9e-ba81-45bc-90c2-e8a417e0ae6f
+                stepCounter: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 20b357c2-d00c-ee3a-5338a330f7ec
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates whether the Penalty Flag can be set for this particular Interest Type.
+        name: PENALTY_FG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a40a8967-9aa1-40c8-978b-b55829128340
+                stepCounter: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 35ba4a26-2e21-0c23-a00a5601aba3
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config:
+          is_hd: true
+        dataType: varchar(2000)
+        defaultValue: ""
+        description: Another description field for the short form code, but this description is used for more documentation purposes and doesnt usually appear within the application.
+        name: DESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4752b974-2f85-43eb-83a8-ec31bf0fc5de
+                stepCounter: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who created the record.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d963e81-dff3-45ea-bfcf-a2803444c209
+                stepCounter: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e880b1ad-f546-4f18-b8e1-8fb6267cc91d
+                stepCounter: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8172489d-4f79-c0fa-a9d172ede316
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who last updated the record.
+        name: LAST_UPDATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d3b0ae13-e6eb-4f5c-b861-6a86f7c0a6ce
+                stepCounter: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43fce560-63fc-5ee4-6b12bbe12b2c
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was last updated.
+        name: LAST_UPDATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 28c493e7-93ae-45a6-bfb3-9e8d2b0bca51
+                stepCounter: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f3ea71f9-9cc2-3134-49d9237132aa
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: ADDITIONAL_PAYMENT_DEFAULT_FG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 48c213b6-b711-40da-b018-4d0e0a660a53
+                stepCounter: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d62568fe-992a-48ea-b47a-41cba16d07f0
+                stepCounter: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f16faadc-6011-4b55-9375-d5e3cd64a2ec
+                stepCounter: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 8832abe6-ca75-cf8f-0ec6-978759119524
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_DOI_INTEREST_TYPE: cca3c223-11e6-4bcd-af7c-638f4e8e2297
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_DOI_INTEREST_TYPE
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_DOI_INTEREST_TYPE') }} "LOAD_QBYTE_DOI_INTEREST_TYPE"
+        name: ODS_QBYTE_DOI_INTEREST_TYPE
+        noLinkRefs: []
+  name: ODS_QBYTE_DOI_INTEREST_TYPE
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

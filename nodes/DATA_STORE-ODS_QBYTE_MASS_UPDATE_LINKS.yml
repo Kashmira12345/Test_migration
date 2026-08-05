@@ -1,0 +1,709 @@
+fileVersion: 1
+id: ae71035b-ae79-d29e-4dac-b72861c34925
+name: ODS_QBYTE_MASS_UPDATE_LINKS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c777ff08-9c63-fe97-21f3cd48cd9e
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config: {}
+        dataType: number(10)
+        defaultValue: ""
+        description: Mass update id.
+        isBusinessKey: true
+        name: MASS_UPDATE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7edb7a6f-30a6-4f7a-895a-02dbc4c700b7
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26df616b-b1a3-18e2-ce00b35b9eee
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config: {}
+        dataType: number(10)
+        defaultValue: ""
+        description: Mass Update Ownership Link.
+        isBusinessKey: true
+        name: MASS_UPDATE_LINK_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7a6d192d-ce7a-4edd-86c4-e6199edceb4b
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 04823709-781b-f5eb-e523b7ee65e8
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Effective Date.
+        name: EFFECTIVE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0d3d1bf6-9a75-4adc-9d63-db827c872b5b
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fa76e93f-6e24-0f44-89fe70231afd
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Category Code.
+        name: CATEGORY_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 694b5139-30b7-4ddc-8406-5b180873c320
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f8b7fe4f-948c-686c-72a0e4b75d84
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Entity Type Code.
+        name: ENTITY_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91252537-ab7f-4efa-81dc-01faf37e1501
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 99183c3d-d0a8-d4ac-ee6f63ceca7b
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: varchar(20)
+        defaultValue: ""
+        description: Entity ID.
+        name: ENTITY_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b7f970e8-da6c-4e72-ac7c-26af88c63b2a
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d223ae89-38a7-a886-451dc86aa66b
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Source of link FA or LA.
+        name: LINK_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 12d4a68d-b308-4c96-b652-4a5266ec300a
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b104b2f1-b78b-9f15-2446b02806e2
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Terminate Flag.
+        name: TERMINATE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8b013757-3928-4b60-9caa-381bd229937a
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edab0119-b0fd-f3bc-e66c0653e3f7
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates that the old doi decks should be terminated.  Use this when the old partner is no longer a legal entity.
+        name: NEW_LINK_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1ba37464-840f-4cf8-b167-047713002f92
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f530525e-31a0-87ca-700ed276f834
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: number(10)
+        defaultValue: ""
+        description: mass Update DOI Decks ID.
+        name: MASS_UPDATE_DOI_DECK_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2f0c7593-4b52-4697-b53e-cf176d48e4bf
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c283d727-bee3-5164-8e1d7179aa41
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: number(10)
+        defaultValue: ""
+        description: ""
+        name: OWNERSHIP_LINK_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 504247b0-a656-4b76-9872-642752f9f38d
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 888bb10a-a45a-7270-01f3aae7f815
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        name: DOI_BUSINESS_OBJECT_LINK_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9a2b11c3-6e5d-45b4-a7e4-00bbb413ff10
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5f09b072-6844-1e13-c0208b05fed9
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: Expiry Date.
+        name: EXPIRY_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 28d62d63-702b-49fc-a4ca-9816048b67b7
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e3c8a9f5-08c5-a3e4-76b97d8670b2
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: number(10)
+        defaultValue: ""
+        description: DOI Deck ID used on - only populated on changed records.
+        name: ORIG_DOI_DECK_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55236020-cbb3-4e28-b8c5-23718a73393a
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 18ff5af7-29ad-e232-1a842f1b4874
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: number(10)
+        defaultValue: ""
+        description: Ownership link id of original link -FA links.
+        name: ORIG_OWNERSHIP_LINK_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 70711d51-c1e2-4b9f-bd6b-be2841c00a3b
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f767c211-ae90-ec24-750dddee4bff
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: number(9)
+        defaultValue: ""
+        description: Business object link id of original link - Land links.
+        name: ORIG_DOI_BUSINESS_OBJ_LINK_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3306b011-d9e9-4cf9-8640-0aa26bad2f7f
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7b787557-6a39-38fd-0e7852e274ea
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: varchar(8)
+        defaultValue: ""
+        description: DOI interest group code of original link - Land links.
+        name: ORIG_DOI_INTEREST_GROUP_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a48e04df-535e-480e-8579-1f2ef537af00
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4f14ecda-a463-7899-078957492c45
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: varchar(8)
+        defaultValue: ""
+        description: DOI interest type code of original link- Land links.
+        name: ORIG_DOI_INTEREST_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 75c07d24-832d-4e20-8a90-c191f6d37362
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f0f0f22f-dd39-3591-dda12c8aedfd
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: number(3)
+        defaultValue: ""
+        description: New Amendment number for Land terminated links
+        name: NEW_AMENDMENT_NB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fc1b9e9a-d74e-48bd-8482-e19d1fe75be0
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who created the record.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b54a238e-4876-49de-8446-dc782019c20a
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 73899f8d-81e9-4c27-bb47-28b1e8e60f94
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8172489d-4f79-c0fa-a9d172ede316
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: The user who last updated the record.
+        name: LAST_UPDATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c5590fdc-5226-4a97-886b-a92b92748941
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43fce560-63fc-5ee4-6b12bbe12b2c
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the record was last updated.
+        name: LAST_UPDATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3294a19d-62a1-4ca9-9fe1-3bc647bbf9dd
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cc079f2a-3dfc-437a-919b-7b85272dc403
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 71975ec8-0d4e-40e4-8c97-c517d3b8d69e
+                stepCounter: 29417e59-690e-4379-8eb1-0da8e8162a25
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: ae71035b-ae79-d29e-4dac-b72861c34925
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_MASS_UPDATE_LINKS: 29417e59-690e-4379-8eb1-0da8e8162a25
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_MASS_UPDATE_LINKS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_MASS_UPDATE_LINKS') }} "LOAD_QBYTE_MASS_UPDATE_LINKS"
+        name: ODS_QBYTE_MASS_UPDATE_LINKS
+        noLinkRefs: []
+  name: ODS_QBYTE_MASS_UPDATE_LINKS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,457 @@
+fileVersion: 1
+id: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+name: ODS_QBYTE_FORECAST_EXCHANGE_RATES
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6dfce232-93f1-c276-654c964a663c
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: The forecast month for which the rate is defined.
+        isBusinessKey: true
+        name: FORECAST_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ed0c3206-594b-4abf-adc3-02c426a67b3d
+                stepCounter: 3ff0e3bd-622e-4e6a-8541-33fac50dd85c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d15030b1-ceff-ff8b-ca239c3673f8
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The currency from which the exchange rate will convert.
+        isBusinessKey: true
+        name: FROM_CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7351a042-ba06-4746-b776-65bfc72c7ea3
+                stepCounter: 3ff0e3bd-622e-4e6a-8541-33fac50dd85c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 870fa9c6-9558-697e-f23c58197eed
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The currency to which the exchange rate will convert.
+        isBusinessKey: true
+        name: TO_CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 86a61a5d-a991-409d-8edd-568a6b1fe6f6
+                stepCounter: 3ff0e3bd-622e-4e6a-8541-33fac50dd85c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ea2fdd28-6d4f-f574-1318c518234d
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The purpose of the exchange rate. Indicates usage such as capital, expense or revenue.
+        isBusinessKey: true
+        name: PURPOSE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 25c5622a-a750-4dba-ad73-204b59cb12e9
+                stepCounter: 3ff0e3bd-622e-4e6a-8541-33fac50dd85c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb7615c6-d006-02b3-b36289893ed8
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: The forecast period in which the exchange rate becomes effective.
+        isBusinessKey: true
+        name: ACCT_PER_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 67e4929a-4d38-4211-83e0-3f2d3de72252
+                stepCounter: 3ff0e3bd-622e-4e6a-8541-33fac50dd85c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78249657-653d-623c-42b6c0e11c46
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: number(4)
+        defaultValue: ""
+        description: The organization for which the exchange rate is defined.
+        isBusinessKey: true
+        name: ORG_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8ca136bb-2868-429c-959e-56ee24b2d383
+                stepCounter: 3ff0e3bd-622e-4e6a-8541-33fac50dd85c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9a16e1a1-5e63-08ea-0cf3d7f8be40
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config:
+          is_hd: true
+        dataType: number(14,10)
+        defaultValue: ""
+        description: The effective rate of exchange between the two currencies.
+        name: FORECAST_EXCHANGE_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 984876a7-52aa-4711-b80b-6347ec530e9d
+                stepCounter: 3ff0e3bd-622e-4e6a-8541-33fac50dd85c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the forecast exchange rate was created.
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e4e395e3-55b5-4282-83b5-1e0b4d07ad8d
+                stepCounter: 3ff0e3bd-622e-4e6a-8541-33fac50dd85c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c7b79e-f36f-ea97-84364ad60699
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: The user who created the forecast exchange rate.
+        name: CREATE_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 40dad52a-1d09-41e6-98cf-5d7213fb2ccd
+                stepCounter: 3ff0e3bd-622e-4e6a-8541-33fac50dd85c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d2c95b3-f3fa-677c-8315ce3f59e2
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config:
+          is_hd: true
+        dataType: timestamp
+        defaultValue: ""
+        description: The date the forecast exchange rate was last updated.
+        name: LAST_UPDT_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e89b415-861e-43f2-b655-8db39f9aa148
+                stepCounter: 3ff0e3bd-622e-4e6a-8541-33fac50dd85c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d504b8bc-a1d6-4e17-eb5f4bd2f9a4
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: The user who last updated the forecast exchange rate.
+        name: LAST_UPDT_USER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 33cd7465-4497-4b74-939d-d4ec89248000
+                stepCounter: 3ff0e3bd-622e-4e6a-8541-33fac50dd85c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1cea6e08-cdfb-4985-9c23-7814c2df01cb
+                stepCounter: 3ff0e3bd-622e-4e6a-8541-33fac50dd85c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 395c3c55-c541-488c-87be-36a22cc446c5
+                stepCounter: 3ff0e3bd-622e-4e6a-8541-33fac50dd85c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 0f770e2c-cd97-1ab5-08b0-8909d0f86aa0
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_FORECAST_EXCHANGE_RATES: 3ff0e3bd-622e-4e6a-8541-33fac50dd85c
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_FORECAST_EXCHANGE_RATES
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_FORECAST_EXCHANGE_RATES') }} "LOAD_QBYTE_FORECAST_EXCHANGE_RATES"
+        name: ODS_QBYTE_FORECAST_EXCHANGE_RATES
+        noLinkRefs: []
+  name: ODS_QBYTE_FORECAST_EXCHANGE_RATES
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

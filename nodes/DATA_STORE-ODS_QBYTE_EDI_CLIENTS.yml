@@ -1,0 +1,352 @@
+fileVersion: 1
+id: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+name: ODS_QBYTE_EDI_CLIENTS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 844703ff-17a4-cdc1-df020f2a0e12
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config: {}
+        dataType: varchar(7)
+        defaultValue: ""
+        description: The UNIQUE code representing the EDI CLIENT.
+        isBusinessKey: true
+        name: EDI_CLIENT_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c8b4fc30-c304-49f4-997b-aa0d5e8fc988
+                stepCounter: 183889fa-ad92-4ade-92cc-98bf7648ef56
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c78747df-0742-ee71-1fe357151dfe
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config:
+          is_hd: true
+        dataType: varchar(40)
+        defaultValue: ""
+        description: The name representing the EDI CLIENT.
+        name: EDI_CLIENT_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6f62c1ff-1de1-4143-856b-5ca30091b8bd
+                stepCounter: 183889fa-ad92-4ade-92cc-98bf7648ef56
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b0a1dea4-16aa-2f4d-958c0677f26b
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: An indication whether to summarize to the CC/AFE/ACCOUNT level prior to creating the financial payables voucher.
+        name: JIBE_RECEIVE_SUMMARIZE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: db643377-7109-41da-a1af-db375e15bc68
+                stepCounter: 183889fa-ad92-4ade-92cc-98bf7648ef56
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 15c710dd-daf6-3b54-479134f48c20
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config:
+          is_hd: true
+        dataType: number(6)
+        defaultValue: ""
+        description: The PW*Sequel CLIENT ID that stores the EDI CLIENT address info.
+        name: CLIENT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 005990b9-534e-41f7-9bfd-891bb1db44b5
+                stepCounter: 183889fa-ad92-4ade-92cc-98bf7648ef56
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 70ffa53f-5d26-46e4-12b4857acfa7
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config:
+          is_hd: true
+        dataType: varchar(17)
+        defaultValue: ""
+        description: The mask format for the operator Cost Centre.  This indicates the true and significant characters in the CC sent by the operator.  Other characters can be ignored when mapping to an internal client CC.
+        name: EDI_CC_MASK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9df1172a-6797-4857-8097-44808278d7ff
+                stepCounter: 183889fa-ad92-4ade-92cc-98bf7648ef56
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 79c52c3f-b32b-58d4-6fdd179fdcbf
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config:
+          is_hd: true
+        dataType: varchar(17)
+        defaultValue: ""
+        description: The mask format for the operator AFE.  This indicates the true and significant characters in the AFE sent by the operator.  Other characters can be ignored when mapping to an internal client CC.
+        name: EDI_AFE_MASK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: df04a054-177f-482f-a89f-d43308a1278c
+                stepCounter: 183889fa-ad92-4ade-92cc-98bf7648ef56
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8d9da68-97d8-403f-ad8e-2e76f45b4cc4
+                stepCounter: 183889fa-ad92-4ade-92cc-98bf7648ef56
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 62e5b7d3-ce4c-42a5-b9c2-c7a3bc7ea1d3
+                stepCounter: 183889fa-ad92-4ade-92cc-98bf7648ef56
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 4f44b8c7-5115-6b33-e665-8b6238e9da2d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_EDI_CLIENTS: 183889fa-ad92-4ade-92cc-98bf7648ef56
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_EDI_CLIENTS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_EDI_CLIENTS') }} "LOAD_QBYTE_EDI_CLIENTS"
+        name: ODS_QBYTE_EDI_CLIENTS
+        noLinkRefs: []
+  name: ODS_QBYTE_EDI_CLIENTS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node
