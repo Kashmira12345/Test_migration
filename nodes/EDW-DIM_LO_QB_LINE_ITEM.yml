@@ -1,0 +1,330 @@
+fileVersion: 1
+id: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+name: DIM_LO_QB_LINE_ITEM
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'DIM_LO_QB_LINE_ITEM') }} AS DST\r\nWHERE NOT EXISTS (SELECT * FROM {{ ref('STAGE_BT','STAGE_LINE_ITEM') }} AS SRC WHERE DST.LI_ID = SRC.LI_ID);"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "!! DO NOT EXECUTE or RECREATE !!  Static historic object"
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8c9e6799-3d8a-8126-03a4e37cc7bf
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_LINE_ITEM_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9fb7f799-1cbb-a17c-cf4a2245521f
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: number(10)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: LI_ID
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b97391c1-8ba2-10fe-7252a3b752b5
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: number(4)
+        defaultValue: ""
+        description: ""
+        name: DEST_ORG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6eea38e1-a06b-88d1-25482ffaa435
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: DEST_ORG_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d6298608-dc87-d4bd-2d7bd82c657f
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: GL_SUB_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a88821ee-3403-c388-77fde0e98394
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: Activity Period Date
+        name: ACTVY_PER_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3d738923-0215-aa49-8b71fe34f572
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        name: ALLOC_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e1ff2f77-1a96-51a7-2878c51a15b7
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        name: BILLED_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa58d543-5fa2-c1b2-a10016827dd4
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: number(10)
+        defaultValue: ""
+        description: ""
+        name: GOVERN_AGR_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b9d9d30d-b2e4-7ef6-9abc03f0379d
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: varchar(2)
+        defaultValue: ""
+        description: ""
+        name: GOVERN_AGR_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e4b41eef-ccaf-0de3-298a57b85f63
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: varchar(72)
+        defaultValue: ""
+        description: ""
+        name: LI_REM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26502b2d-157d-9e97-173505602bfa
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: A free-format user-definable column to be associated with the line item.
+        name: USER_DEFINED_TAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 948a3e48-b869-839d-0cf1846e4e56
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: GOVERN_AGR_OVERRIDE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 48ff1203-1f36-cdb6-3dffa808f6cf
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: JIB_REVERSED_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: fd7d0dc1-e3e3-d555-005c-1246ac5ee5f2
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_LINE_ITEM
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_LINE_ITEM') }} "STAGE_LINE_ITEM"
+        name: DIM_LO_QB_LINE_ITEM
+        noLinkRefs: []
+  name: DIM_LO_QB_LINE_ITEM
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,186 @@
+fileVersion: 1
+id: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+name: DIM_LO_QB_PRODUCT_TYPE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'DIM_LO_QB_PRODUCT_TYPE') }} AS DST\r\nWHERE NOT EXISTS (SELECT * FROM {{ ref('STAGE_BT','STAGE_PRODUCT_TYPE') }} AS SRC WHERE DST.PROD_CODE = SRC.PROD_CODE);"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "!! DO NOT EXECUTE or RECREATE !!  Static historic object"
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bfe2ba9f-8b26-84f3-13ca4c138cdd
+          stepCounter: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_PRODUCT_TYPE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee2d495c-1f5d-7de5-9c47dee4bf43
+          stepCounter: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The user-defined product code.
+        isBusinessKey: true
+        name: PROD_CODE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 10901e27-b956-78df-d65bcad0087d
+          stepCounter: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: The name of the product.
+        name: PROD_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ee1e3e2-2356-dbea-197718f92dad
+          stepCounter: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+        config: {}
+        dataType: number(14,10)
+        defaultValue: ""
+        description: The conversion factor used from SI to Imperial.
+        name: SI_TO_IMP_CONV_FACTOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30c56fcf-0c6c-dc3c-3bc4d38113dd
+          stepCounter: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+        config: {}
+        dataType: number(8,5)
+        defaultValue: ""
+        description: Conversion factor for barrel of oil equivalent in thermal quantities.  For example, BTUs, Joules.
+        name: BOE_THERMAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b52d2c9d-2407-e0e3-e04a1bea3a58
+          stepCounter: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+        config: {}
+        dataType: number(8,5)
+        defaultValue: ""
+        description: ""
+        name: M3_THERMAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_PRODUCT_TYPE
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_PRODUCT_TYPE') }} "STAGE_PRODUCT_TYPE"
+        name: DIM_LO_QB_PRODUCT_TYPE
+        noLinkRefs: []
+  name: DIM_LO_QB_PRODUCT_TYPE
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

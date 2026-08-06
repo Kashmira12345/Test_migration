@@ -1,0 +1,186 @@
+fileVersion: 1
+id: 3c26e0b5-2d6d-598e-a79e-d9c96b6c974b
+name: DIM_LO_QB_LEASE_OPS_VERSION
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 97116024-1e80-ce6a-46b19788c455
+          stepCounter: 3c26e0b5-2d6d-598e-a79e-d9c96b6c974b
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_LEASE_OPS_VERSION_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 97116024-1e80-ce6a-46b19788c455
+                stepCounter: 618bf4eb-c150-61cd-bc20-946e98782a19
+            transform: "TARGET.DIM_LEASE_OPS_VERSION_KEY"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d271b5bb-ca0b-69ec-d1a79650c6b5
+          stepCounter: 3c26e0b5-2d6d-598e-a79e-d9c96b6c974b
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: Source IDX
+        name: IDX
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d271b5bb-ca0b-69ec-d1a79650c6b5
+                stepCounter: 618bf4eb-c150-61cd-bc20-946e98782a19
+            transform: "TARGET.IDX"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 12cd1b12-f47f-2e3b-d5d7c1ef777c
+          stepCounter: 3c26e0b5-2d6d-598e-a79e-d9c96b6c974b
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: VERSION_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 12cd1b12-f47f-2e3b-d5d7c1ef777c
+                stepCounter: 618bf4eb-c150-61cd-bc20-946e98782a19
+            transform: "TARGET.VERSION_TYPE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae4901df-7b48-75ca-35b1d1fa19c7
+          stepCounter: 3c26e0b5-2d6d-598e-a79e-d9c96b6c974b
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: VERSION_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ae4901df-7b48-75ca-35b1d1fa19c7
+                stepCounter: 618bf4eb-c150-61cd-bc20-946e98782a19
+            transform: "TARGET.VERSION_NAME"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 04823709-781b-f5eb-e523b7ee65e8
+          stepCounter: 3c26e0b5-2d6d-598e-a79e-d9c96b6c974b
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: EFFECTIVE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 04823709-781b-f5eb-e523b7ee65e8
+                stepCounter: 618bf4eb-c150-61cd-bc20-946e98782a19
+            transform: "TARGET.EFFECTIVE_DATE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 3c26e0b5-2d6d-598e-a79e-d9c96b6c974b
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+                stepCounter: 618bf4eb-c150-61cd-bc20-946e98782a19
+            transform: "TARGET.DSS_CREATE_TIME"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 3c26e0b5-2d6d-598e-a79e-d9c96b6c974b
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 678005e7-9cf5-41cd-d309566a5711
+                stepCounter: 618bf4eb-c150-61cd-bc20-946e98782a19
+            transform: "TARGET.DSS_UPDATE_TIME"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_LO_QB_BUDGET_VERSION: 618bf4eb-c150-61cd-bc20-946e98782a19
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: EDW
+            nodeName: DIM_LO_QB_BUDGET_VERSION
+        join:
+          joinCondition: |-
+            FROM ( SELECT DIM_BUDGET_VERSION_KEY AS DIM_LEASE_OPS_VERSION_KEY , IDX , VERSION_NAME , EFFECTIVE_DATE , VERSION_TYPE , DSS_CREATE_TIME , DSS_UPDATE_TIME
+            FROM WS_EDW.DIM_LO_QB_BUDGET_VERSION
+            UNION SELECT -1 AS DIM_LEASE_OPS_VERSION_KEY , 1 AS IDX , 'Actuals' AS VERSION_NAME , CAST(CURRENT_TIMESTAMP AS TIMESTAMP) AS EFFECTIVE_DATE , 'ACTUALS' VERSION_TYPE , CAST(CURRENT_TIMESTAMP AS TIMESTAMP) AS DSS_CREATE_TIME , CAST(CURRENT_TIMESTAMP AS TIMESTAMP) AS DSS_UPDATE_TIME
+            FROM DUAL ) AS TARGET
+        name: DIM_LO_QB_LEASE_OPS_VERSION
+        noLinkRefs: []
+  name: DIM_LO_QB_LEASE_OPS_VERSION
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

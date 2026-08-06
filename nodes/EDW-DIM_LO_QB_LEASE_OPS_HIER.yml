@@ -1,0 +1,348 @@
+fileVersion: 1
+id: f1c87fba-1d39-c16c-6629-335443b76f3f
+name: DIM_LO_QB_LEASE_OPS_HIER
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'DIM_LO_QB_LEASE_OPS_HIER') }} AS DST\r\nWHERE NOT EXISTS (SELECT * FROM {{ ref('CLS_LOAD','LOAD_VET_REF_VET_LEASE_OPS_HIER') }} AS SRC WHERE DST.LINE_NO = SRC.LINE_NO);"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "!! DO NOT EXECUTE or RECREATE !!  Static historic object"
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0c980aff-afe1-09d4-9ec13fafe0a8
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_LEASE_OPS_HIER_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 811e381a-16ef-a274-97da13529122
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: LINE_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bab89f34-0880-a1cf-03cb1776f48e
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: LINE_NO_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f37e17c8-32aa-b458-7e57cc6205b0
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: One of "LI","SUM","CALC" - for Lease Ops report layer only
+        name: LINE_NO_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 876e3c75-6a2b-9d0c-cf1275df79fa
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: decimal(38)
+        defaultValue: ""
+        description: Report Sequence of LINE_NO
+        name: LINE_NO_SEQ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 90038f7b-af46-1811-0a5f538d8b1c
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: LINE_NO_GROUP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1b6708a0-cc72-610d-dbc9a0cb1d28
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: ""
+        name: LINE_NO_GROUP_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 392f09da-1ab5-f5a8-364bda8eb15e
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: One of "DOLLAR","VOLUME","RATE" - for Net Amount line number inclusion logic
+        name: LINE_NO_AMT_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ccb3e4e-55c7-aacd-788dd6421939
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Is Summary Subset Line No
+        name: FLG_SUMMARY_SUBSET
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 737abc5b-90e7-ad12-1a44da1ff88c
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Is Financial Subset Line No
+        name: FLG_FIN_SUBSET
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ea013f2f-eb3b-f2b1-900ff37c43c0
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Financial Subset Name
+        name: FIN_SUBSET_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c014f3f3-b753-95cb-a365815138b9
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: FLG_DSPLY_W_SIGN_REV
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: db8c193e-2d86-3171-945db1dde5ef
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: decimal(1)
+        defaultValue: ""
+        description: value that can be used to flip the sign of the amount displayed - for Lease Ops Model purposes only
+        name: FLIPSIGN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78ff3193-1a88-5925-0550220a5dd6
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: decimal(1)
+        defaultValue: ""
+        description: value that can be used to flip the sign of the amount displayed - for Budget Load purposes only
+        name: FLIPSIGN_BDGT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e86ff803-eb2c-e287-96e35c3d0702
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: Integer
+        defaultValue: ""
+        description: DSPLY_LINE_NO_TYPE
+        name: DSPLY_LINE_NO_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "    case          when LOAD_VET_REF_VET_LEASE_OPS_HIER.LINE_NO like '%A' then 1          when LOAD_VET_REF_VET_LEASE_OPS_HIER.LINE_NO like '%B' then 2          when LOAD_VET_REF_VET_LEASE_OPS_HIER.LINE_NO like '%C' then 3          else 0      end     "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: f1c87fba-1d39-c16c-6629-335443b76f3f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_VET_REF_VET_LEASE_OPS_HIER
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_REF_VET_LEASE_OPS_HIER') }} LOAD_VET_REF_VET_LEASE_OPS_HIER
+        name: DIM_LO_QB_LEASE_OPS_HIER
+        noLinkRefs: []
+  name: DIM_LO_QB_LEASE_OPS_HIER
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

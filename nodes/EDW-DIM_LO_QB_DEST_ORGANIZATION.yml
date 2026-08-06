@@ -1,0 +1,294 @@
+fileVersion: 1
+id: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+name: DIM_LO_QB_DEST_ORGANIZATION
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'DIM_LO_QB_DEST_ORGANIZATION') }} AS DST\r\nWHERE NOT EXISTS (SELECT * FROM {{ ref('STAGE_BT','STAGE_DEST_ORGANIZATION') }} AS SRC WHERE DST.ORG_ID = SRC.ORG_ID);"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "!! DO NOT EXECUTE or RECREATE !!  Static historic object"
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2062913-c6f4-65d1-32b14eabfc7d
+          stepCounter: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_DEST_ORGANIZATION_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78249657-653d-623c-42b6c0e11c46
+          stepCounter: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+        config: {}
+        dataType: number(4)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: ORG_ID
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: da6a4066-af80-15ba-b35ee1e64bdb
+          stepCounter: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: ORG_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a52c243-5c33-1362-c9a1d59c35e3
+          stepCounter: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: OP_CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 883efb24-939e-9d7b-e46bf02d2fd1
+          stepCounter: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: REPORTING_CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d2c95b3-f3fa-677c-8315ce3f59e2
+          stepCounter: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: LAST_UPDT_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 050d06ca-24dc-7651-22318c7ca350
+          stepCounter: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: ""
+        name: PROFILE_GROUP_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: efb5685b-a6cf-25e5-2e3045442c89
+          stepCounter: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Boolean field indicating if this is a GAAP entity
+        name: IS_GAAP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bc505eb2-bcda-e92f-a8422da5014f
+          stepCounter: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: IS_OPERATIONAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a29c3607-0f54-a947-1ac73492c95f
+          stepCounter: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: COUNTRY CODE
+        name: COUNTRY_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ddc09dc-01d9-854e-9fe670374eb2
+          stepCounter: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: Organization Country
+        name: COUNTRY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: fcc93fa6-757a-e6cb-6a38-c0010d449cbc
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_DEST_ORGANIZATION
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_DEST_ORGANIZATION') }} "STAGE_DEST_ORGANIZATION"
+        name: DIM_LO_QB_DEST_ORGANIZATION
+        noLinkRefs: []
+  name: DIM_LO_QB_DEST_ORGANIZATION
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,138 @@
+fileVersion: 1
+id: 2ec798ee-c629-034a-ab2b-b9463fa12aab
+name: DIM_FDC_GROSS_NET
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 20b5c632-bb83-7051-509e53b04d27
+          stepCounter: 2ec798ee-c629-034a-ab2b-b9463fa12aab
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: GROSS_NET_DESCRIPTION
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 20b5c632-bb83-7051-509e53b04d27
+                stepCounter: 2ec798ee-c629-034a-ab2b-b9463fa12aab
+            transform: "TARGET.GROSS_NET_DESCRIPTION"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2698198b-77d9-afee-4d694f75cafd
+          stepCounter: 2ec798ee-c629-034a-ab2b-b9463fa12aab
+        config: {}
+        dataType: int
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: DIM_GROSS_NET_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: af31a3b0-e2fb-1e27-73bbf8e709fc
+                stepCounter: 2ec798ee-c629-034a-ab2b-b9463fa12aab
+            transform: "TARGET.GROSS_NET_KEY"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 54f72b08-a035-d51d-e26215c74332
+          stepCounter: 2ec798ee-c629-034a-ab2b-b9463fa12aab
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: ""
+        name: GROSS_NET_SORT_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 54f72b08-a035-d51d-e26215c74332
+                stepCounter: 2ec798ee-c629-034a-ab2b-b9463fa12aab
+            transform: "TARGET.GROSS_NET_SORT_KEY"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 2ec798ee-c629-034a-ab2b-b9463fa12aab
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: DSS_CREATE_TIME
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 2ec798ee-c629-034a-ab2b-b9463fa12aab
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: DSS_UPDATE_TIME
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: ''
+            nodeName: ''
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('EDW','DIM_FDC_GROSS_NET') }} "DIM_FDC_GROSS_NET"
+        name: DIM_FDC_GROSS_NET
+        noLinkRefs: []
+  name: DIM_FDC_GROSS_NET
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

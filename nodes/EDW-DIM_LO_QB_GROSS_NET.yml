@@ -1,0 +1,150 @@
+fileVersion: 1
+id: 6e7051f1-5ac1-3733-5ccc-bb4d72cde81e
+name: DIM_LO_QB_GROSS_NET
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'DIM_LO_QB_GROSS_NET') }} AS DST\r\nWHERE NOT EXISTS (SELECT * FROM {{ ref('STAGE_BT','STAGE_GROSS_NET') }} AS SRC WHERE DST.GROSS_OR_NET_CODE = SRC.GROSS_OR_NET_CODE);"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "!! DO NOT EXECUTE or RECREATE !!  Static historic object"
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2698198b-77d9-afee-4d694f75cafd
+          stepCounter: 6e7051f1-5ac1-3733-5ccc-bb4d72cde81e
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_GROSS_NET_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b3772b7-cc7a-21ff-cf9462714a73
+          stepCounter: 6e7051f1-5ac1-3733-5ccc-bb4d72cde81e
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates amounts are gross or net.
+        isBusinessKey: true
+        name: GROSS_OR_NET_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 20b5c632-bb83-7051-509e53b04d27
+          stepCounter: 6e7051f1-5ac1-3733-5ccc-bb4d72cde81e
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: GROSS_NET_DESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 54f72b08-a035-d51d-e26215c74332
+          stepCounter: 6e7051f1-5ac1-3733-5ccc-bb4d72cde81e
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: GROSS_NET_SORT_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 6e7051f1-5ac1-3733-5ccc-bb4d72cde81e
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 6e7051f1-5ac1-3733-5ccc-bb4d72cde81e
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_GROSS_NET
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_GROSS_NET') }} "STAGE_GROSS_NET"
+        name: DIM_LO_QB_GROSS_NET
+        noLinkRefs: []
+  name: DIM_LO_QB_GROSS_NET
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

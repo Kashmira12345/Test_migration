@@ -1,0 +1,357 @@
+fileVersion: 1
+id: d6ce4372-6999-e411-f712-c309a4687e3d
+name: DIM_FDC_PRODUCING_DATE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 091ace63-75d2-4519-427589101ffa
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: number(38,0)
+        defaultValue: "1"
+        description: ""
+        name: DAY_COUNTER
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "1"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a8fa75dc-3aa0-bc5f-2265e606d4df
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: number(38,0)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: DIM_PRODUCING_DATE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a43552a2-cdbc-f4b3-2dfdbd46d220
+                stepCounter: cbc73dda-91fb-464f-38cc-53ccd3b3b87d
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 01d3b972-2805-a2bc-3413eb0b71a4
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: number(38,0)
+        defaultValue: ""
+        description: ""
+        name: DAY_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a43552a2-cdbc-f4b3-2dfdbd46d220
+                stepCounter: cbc73dda-91fb-464f-38cc-53ccd3b3b87d
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 79f94bae-e92c-1b90-5901a32667c9
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: DAY_NUMBER_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 01d3b972-2805-a2bc-3413eb0b71a4
+                stepCounter: cbc73dda-91fb-464f-38cc-53ccd3b3b87d
+            transform: "CASE WHEN DIM_FDC_NORMALIZED_DATE.DIM_NORMALIZED_DATE_KEY > 0 THEN 'DAY ' || RIGHT('0' || TO_VARCHAR(DIM_FDC_NORMALIZED_DATE.DAY_NUMBER),2)   ELSE REPLACE(DIM_FDC_NORMALIZED_DATE.DAY_NAME,'NORMALIZED','PRODUCING') END"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84309f10-a336-3341-11248c81bb05
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: DAY_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 84309f10-a336-3341-11248c81bb05
+                stepCounter: cbc73dda-91fb-464f-38cc-53ccd3b3b87d
+            transform: "CASE WHEN DIM_FDC_NORMALIZED_DATE.DAY_NUMBER > 0   THEN 'DAY ' || RIGHT('0' || TO_VARCHAR(DIM_FDC_NORMALIZED_DATE.DAY_NUMBER) ,2) || ' OF ' || DIM_FDC_NORMALIZED_DATE.MONTH_NAME   ELSE REPLACE(DIM_FDC_NORMALIZED_DATE.DAY_NAME,'NORMALIZED', 'PRODUCING') END"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7f7d8d65-811b-b608-a4b987063ada
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: number(38,0)
+        defaultValue: ""
+        description: ""
+        name: WEEK_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7f7d8d65-811b-b608-a4b987063ada
+                stepCounter: cbc73dda-91fb-464f-38cc-53ccd3b3b87d
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 42fabea2-2859-1c8d-fae9d2836ee3
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: WEEK_NUMBER_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7f7d8d65-811b-b608-a4b987063ada
+                stepCounter: cbc73dda-91fb-464f-38cc-53ccd3b3b87d
+            transform: "CASE WHEN DIM_FDC_NORMALIZED_DATE.WEEK_NUMBER > 0   THEN   CASE WHEN LEN(DIM_FDC_NORMALIZED_DATE.WEEK_NUMBER) > 2   THEN 'WEEK ' || TO_VARCHAR(DIM_FDC_NORMALIZED_DATE.WEEK_NUMBER)  ELSE 'WEEK ' || RIGHT('0' || TO_VARCHAR(DIM_FDC_NORMALIZED_DATE.WEEK_NUMBER),2) END   ELSE REPLACE(DIM_FDC_NORMALIZED_DATE.WEEK_NAME,'NORMALIZED','PRODUCING') END"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cbee6582-0b36-9733-64e97ff6a6ab
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: WEEK_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cbee6582-0b36-9733-64e97ff6a6ab
+                stepCounter: cbc73dda-91fb-464f-38cc-53ccd3b3b87d
+            transform: "CASE WHEN DIM_FDC_NORMALIZED_DATE.WEEK_NUMBER > 0 THEN   CASE WHEN DIM_FDC_NORMALIZED_DATE.DAY_NUMBER BETWEEN 1 AND 7 THEN 'WEEK 01'  WHEN DIM_FDC_NORMALIZED_DATE.DAY_NUMBER BETWEEN 8 AND 14 THEN 'WEEK 02'  WHEN DIM_FDC_NORMALIZED_DATE.DAY_NUMBER BETWEEN 15 AND 21 THEN 'WEEK 03'  WHEN DIM_FDC_NORMALIZED_DATE.DAY_NUMBER BETWEEN 22 AND 28 THEN 'WEEK 04'  WHEN DIM_FDC_NORMALIZED_DATE.DAY_NUMBER BETWEEN 29 AND 31 THEN 'WEEK 05' END || ' OF ' || DIM_FDC_NORMALIZED_DATE.MONTH_NAME  ELSE REPLACE(DIM_FDC_NORMALIZED_DATE.WEEK_NAME,'NORMALIZED','PRODUCING') END"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e0dc024b-84fa-f927-9f54b3c78d07
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: MONTH_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e0dc024b-84fa-f927-9f54b3c78d07
+                stepCounter: cbc73dda-91fb-464f-38cc-53ccd3b3b87d
+            transform: "REPLACE(DIM_FDC_NORMALIZED_DATE.MONTH_NAME,'NORMALIZED','PRODUCING')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 974e9abc-71c1-c918-7a5e57e86ccf
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: DAY_NAME_SHORT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 974e9abc-71c1-c918-7a5e57e86ccf
+                stepCounter: cbc73dda-91fb-464f-38cc-53ccd3b3b87d
+            transform: "REPLACE(DIM_FDC_NORMALIZED_DATE.DAY_NAME_SHORT,'NORMALIZED','PRODUCING')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1fd56470-dbc9-15f4-d1f22ad85432
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: number(38,0)
+        defaultValue: ""
+        description: ""
+        name: NORMALIZED_DATE_SORT_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1fd56470-dbc9-15f4-d1f22ad85432
+                stepCounter: cbc73dda-91fb-464f-38cc-53ccd3b3b87d
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 31d14652-74b0-678a-3c4845b7c62a
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: number(38,0)
+        defaultValue: ""
+        description: ""
+        name: NORMALIZED_DATE_OF_MONTH_SORT_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 31d14652-74b0-678a-3c4845b7c62a
+                stepCounter: cbc73dda-91fb-464f-38cc-53ccd3b3b87d
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7b991e11-e45c-3603-37c8e1f9c5ba
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: number(38,0)
+        defaultValue: ""
+        description: ""
+        name: NORMALIZED_WEEK_SORT_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7b991e11-e45c-3603-37c8e1f9c5ba
+                stepCounter: cbc73dda-91fb-464f-38cc-53ccd3b3b87d
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 44b20e39-f274-6603-ccaac3361bae
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: number(38,0)
+        defaultValue: ""
+        description: ""
+        name: NORMALIZED_MONTH_SORT_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 44b20e39-f274-6603-ccaac3361bae
+                stepCounter: cbc73dda-91fb-464f-38cc-53ccd3b3b87d
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: DSS_CREATE_TIME
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: d6ce4372-6999-e411-f712-c309a4687e3d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: DSS_UPDATE_TIME
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_FDC_NORMALIZED_DATE: cbc73dda-91fb-464f-38cc-53ccd3b3b87d
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: EDW
+            nodeName: DIM_FDC_NORMALIZED_DATE
+        join:
+          joinCondition: |-
+            FROM {{ ref('EDW', 'DIM_FDC_NORMALIZED_DATE') }} DIM_FDC_NORMALIZED_DATE
+        name: DIM_FDC_PRODUCING_DATE
+        noLinkRefs: []
+  name: DIM_FDC_PRODUCING_DATE
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

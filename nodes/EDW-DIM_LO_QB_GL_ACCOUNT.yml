@@ -1,0 +1,457 @@
+fileVersion: 1
+id: a86898b3-0b01-fc41-acdd-c0644603ea7b
+name: DIM_LO_QB_GL_ACCOUNT
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'DIM_LO_QB_GL_ACCOUNT') }} AS DST\r\nWHERE NOT EXISTS (SELECT * FROM {{ ref('STAGE_BT','STAGE_GL_ACCOUNT') }} AS SRC \r\n   WHERE DST.MAJOR_ACCT = SRC.MAJOR_ACCT AND DST.MINOR_ACCT = SRC.MINOR_ACCT);"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "!! DO NOT EXECUTE or RECREATE !!  Static historic object"
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 73dcde0e-7feb-f704-182dcfbe43b5
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_GL_ACCOUNT_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: df1a9a7e-2cdf-cf3e-4d493fe41681
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: ACCT_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 89f51e74-4bb5-d8fa-cd0f27f802d2
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: MAJOR_ACCT
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 179a1893-5d6e-1c4b-734fe72cb3ad
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: MINOR_ACCT
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c40eb667-28cf-dcfb-437c5d221bf6
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: ACCOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2bb3ee46-254a-5141-98618f6c55e6
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(200)
+        defaultValue: ""
+        description: ""
+        name: ACCOUNT_ID_DESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "concat(.ACCOUNT,' - ',.ACCT_DESC)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 811e381a-16ef-a274-97da13529122
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: The first element of the destination system code value.
+        name: LINE_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b3772b7-cc7a-21ff-cf9462714a73
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates amounts are gross or net.
+        name: GROSS_OR_NET_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c156078a-cbc5-fa8d-27cb873161c7
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The major account to which our share is posted.
+        name: NET_MAJOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee2d495c-1f5d-7de5-9c47dee4bf43
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: PROD_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 542205fc-7089-9b08-dc92be1c199a
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c3a61f71-2947-9991-c5ec4454baa0
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: CURR_CONVERSION_RULE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b2fef984-e696-3725-4841872e11b2
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: AFE_REQD_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5dc92c20-780e-1897-3710370e6c3a
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: CC_REQD_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bb8cefee-7576-6ee3-47741fd3425d
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: VOL_REQD_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 735e7c9d-3954-1eb5-d3a793631820
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: ACTVY_DATE_REQD_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2459dae7-7b04-2663-cbeeb4fce191
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(2)
+        defaultValue: ""
+        description: ""
+        name: CTRL_ACCT_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5369504f-739c-18d0-4a888bab5dee
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        name: TERM_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d2c95b3-f3fa-677c-8315ce3f59e2
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: LAST_UPDT_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8790704-a735-ed9f-d63e03aba78a
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ACCT_GROUP_CODE
+        name: ACCT_GROUP_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: a86898b3-0b01-fc41-acdd-c0644603ea7b
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_GL_ACCOUNT
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_GL_ACCOUNT') }} "STAGE_GL_ACCOUNT"
+        name: DIM_LO_QB_GL_ACCOUNT
+        noLinkRefs: []
+  name: DIM_LO_QB_GL_ACCOUNT
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

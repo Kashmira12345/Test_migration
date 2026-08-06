@@ -1,0 +1,276 @@
+fileVersion: 1
+id: 1d40ab64-1659-eb31-0be6-37c3642475b5
+name: DIM_LO_QB_INVOICE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'DIM_LO_QB_INVOICE') }} AS DST\r\nWHERE NOT EXISTS (SELECT * FROM {{ ref('STAGE_BT','STAGE_INVOICE') }} AS SRC WHERE DST.INVOICE_ID = SRC.INVOICE_ID);"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "!! DO NOT EXECUTE or RECREATE !!  Static historic object"
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a0ca60c4-72e9-299a-f3c08e89c206
+          stepCounter: 1d40ab64-1659-eb31-0be6-37c3642475b5
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_INVOICE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ccfc3cff-35f5-9eae-f0fc6484f80b
+          stepCounter: 1d40ab64-1659-eb31-0be6-37c3642475b5
+        config: {}
+        dataType: number(10)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: INVOICE_ID
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bbb7d9c2-d000-de0b-fbbc59ba7664
+          stepCounter: 1d40ab64-1659-eb31-0be6-37c3642475b5
+        config: {}
+        dataType: number(6)
+        defaultValue: ""
+        description: ""
+        name: BUSINESS_ASSOCIATE_ID
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3e966303-f793-6d2a-83022a183abf
+          stepCounter: 1d40ab64-1659-eb31-0be6-37c3642475b5
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Name of a person, place or thing.
+        name: BUSINESS_ASSOCIATE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a81325b-9043-b68b-e1078bc1d302
+          stepCounter: 1d40ab64-1659-eb31-0be6-37c3642475b5
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: INVOICE_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae3dad5b-f1d4-51a6-2919b58a3525
+          stepCounter: 1d40ab64-1659-eb31-0be6-37c3642475b5
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        name: INVOICE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 14667387-4a1f-3708-7a74544b7abe
+          stepCounter: 1d40ab64-1659-eb31-0be6-37c3642475b5
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: The valid invoice type.
+        name: INVOICE_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 60800e24-1fc3-1fdb-ef4eb63e498a
+          stepCounter: 1d40ab64-1659-eb31-0be6-37c3642475b5
+        config: {}
+        dataType: varchar(80)
+        defaultValue: ""
+        description: Invoice type description.
+        name: INVOICE_TYPE_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 725c8ac3-d26f-f34d-99a74b7cd80e
+          stepCounter: 1d40ab64-1659-eb31-0be6-37c3642475b5
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The major portion of the control account.
+        name: CTRL_MAJOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26ad1191-fa14-a2c6-ef36e8406fc2
+          stepCounter: 1d40ab64-1659-eb31-0be6-37c3642475b5
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The minor portion of the control account.
+        name: CTRL_MINOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c40eb667-28cf-dcfb-437c5d221bf6
+          stepCounter: 1d40ab64-1659-eb31-0be6-37c3642475b5
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: ACCOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 1d40ab64-1659-eb31-0be6-37c3642475b5
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 1d40ab64-1659-eb31-0be6-37c3642475b5
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_INVOICE
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_INVOICE') }} "STAGE_INVOICE"
+        name: DIM_LO_QB_INVOICE
+        noLinkRefs: []
+  name: DIM_LO_QB_INVOICE
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

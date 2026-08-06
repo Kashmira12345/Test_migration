@@ -1,0 +1,2397 @@
+fileVersion: 1
+id: c492acf9-13aa-0496-373e-f3888353cfad
+name: DIM_LO_QB_COST_CENTER_HIER
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ed01faae-0653-fdd2-12d32ff3be84
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_COST_CENTER_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ed01faae-0653-fdd2-12d32ff3be84
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4a14c68e-4f14-5604-4c77567881eb
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: DIM_LO_QB_COST_CENTER.CC_NUM=DIM_LO_CC_CORP_HIER_BUDGET.CC_NUM
+        name: DIM_CC_CORP_HIER_BUDGET_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4a14c68e-4f14-5604-4c77567881eb
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c2109d3a-f89c-8408-7be15045935e
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: DIM_LO_QB_COST_CENTER.CC_NUM=DIM_LO_CC_CORP_HIER_CURRENT.CC_NUM
+        name: DIM_CC_CORP_HIER_CURRENT_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2109d3a-f89c-8408-7be15045935e
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a3808fed-cd0c-a024-93d90170757e
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: DIM_LO_QB_COST_CENTER.CC_NUM=DIM_LO_CC_CORP_HIER_PREVIOUS.CC_NUM
+        name: DIM_CC_CORP_HIER_PREVIOUS_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a3808fed-cd0c-a024-93d90170757e
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        name: CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d6850309-160d-593a-f22a0ab5586c
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        name: UNIT_CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d6850309-160d-593a-f22a0ab5586c
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f51bd8a6-f7b1-1562-982710534c5d
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: CC_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f51bd8a6-f7b1-1562-982710534c5d
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 97c15d9c-193e-729a-193275e914eb
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: CC_NUM_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: "CONCAT(DIM_LO_QB_COST_CENTER.CC_NUM, ' - ', DIM_LO_QB_COST_CENTER.CC_NAME)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd35723d-1b89-ea91-db4dba63e34a
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: ""
+        name: CC_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dd35723d-1b89-ea91-db4dba63e34a
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 59eb5b76-14ee-14a3-64662d3c8b95
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(80)
+        defaultValue: ""
+        description: ""
+        name: CODE_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 59eb5b76-14ee-14a3-64662d3c8b95
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c77eb5a2-de24-8a33-aa5819056659
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: number(4)
+        defaultValue: ""
+        description: ""
+        name: OWNERSHIP_ORG_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c77eb5a2-de24-8a33-aa5819056659
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 16d1c423-b1d8-c650-397fb066c675
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: OWNERSHIP_ORGANIZATION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 16d1c423-b1d8-c650-397fb066c675
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 77f195ed-4030-da81-0af29b5b4383
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: UWI of the Cost Centre
+        name: UWI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 77f195ed-4030-da81-0af29b5b4383
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 67336aee-88e8-aecb-ccf9e77a7597
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: Formatted UWI of the Cost Centre
+        name: FORMATTED_UWI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 67336aee-88e8-aecb-ccf9e77a7597
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9edd78a7-65ec-f307-d216bcbd9c59
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: number(6)
+        defaultValue: ""
+        description: ""
+        name: OPERATOR_CLIENT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9edd78a7-65ec-f307-d216bcbd9c59
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5fd5ce6d-fe7a-7339-1bdbaace8903
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(300)
+        defaultValue: ""
+        description: ""
+        name: OPERATOR_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5fd5ce6d-fe7a-7339-1bdbaace8903
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c465ccec-a79a-2d20-3b25cc1fc593
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: number(6)
+        defaultValue: ""
+        description: ""
+        name: CONTRACT_OPERATOR_CLIENT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c465ccec-a79a-2d20-3b25cc1fc593
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 89bd1cbe-3ade-8754-139bcab0a235
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(300)
+        defaultValue: ""
+        description: ""
+        name: CONTRACT_OPERATOR_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 89bd1cbe-3ade-8754-139bcab0a235
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5369504f-739c-18d0-4a888bab5dee
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        name: TERM_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5369504f-739c-18d0-4a888bab5dee
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ff7edc55-3e01-b13f-3024d1ec44d3
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(2)
+        defaultValue: ""
+        description: ""
+        name: COST_CENTER_PROVINCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ff7edc55-3e01-b13f-3024d1ec44d3
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bdf91c27-813a-e4a5-2da4cc07325d
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(2)
+        defaultValue: ""
+        description: ""
+        name: COST_CENTER_COUNTRY_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bdf91c27-813a-e4a5-2da4cc07325d
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0ae5d3d0-282b-3962-4173338f43b4
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: COST_CENTER_COUNTRY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0ae5d3d0-282b-3962-4173338f43b4
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 74adca67-86bc-7615-bc9235b2792d
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: IS_JIB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 74adca67-86bc-7615-bc9235b2792d
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eabaa94b-102a-6bb7-d589c7c4d144
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: ALLOW_OTHER_ORGS_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eabaa94b-102a-6bb7-d589c7c4d144
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f41dbb57-8c81-e9f1-be60d20cd253
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        name: OVERHEAD_METHOD_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f41dbb57-8c81-e9f1-be60d20cd253
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 855520d2-b1a6-4b93-9e7e30889e2a
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: RUN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 855520d2-b1a6-4b93-9e7e30889e2a
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43b69991-3756-7369-fc6354008255
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: ACQUISITION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 43b69991-3756-7369-fc6354008255
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7316a25c-4804-1a68-e3b72b467144
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: GCA_FCC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7316a25c-4804-1a68-e3b72b467144
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e1ec6867-8126-f6ee-1aeeaeb5d166
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: Date when the cost center was created
+        name: CC_CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e1ec6867-8126-f6ee-1aeeaeb5d166
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d852b454-4cf7-fab0-84f29958cc9d
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: CBM_FORMATION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d852b454-4cf7-fab0-84f29958cc9d
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e54d70e1-03d7-ea6b-15a066ebb162
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: OP_NONOP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e54d70e1-03d7-ea6b-15a066ebb162
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a4258d33-470e-708e-a053fd516aad
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: number(14,11)
+        defaultValue: ""
+        description: The Land Percent.
+        name: WORKING_INTEREST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a4258d33-470e-708e-a053fd516aad
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5740ea3c-dea3-4b52-46aa4bc7ac3a
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: BUDGET_ACQUISITION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 43b69991-3756-7369-fc6354008255
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 909a5980-eb0a-40c5-55f17dfd9584
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: BUDGET_AREA_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0cb8e501-3b2b-3cee-ab24cdbbf7c7
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc702fbd-7ca2-c540-47a455ceb6de
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: BUDGET_AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be72a29b-4dd7-5d69-cfb9365d5896
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 89f6da79-ee36-1b5e-6f0f68595a26
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: BUDGET_BUDGET_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9212ec3f-1f98-8570-d06d7c0c28f9
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 13967e17-5295-aa37-22e85fd150e6
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Capital Year  - Mosaic CDM
+        name: BUDGET_CAPITAL_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1c8c220-68f4-30d7-6722e33524e1
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 957e15ea-914d-0fb5-d16f655655d5
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Volume Year  - Mosaic CDM
+        name: BUDGET_VOLUME_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3bd8cf44-827d-fb5a-e260d7826acd
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b2053397-9900-c32f-5ddd778a5ead
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: BUDGET_WELL_COUNT_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 359358f4-4d34-b26e-7761ff66b79b
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cab82c22-43b3-2d9d-c3cab81aeda4
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: BUDGET_CDM_RIG_RELEASE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7f90e55a-99a5-79ae-d2bb6efd377b
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c67db33f-3e00-0778-64c26a0442b0
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: BUDGET_CC_CORP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 81ae049d-5382-1176-a8d4874eea18
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b2c40686-4d88-8d6d-df7cd781de69
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: BUDGET_COREAREA_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4d7c0027-ce55-22a0-c0c599e301ce
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e0070a2e-5ac5-fefb-87cc8c8e57c5
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: BUDGET_COREAREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a7252aca-bce9-ce1c-a20be417c256
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2b554ab-6e87-416d-64d307eae509
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: BUDGET_COUNTRY_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a29c3607-0f54-a947-1ac73492c95f
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 530eb51f-adec-421d-83f652085c6a
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: BUDGET_COUNTRY_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 34f5dfe9-43ff-13fa-e39325cea0e0
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a3f83711-158f-205d-74f47801f126
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: EXPLOITATION ENGINEER
+        name: BUDGET_EXPLOITATION_ENGINEER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6aed45f4-6ab9-f41d-7f9fd9c6bc4b
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fd4442bd-5802-d89c-467399fcfa50
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Flow Network Name - ProdView
+        name: BUDGET_NETWORK_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d693edcc-73ca-9607-76537f2cd6ec
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e209da3-db1d-8a8b-4de273d42eb4
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Facility - ProdView
+        name: BUDGET_FACILITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad175978-a792-8165-148cd89b3abb
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 23aa625e-428f-01a2-ecb6781c7971
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: BUDGET_BATTERY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7e64f220-98ad-ef05-3289d3d319c0
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d400d77-28f9-fdd1-049ec1f0c923
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Foreman Name manually assigned to Cost Center
+        name: BUDGET_MANUAL_FOREMAN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6504db6f-f23f-f4af-4943d9061d61
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 761a96f3-415f-760f-72a6d71f1531
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: BUDGET_LICENSEE_OPERATOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 433a6a31-a7e1-fbd5-61a6532d8a36
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7c19d98-4b77-6c1d-0b8cb5577b6b
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Meter Station
+        name: BUDGET_METER_STATION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5cf021d2-6b44-72da-56ad495c28d3
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5c7da3da-f0b8-33aa-45ad1b9e68c5
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: PHYSICAL OPERATOR
+        name: BUDGET_PHYSICAL_OPERATOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55943c73-08a6-7f22-f7f7f8f6c989
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 41b9a4ab-8084-01f9-691ba49fa0b4
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: PLAY
+        name: BUDGET_PLAY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a216efc-25c6-0a4a-4c0bc99ad77f
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d4ac6c57-7996-f9e7-b0939bae0181
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: PRODUCTION ENGINEER
+        name: BUDGET_PRODUCTION_ENGINEER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ab62f4c9-dab8-3c9e-46cd168a7d1a
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f12fb35a-13c0-2ae2-8096f135f6c4
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: BUDGET_PROV_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ff4dfa1-afdc-b7a5-61f046020ba9
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0017c4e1-256c-83c8-af08e14bf138
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: BUDGET_PROV_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: afee24ed-c61a-882d-ef7658d67cca
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f0f945e-410c-22aa-5f5245499167
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Operator Run
+        name: BUDGET_ROUTE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b27f430e-df9b-2bf1-26b3122d7175
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 369174a3-9f48-f78f-45203d6bfdd5
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Sales Point
+        name: BUDGET_SALES_POINT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f5fbd33a-cc94-ef76-4af70fd6e61c
+                stepCounter: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78791dc3-b42c-6d56-10c2b119df5a
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: PREVIOUS_ACQUISITION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 43b69991-3756-7369-fc6354008255
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f9c4174-0a00-3744-dbafadfe5462
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: PREVIOUS_AREA_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0cb8e501-3b2b-3cee-ab24cdbbf7c7
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2e1f615a-e8cb-2d9b-349bef306a03
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: PREVIOUS_AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be72a29b-4dd7-5d69-cfb9365d5896
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 95300883-c87d-2ec1-68f147dc0566
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: PREVIOUS_BUDGET_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9212ec3f-1f98-8570-d06d7c0c28f9
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7e800f05-70a3-97ef-7324e3428cec
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Capital Year  - Mosaic CDM
+        name: PREVIOUS_CAPITAL_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1c8c220-68f4-30d7-6722e33524e1
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3bd9a2e5-6922-e20b-72ac92a857e5
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Volume Year  - Mosaic CDM
+        name: PREVIOUS_VOLUME_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3bd8cf44-827d-fb5a-e260d7826acd
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 045ca821-997c-c525-c64a55a1f0b1
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: PREVIOUS_WELL_COUNT_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 359358f4-4d34-b26e-7761ff66b79b
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9b436677-bebb-aa1e-771b1b92ce98
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: PREVIOUS_CDM_RIG_RELEASE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7f90e55a-99a5-79ae-d2bb6efd377b
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f0765cf7-f47d-c044-2cf57dd66e1d
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: PREVIOUS_CC_CORP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 81ae049d-5382-1176-a8d4874eea18
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a150ec50-e1c2-bbe9-118593d652de
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: PREVIOUS_COREAREA_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4d7c0027-ce55-22a0-c0c599e301ce
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e891ea22-a968-7725-f3faefcd6e30
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: PREVIOUS_COREAREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a7252aca-bce9-ce1c-a20be417c256
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f3f85607-1386-50c8-9ad4d4a1c09f
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: PREVIOUS_COUNTRY_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a29c3607-0f54-a947-1ac73492c95f
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c77da876-c603-2d88-541e2c1872ff
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: PREVIOUS_COUNTRY_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 34f5dfe9-43ff-13fa-e39325cea0e0
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f8d7448e-04ef-545f-436bfd30690d
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: EXPLOITATION ENGINEER
+        name: PREVIOUS_EXPLOITATION_ENGINEER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6aed45f4-6ab9-f41d-7f9fd9c6bc4b
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a67e4feb-87ea-898f-3d54ce1773fb
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Flow Network Name - ProdView
+        name: PREVIOUS_NETWORK_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d693edcc-73ca-9607-76537f2cd6ec
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26fccfe5-6d43-d310-bf019e962608
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Facility - ProdView
+        name: PREVIOUS_FACILITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad175978-a792-8165-148cd89b3abb
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83dba95c-1fb6-2d71-7a3851ebf574
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: PREVIOUS_BATTERY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7e64f220-98ad-ef05-3289d3d319c0
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e65f3d4c-3e78-7791-fea3fe94dd5b
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Foreman Name manually assigned to Cost Center
+        name: PREVIOUS_MANUAL_FOREMAN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6504db6f-f23f-f4af-4943d9061d61
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e1337e57-0d1c-4d15-c12e132360d0
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: PREVIOUS_LICENSEE_OPERATOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 433a6a31-a7e1-fbd5-61a6532d8a36
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd030719-e606-d640-6f0d8dd891e7
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Meter Station
+        name: PREVIOUS_METER_STATION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5cf021d2-6b44-72da-56ad495c28d3
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edad7557-a77e-4b72-b0ce68d01acf
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: PHYSICAL OPERATOR
+        name: PREVIOUS_PHYSICAL_OPERATOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55943c73-08a6-7f22-f7f7f8f6c989
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc8ab206-29d1-93ee-ab6e2b9edb1d
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: PLAY
+        name: PREVIOUS_PLAY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a216efc-25c6-0a4a-4c0bc99ad77f
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a7a921e-db6c-3ebf-402c86971ee1
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: PRODUCTION ENGINEER
+        name: PREVIOUS_PRODUCTION_ENGINEER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ab62f4c9-dab8-3c9e-46cd168a7d1a
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9b12025b-d37c-33a4-5818b3e51c32
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: PREVIOUS_PROV_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ff4dfa1-afdc-b7a5-61f046020ba9
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 999d9f1e-48b5-9402-5c0692fd28ca
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: PREVIOUS_PROV_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: afee24ed-c61a-882d-ef7658d67cca
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 339c90c3-97a5-8ffc-d10c4bd0eeed
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Operator Run
+        name: PREVIOUS_ROUTE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b27f430e-df9b-2bf1-26b3122d7175
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d16a7ef6-98d2-7d6b-6cc8914c6b58
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Sales Point
+        name: PREVIOUS_SALES_POINT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f5fbd33a-cc94-ef76-4af70fd6e61c
+                stepCounter: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0cb8e501-3b2b-3cee-ab24cdbbf7c7
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: AREA_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0cb8e501-3b2b-3cee-ab24cdbbf7c7
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: be72a29b-4dd7-5d69-cfb9365d5896
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be72a29b-4dd7-5d69-cfb9365d5896
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9212ec3f-1f98-8570-d06d7c0c28f9
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: BUDGET_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9212ec3f-1f98-8570-d06d7c0c28f9
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1c8c220-68f4-30d7-6722e33524e1
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Capital Year  - Mosaic CDM
+        name: CAPITAL_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1c8c220-68f4-30d7-6722e33524e1
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3bd8cf44-827d-fb5a-e260d7826acd
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Volume Year  - Mosaic CDM
+        name: VOLUME_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3bd8cf44-827d-fb5a-e260d7826acd
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 359358f4-4d34-b26e-7761ff66b79b
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: WELL_COUNT_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 359358f4-4d34-b26e-7761ff66b79b
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7f90e55a-99a5-79ae-d2bb6efd377b
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: CDM_RIG_RELEASE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7f90e55a-99a5-79ae-d2bb6efd377b
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 81ae049d-5382-1176-a8d4874eea18
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: CC_CORP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 81ae049d-5382-1176-a8d4874eea18
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4d7c0027-ce55-22a0-c0c599e301ce
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: COREAREA_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4d7c0027-ce55-22a0-c0c599e301ce
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a7252aca-bce9-ce1c-a20be417c256
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: COREAREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a7252aca-bce9-ce1c-a20be417c256
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a29c3607-0f54-a947-1ac73492c95f
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: COUNTRY_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a29c3607-0f54-a947-1ac73492c95f
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 34f5dfe9-43ff-13fa-e39325cea0e0
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: COUNTRY_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 34f5dfe9-43ff-13fa-e39325cea0e0
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6aed45f4-6ab9-f41d-7f9fd9c6bc4b
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: EXPLOITATION ENGINEER
+        name: EXPLOITATION_ENGINEER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6aed45f4-6ab9-f41d-7f9fd9c6bc4b
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d693edcc-73ca-9607-76537f2cd6ec
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Flow Network Name - ProdView
+        name: NETWORK_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d693edcc-73ca-9607-76537f2cd6ec
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ad175978-a792-8165-148cd89b3abb
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Facility - ProdView
+        name: FACILITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad175978-a792-8165-148cd89b3abb
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7e64f220-98ad-ef05-3289d3d319c0
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: BATTERY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7e64f220-98ad-ef05-3289d3d319c0
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6504db6f-f23f-f4af-4943d9061d61
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Foreman Name manually assigned to Cost Center
+        name: MANUAL_FOREMAN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6504db6f-f23f-f4af-4943d9061d61
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 433a6a31-a7e1-fbd5-61a6532d8a36
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: LICENSEE_OPERATOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 433a6a31-a7e1-fbd5-61a6532d8a36
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5cf021d2-6b44-72da-56ad495c28d3
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Meter Station
+        name: METER_STATION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5cf021d2-6b44-72da-56ad495c28d3
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 55943c73-08a6-7f22-f7f7f8f6c989
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: PHYSICAL OPERATOR
+        name: PHYSICAL_OPERATOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55943c73-08a6-7f22-f7f7f8f6c989
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a216efc-25c6-0a4a-4c0bc99ad77f
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: PLAY
+        name: PLAY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a216efc-25c6-0a4a-4c0bc99ad77f
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ab62f4c9-dab8-3c9e-46cd168a7d1a
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: PRODUCTION ENGINEER
+        name: PRODUCTION_ENGINEER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ab62f4c9-dab8-3c9e-46cd168a7d1a
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ff4dfa1-afdc-b7a5-61f046020ba9
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: PROV_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ff4dfa1-afdc-b7a5-61f046020ba9
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: afee24ed-c61a-882d-ef7658d67cca
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: PROV_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: afee24ed-c61a-882d-ef7658d67cca
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b27f430e-df9b-2bf1-26b3122d7175
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Operator Run
+        name: ROUTE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b27f430e-df9b-2bf1-26b3122d7175
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f5fbd33a-cc94-ef76-4af70fd6e61c
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Sales Point
+        name: SALES_POINT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f5fbd33a-cc94-ef76-4af70fd6e61c
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 33eaadc1-0149-fd0d-530c031bb0f6
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: BU_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 33eaadc1-0149-fd0d-530c031bb0f6
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: BU_SF_ROLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e81df334-16e8-ab69-a8a1fab67bb3
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: BU_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e81df334-16e8-ab69-a8a1fab67bb3
+                stepCounter: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: c492acf9-13aa-0496-373e-f3888353cfad
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 678005e7-9cf5-41cd-d309566a5711
+                stepCounter: c3e01168-f653-7e8c-f468-fb03dbebe98f
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_LO_QB_CC_CORP_HIER_BUDGET: bb5ac18a-eff2-f63d-4a9b-504fbb1f0297
+          DIM_LO_QB_CC_CORP_HIER_CURRENT: 065cb19b-69e3-5a04-03ef-35c4ec2652c4
+          DIM_LO_QB_CC_CORP_HIER_PREVIOUS: 82a834db-fdd2-d1f7-c0d4-d0a46faba70c
+          DIM_LO_QB_COST_CENTER: c3e01168-f653-7e8c-f468-fb03dbebe98f
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: EDW
+            nodeName: DIM_LO_QB_CC_CORP_HIER_BUDGET
+          - locationName: EDW
+            nodeName: DIM_LO_QB_CC_CORP_HIER_CURRENT
+          - locationName: EDW
+            nodeName: DIM_LO_QB_CC_CORP_HIER_PREVIOUS
+          - locationName: EDW
+            nodeName: DIM_LO_QB_COST_CENTER
+        join:
+          joinCondition: |-
+            FROM {{ ref('EDW', 'DIM_LO_QB_COST_CENTER') }} "DIM_LO_QB_COST_CENTER"
+            LEFT JOIN {{ ref('EDW', 'DIM_LO_QB_CC_CORP_HIER_BUDGET') }} "DIM_LO_QB_CC_CORP_HIER_BUDGET"
+              ON DIM_LO_QB_COST_CENTER.CC_NUM = DIM_LO_QB_CC_CORP_HIER_BUDGET.CC_NUM
+            LEFT JOIN {{ ref('EDW', 'DIM_LO_QB_CC_CORP_HIER_CURRENT') }} "DIM_LO_QB_CC_CORP_HIER_CURRENT"
+              ON DIM_LO_QB_COST_CENTER.CC_NUM = DIM_LO_QB_CC_CORP_HIER_CURRENT.CC_NUM
+            LEFT JOIN {{ ref('EDW', 'DIM_LO_QB_CC_CORP_HIER_PREVIOUS') }} "DIM_LO_QB_CC_CORP_HIER_PREVIOUS"
+              ON DIM_LO_QB_COST_CENTER.CC_NUM = DIM_LO_QB_CC_CORP_HIER_PREVIOUS.CC_NUM
+        name: DIM_LO_QB_COST_CENTER_HIER
+        noLinkRefs: []
+  name: DIM_LO_QB_COST_CENTER_HIER
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,401 @@
+fileVersion: 1
+id: 2c726b8f-88e1-9871-7194-f3f98de75c45
+name: DIM_LO_QB_ACTVY_PER_DATE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a9155f70-5bab-db8d-b853c168afd6
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated key for the date dimension. Nominal format is YYYYMMDD, but DD equal to 0 and greater than 31 permited for special date handling.
+        name: DIM_ACTVY_PER_DATE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aec04c15-1bd9-7440-417995c5705c
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 633a6c7a-58f8-1742-50094daf1e6a
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: The calendar date for this row.
+        name: DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6922a2ae-7004-c486-e9a6457d393c
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0d23c2c1-1f82-b270-5fb32d700f67
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: The calendar month number 1-12.
+        name: MONTH_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 57b7b5e2-7fcd-22c3-7d67f7a09c8e
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 38331692-16ab-e5ab-e53370284a7f
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: 'The calendar month representation. Format YYYYMM. Example: 200206.'
+        name: MONTH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 01efe963-ba53-84fa-49187eee598e
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e0dc024b-84fa-f927-9f54b3c78d07
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: varchar(7)
+        defaultValue: ""
+        description: 'The calendar month name. Format MON. Examples: jan, feb, mar.'
+        name: MONTH_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2134ce3-17ac-3107-b060860b05c7
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e1959f8a-e7dd-3108-77bf76f9603d
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: The calendar quarter number 1-4.
+        name: QUARTER_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4055c224-67ab-0a94-43509c57c1c2
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6381971d-1f4c-7079-fe83213dc624
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: varchar(8)
+        defaultValue: ""
+        description: ""
+        name: QUARTER_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4055c224-67ab-0a94-43509c57c1c2
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "DIM_DATE.CAL_YEAR || ' Q' || DIM_DATE.CAL_QUARTER_NO"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 21277495-8767-8c2f-f775d060024e
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: The calendar quarter representation. Format YYYYQQ. Example 200204.
+        name: QUARTER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: caa5d64a-acc8-b7fb-68f2e56b962c
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 31426498-eb16-12a0-f28289893141
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: YEAR_MONTH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2f36bb0-57a6-1167-6a3a39d3a261
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "DIM_DATE.CAL_YEAR || ' - ' || DIM_DATE.CAL_MONTH_NAME"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 284dae7c-4c42-7d77-d73a2ff1e6a5
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: YEAR_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2f36bb0-57a6-1167-6a3a39d3a261
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "'ACTIVITY ' || DIM_DATE.CAL_YEAR"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d1810172-0479-023d-5eceeb29c9cf
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: The calendar year. Format YYYY
+        name: YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2f36bb0-57a6-1167-6a3a39d3a261
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bcb9aaff-b478-9738-d0016750e62b
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Flag to indicate the current month. Set as per current_cal_day.
+        name: CURRENT_MONTH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fa4680da-cb74-a335-a9f6ef8d6ea1
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4094d4f4-e1b6-ba65-69cea2886f13
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Flag to indicate the current year. Set as per current_cal_day.
+        name: CURRENT_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f7c3af25-09fe-d8ef-bac3e805f457
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 246dfa95-9ad9-6e32-3a61adbcd531
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Flag to indicate days in the current month to date. Set as per current_cal_day.
+        name: CURRENT_MTD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 314b5701-d46a-0552-10de9cab043f
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5c918b9d-cb55-2336-2f146c1d5334
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Flag to indicate days in the current year to date. Set as per current_cal_day.
+        name: CURRENT_YTD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6c036bf2-31d1-8a32-800843945c89
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 146a0619-c859-84f4-51fe3b154c91
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Flag to indicate days that constitute a full year counting back from the current day. Set as per current_cal_day.
+        name: MOVING_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a1629ab4-8fb6-58cc-d47bc29ade7c
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Date/time that this record was inserted in the data warehouse
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 2c726b8f-88e1-9871-7194-f3f98de75c45
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Date/time that this record was updated in the data warehouse
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 678005e7-9cf5-41cd-d309566a5711
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_DATE: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: EDW
+            nodeName: DIM_DATE
+        join:
+          joinCondition: ""
+        name: DIM_LO_QB_ACTVY_PER_DATE
+        noLinkRefs: []
+  name: DIM_LO_QB_ACTVY_PER_DATE
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

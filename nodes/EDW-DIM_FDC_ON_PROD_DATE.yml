@@ -1,0 +1,257 @@
+fileVersion: 1
+id: 7b8b7518-0902-65fd-3ea0-55ffd19d4708
+name: DIM_FDC_ON_PROD_DATE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba0e879d-2f14-96e5-f5ef8a82eb99
+          stepCounter: 7b8b7518-0902-65fd-3ea0-55ffd19d4708
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated key for the date dimension. Nominal format is YYYYMMDD, but DD equal to 0 and greater than 31 permited for special date handling.
+        isBusinessKey: true
+        name: DIM_ON_PROD_DATE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aec04c15-1bd9-7440-417995c5705c
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6922a2ae-7004-c486-e9a6457d393c
+          stepCounter: 7b8b7518-0902-65fd-3ea0-55ffd19d4708
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: The calendar date for this row.
+        name: CALENDAR_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6922a2ae-7004-c486-e9a6457d393c
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83b5d3f4-a737-0e0c-26e8fe291648
+          stepCounter: 7b8b7518-0902-65fd-3ea0-55ffd19d4708
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: ""
+        name: BASE_CAPEX
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CASE WHEN VIEW_DIM_FDC_ON_PROD_DATE.CALENDAR_DATE >= '$PFDC_BASE_CAPEX_DATE$' THEN 'CAPEX'  ELSE 'BASE' END"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1a0d6243-95eb-17ba-dde124097916
+          stepCounter: 7b8b7518-0902-65fd-3ea0-55ffd19d4708
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: The calendar year. Format YYYY
+        name: YEAR_SORT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1a0d6243-95eb-17ba-dde124097916
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5d216120-3418-eb3b-af91bdf5af30
+          stepCounter: 7b8b7518-0902-65fd-3ea0-55ffd19d4708
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: The calendar year. Format YYYY
+        name: YEAR_GROUPING
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5d216120-3418-eb3b-af91bdf5af30
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6381971d-1f4c-7079-fe83213dc624
+          stepCounter: 7b8b7518-0902-65fd-3ea0-55ffd19d4708
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: The calendar quarter number 1-4.
+        name: QUARTER_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6381971d-1f4c-7079-fe83213dc624
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57b7b5e2-7fcd-22c3-7d67f7a09c8e
+          stepCounter: 7b8b7518-0902-65fd-3ea0-55ffd19d4708
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: The calendar month number 1-12.
+        name: CAL_MONTH_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 57b7b5e2-7fcd-22c3-7d67f7a09c8e
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2134ce3-17ac-3107-b060860b05c7
+          stepCounter: 7b8b7518-0902-65fd-3ea0-55ffd19d4708
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: 'The calendar month name. Format MON. Examples: jan, feb, mar.'
+        name: CAL_MONTH_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2134ce3-17ac-3107-b060860b05c7
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae2016a3-c1de-ca92-c852152caf69
+          stepCounter: 7b8b7518-0902-65fd-3ea0-55ffd19d4708
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: The calendar quarter representation. Format YYYYQQ. Example 200204.
+        name: MONTH_SORT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ae2016a3-c1de-ca92-c852152caf69
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 7b8b7518-0902-65fd-3ea0-55ffd19d4708
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: DSS_CREATE_TIME
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 7b8b7518-0902-65fd-3ea0-55ffd19d4708
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: DSS_UPDATE_TIME
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          VIEW_DIM_FDC_ON_PROD_DATE: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: VIEW_DIM_FDC_ON_PROD_DATE
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'VIEW_DIM_FDC_ON_PROD_DATE') }} "VIEW_DIM_FDC_ON_PROD_DATE"
+        name: DIM_FDC_ON_PROD_DATE
+        noLinkRefs: []
+  name: DIM_FDC_ON_PROD_DATE
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node
