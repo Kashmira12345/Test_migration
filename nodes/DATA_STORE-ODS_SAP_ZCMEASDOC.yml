@@ -1,0 +1,1233 @@
+fileVersion: 1
+id: 17199efa-0ea5-ee87-f786-5489ab272162
+name: ODS_SAP_ZCMEASDOC
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5658c312-55a2-ca65-b0f5a55616fe
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Client
+        name: MANDT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7ed2ee4c-1844-43fe-a4ed-5ef4cb4d37f6
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9fe43afa-f966-7117-42406f708a3a
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: Measurement Document
+        isBusinessKey: true
+        name: MEASUREMENTDOCUMENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1e77e910-e3fe-4686-acaf-305c144b29ec
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b17fe19d-e615-77c0-dabfc35498fa
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Measuring Point
+        name: MEASURINGPOINT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a6b5d9e-32c1-43e9-8bea-3a9059d930fe
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b8d912b9-63c3-8b70-db8d4b465e6b
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Date of the Measurement
+        name: MSMTRDNGDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c32076fc-910b-42c6-9ee8-a40ebe0c81ad
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 80b1c68a-f7e4-2780-c922d6619b32
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: Time of Measurement
+        name: MSMTRDNGTIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b8cbe026-7b02-4b28-88ae-1409a4e14985
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7457bbd9-cbb2-010b-f362ba7bb2d8
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(11)
+        defaultValue: ""
+        description: 'Inverted Time Stamp: 99.999.999.999 - Seconds AD'
+        name: MSMTRDNGINVERTEDDATETIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f77615b-1e72-4b39-a25d-2be88508bc82
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e28cc3d-1d66-1d04-e0e786f25777
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Counter Reading Document'
+        name: MSMTRDNGISFORCOUNTER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91d4959d-17ad-467e-acf2-522b6b792c2d
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8b82268f-4d4f-b6df-f701c416a9e0
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(40)
+        defaultValue: ""
+        description: Measurement Document Text
+        name: MEASUREMENTDOCUMENTTEXT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ed785d68-9d04-4554-ac6e-2916492f34de
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5b64a525-3da2-9509-72747ac9a3b0
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(16777216)
+        defaultValue: ""
+        description: Language Key
+        name: LANGUAGE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: af81aa51-d810-434c-9f30-6250a3cfa4a5
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 77184500-b679-f7e9-8b5232301d0e
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Long Text Exists
+        name: MEASUREMENTDOCUMENTHASLONGTEXT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f491f60a-ae1b-4a66-901d-a811cf87e6d9
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f0f03f75-a33f-2194-3455c5cbb502
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Person who Took the Measurement Reading
+        name: MSMTRDNGBYUSER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ac279078-a118-4979-ad40-bcbc3e3cb282
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f3abe104-9e3a-4f6a-bc7b2f85c95f
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Date on which the object was created
+        name: CREATIONDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e083ce4d-411f-46a9-86ec-3714ca8f226a
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47c0b193-404b-f8be-42bf9810a9e9
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: Time at which the object was created
+        name: CREATIONTIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 228aaff9-2a43-4612-ac9c-b1552318d387
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a830d732-7c33-bec7-c200d504635e
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Name of User Who Created the Object
+        name: CREATEDBYUSER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7fc96fe6-2a1b-48a7-aa06-38ffb3cd28d0
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9a2886a2-9f1b-ed0f-4ba4e9d6dca1
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Date on which the object was last changed
+        name: LASTCHANGEDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a37e996e-ad44-4610-9edb-709e6858bb1d
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 395ff192-8d90-e3d7-d9d7d130a566
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Name of the user who last changed the object
+        name: LASTCHANGEDBYUSER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1bcbe7f2-ca6c-48d1-ae8a-0e42fe05df93
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: abaf08fb-21c1-bb84-0cd8caaa2e52
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Deletion Flag for 1-Level Deletion Logic
+        name: SINGLELEVELDELETIONLOGICFLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fa12bb62-cd28-4896-896b-09d320a5997d
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 80125802-d412-67ea-32bf904b3dc8
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Origin Indicator
+        name: MEASUREMENTDOCUMENTORIGIN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5d4a1fda-0724-4dfb-9a0f-dc7f9a326d41
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9434d0cc-dce0-6809-5bd37aa375e7
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Inspection Lot Number
+        name: INSPECTIONLOT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 34817004-60b1-4feb-ad74-f944034e010f
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4706f1e1-e87a-25a6-956276786562
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Inspection Characteristic Number
+        name: INSPECTIONCHARACTERISTIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bef68609-85ae-421b-a28b-0eab1ef4f730
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e9fe1568-b003-0d8b-9064f9ab8abb
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(20)
+        defaultValue: ""
+        description: Source Document for Measurement Reading Transfer
+        name: MSMTRDNGSOURCEMEASUREMENTDOC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8dc1f208-76b0-4136-9cee-c2ae1e01b8a1
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 455b9f06-bedc-eb57-e10a77322b8b
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: CIM Resource Object Type for Production Resources/Tools
+        name: PRODNRSCETOOLTYPECODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b680fa55-70c6-4762-bf2e-a3929a33d202
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e3c446e1-c49e-b03b-9eff3de2bf08
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Production Resource/Tool Object ID
+        name: PRODNRSCETOOLINTERNALID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5dec5fb4-02df-461e-a07a-c7f1c4b15b62
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ef9e947a-b77b-1571-e75f8f7316ea
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(22)
+        defaultValue: ""
+        description: Object Number of Order
+        name: MSMTDOCUMENTREFERREDORDER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 07741e2b-ad28-4848-92fc-e1496f73f749
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 38c11c73-ff95-ef67-adf72f4ce053
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: MeasDoc. Created After Associated Task'
+        name: MSMTISDONEAFTERTASKCOMPLTN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4d19fe53-3433-4dd6-93bb-ca0655ac9a38
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7f1b805-e767-5052-50abda3982dd
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Measurement Reading/Total Counter Reading in SI Unit
+        name: MEASUREMENTREADING
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 268a7df2-ebf8-45b1-bd7c-b8e6c54f0466
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f29d6e3b-4a7b-9e86-bd21e95d9381
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Associated Number Field Contains a Value'
+        name: MSMTRDNGISENTERED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0d4cf53b-425b-4dbd-a703-f386824ff8c7
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0d337939-138f-cb09-314758ce569b
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Measurement Reading in Unit of Entry
+        name: MEASUREMENTREADINGINENTRYUOM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b860fd65-31cd-492e-993a-5e03149f678b
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8ad48654-3e8c-9851-0bf62f44afd0
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Associated Number Field Contains a Value'
+        name: MSMTREADINGINENTRYUOMISENTERED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad916539-b347-448f-a30b-a2eae7cedb2a
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1474c682-f042-3678-1122d905615a
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(16777216)
+        defaultValue: ""
+        description: Unit of Measurement for Document Entry
+        name: MEASUREMENTREADINGENTRYUOM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 27a068b4-7197-4227-abbc-eda7b7b02a21
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b2d76a16-d37f-f11d-befae86437cc
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(16777216)
+        defaultValue: ""
+        description: SI unit
+        name: MSMTDOCUMENTSIUNITOFMEASURE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2bbba1d7-629a-4633-a80f-b899aef99a4a
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4f6ff97c-5274-a47e-0b0fc71d9e98
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Counter Reading in SI Unit
+        name: MEASUREMENTCOUNTERREADING
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 06d8fb01-ab2e-40e0-b4a6-76c2202480b4
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3eba3e61-6fc1-d0f0-ae6a74141b6e
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Associated Number Field Contains a Value'
+        name: MSMTCNTRRDNGISENTERED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4c020c75-b11d-49a5-8a26-72f3e8806f26
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 29ad812b-9057-70d8-344c76c6c01c
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Counter Reading Difference in SI Unit
+        name: MSMTCOUNTERREADINGDIFFERENCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c16b46ab-4669-463f-8bfd-918710a446ab
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 02bc9654-7405-1497-ce96a6057150
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Counter Reading Entered as Difference'
+        name: MSMTCNTRREADINGDIFFISENTERED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8509ec4b-d958-41b0-8c69-5c6c9f03bea3
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 31b914c6-4efc-441d-41c7dab4162c
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Counter Replaced'
+        name: MSMTCOUNTERREADINGISREPLACED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d736dcb2-5532-44e5-aab3-3b7cca64f376
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 69ba0371-0b2a-75d4-c9ce32dd1aff
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Total Counter Reading Set Externally'
+        name: TOTALMSMTRDNGISSETEXTERNALLY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6ce1f259-27ee-492e-8e0c-ec31179e5ad0
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cb366abb-0102-9c73-e3e45def3f3d
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Catalog Type - Measurement Reading Valuation Code
+        name: MEASUREMENTDOCUMENTCATALOGTYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 20d56f13-a5c1-44d9-9817-f549e5952988
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b40d283d-66cc-c971-30be8a727523
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Code Group - Measurement Reading Valuation Code
+        name: MEASUREMENTDOCUMENTCODEGROUP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be37410b-7aa6-4c4c-9a93-c3bd4509125f
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4396a3b3-fd7a-e8b1-8685f3679756
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Valuation Code
+        name: MSMTVALUATIONCODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f9e4483-897c-4630-a1bf-15e1ffae0a23
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e91ca9c1-899b-42b3-444f7867f7e0
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: Version Number
+        name: MSMTVALUATIONCODEVERSNMBR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8544c394-6186-47ff-a070-65ce0197ea64
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3fdd46a5-edac-7382-3d2e55336f2a
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Processing Status
+        name: MSMTRDNGSTATUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c566a29a-392f-4eab-9310-b05480f556b8
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 95347252-65a4-cdee-0b6920d62d85
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Reversal Indicator
+        name: MSMTRDNGISREVERSED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 36ee083d-f3b7-41e6-b362-6e9d06610adb
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0f22b7b3-3d26-b69a-e8855c851fcf
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Inspection Result Valuation
+        name: INSPECTIONVALUATIONRESULT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5e7954d5-b8c4-49a3-8da4-962a936b79da
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 70b64c4c-5e86-1975-b351c19d7df1
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicator that Document Refers to Time Interval
+        name: MSMTRDNGISINTERVALDOC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5e465f0b-f5bf-4687-8fec-9380c3e355db
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e4976d91-be25-2105-b13a3b5b7f54
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Date of Interval Start
+        name: MSMTRDNGINTERVALSTARTDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3fa891c0-fa42-45a2-96c1-46f140631a03
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 949bbedb-2037-7057-e01b0395dd87
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: Time of Interval Start
+        name: MSMTRDNGINTERVALSTARTTIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c0954739-b4d7-47e9-90b0-bd0e08819525
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 316fa717-c807-d1d0-9e812196c37c
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config:
+          is_hd: true
+        dataType: varchar(22)
+        defaultValue: ""
+        description: Object Number of Order Operation/Confirmation Counter etc.
+        name: MAINTORDEROPERATIONINTERNALID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f1bcb038-a497-4c89-bc53-55ac14b1065f
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config: {}
+        dataType: varchar(128)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5760c7ec-d52d-412e-bd2a-d00623ac525d
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4094b733-fbc1-463f-a757-6a92244fdcaa
+                stepCounter: 408d7904-c4f7-4b9d-9fce-e09da065f697
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: DSS_DELETE_TIME
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 17199efa-0ea5-ee87-f786-5489ab272162
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: DSS_DELETE_FLAG
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_SAP_ZCMEASDOC: 408d7904-c4f7-4b9d-9fce-e09da065f697
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: LOAD
+            nodeName: LOAD_SAP_ZCMEASDOC
+        join:
+          joinCondition: |-
+            FROM {{ ref('LOAD', 'LOAD_SAP_ZCMEASDOC') }} "LOAD_SAP_ZCMEASDOC"
+        name: ODS_SAP_ZCMEASDOC
+        noLinkRefs: []
+  name: ODS_SAP_ZCMEASDOC
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

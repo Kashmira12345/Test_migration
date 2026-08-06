@@ -1,0 +1,3018 @@
+fileVersion: 1
+id: a4d2fae3-869b-f48b-1d41-1c4b16189750
+name: ODS_SAP_FEBEP
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5658c312-55a2-ca65-b0f5a55616fe
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Client
+        name: MANDT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: df1f1768-0e81-4fef-95e3-b590b77d30e8
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d2cbac9d-6679-dbda-a663a14734f7
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config: {}
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Short Key for Bank Statement (Surrogate Key)
+        isBusinessKey: true
+        name: KUKEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 50d38c5e-2e29-4928-8a8b-13ead4a2fce8
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a09a57ef-f2f5-f1ff-4850a4d113dc
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config: {}
+        dataType: varchar(5)
+        defaultValue: ""
+        description: Memo Record Number (Line Item Number in Bank Statement)
+        isBusinessKey: true
+        name: ESNUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 495a3e6c-5d3e-4c90-bfe1-21f35ea2d9d7
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ff3bf29-4795-9dc4-ab38e0dacb2b
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Line Item Completed
+        name: EPERL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c44c7bef-622b-40f4-a038-8f7d7c444aa2
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a1558c81-27fc-aaf5-d851df7225cd
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Update 1 OK
+        name: VB1OK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ea5526c0-0a07-4401-9151-be618ffcfd29
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7c18cd7d-fcc7-14c9-3e1b57d32b86
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 2nd Update Processed
+        name: VB2BA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c4c5b918-dda2-4f2d-9313-6220f6a3aa4b
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 34154e85-2df0-2c38-c71bb2e34087
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 2nd Update OK
+        name: VB2OK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9b1129f2-85fd-4c92-94d6-9f4f61209549
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84c4ce07-22ac-389a-53d4de5bf59b
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Line Items Were Interpreted
+        name: PIPRE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 93a6f991-183f-4c20-96d5-fd0aed792078
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 55694932-b4ba-df7b-fc15a60e417b
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Bundle Number for Grouping Line Items
+        name: GRPNR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 92b6adcd-9b19-458e-8aeb-642977e7d214
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2e77ce0f-a3f2-9dbd-79c0a15a2935
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Error Status
+        name: ESTAT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3d84b6d8-3376-485a-b2cd-953874cb9098
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56d604ee-9eec-a712-49ca4ad6fee5
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Document Number of an Accounting Document
+        name: BELNR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e4e5af0b-8c21-45e0-87b3-b561e745a722
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8d442f8f-d254-f0da-bc92c62451b3
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Fiscal Year
+        name: GJAHR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1ff28c9b-23aa-4403-97fc-b0d41d1ec154
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0eff112-b0a6-7810-e3837d7074c1
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Posting Date at the Bank
+        name: BVDAT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 17edfe12-d967-48f3-8a5c-8fae9ddc03de
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e43841f4-1b61-8c14-c3e33e479664
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Posting Date in the Document
+        name: BUDAT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9ab39c15-cfa7-4582-a64e-93b407dec646
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8e8c57db-4333-4ff3-f996c7d7d835
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Value Date of the Item to Be Cleared
+        name: VALUT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d25495d6-74f5-4021-9e9c-9e06a8f85459
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: abe0f26c-8807-6bec-86952294e7a6
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: Value Date Time
+        name: BUTIM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9d066fa1-4be1-496a-b092-4ae8e891412f
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f13a7a75-e03b-919d-ac2fb07c4405
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(5)
+        defaultValue: ""
+        description: Account Currency Key
+        name: KWAER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 750e623c-38a7-4361-b21e-c2cd90eaf47d
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5f8ea002-2c24-3dea-b716543b0d8a
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Do Not Use-> Now EPVOZ_EP Signs (C,RC,D,RD)
+        name: VOZEI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 678b0c3c-df06-424e-856a-a8af8c157ae5
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: be28101a-41c6-06e4-c6d1e7da2e13
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Amount in Account Currency
+        name: KWBTR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d17d60c9-2703-44c1-8afa-af724fe29afe
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 40e8c0c0-0f81-4e0d-0e112df2f30c
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Fees in Account Currency
+        name: SPESK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8ac3a701-fdc2-4efd-848e-40f6d3abe0d6
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eba2e05f-d430-402e-021916e62bd3
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(5)
+        defaultValue: ""
+        description: Foreign Currency Key (Not Account Currency)
+        name: FWAER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 23fc1d67-c7c7-47b9-833a-49da53c8b64e
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 855c7388-7d19-9b29-291abba7f82a
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Foreign Currency Amount (Different from Account Currency)
+        name: FWBTR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 113d940f-fa3e-4dbe-9125-22d44ec2e3ba
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fbf442e9-34f5-4cdc-9546eefdd6e4
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Fees in Foreign Currency (Not Same as Account Currency)
+        name: SPESF
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 67d2bd60-517c-4781-ae56-d9db554d468a
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1b711b4d-d265-cb5a-818114837413
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Business Transaction Code
+        name: VORGC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 978289d1-7609-4c3d-accc-0ad7bfd8713b
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bbb6d46e-c0aa-4648-3b908a605c81
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Text Key
+        name: TEXTS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6278ad31-a86a-44c1-9036-734906dcf11e
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0cd0cccf-d423-7307-3b06fe738a28
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(27)
+        defaultValue: ""
+        description: External Business Transaction
+        name: VGEXT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9b656a53-57f7-4e0c-ad39-a061c33c28dd
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c87cac49-46d4-5108-6dd6020d9477
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Transaction
+        name: VGMAN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5bcb4c41-f339-4108-8b14-38d55338deb8
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 17951f10-e079-b434-11392275598f
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Posting Rule
+        name: VGINT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7752fe85-b09f-49f9-9ea5-b81a8bec138d
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c24a4cb5-3bf7-fd46-728e49bf7211
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Posting Rule Determined Using Standard Value
+        name: VGDEF
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a86299f5-d4c0-4589-8ed1-ad33d7fd7b8b
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2a4ba443-5c07-9187-eb220d021598
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Account modification
+        name: KFMOD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 50705159-6d3b-497f-a480-d3554983ce1c
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 76aecac3-e797-e3cc-d92f60d93bf5
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: SAP Bank Transaction
+        name: VGSAP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d317a0a7-6368-4954-bc07-e1290f3b9e3b
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 771a25e4-2be3-6779-8fd20c5cb72d
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Bank Posting Text
+        name: BUTXT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d53ca413-4b71-4ade-812f-3973ead17b91
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30af54d1-9f80-8c62-5a89d0a0033b
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(5)
+        defaultValue: ""
+        description: Number of Collective Items
+        name: ANZSP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a23e1933-335b-49b0-9331-5b6fe1e78e94
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec978e9b-5213-72e3-d0dba98fc56c
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(16)
+        defaultValue: ""
+        description: Reference Document Number
+        name: XBLNR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 38ab5e16-c84e-440b-9ecf-0ade116059bd
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba64e152-4271-3d3c-1eb8b2f061e2
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(18)
+        defaultValue: ""
+        description: Assignment number
+        name: ZUONR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8e314d9b-cf7e-4afe-9c3c-31a325bfdd77
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3b51bef9-fe8e-3674-d299ced1ef22
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Country/Region Key of Partner Bank
+        name: PABKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9c1d219e-e404-4d8e-a48e-fe62bfcc4ded
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 08d33a51-18d2-d9f1-672492a0ff23
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(15)
+        defaultValue: ""
+        description: Bank Number of Partner Bank
+        name: PABLZ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1a84c21a-28c8-42d1-accb-a9c35e7c2f02
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 19c627c8-4b21-d803-36937e9edac2
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(11)
+        defaultValue: ""
+        description: SWIFT Code of Partner Bank
+        name: PASWI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 37b93b76-0137-45b8-b60b-aa331c36c3cd
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 180683a2-8e34-b6c1-7732a57a5f7c
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(18)
+        defaultValue: ""
+        description: Account Number at the Partner Bank
+        name: PAKTO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f241e3f-66cf-4150-9832-c3fe60194b54
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7cb86e81-5a56-f70e-b1c69a4ffefb
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(55)
+        defaultValue: ""
+        description: Business Partner
+        name: PARTN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0f7490ba-7bf0-4f3f-894a-2d924678b461
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c895f665-8008-da0f-bc915b98e66d
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Accounting Clerk
+        name: BUSAB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 14ca3cc3-edcc-49af-8739-935ca5b24e54
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f8a9e69-afb8-d1a2-bce1ca3dbb15
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Cost Center
+        name: KOSTL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9390f1ae-e443-4a93-9648-deb8fbe554cc
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 955ec30f-1432-f665-9a019686f4da
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Business Area
+        name: GSBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0199bf5a-7d96-4b11-881b-b4b0f2ae0592
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2ba1ee2a-9a96-d88d-d2cf13a40d43
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Profit Center
+        name: PRCTR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 765d7197-73f1-4fbe-8a41-49bb41166507
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f8dc6013-f376-8608-33c73c9a9490
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(13)
+        defaultValue: ""
+        description: Contract Number
+        name: VERTN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 43e41d06-0dc6-4969-94f1-fcc358faf539
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 15a25ee4-3f3c-8e19-60dcc3e411fc
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Contract Type
+        name: VERTT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f4a380a9-9e03-400c-b955-188d417c7b8d
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d5ed877-a8c0-d6a4-42f2cc38c376
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Daybook Number
+        name: PNOTA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9d9860a8-c85b-41aa-a49f-281e0a2ff69b
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c32910ea-235d-0998-dceb341e87dd
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(13)
+        defaultValue: ""
+        description: Check number
+        name: CHECT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 00601e10-6b53-4c65-be6d-f1ba3fdda9a4
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9de2e0e0-8731-3884-b1392f027744
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Financial Assets Management Status
+        name: STAVV
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6fd36741-a5eb-431f-be30-c3193cf1c1f5
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a0ed893d-8425-e6d4-d517dfffae2d
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(40)
+        defaultValue: ""
+        description: Financial Assets Management Information Field
+        name: TXTVV
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5566979a-e622-41e5-a903-379a861f625a
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 05e4ff4b-2b7c-f2db-4dfb18f6d1a7
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Debit/Credit Key for Line Items (for Bank Purposes)
+        name: EPVOZ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6dfcc74e-48d0-415b-a0c6-ace1be1664f6
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 18f816c2-dfc4-bebe-88a866cf9317
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: Additional Information 1
+        name: INFO1
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 08601220-3107-4b6c-adbb-03eb2658df62
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eba4e02f-a6fe-5da2-ec44f4f181e2
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: Additional Information 2
+        name: INFO2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5bc79c53-ecff-4934-8b51-490f9e32bc54
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 522adbd6-0270-ae65-6c07e18a3861
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(16)
+        defaultValue: ""
+        description: Payment Advice Number
+        name: AVSID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 04c8c1c6-555c-462e-a0bd-2bd470dff712
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 45384af8-e0e9-3732-60cc347f2425
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Interpretation Algorithm
+        name: INTAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 82e41242-a220-437b-926f-9adc08ea8f66
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 93adab85-139e-fb1d-ba92c935d4c1
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Subledger document number
+        name: NBBLN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f6a99c90-4497-4618-98e0-a8e27af6af5e
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b27a3845-4f97-34c9-938f7e5540ae
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Payment on account document number
+        name: AK1BL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b870c0f9-f00e-4c4e-802a-0cbf3628364a
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6bb7fd23-2a26-3cce-18d3cc7122bf
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Payment on account document number
+        name: AKBLN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb9e18b5-7986-48ff-8687-38a8072f8dba
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1cfb2480-a402-f316-175cdbff7d4f
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Account Number of an Alternative Payer
+        name: KNRZA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 376e205b-926c-4c07-a80c-229cf323a869
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43cf50a9-9a3b-ae6c-e6fa6e71a891
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Payment Advice Account Type
+        name: AVKOA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 949878a7-a19d-4116-9f19-49162602c163
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 233bc5a1-7f50-9cb7-7058e0ce14ab
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Account Number
+        name: AVKON
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dacef881-6d75-472e-88f2-6672aff887d1
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3dba7f2d-ffb4-bd65-7af94b1add80
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Batch Number (Bundle Number)
+        name: BATCH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 489c7103-cd0f-42e9-bda7-a0f677fb356a
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd67cf46-65dd-fe53-afd124fd1366
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Batch Item Number for Lockbox
+        name: ITMNR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 75328fa6-056c-4be2-b82e-5f5a2b7aa52d
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f1d021d3-40ec-86b2-5def948cb3d3
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: number(9,5)
+        defaultValue: ""
+        description: Exchange Rate (Different from Local Currency)
+        name: KURSF
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a2b2e517-1bde-4e1f-b707-16f45e8d96e2
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9de06bf9-0e48-3b61-9d16bbb87872
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Item Text
+        name: SGTXT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1dea5bfc-582d-48a2-8539-da9046e31271
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cd9d286e-860b-4d2e-5e6e45f8105d
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Date of Failed Bills of Exchange in Japan
+        name: JPDAT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e60f5057-1241-45f3-bd67-2c79eb70c0d9
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 39542489-861b-e037-334ab8e4e18d
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Posting Algorithm (Lockbox only)
+        name: POSAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 79135e14-3e73-4391-b7b8-2492a73e0523
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 76d8282d-9645-77eb-8555f3451b2b
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Number of Second Subledger Document
+        name: SDOC2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3dab79bf-e157-4caf-9d3f-21296ec54d54
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: af5ebc76-0509-bd28-59da733b88d9
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(35)
+        defaultValue: ""
+        description: Bank Reference Number
+        name: VGREF
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bdbda85d-e94c-4e1c-b3b2-6f4337b95111
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3daf2c2d-cd55-c462-87b61759421b
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(20)
+        defaultValue: ""
+        description: Reference Key
+        name: XBENR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0285abdb-623f-4e07-bfcd-2f2a0843d800
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: de825215-c15b-2d3c-593ae2ae704f
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(5)
+        defaultValue: ""
+        description: Reference procedure
+        name: XBTYP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 25892e00-c65e-4f8a-b762-07edbf09b49f
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9e49773f-80b2-da8e-486ac7514f07
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Overdue Charges from/to Partners in Account Currency
+        name: ARRSK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9deb553a-f488-4b5a-b967-9ef7d9c3a63b
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30f70600-60bc-890b-4b5c9042ccb7
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Processing Type
+        name: PFORM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3d279898-299b-4fc7-a20b-b1303cb15f23
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a6c1720e-a677-2ea7-6baffaa95605
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: Payment Reference
+        name: KIDNO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0336b9b6-8709-4658-8e33-b87dd5afe1f1
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1325256-67bf-8f7c-fac8369e17d1
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(35)
+        defaultValue: ""
+        description: Customer-to-Customer Reference
+        name: KKREF
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6fa59381-9714-44cf-99a4-afab5c67fe84
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: df0b2c6d-ff33-f937-1575b90db05c
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(35)
+        defaultValue: ""
+        description: Customer-to-Customer Reference
+        name: KKRF2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 048a26fa-f00a-491c-8ef2-5d1a2a5690a1
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b7c4c4e4-95b6-4415-0f2a09c3e29c
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Dunning Block
+        name: MANSP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a6afb552-f678-4930-84a6-d0c37e247703
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c3152f39-0acf-46cf-c7f0aa871151
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(132)
+        defaultValue: ""
+        description: BDC field name
+        name: FNAM1
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b9e57fe3-f23f-4a2a-b3c6-cb3c76ffaa6c
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c163b343-f693-6acf-88958a549a44
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(132)
+        defaultValue: ""
+        description: BDC field value
+        name: FVAL1
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 458a65e7-88f2-4a99-a5de-58ae33454053
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fa818c99-1116-9177-86d2d55f06f8
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: BDC-Account Type
+        name: FKOA1
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7fe8ffb6-7e98-4f19-ae9d-3106512af563
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d131c99c-1281-37b7-21e05a541db3
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(132)
+        defaultValue: ""
+        description: BDC field name
+        name: FNAM2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e4596b72-21e9-404b-ba01-989e3246047d
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2b9f56b-8eb5-bc97-17542c3d372b
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(132)
+        defaultValue: ""
+        description: BDC field value
+        name: FVAL2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7e2d3814-c089-4649-a338-4d7bf89df39d
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: acfcb9e7-5ad7-4b15-ff9051484f9f
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: BDC-Account Type
+        name: FKOA2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 302d032f-e5bf-4bb4-9473-27e88a091e79
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2d5e9b58-6aac-1313-fe1df2dca088
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(132)
+        defaultValue: ""
+        description: BDC field name
+        name: FNAM3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 73f321c4-3801-4966-a17f-9e85707076e2
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4af176e8-476a-1417-efcca6902b90
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(132)
+        defaultValue: ""
+        description: BDC field value
+        name: FVAL3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f50aa9b-aa53-4c11-930b-95f0a9107146
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b05c215a-230e-398f-c34cd306b743
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: BDC-Account Type
+        name: FKOA3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a8e3af38-d0d2-406f-af63-846557bd3a80
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bc4f9ed5-5535-de1a-184c064a3649
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ID number for cash management and forecast
+        name: IDENR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b0f9775c-b403-4031-b341-5fa0226d3569
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 88502f34-1a4e-c33e-bf2c999287a6
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: Application Indicator
+        name: B1APP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d801cf4a-0a3a-4e16-aa15-bbf055f54cf8
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 054ed0fb-5314-3007-35b815bc56d5
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Error Status
+        name: B1ERR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 662acae4-a84d-4f42-8145-3fe0e1237358
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d6043c24-d9d9-8657-d410a1e7f4d5
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: X - Standard (FI) Posting Should Be Suppressed
+        name: B1STD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4fa46d30-a8d0-44b7-b3bc-2ea45702b427
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f8f1be5e-c967-d83f-4efc65703ae8
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(70)
+        defaultValue: ""
+        description: Doc. no. (IDoc number, application document no., etc.)
+        name: B1DOC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 32a2c686-3654-45a8-b541-a35693c55816
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 525e5fb8-fd12-5ed6-15cafc64675d
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(5)
+        defaultValue: ""
+        description: Reference procedure
+        name: B1TYP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 340f926e-17b9-467e-aa23-7bab5fe50922
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4f2a3569-001e-18b5-a30359277a2d
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: Application Indicator
+        name: B2APP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 131758c4-4a9b-47fe-b190-c53cb80b99d4
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2ade3c2c-5b99-a117-58410a167bd1
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Error Status
+        name: B2ERR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8ba43bee-1c68-4997-a685-a6849e9b0c1a
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2102115a-73e8-9680-dca9bb6ac1da
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: X - Standard (FI) Posting Should Be Suppressed
+        name: B2STD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0b7529ec-9981-43a5-a6dc-c5a1898e8e4f
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ac53d610-f47b-eae6-a277d843ef6c
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(70)
+        defaultValue: ""
+        description: Doc. no. (IDoc number, application document no., etc.)
+        name: B2DOC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f7c5bf6c-f60f-45f8-bc59-a6d4ce10181e
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e4c74c46-6561-a6cc-f5de967c33a5
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(5)
+        defaultValue: ""
+        description: Reference procedure
+        name: B2TYP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d528cec5-7505-4062-a77a-710f77c0c3c8
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 956f177b-2eeb-cf41-05a656664bd5
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(34)
+        defaultValue: ""
+        description: 'Partner Bank Account: IBAN'
+        name: PIBAN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4972c1c9-c970-43f7-bc6f-bb955ac30101
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3705ac8c-948e-a522-4941e7632bbd
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Note to Payee Has Been Changed Manually
+        name: N2PCH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4ccafdf9-8207-45bb-af20-efa2b0a56c62
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aef547a1-fd1f-2585-802dbd6fdd95
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Company Code
+        name: SVBUK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dba4cf57-cbf7-442a-aa5f-650f2c7629ba
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 39d7870a-0f94-a7f5-00b16dd00a91
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Payment Advice Account Type
+        name: SVKOA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ed175e12-3cc2-4792-8074-87246f97a123
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f800bca1-0a69-14c1-574ffcce6f2e
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Account Number
+        name: SVKON
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4d2a9622-3ec1-43d3-bb84-2894ba54e23e
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 00e64cfa-20d6-856d-d6365b71028a
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(16)
+        defaultValue: ""
+        description: Payment Advice Number
+        name: SVAVS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ea771c55-90aa-480d-8cbd-351ed1ffa3bd
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0c62a10-1114-78b7-317cd3f8c973
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Process Enhancements for Reinterpretation'
+        name: REPRO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a3bec2f1-d7b0-42be-930a-1c7ba1962b88
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8d8b59a-9f1f-a888-d64f760a0126
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(35)
+        defaultValue: ""
+        description: Transaction ID
+        name: TRNID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b60005b-4c32-4d58-abc0-fbe57bb64571
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8999df04-da35-0693-f74baffe3630
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(22)
+        defaultValue: ""
+        description: Temporary Accounting Document ID
+        name: ACCDOC_TMP_DOC_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7a068f8d-9195-4a26-aa0a-1d634693b521
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7545d81e-3ed1-ba01-110e0943e1e7
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(13)
+        defaultValue: ""
+        description: Check number
+        name: CHECT_ORIG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f64d88b7-1ea8-43d4-98d9-aacc79895a5e
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 092cb1e5-b482-f7b3-7a7ceabf9843
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Type of document which is mentioned in CHECT
+        name: CHECT_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24c8a3aa-76b6-4fa1-9df6-ffcff95f9589
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 88da8064-c8de-a5e0-34d76c9efbc8
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Machine Learning Status of Item
+        name: ML_STATUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fd59a134-38f2-4ef8-86a4-0c85b5ee87d8
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1f75d343-9e79-a3bb-eb6ff7925b04
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Bank Statement Item Posting Rule Status
+        name: PR_STATUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a65af5e-c8b8-404e-a4ed-44a75370974b
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 780b4786-2eb7-b60e-e238196707c1
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Fiscal Year of Document on Account in Banking Book
+        name: AK1BL_GJAHR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2399970d-1e67-4c77-abbc-54bbb6412822
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7c809c02-dfa9-0e2e-9f38740fcea5
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Fiscal Year of Document on Account in Subledger
+        name: AKBLN_GJAHR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 22f7bf36-db30-499d-bde5-6dc35f13b32b
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0eb7fe93-3cab-e008-36a3856d235b
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Fiscal Year of Bank Accounting Document
+        name: BELNR_GJAHR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ca77e656-10ff-4b18-94d1-3f07e7592ce1
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9e611f56-bd2c-b5fa-83693e0bd1aa
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Fiscal Year of Subledger Accounting Document
+        name: NBBLN_GJAHR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3f7ce119-b1bc-4036-ac73-064c81723321
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57288dbc-3355-66bb-050ca6be7557
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Fiscal Year of Second Subledger Accounting Document
+        name: SDOC2_GJAHR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0a7db1f1-e86d-4597-a37e-92f7cd10fc6f
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4d355688-61b5-30b2-49045c233eef
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(16777216)
+        defaultValue: ""
+        description: RAW to STRG DE for data element mapping purposes
+        name: POSTINGRULEUUID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 00efdeaa-eca1-4ebb-a8fc-c490fc492b55
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5c4596e4-8e10-21c0-85ab2c409ad5
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Dummy function in length 1
+        name: DUMMY_FEBEP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 53b0c217-30d6-4d7f-87f1-24ef14e4b4b3
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5c78dd8d-0c7f-cd46-dec40c3bb828
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: BP Identification Category
+        name: BP_ID_CATEGORY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b20dc42-67b5-438a-8c5b-1e645e1a9e85
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d639f253-3709-2b1c-cb10cc0e131f
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(60)
+        defaultValue: ""
+        description: Identification Number
+        name: BP_ID_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9d569708-eb49-4013-a879-2863218223b2
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9520e0b5-be4f-40f4-855198adde34
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(100)
+        defaultValue: ""
+        description: Additional information from file
+        name: ADDITIONAL_INFO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d44b7605-b61f-4960-9dec-bc770af22245
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cb936be8-74a8-2f02-d26ee2607c62
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Subarea for Parallelization in Mass Processing
+        name: KEYPP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5097f5e9-b037-427e-add2-ce8a19e57e13
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d52dbd03-3484-2142-93681dc67199
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Machine Learning Status for Account Determination of Item
+        name: ML_STATUS_ACCDET
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 25f4489c-0f11-49c5-a1c0-5b0ab52223cc
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e3c21d66-574c-b8dd-48ca83294629
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Partial Application Status
+        name: PART_APPL_STATUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 13124b08-247c-436a-815c-6eae0d0c6dc1
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ae15b60-77c9-600e-13b564222984
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Advice assignment repetition status
+        name: ADVCASSIGNMENTREPETITIONSTATUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e6a20226-3c18-4b3c-b0e2-a77ab75f3ea4
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd611953-8023-98e9-dea9c8c42f24
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Start date for repetition of payment advice assgn job
+        name: REPETITIONSTARTDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d2930b30-55c9-4690-af5d-d3c041ba2119
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 01587b4c-aa02-0352-d5d953e7f298
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: The end date for the repetition of payment advice assgn job
+        name: REPETITIONENDDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e34a328b-e9e0-40c4-8ef5-4bbe9e94ec23
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8e2bb293-5527-6a42-03e5fc2b66e6
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: number(15)
+        defaultValue: ""
+        description: The datetime for the last run of AVIS assign repetition
+        name: REPETITIONJOBLASTRUNDATETIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bba93119-ddd8-40e0-a0eb-0778a768a335
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 975734d4-abd8-2a08-368a5d72019d
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Transaction
+        name: TATYP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bd82ca34-aa67-421b-accf-87282df62bdf
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 284d1098-5830-dfe5-162bb9176708
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Status of Changes Regarding Foreign Currency
+        name: X_FWBTR_CHG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 20ab5fe2-646f-4bee-af91-4ba661b4570a
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 81237768-cd26-6162-e122ecf6a54c
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: number(9,5)
+        defaultValue: ""
+        description: 'Exchange Rate: Foreign Currency to Account Currency'
+        name: CURR_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a092325b-8671-4e4d-940a-29c1f63aae46
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 72a6d158-814c-5094-b4d38f276a5a
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Reprocessing Reason Code
+        name: REPROCREASONCODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 69bf79a6-67b9-442b-961b-37145d5ba49f
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5a9992f4-5385-c18c-63721238e216
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Business Partner Reference Key
+        name: XREF1
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 076d0072-0be8-4ee9-9696-ba75127b7146
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f4a17edc-f1de-23fd-9d97f0e9ccea
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config:
+          is_hd: true
+        dataType: varchar(24)
+        defaultValue: ""
+        description: Commitment Item
+        name: FIPEX
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 602a8185-851e-47a9-b59c-63dc3be318f6
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config: {}
+        dataType: varchar(128)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bd0b71ff-d86e-4aaf-85ba-9e09135c05ef
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ae53ed39-8b46-4141-b9fc-5fbfb9288889
+                stepCounter: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: DSS_DELETE_TIME
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: a4d2fae3-869b-f48b-1d41-1c4b16189750
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: DSS_DELETE_FLAG
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_SAP_FEBEP: ec27254c-f33f-4850-9a2e-11f8bcee41f7
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: LOAD
+            nodeName: LOAD_SAP_FEBEP
+        join:
+          joinCondition: |-
+            FROM {{ ref('LOAD', 'LOAD_SAP_FEBEP') }} "LOAD_SAP_FEBEP"
+        name: ODS_SAP_FEBEP
+        noLinkRefs: []
+  name: ODS_SAP_FEBEP
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

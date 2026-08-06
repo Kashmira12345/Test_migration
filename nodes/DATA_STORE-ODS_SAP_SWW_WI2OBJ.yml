@@ -1,0 +1,624 @@
+fileVersion: 1
+id: c339892c-ff62-2746-163c-bef9802e4bd8
+name: ODS_SAP_SWW_WI2OBJ
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ef10c650-bffd-6399-e5e78da2a9b1
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Client
+        name: CLIENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b381cacf-0759-4689-9bb4-31d293a0dfba
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7b1419a1-d33f-8173-2a4710376cd1
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config: {}
+        dataType: varchar(16777216)
+        defaultValue: ""
+        description: RAW to STRG DE for data element mapping purposes
+        isBusinessKey: true
+        name: GUID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2bf2c7a2-f587-4d37-b3de-147315368a1f
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3629bc76-2114-c1fb-dd74bf75facb
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Work item ID
+        name: WI_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d1a8dd25-9554-4ebe-a720-604f40653e2b
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2a2f7cd6-185a-6763-9bc94018e67e
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: 'Workflow: Unique ID of Top-Level Instance (6.1/get)'
+        name: TOP_WI_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91d95f93-6224-4fa9-861b-7a005c8b39b3
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cfbbadc0-c705-0832-d1a2e52230ce
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(14)
+        defaultValue: ""
+        description: Task ID
+        name: WI_RH_TASK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 237ddcc6-54c2-4d26-8525-e7ba4736ab10
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a9b000c-3cf6-2ef4-f134caba09c3
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Release of SAP System
+        name: WI_RELEASE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 580db7f9-7a23-4925-89c7-c60523bf6a97
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 052ea7e6-47a9-876b-8652186a5a59
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: number(21,7)
+        defaultValue: ""
+        description: 'Workflow: Creation Time Stamp'
+        name: CREA_TMP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2093eab-6deb-4388-871a-e86e4b2fc26d
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b8abca81-73de-2a5d-e8adf5affda1
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Category of Objects in Persistent Object References
+        name: CATID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 51712fb4-d81b-4164-81c1-cc0ed821bfbc
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ca24cc5a-0e29-072e-3728a6adeeb0
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(70)
+        defaultValue: ""
+        description: Instance Ident. in BOR Compat. Persistent Object References
+        name: INSTID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 85d5fd11-5793-41b3-90e8-0ed6e537cc0b
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 54b55cee-8af2-0a1a-fb957603fb1c
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(32)
+        defaultValue: ""
+        description: Type of Objects in Persistent Object References
+        name: TYPEID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 06b69736-626f-4e7f-bf0a-8154cdb9e5c2
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3220df1a-f5a6-4542-7bae4714ad75
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: 'Workflow: Type of Work Item<->Object Relation'
+        name: WI_RELTYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1f3006ab-daf8-4e4c-bda2-907071b9e237
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b3461745-1234-6503-b2980e436db5
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Workflow: Relation Deleted'
+        name: REMOVED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8908c679-b90e-48a1-b192-58282146c081
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 35724be3-6ed1-6f1f-6f02d2249263
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: SAP Object Node Type
+        name: SONT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5496a951-270e-435f-9603-ca055d9e0f05
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ad963f49-4f76-7bce-32e431fb1161
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(70)
+        defaultValue: ""
+        description: Workflow SONT partial key 1
+        name: SONT_KEY_PART_1
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c657be9e-c2db-4c93-9940-b6725725d9cd
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a8f29504-e41d-9b1f-e3dcd8a7918f
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(70)
+        defaultValue: ""
+        description: Workflow SONT partial key 2
+        name: SONT_KEY_PART_2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7c4ae07e-ec50-4f6e-adab-fd3479274a7a
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b62199d0-ef85-2ab8-250c1e980738
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(70)
+        defaultValue: ""
+        description: Workflow SONT partial key 3
+        name: SONT_KEY_PART_3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1f6c3bd2-beb7-45a2-b043-c98981810b53
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 949877ca-58c7-e6c3-dc0a7f5c21c7
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(70)
+        defaultValue: ""
+        description: Workflow SONT partial key 4
+        name: SONT_KEY_PART_4
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e6189a43-1612-4e0a-a56b-744162183508
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5902908f-a891-1107-b387bd38a45d
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(70)
+        defaultValue: ""
+        description: Workflow SONT partial key 5
+        name: SONT_KEY_PART_5
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fbc4a96e-697f-436a-a9ea-390a35903112
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 50646504-860c-9f80-ae72f88a0b62
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config:
+          is_hd: true
+        dataType: varchar(70)
+        defaultValue: ""
+        description: Workflow SONT partial key 6
+        name: SONT_KEY_PART_6
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1ee3965c-cfda-4a5d-9faf-34259242a138
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config: {}
+        dataType: varchar(128)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b0e75c93-e493-418e-b241-9efef32ebf73
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d0cee039-bd0b-4d26-b805-c8e42a93670d
+                stepCounter: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: DSS_DELETE_TIME
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: c339892c-ff62-2746-163c-bef9802e4bd8
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: DSS_DELETE_FLAG
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_SAP_SWW_WI2OBJ: 2563d270-bead-46fa-b8e1-dbdde9b74ac2
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: LOAD
+            nodeName: LOAD_SAP_SWW_WI2OBJ
+        join:
+          joinCondition: |-
+            FROM {{ ref('LOAD', 'LOAD_SAP_SWW_WI2OBJ') }} "LOAD_SAP_SWW_WI2OBJ"
+        name: ODS_SAP_SWW_WI2OBJ
+        noLinkRefs: []
+  name: ODS_SAP_SWW_WI2OBJ
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

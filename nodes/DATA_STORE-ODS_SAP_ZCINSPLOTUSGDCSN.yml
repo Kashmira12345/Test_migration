@@ -1,0 +1,645 @@
+fileVersion: 1
+id: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+name: ODS_SAP_ZCINSPLOTUSGDCSN
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5658c312-55a2-ca65-b0f5a55616fe
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Client
+        name: MANDT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 618999ab-37aa-4a3c-83bb-d986bfcbc437
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9434d0cc-dce0-6809-5bd37aa375e7
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config: {}
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Inspection Lot Number
+        isBusinessKey: true
+        name: INSPECTIONLOT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8da68e30-8330-4ab3-8f3a-f2a1a5de3645
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fe77c0a8-138e-903f-e459a92111f2
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Inspection Lot, Partial Lot, Single Unit, Interval
+        name: INSPLOTUSAGEDECISIONLEVEL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1c0ffc1-998e-4747-af60-638cf8d2f438
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 35e2dde6-36ab-fc2b-600c672a5e28
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: Counter for Usage Decision
+        name: INSPLOTUSAGEDECISIONINTERNALID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fc046a72-c66d-4321-ad77-279f78cfb0c7
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2cc06994-2710-330f-41acccf3e7d4
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: number(3)
+        defaultValue: ""
+        description: Quality Score
+        name: INSPECTIONLOTQUALITYSCORE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4e004d3e-6aef-42a1-89ff-5a620c5a362b
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e1cd7ca3-8201-90e5-2c6f99a85419
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Catalog
+        name: INSPLOTUSAGEDECISIONCATALOG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 252cd183-8f5c-49ef-8e2d-306c2b2d86a7
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f44d3150-7ef6-bfb1-92b90c5d0851
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Plant
+        name: SELECTEDCODESETPLANT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e1ae5cf3-a553-466c-9df5-bf959b2c2863
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d252df8a-a36c-d68c-29b98c392a8c
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Selected Set of the Usage Decision
+        name: INSPLOTUSGEDCSNSELECTEDSET
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b0a5d3f-540c-4724-b0e0-a8f46456b96c
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6af1df90-f3b7-3ae3-e802f02c0a78
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Usage Decision Code Group
+        name: INSPLOTUSAGEDECISIONCODEGROUP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bf8e6c20-74dc-4972-b06b-622e987df710
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aaafeff6-95ab-303e-7e3479159c9e
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Usage Decision Code
+        name: INSPECTIONLOTUSAGEDECISIONCODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9d19e207-7a58-48f2-bcfd-6006d0bbc1ec
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1c3d310c-0dd1-b65f-ff72a850749d
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Dynamic Modif. Valuation According to Worst Case Principle
+        name: INSPLOTUSGEDCSNDYNVALUATION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 82ac226a-a47c-4e12-a927-90a0be86f405
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e91b6bc6-9fda-964e-b545d04fed5c
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Code Valuation
+        name: INSPLOTUSAGEDECISIONVALUATION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ec662bee-d686-4eec-9edb-8fca565207db
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 13dba931-5ca2-186f-b8237db97d9c
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Follow-Up Action
+        name: INSPLOTUSGEDCSNFOLLOWUPACTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dba4075a-84d4-429e-b3ac-7ba84757f1b9
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba665dd2-9b4f-3ded-48aa1a611008
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Usage Decision Made By
+        name: INSPECTIONLOTUSAGEDECIDEDBY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c27a5ab5-0fe0-44c5-b4d6-6433fab93030
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 22c5d42c-85de-1474-b84c9fc11f42
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Date When Usage Decision Was Made
+        name: INSPECTIONLOTUSAGEDECIDEDON
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f9d09004-2721-483d-9c5b-8a5a089612d3
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dfd87008-d78c-7a80-f177bddabf9a
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: Time When Usage Decision Was Made
+        name: INSPLOTUSAGEDECISIONTIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cc5cbe02-105f-466d-980c-da5a4968e2db
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cf7ecd49-c11c-c3f0-52134380ff72
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Usage Decision Changed By
+        name: INSPLOTUSAGEDECISIONCHANGEDBY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f6997b1e-f164-4f08-a309-3782823490af
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5c5f010a-dd5d-3ac1-df3174da7ccd
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Date When Usage Decision Was Changed
+        name: INSPLOTUSAGEDECISIONCHANGEDON
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8d9610bf-846a-415d-b558-5c3dc39bc03e
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7bea375a-896c-639d-dd1b00835292
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: Time When Usage Decision Was Changed
+        name: INSPLOTUSGEDCSNCHANGEDTIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f967cfb2-eb30-4176-a899-bbacd6f83311
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f8174a90-1007-fdd2-5810c8920d39
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Usage Decision Has Long Text
+        name: INSPLOTUSGEDCSNHASLONGTEXT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cb251a78-cf96-4bf9-aa4c-cfa4821e80eb
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config: {}
+        dataType: varchar(128)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5102e619-057d-4239-9919-b88a3fd9b4b4
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3d32947e-291e-4403-a293-71474ebc5384
+                stepCounter: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: DSS_DELETE_TIME
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 7dbdfd1b-950c-6453-acf7-5eb105aae271
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: DSS_DELETE_FLAG
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_SAP_ZCINSPLOTUSGDCSN: 7b3bfc94-201a-4527-82f3-18b810fd5ea7
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: LOAD
+            nodeName: LOAD_SAP_ZCINSPLOTUSGDCSN
+        join:
+          joinCondition: |-
+            FROM {{ ref('LOAD', 'LOAD_SAP_ZCINSPLOTUSGDCSN') }} "LOAD_SAP_ZCINSPLOTUSGDCSN"
+        name: ODS_SAP_ZCINSPLOTUSGDCSN
+        noLinkRefs: []
+  name: ODS_SAP_ZCINSPLOTUSGDCSN
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

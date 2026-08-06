@@ -1,0 +1,561 @@
+fileVersion: 1
+id: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+name: ODS_SAP_HRRP_NODE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5658c312-55a2-ca65-b0f5a55616fe
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Client
+        name: MANDT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5fa299c8-5a57-4e46-8843-96ddd64c3d19
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 200043a9-bdb0-27ea-4c330067e122
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: varchar(42)
+        defaultValue: ""
+        description: Hierarchy ID
+        isBusinessKey: true
+        name: HRYID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8d99e227-56fb-46f2-ab3f-f550e7d1da1c
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2ffb6442-3ba0-16fa-eb96710708d1
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: varchar(15)
+        defaultValue: ""
+        description: Hierarchy version
+        isBusinessKey: true
+        name: HRYVER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7b69f8c0-a6c5-456b-837f-dbe49e511d23
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 09914ba7-7af2-a068-cdb9c6370202
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Node class
+        isBusinessKey: true
+        name: NODECLS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb752dae-258e-4dc2-98ed-8adb9713b8c7
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 95686c2e-9b51-7f3c-47d5984a9f6f
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Hierarchy node
+        isBusinessKey: true
+        name: HRYNODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8d9c976b-ef06-4979-b43f-0847c6c55e63
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 93b32753-42f5-80c1-997fde3f875f
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Hierarchy parent node
+        isBusinessKey: true
+        name: PARNODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bfbf70bd-8e1f-4fbd-b124-944d2c795d12
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 59f4c555-7441-86de-d64562b9a903
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: Valid To Date
+        isBusinessKey: true
+        name: HRYVALTO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a3ee2759-1a71-4219-a9dd-21de88df1c1d
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f806fc1e-460c-1fe0-b37123892279
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Valid-From Date
+        name: HRYVALFROM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 60d3b624-7250-463b-b14e-0accab1775d6
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 61e8e10f-92a3-bf6c-e638fc6ad814
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Balance indicator
+        name: BALIND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b202c8d-2174-4772-9307-b953fff9084d
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 254f1722-bf04-9f8f-316bae7c6f3e
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Hierarchy node type
+        name: NODETYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1425e71a-0b3c-4e04-8f67-c47b2aa78f2e
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cf6bebf3-0642-3f18-b0da929192af
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config:
+          is_hd: true
+        dataType: varchar(40)
+        defaultValue: ""
+        description: Node value
+        name: NODEVALUE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e89e790b-dc28-4fac-88e2-023a80974b53
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2d4b4ab9-2b04-2216-c6a0517cc6bc
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: Hierarchy Sequence Number
+        name: HRYSEQNBR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c4134193-a389-4c96-9f43-6ea46eda8d78
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8192cb22-476b-fe86-7abba7c6061f
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config:
+          is_hd: true
+        dataType: varchar(6)
+        defaultValue: ""
+        description: Hierarchy Level
+        name: HRYLEVEL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b7954466-8d73-4060-882d-68cdad1cf6b8
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 55ce4fef-7dcd-aeeb-0ca7ce4bf533
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Hierarchy Type
+        name: HRYTYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fec58f18-d7b5-49f3-a183-4c46d8a534bc
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0925f93c-57c3-d0be-1e403b482928
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config:
+          is_hd: true
+        dataType: varchar(40)
+        defaultValue: ""
+        description: Leaf value
+        name: LEAFVALUE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9b097e6c-4997-4429-8ee0-a814fe233765
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d5dedf71-f943-9326-1540b0178a7f
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config:
+          is_hd: true
+        dataType: varchar(40)
+        defaultValue: ""
+        description: Node ID
+        name: UHNODEID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 74382656-2cd3-4d2d-aaf0-35546d033779
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: varchar(128)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a3591408-23ab-460a-828a-4037eee792c5
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dbffe505-2492-431b-8c7c-3988a2f12c52
+                stepCounter: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: DSS_DELETE_TIME
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: DSS_DELETE_FLAG
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_SAP_HRRP_NODE: 04c76bc4-5d25-48ff-a860-e1195c5efac2
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: LOAD
+            nodeName: LOAD_SAP_HRRP_NODE
+        join:
+          joinCondition: |-
+            FROM {{ ref('LOAD', 'LOAD_SAP_HRRP_NODE') }} "LOAD_SAP_HRRP_NODE"
+        name: ODS_SAP_HRRP_NODE
+        noLinkRefs: []
+  name: ODS_SAP_HRRP_NODE
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

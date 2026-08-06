@@ -1,0 +1,1569 @@
+fileVersion: 1
+id: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+name: ODS_SAP_MHIS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5658c312-55a2-ca65-b0f5a55616fe
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Client
+        name: MANDT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 63b6598d-ee62-4b95-b7df-d105e88f6f8c
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 87c9768e-f225-a542-8ef84bd34d15
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config: {}
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Maintenance Plan
+        isBusinessKey: true
+        name: WARPL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 34ee8098-0be3-4453-b4b0-d8d7a80ecacf
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 13daa794-dcd6-5a0d-9a6262873d4c
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: Maintenance Plan Call Number
+        isBusinessKey: true
+        name: ABNUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3aa96fc1-de22-40c3-9b01-480bea5533b2
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d4fb3290-3654-69dc-0668f0f8ad7a
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config: {}
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Maintenance Package Number
+        isBusinessKey: true
+        name: ZAEHL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9c180ff3-e5ad-4bc7-9132-05c72749f45c
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2237d8f-0c15-2ca9-ee0d598ef5ad
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Next planned date
+        name: NPLDA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8e3dbdb-7206-4081-b23a-96d3f20f6dff
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 81d1add9-8dd3-3584-ec37e6bb0221
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Scheduling type
+        name: TERMA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8220aa22-dea4-4337-b1b4-88ec317ddd00
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb5f08b5-c11f-8ea5-e437ecb2eb5d
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Start date
+        name: STADT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1a2c714c-7261-47c0-a7d7-1f3964ed4997
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 71f67ae7-a181-26c8-2a0b2ae8edd5
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Date of last completion in maintenance plan
+        name: LRMDT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 13c5ca9a-10ef-4024-b674-92ec809c0e59
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d9b55989-c836-5a50-a1875142b6fe
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Offset in current cycle
+        name: OFFZE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a36bfe83-ef97-42cb-9215-d7bbe46a4f8a
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 52f3cc40-972c-17d9-f1acaf7382ff
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Previous offset
+        name: OFFZO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9b10c0bb-09e5-428e-82ec-794365c15b71
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 39929b7d-6ca0-4118-66dd2d1ad2e9
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Date of the call
+        name: ABRUD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 49429855-7ec4-4aca-bd89-75cd66f55665
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5a0963a5-e066-61d2-5e521a9fbe61
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Name of the person who made the call
+        name: ABRNA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1a84dd84-6186-44fe-a5b3-21f2dc3a2af4
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c500177d-a3fa-0ded-77ddeb7c7c71
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: number(3,2)
+        defaultValue: ""
+        description: Cycle modification factor
+        name: SFAKT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 795dc309-ccab-40e3-824b-27acf6e00b06
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 480e5a50-327c-d6f4-101e22a7aa75
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Scheduling indicator
+        name: TERMK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6f0f9324-182c-4c7b-b7ca-9b6f08720d1f
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ede7a320-5bf1-84ae-d7fb221881cd
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Shift Factor for Late Completion
+        name: VERSCH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7acc4b1e-dcc7-40ee-b8db-6d0d7e56abda
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f52369c4-e05c-de4f-ee4fd96a6fbd
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Tolerance for Late Completion (%)
+        name: TOLER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 79985dfd-aff9-4ece-9d2a-96e288f645b0
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5371b6fb-77eb-9d8b-1b6473877a39
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicator for negative completion confirmation
+        name: KNNRM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2e48cd16-728a-4670-b2ec-e006f4c49c09
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 01213470-6b0e-228d-20add34ab096
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: planned counter reading set manually'
+        name: KNPRM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 46bba925-2e38-47fd-98f2-b9dddc7377b9
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fa87631a-7c53-5432-de31e7103497
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Last planned date
+        name: NPLDO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6623118e-70e1-43cb-8c2a-57b4742aa18b
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7d73086f-5916-d035-71dac385c6b2
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Completion for Predecessor
+        name: NPLDZ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ce18000c-cb03-4df9-8d51-9cfecdc45c75
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 62cd8729-e84e-d9ef-6265de5fe9ec
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Manual call date
+        name: MANDA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e9c13c3e-d127-4e2c-8652-34edbac118c3
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7a850755-1451-f834-c4716335dc04
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Estimated annual performance
+        name: OFFLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1a79189b-c279-4dd8-a7fd-554e6f9a0125
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2e93333a-07db-2cb1-6faae94fcb2f
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Shift factor
+        name: OFFLO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 11002160-249a-434e-a80d-82e2802f345d
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8a87d1a7-8fd3-d7dd-331f1b8079df
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Reserved
+        name: KNAUT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aece41c3-bee1-46d3-add8-d41551c46308
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d41480a0-b8b1-f46a-d29ba355e917
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicator for leading cycle (multi-counter plan) -> internal
+        name: KNASR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0c7a262f-a976-46ce-b015-84b2958aab8f
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0d4c02d-0ce8-0ca8-d0fabbf96f88
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Scheduling status: planned date called'
+        name: TSABR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ee41e77e-b4a5-45cb-a443-d57972020b63
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c84daae9-b98f-7498-51e65c248b52
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Scheduling status: call outstanding'
+        name: TSVBT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ae231560-c800-4aa8-81d2-4c1199bbfa5f
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c045d93a-589e-5b14-7e6c1bc2b5a8
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Scheduling status: call horizon not reached'
+        name: TSENQ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d991667f-1fef-4c88-b3ec-9a9ad2ab67fd
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1db73c51-c6b6-968d-3833d05a5392
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Scheduling status: stopped manually'
+        name: TSENM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: de618955-c319-4064-bdb6-d7c4af5b22d5
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 81dc03a6-bd7f-db5f-d5414cedb556
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Call date
+        name: HORDA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b6465f9b-5e4a-4949-8846-92feb18e96f8
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9d1a2d08-91a9-1819-03b7a62e232b
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Scheduling status
+        name: TSTAT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 086cf714-cd9d-4c8f-831d-e5bea03a3263
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0c757b12-4b39-c0ed-8e894818e40d
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Fixed or skipped by
+        name: FIXDU
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ef376754-cfff-4290-afc9-136105068049
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a62c320-f671-570f-8fdcccfdff3d
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Fixed/skipped on
+        name: FIXDA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5200b727-7f34-493c-b3df-424ee1cebfb9
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4e458d8e-dd2a-1df9-c078f8e4906e
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: number(38)
+        defaultValue: ""
+        description: Previous maintenance plan call
+        name: VGNUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9ee3a76f-b670-4490-8d16-4de74d3b6c57
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dbe1336f-0c74-effc-7ae296239974
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Maintenance package cycle/offset
+        name: ZYKZT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d8871653-545b-4a8e-b851-44e3fe36fc3a
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 18b7b14c-ea91-98fe-00bc1bcb793c
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Total counter reading on call date
+        name: ZYKLS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 272549a9-f464-4487-8767-3b6b8e345421
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2df5c895-50e9-3907-8521211911b0
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Lead Float in Days
+        name: PUFFP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4d59259a-2cd4-4528-ba37-677da911a855
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9c6beb40-1993-8ce4-7abb0aaad090
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Follow-up float in days
+        name: PUFFN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dca5ef32-7bd5-4fbd-a7e8-15a4d70e072c
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d2a647f0-a45b-d82c-0eb9efcc0818
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Start counter reading
+        name: SZAEH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 36a8f436-9be9-4fc5-984d-ce93459e66d7
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7634919c-3f63-0275-4044b8516c5b
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Counter reading confirmation
+        name: RZAEH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 10df3a1a-7560-44cd-a2bb-a28615e85ca6
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 016a2979-c519-e754-4608efcd999c
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Next planned counter reading
+        name: NZAEH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 71851d05-3415-404a-81a5-b979b924fef0
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4495aa25-a3f2-a461-3d144b54dd9c
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Scheduling determined by user
+        name: USERMOD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 80aee353-7794-4ec4-bfbb-19563036f0a2
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e5dd6f5b-1b67-b10e-93e969cc779e
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(22)
+        defaultValue: ""
+        description: Demand Id
+        name: DEMAND_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b30e6eb2-fa2b-4c33-93cd-8ebd28677571
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 639e521f-01eb-6d13-ddcc6c568ffa
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: APO Demand Number
+        name: DEMAND_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 600a663b-8087-47fd-a872-5af8ba77ca85
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 039831de-cf0f-894c-b79e1eec724e
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Revision for Plant Maintenance and Customer Service
+        name: REVISION_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 65edf3e9-da49-4f1b-9995-1e755b3d4ee1
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 62e8cd06-6f2a-33ff-a4c0c32f7250
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Maintenance Planning Plant
+        name: REV_PLANT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 016cad0e-465c-46a7-b822-50dfcc2a38c8
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 796d5b50-28eb-a1ee-c0bdcfd5532a
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Measuring Point
+        name: ADPOINT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7645c68e-46c5-4de9-9e0c-1f5918d63f03
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5763f601-ecf1-c171-a28a2f1a0f9a
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicator for OR or AND link
+        name: ADANDOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1440cac8-f1cc-495e-a6ac-6880e2cf5797
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 53a57e5d-e68e-0fd4-b65e60c753c2
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Scheduling to reoccur when lead float reached
+        name: ADTGOON
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 06784bae-ec36-4b1e-9f1e-87a097084163
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 438ad76b-b59d-66fd-8ac68b48c940
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Maintenance package cycle/offset
+        name: ADCYCLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a331bcbc-8283-4dcc-a738-986ded0b24de
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eedb40fc-3f6e-f27d-0bd900c7b645
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(16777216)
+        defaultValue: ""
+        description: Unit for the performance of maintenance tasks
+        name: ADUNIT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 675d620a-ce84-4ad4-9365-0780e907dc1e
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee2a8b0b-9cf1-757a-c3a4d69208a4
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Start offset of a time-based maintenance package
+        name: ADOFFSET
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 10bb1c11-6e37-4076-82f3-bee681209f12
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4abd6c7b-7f7e-5e47-e45e632ef050
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: float(38)
+        defaultValue: ""
+        description: Next planned counter reading
+        name: ADNZAEH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 777a2fa6-2da3-491c-9a38-5cde5732d7fb
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 12a89704-1db2-18e7-e10173dc1c4b
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: Start Time for Scheduling
+        name: ADSTTIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0412d7e2-ea98-4c57-8b21-18333256bc1b
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9633436a-cb1e-620d-acc9074ddea3
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: Time of Last Completion in Maintenance Plan
+        name: ADCONFTIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: de57f61e-9d0f-4ed8-a2a4-327c2488e6ee
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd6c7779-bcde-74cd-5aa5c9353d12
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Cycle Set Sequence
+        name: CYCLESEQIND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: af14a4fb-1afb-4d9f-bf0e-65e74f5b1b84
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1d467b54-9652-cf68-0ab288eb5cf8
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Maintenance Plan Start Date Set Externally
+        name: ADEXTSTARTDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aa6c274b-f10f-47b9-b28f-813a48865100
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d7eef4ad-a8df-2a1a-b950fd9f5e08
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: Maintenance Plan Start Time Set Externally
+        name: ADEXTSTARTTIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 86aa97e1-2be7-4cb2-945a-e46baf7e8845
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b4fa2472-07d3-d352-02aa014bd886
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: System Date for Maintenance Plan Start
+        name: ADSYSTARTDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8c6abb27-d40d-4e45-89ad-c141c07ed6c8
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2aea31c5-18d8-7ad7-a9fe951c5616
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: System Time for Maintenance Plan Start
+        name: ADSYSTARTTIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8181d08f-d66b-4f1b-802e-8157be994b81
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1f1b74bd-6b87-2839-d123663cd478
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(22)
+        defaultValue: ""
+        description: Object number
+        name: ADOBJECT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b0f0691a-9080-4048-b21d-58609ea1e773
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ce954de-9932-96e1-2ff65938bcb4
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Repeat Factor for Cycle Set Sequence
+        name: SETREPEATIND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fd9f82aa-65e2-4c09-9d2d-77f817f05087
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d5bc595a-609e-185e-63b67ae64441
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Maintenance Plan Was Created/Changed by API
+        name: IND_MPLA_API
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 82f9b390-15f1-45be-bec9-1717ffe2fbba
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1796c737-f462-78fb-0af212a443bc
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: Start Time for Scheduling
+        name: DUE_DATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 71e54594-a23b-47f2-a173-977ba19417eb
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config: {}
+        dataType: varchar(42)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a4ffaa8d-9482-4b77-9289-d8d924d5c1d7
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bd9cfd5d-cd38-4ed4-8624-14491a72ba59
+                stepCounter: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: DSS_DELETE_FLAG
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 0a0bbe51-ef9b-7258-1b2c-650084673edf
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: DSS_DELETE_TIME
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_SAP_MHIS: b4c1d125-cd99-4dfb-812e-1fcda82fb429
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: LOAD
+            nodeName: LOAD_SAP_MHIS
+        join:
+          joinCondition: |-
+            FROM {{ ref('LOAD', 'LOAD_SAP_MHIS') }} "LOAD_SAP_MHIS"
+        name: ODS_SAP_MHIS
+        noLinkRefs: []
+  name: ODS_SAP_MHIS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

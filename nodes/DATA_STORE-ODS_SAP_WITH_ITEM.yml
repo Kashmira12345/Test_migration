@@ -1,0 +1,2115 @@
+fileVersion: 1
+id: 8407e815-5eb4-673f-d5db-934146dbeff2
+name: ODS_SAP_WITH_ITEM
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5658c312-55a2-ca65-b0f5a55616fe
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Client
+        name: MANDT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 456ffccd-fa40-454f-abdb-1d00177ed473
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ca1ae24a-0133-b2c4-942d8fc15fbf
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Company Code
+        isBusinessKey: true
+        name: BUKRS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8ee494f8-c375-434f-beef-f255372ee276
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56d604ee-9eec-a712-49ca4ad6fee5
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Document Number of an Accounting Document
+        isBusinessKey: true
+        name: BELNR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 00aa40a6-e0a2-4c92-b260-c3dd31feafb6
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8d442f8f-d254-f0da-bc92c62451b3
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Fiscal Year
+        isBusinessKey: true
+        name: GJAHR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e3c214a-f9db-43cf-a54d-784258b596e9
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 521daada-f027-2dfb-eb37de7feb53
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Number of Line Item Within Accounting Document
+        isBusinessKey: true
+        name: BUZEI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dc3494f5-0a4c-4491-b60b-aed73b2d10a7
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9243bd47-acce-c731-07345f8a5916
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Indicator for Withholding Tax Type
+        isBusinessKey: true
+        name: WITHT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f613367-1467-4258-8e87-05836dae6230
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a67bd23a-4469-22fb-15ee4480932f
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Withholding Tax Code
+        name: WT_WITHCD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4d00bf50-0453-42ac-b819-a9c162a63dde
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ff5b152f-f28b-1f77-9732d70167b9
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Base Amount (Local Currency)
+        name: WT_QSSHH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8bbe69ad-fb25-4e8e-ac89-6174009be816
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: efb32fc7-1c4f-0385-1f1d5ff4acd7
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Base Amount in Document Currency
+        name: WT_QSSHB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a820f831-228d-4c71-881a-1c66d4b60190
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fd5d8bf7-2541-b890-7e5f6ad94164
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Base Amount in Second Local Currency
+        name: WT_QSSH2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3118852b-717b-4b5f-8672-cde6103757c0
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 209ea6b4-4091-dac3-1ddf9cafe996
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Base Amount in Third Local Currency
+        name: WT_QSSH3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 84544f86-bc99-4cfa-b124-d14d446e2d75
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 88770521-0eaf-81e7-cea9d20c6c86
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Withholding Tax Base Amount Entered Manually'
+        name: WT_BASMAN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dab95c90-7905-4b00-8f8d-0edc43334cdf
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 12d4f372-34e3-5c80-113d904183f9
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Base Amount in Local Crcy for Calculation
+        name: WT_QSSHHC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 98993c10-6535-4750-8390-586532a4befb
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3575258a-d8f0-a9ea-1bf920e7c3bb
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Base Amount in Document Crcy for Calculation
+        name: WT_QSSHBC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b2b29317-6cec-40fb-8e88-3eb2633c9ab5
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 62f25f20-6231-089c-50540281af75
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: WTax Base Amount in 2nd Local Currency for Calculation
+        name: WT_QSSH2C
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3d9e60a4-237a-45e7-9aec-926a5d44595b
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b303e8ea-052e-7feb-5fc290e659e2
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Base Amount in 3rd Local Currency for Calc.
+        name: WT_QSSH3C
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3f863208-9a3d-43bb-a72e-478aea3a5a10
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ef746cd0-f110-2d7b-2a21c9fb024c
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Amount in Local Currency
+        name: WT_QBSHH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2f38fe75-5050-4459-aa2b-b76ef48def18
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b927526-df28-d3e7-bf09b5aeb7f5
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Amount in Document Currency
+        name: WT_QBSHB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: abb0e3b1-5178-465b-a15d-8057f8075397
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 373913d4-9670-9b08-90e116e38f8b
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Amount in Second Local Currency
+        name: WT_QBSH2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1d9d042c-183d-41d8-9deb-ed257ed339cc
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: afeae5f8-6a97-46f6-ccc0fe598ba4
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Amount in Third Local Currency
+        name: WT_QBSH3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 682abb04-417b-4a31-b233-cdb52788db51
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 952c19e8-a1a4-4447-4031a4583960
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Withholding Tax Amount Entered Manually'
+        name: WT_AMNMAN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 464d3a42-1830-4392-a1d1-d1f84cd7b18b
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 14a25434-9b6b-a6bd-d90baa7d375d
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Auxiliary Amount in Local Crcy for Reversal
+        name: WT_QBSHHA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 05838f01-01a0-4031-8627-93ff741bfc0f
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c0bb6da6-07fa-a994-d47fc1a56672
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Auxiliary Amt 2 in Local Crcy for Reversal
+        name: WT_QBSHHB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f61318fd-75b9-4bb3-a0fc-63d3b8d5a443
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b8e6b277-5513-bc87-7f365846483f
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Line Item Status
+        name: WT_STAT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0f23092d-dbed-4d86-858d-e7afbd51fcd7
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dc887ff2-9ae9-55d9-fb7a88ee4230
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Amount Exempt from Withholding Tax in Local Currency
+        name: WT_QSFHH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 62cc414e-6532-4c90-bf8d-267b82f28eb4
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2b29ff77-e03c-29fd-1307d5da2a05
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Amount Exempt from Withholding Tax in Document Currency
+        name: WT_QSFHB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6684ea60-7810-486c-8c46-ea5a01cfa2de
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56ab2b6b-990c-a479-a96d7b5bc87b
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Amount Exempt from Withholding Tax in 2nd Local Currency
+        name: WT_QSFH2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3880f570-f2c9-4e99-82db-a65c2b8e6937
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d77e9eb5-02b5-b07f-c57a2278155a
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Amount Exempt from Withholding Tax in 3rd Local Currency
+        name: WT_QSFH3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 149c589d-1571-4d2a-8098-ee20cca55b55
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4a62c5c-8991-c4dc-b5721874a40a
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(25)
+        defaultValue: ""
+        description: Exemption Certificate Number
+        name: WT_WTEXMN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 892fb51a-77b3-4dc6-87a4-6a8c378f5f7c
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2d32d3d-1af8-8e62-f710c0cb2484
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Account type
+        name: KOART
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c8d7174b-56c1-4477-9509-51598f47d1ff
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3c6668ed-b3b7-81ad-e485538a5136
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Vendor/Customer Account Number
+        name: WT_ACCO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f02fef32-1b4f-4148-aa61-ad34c012245d
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 22729657-0f21-397f-4a680443e277
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: General Ledger Account
+        name: HKONT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ffd637fe-7dcf-4650-85d4-289985cdbd61
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56e675ee-8bed-1cd1-5d95f596d994
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: General Ledger Account
+        name: HKONT_OPP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3907f2db-2886-4690-8c95-68732bdf1998
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0478880-2d36-a11a-20df42eadc62
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Type of Recipient
+        name: QSREC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2cd47ce-1e42-4583-a9f4-f367075cfb6e
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 42df54ba-3a95-8f70-1bb97d503a91
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Document Number of the Clearing Document
+        name: AUGBL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6e791845-ed4d-4ccc-a918-e48eb3987907
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eea6ba53-1d2e-ccdc-174bbe182288
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Clearing Date
+        name: AUGDT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8704b898-06a1-45fa-8678-9042cab55f6e
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b59eb0fc-69f3-94b8-d21f4494fb41
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(5,2)
+        defaultValue: ""
+        description: Exemption Rate
+        name: WT_QSZRT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fc82a19c-21d0-4f60-9cb7-828b73b7332b
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f6c7df6-a7a4-147b-186e5959835e
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Amount Already Withheld in Local Currency
+        name: WT_WDMBTR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 61e1c106-908f-473f-8e9a-eb88d737e7f5
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5a734a8c-3ce2-dc80-909560c769ed
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Amount Already Withheld in Document Currency
+        name: WT_WWRBTR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0b5c7b33-f003-42ce-959e-4e2e04c03ca9
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b6d02ff9-1c84-e2b5-37ab8266a007
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding tax amount already withheld in 2nd local curr.
+        name: WT_WDMBT2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f93dd3e4-c618-4a19-80ee-1e5a0b7a6b13
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 053085ff-339b-36f2-a3713b745538
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Amt Already Withheld in 3rd Local Currency
+        name: WT_WDMBT3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8d7b2d84-00a3-4305-80d1-1e54961794da
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 031512cc-0e2b-b340-292aad61682e
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(15)
+        defaultValue: ""
+        description: Text (15 characters)
+        name: TEXT15
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8a56097e-b4f4-4770-b413-00eaf348701f
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 19dd80c5-4fd1-d655-2abe76af138f
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Amount Entered Manually in Local Currency
+        name: WT_QBUIHH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9a53c4d7-dbcf-42dd-80d8-9af6318c64cc
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9b5059c3-0163-bae2-8a210e2ff942
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Amount Entered Manually in Document Currency
+        name: WT_QBUIHB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 50cd801f-48f6-40c0-9964-9551f8f9e3ca
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 215454b5-d25f-a506-ad42caacda53
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Amount Entered Manually in 2nd Local Curr.
+        name: WT_QBUIH2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 79cf334c-372a-40a4-9a2c-d01f003da656
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 45f929c3-6b86-a7bd-aa1e71a93bae
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Amount Entered Manually in 3rd Local Curr.
+        name: WT_QBUIH3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e4c31392-7d0a-4bef-85a5-e261e24d39ae
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c374803c-0425-4c6e-dbf4cf217aac
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated Withholding Tax Base Amount in Local Currency
+        name: WT_ACCBS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6cb3a208-28c1-458a-b3ce-38951a6d41ef
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 371b27ce-4d58-6268-180c7e49a6ac
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated Withholding Tax Amount in Local Currency
+        name: WT_ACCWT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9251cdef-f76f-4c49-bbad-8fdf1d98faa1
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0d63441a-4760-4925-9cb6c6f274de
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated Auxiliary WTax Amount in Local Currency
+        name: WT_ACCWTA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f32e547b-4bcc-42e7-8f99-7687dd40a5f2
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7624f831-2c14-0cf8-b4d364017e24
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated Auxiliary WTax Amount in Local Currency
+        name: WT_ACCWTHA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 271ab13f-0646-45f6-b9fe-8914775da75f
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3094ff9d-3951-a0e6-6187f21e25b0
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated Withholding Tax Base Amount in Local Currency
+        name: WT_ACCBS1
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 796dc965-5ea9-4219-b208-39adb332d995
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9c8d05cf-e9f3-b1aa-00d86b4286c0
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated Withholding Tax Amount in Local Currency
+        name: WT_ACCWT1
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d60dfec6-976c-410e-b3e3-8fff7f149185
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 767c5190-9535-fc5f-509398393c32
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated Auxiliary WTax Amount in Local Currency
+        name: WT_ACCWTA1
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 06f784e8-22cc-407f-a289-df397208d154
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b087c189-56f5-5c43-a77f4f3ba96a
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated Auxiliary WTax Amount in Local Currency
+        name: WT_ACCWTHA1
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 02d1d17e-803c-471e-b7d3-f260df149d21
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 529caae0-4cb0-1bdd-33464151e253
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated Withholding Tax Base Amount in Local Currency
+        name: WT_ACCBS2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c3a999a4-373c-4de7-890a-07cb38460b57
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9ed5b5ae-a9c8-6f30-88a919353af0
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated Withholding Tax Amount in Local Currency
+        name: WT_ACCWT2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 58822f5f-55ec-4ff3-b572-ca513a57766c
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ad392003-77d7-5187-305304e5d44e
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated Auxiliary WTax Amount in Local Currency
+        name: WT_ACCWTA2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e5807213-3a92-48a3-94bd-5b64a2350b2c
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e71a6064-263b-1835-6d879e0463fb
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated Auxiliary WTax Amount in Local Currency
+        name: WT_ACCWTHA2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f455d6ae-a4f4-4c1c-8921-d9f2105176f7
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 910ec4de-d76f-3fc2-0f19b9a9cebf
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(7,4)
+        defaultValue: ""
+        description: Withholding Tax Rate
+        name: QSATZ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 060a4f67-bebe-4d9b-8f90-68dfe5f22657
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7916ef8e-d67c-a639-f112c31b0cb9
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Entry Posted as Self-Withholding Tax'
+        name: WT_SLFWTPD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 596bb915-ac1c-48ab-9343-db17b2e5e70a
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8bfb6224-5974-c8dd-b4a99db26915
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Entry Posted as "Grossing Up"'
+        name: WT_GRUWTPD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 37e12128-fe48-44b5-a144-1a9badae0943
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 027e159c-e40e-4e86-f910c2ccc3d3
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Entry Posted as Debit/Credit'
+        name: WT_OPOWTPD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ba79e019-ee2b-4ebb-a3e4-0d5660515c28
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa22b219-5df5-c031-f10a6edc9126
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Withholding Tax Amount Entered Manually with Payt'
+        name: WT_GIVENPD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d9af0881-116f-46d8-a8b9-6b8a5a4965e7
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7af43463-7b46-5c80-32c9cbf78f73
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Withholding Tax Certificate Number
+        name: CTNUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f0bca9f7-cb12-45c3-be42-b66f083a05ba
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83cc30aa-cf9d-c704-6fd55b42c732
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Entry Belongs to a Down Payment Clearing Item'
+        name: WT_DOWNC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aba75188-20ba-45a7-b5b9-20ba733b0a35
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 06720433-1902-8166-482bcdeb0636
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Indicator: Entry Belongs to a Residual Item'
+        name: WT_RESITEM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cae152a5-7de8-4d24-aca5-e439d2f33a6b
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 66ea6e35-6de6-dadc-46a5f48fc1af
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Issue or Print Date of Withholding Tax Certificate
+        name: CTISSUEDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 044a2c03-7e3e-4ac3-a4f3-2e1b6e11836b
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 858090ed-0fbf-60cf-9be9e013cc45
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding tax base amount in local currency for  reporting
+        name: J_1AF_WT_REPBS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2145c511-5766-4b82-9f54-188d11ac62c2
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 017c193e-35cb-69b7-83269ae32879
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Withholding Tax Already Calculated/Determined?
+        name: WT_CALC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4ff0f55b-3776-49f6-9e39-c8616c09a003
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 69b95c66-0414-0f57-1edd788909cf
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Logical System in Which the Withholding Tax Was Calculated
+        name: WT_LOGSYS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e09bfc73-4848-4e2c-a53b-2dc189a908cf
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 89626566-b7a8-86f9-e6c5b1a85087
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Data Filter Value for Data Aging
+        name: _DATAAGING
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2c3bfba6-24b9-4697-ab65-33db910b11a2
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e1b956fc-cf3d-7df4-cf72eacc1554
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Voluntary Pension Contribution
+        name: FIWTCO_PEN_VOL_DEDO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b0c20830-3798-4fc0-93fe-faf35e3b3c75
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d9c5e18c-5ac0-a08c-fafa36f78541
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Volunteers' Pension Contribution
+        name: VOL_CONTRIBUTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5162d1c1-d68b-49c0-ba37-900ca7244865
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 42d7f75a-7060-3609-db0290b1b2a9
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Maximum Deduction
+        name: CO_MAX_DEDUCTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6cebbbb5-09d7-4247-9688-058283006353
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a2d3ae17-8553-e3e8-cf2646413647
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(13,2)
+        defaultValue: ""
+        description: Mandatory Contributions Base
+        name: FIWTCO_MAND_BASE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e0ddc65b-d208-41db-98c5-b57faba48f71
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b6ed49cf-b156-da7e-c318331f0330
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(16)
+        defaultValue: ""
+        description: Official Withholding Tax Collection Code
+        name: J_1BWHTCOLLCODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8d6fe84c-544f-4379-bfa9-1fe120409ca3
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: df430ad3-3292-d9f7-477e30e87269
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(6,2)
+        defaultValue: ""
+        description: Tax Rate
+        name: J_1BWHTRATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 943f4586-ac5d-4438-b0d9-7d67d19a871c
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cd9b67c9-ec67-7e29-17d5837b8b0e
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Withholding Tax Base Amount from Nota Fiscal
+        name: J_1BWHT_BS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2c0492a9-ae8e-4d1d-ad8b-257de002d0f1
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 64a8adc7-94f6-4599-9d486c727856
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated withholding tax real base amount(local currency)
+        name: J_1BWHTACCBS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 57fa31d0-bda8-4ae8-a0ba-a1ab9215f04a
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ab3d19ac-8d18-a7cf-32efbf61acfd
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated withholding tax real base amount(local currency)
+        name: J_1BWHTACCBS1
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: df3d0e7d-5eb8-44e5-a3c5-b973277880e8
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 44eca2c0-09ea-d417-d2f92f973550
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Accumulated withholding tax real base amount(local currency)
+        name: J_1BWHTACCBS2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6702b219-0afe-4306-9eba-1449d243742e
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cffc7517-a41b-a5c5-586e69d1f3e1
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Challan Number
+        name: J_1IINTCHLN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3eafd1bc-1e14-4059-bcf3-099a01e5bb6d
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 414d762a-0208-975e-02cb8a00aaec
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Challan Date
+        name: J_1IINTCHDT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 78f47857-3917-4e94-bdeb-a0c03ee355a3
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 292f789d-13d3-086b-b583e9afda9c
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Record type for EWT transactions-India
+        name: J_1IEWTREC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 26c97fa0-70f8-4b15-a359-57a0e7f86054
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3324cf2d-502d-9410-5cfbcba9feff
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Number of Line Item Within Accounting Document
+        name: J_1IBUZEI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9d48de30-1d6c-47db-90f5-f6aa0809742d
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fce4a79e-e846-a2ab-ca6c995cf93d
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Certificate Date
+        name: J_1ICERTDT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ed7d2422-cbea-4d18-8833-de15991232ae
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fbdfadd9-efc8-7ddc-2cd6a2e5fb0c
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(23,2)
+        defaultValue: ""
+        description: Amount of EWT for which certificate is received from Custome
+        name: J_1ICLRAMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b3a77187-339d-4d90-b859-36051fc3ea76
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 71d5d2b8-da0c-11b2-dff198380a90
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Document No. of the Invoice to Which the Transaction Belongs
+        name: J_1IREBZG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ff24c316-1350-4435-aa08-775fb3a3acae
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2ec76a0-9066-93a2-ae99c321d94b
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: number(13,2)
+        defaultValue: ""
+        description: Surcharge amount
+        name: J_1ISURAMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aa458c3b-bfa5-4d1d-b70e-df88d7513225
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 939edff6-232a-4cd7-d2cc1c2f8da0
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Partial Exemption
+        name: FIWTIN_PAR_EXEM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 41514b59-b380-4e8c-bb65-ac1d6decc57c
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: varchar(128)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 753950ba-64bf-4fd4-ab22-8868c0040330
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a0527071-3e0d-489e-b001-811dee3fda62
+                stepCounter: 23592495-41b9-48c2-9bb0-d01799d91c9b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: DSS_DELETE_TIME
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 8407e815-5eb4-673f-d5db-934146dbeff2
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: DSS_DELETE_FLAG
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_SAP_WITH_ITEM: 23592495-41b9-48c2-9bb0-d01799d91c9b
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: LOAD
+            nodeName: LOAD_SAP_WITH_ITEM
+        join:
+          joinCondition: |-
+            FROM {{ ref('LOAD', 'LOAD_SAP_WITH_ITEM') }} "LOAD_SAP_WITH_ITEM"
+        name: ODS_SAP_WITH_ITEM
+        noLinkRefs: []
+  name: ODS_SAP_WITH_ITEM
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

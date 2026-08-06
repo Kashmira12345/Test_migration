@@ -1,0 +1,666 @@
+fileVersion: 1
+id: 0ea92907-7f80-3492-16a7-9c28874be78f
+name: ODS_SAP_MHIO
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5658c312-55a2-ca65-b0f5a55616fe
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Client
+        name: MANDT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ff04d97f-9c1c-46c3-a529-08b04e6b07e4
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 87c9768e-f225-a542-8ef84bd34d15
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config: {}
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Maintenance Plan
+        isBusinessKey: true
+        name: WARPL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f5e8fa0b-7f49-490f-8dc6-763ae8f12c66
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 13daa794-dcd6-5a0d-9a6262873d4c
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: Maintenance Plan Call Number
+        isBusinessKey: true
+        name: ABNUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b6a5efb3-723c-4527-b134-bb2acf4bc7bf
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0cac9ecd-dc26-ab1b-0949dd73ed4c
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config: {}
+        dataType: varchar(16)
+        defaultValue: ""
+        description: Maintenance item
+        isBusinessKey: true
+        name: WPPOS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fbc0439a-e65d-496b-8c5c-28d8995edf7c
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f843c628-82af-241e-f9825d210111
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Order Number
+        name: AUFNR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 73c97100-c027-4bc0-bd17-c7320540d402
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b872666f-9f62-db8d-7e9910d14391
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Completion Date for Call Object
+        name: ADDAT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 019abe71-775a-4dae-b342-2aa27f47bf60
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb736a98-17fa-8785-f703fc996713
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Entry Sheet Number
+        name: LBLNI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cfcfcb9d-5b0a-4ad5-9cee-059c463f6533
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c045d93a-589e-5b14-7e6c1bc2b5a8
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: 'Scheduling status: call horizon not reached'
+        name: TSENQ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f43f5e8-7898-49e5-87fc-af5fa1e27b1e
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9d1a2d08-91a9-1819-03b7a62e232b
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Scheduling status
+        name: TSTAT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 864ecc87-0904-4888-b76e-769e4cff5cf6
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1c5e9ff6-e315-bc73-2ac9f82c3954
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Basic start date
+        name: GSTRP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ad862ef-896c-4ecd-bdf4-c2795e36aa17
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba5c2dc4-61a9-d691-2f512bfae4f6
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: varchar(30)
+        defaultValue: ""
+        description: Sort field for maintenance item scheduling call
+        name: SORTF
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8eee9a34-b8b8-4f4f-a1ab-9f68031c7175
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2cbb4967-f2bb-a1dd-a47cace3a62c
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Notification Number
+        name: QMNUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1cfeb69f-538c-4c28-bb4b-8802f293537f
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 538aa912-6698-e9c3-8d62422caa76
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: Completion Time for Call Object
+        name: ADTIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bf591358-54fb-491c-8f1e-e9dbb30bfa9d
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5dd20d56-57e2-3a44-e5f78ea5747b
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Inspection Lot Number
+        name: PRUEFLOS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c6525d83-7b52-4e1b-8c04-1a1cf15c1075
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4495aa25-a3f2-a461-3d144b54dd9c
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Scheduling determined by user
+        name: USERMOD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: feca1209-6877-4097-b9b8-c6ab76761512
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d5bc595a-609e-185e-63b67ae64441
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Maintenance Plan Was Created/Changed by API
+        name: IND_MPLA_API
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d6f127aa-ab9d-47df-a4f6-eea1008e820b
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e5dd6f5b-1b67-b10e-93e969cc779e
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: varchar(22)
+        defaultValue: ""
+        description: Demand Id
+        name: DEMAND_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f5320fab-0d70-4bdc-92e4-0878c3634c2a
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 639e521f-01eb-6d13-ddcc6c568ffa
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: varchar(12)
+        defaultValue: ""
+        description: APO Demand Number
+        name: DEMAND_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb558d69-5505-4fa6-b222-cbf0fa75abe4
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 039831de-cf0f-894c-b79e1eec724e
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: varchar(8)
+        defaultValue: ""
+        description: Revision for Plant Maintenance and Customer Service
+        name: REVISION_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e751a2f0-83fe-4896-afb0-e3ddef100446
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 62e8cd06-6f2a-33ff-a4c0c32f7250
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Maintenance Planning Plant
+        name: REV_PLANT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2815c986-b6e9-440d-b214-e1d969679962
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ad2c39cd-3eea-d4c7-cf4fbdd25aa6
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config:
+          is_hd: true
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Transaction ID
+        name: SERVICE_ORDER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 77c60388-9546-4d56-9d2c-4becd1d4a036
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config: {}
+        dataType: varchar(128)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5cfc3871-7fa4-4c1a-9905-5c86eef860e3
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c02de2e5-41f8-4a93-aec7-01142b52343f
+                stepCounter: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: DSS_DELETE_FLAG
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 0ea92907-7f80-3492-16a7-9c28874be78f
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: DSS_DELETE_TIME
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_SAP_MHIO: 40bbfb66-b1e1-43f2-bf69-4760fa11c402
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: LOAD
+            nodeName: LOAD_SAP_MHIO
+        join:
+          joinCondition: |-
+            FROM {{ ref('LOAD', 'LOAD_SAP_MHIO') }} "LOAD_SAP_MHIO"
+        name: ODS_SAP_MHIO
+        noLinkRefs: []
+  name: ODS_SAP_MHIO
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,960 @@
+fileVersion: 1
+id: 09e64974-be0c-375a-73d7-0f781c43a9d1
+name: ODS_SAP_ZCMAINTORDOPVAL
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5658c312-55a2-ca65-b0f5a55616fe
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: Client
+        name: MANDT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5658c312-55a2-ca65-b0f5a55616fe
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3615c009-22c0-4d37-8ec2cc3fa8c3
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Routing number of operations in the order
+        isBusinessKey: true
+        name: MAINTORDERROUTINGNUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3615c009-22c0-4d37-8ec2cc3fa8c3
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 734ab1aa-07b0-7926-c66a62695047
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config: {}
+        dataType: varchar(8)
+        defaultValue: ""
+        description: General counter for order
+        isBusinessKey: true
+        name: MAINTORDEROPERATIONCOUNTER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 734ab1aa-07b0-7926-c66a62695047
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 15d29d10-1c23-cb67-a5d4b9f71bfe
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: number(7,1)
+        defaultValue: ""
+        description: Work involved in the activity
+        name: OPERATIONPLANNEDWORK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 15d29d10-1c23-cb67-a5d4b9f71bfe
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1dfe16ea-039f-2fd5-a3f18b2115f5
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: varchar(16777216)
+        defaultValue: ""
+        description: Unit for work
+        name: OPERATIONPLANNEDWORKUNIT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1dfe16ea-039f-2fd5-a3f18b2115f5
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f875bf36-43ed-8565-1368ff7e92e2
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: number(5,1)
+        defaultValue: ""
+        description: Normal duration of the activity
+        name: OPERATIONDURATION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f875bf36-43ed-8565-1368ff7e92e2
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c0a47e76-bb11-0329-48f8d44c663e
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: varchar(16777216)
+        defaultValue: ""
+        description: Normal duration/unit
+        name: OPERATIONDURATIONUNIT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c0a47e76-bb11-0329-48f8d44c663e
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 04e89258-007b-f6a5-701a732aa1b3
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: number(13,3)
+        defaultValue: ""
+        description: Operation Quantity in Unit of Measure of Order
+        name: OPERATIONQUANTITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 04e89258-007b-f6a5-701a732aa1b3
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cec9b871-7e06-387d-6980a5f86e34
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: varchar(16777216)
+        defaultValue: ""
+        description: Base Unit of Measure
+        name: OPERATIONQUANTITYUNIT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cec9b871-7e06-387d-6980a5f86e34
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edb3e394-7da2-367a-920990155ef9
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: number(3)
+        defaultValue: ""
+        description: Planned Delivery Time in Days
+        name: OPPLNDDELIVERYDURATIONINDAYS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: edb3e394-7da2-367a-920990155ef9
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3a8a670a-f2a6-8235-920783fcdb51
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: 'Earliest scheduled start: Execution (date)'
+        name: OPERLSTSCHEDLDEXECSTRTDTE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a8a670a-f2a6-8235-920783fcdb51
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b4e9522f-4eba-c5b7-e1d4dbb46189
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: 'Earliest scheduled start: Execution (time)'
+        name: OPERLSTSCHEDLDEXECSTRTTME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b4e9522f-4eba-c5b7-e1d4dbb46189
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 761885e6-35ff-426f-b9a213225f44
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: 'Earliest scheduled finish: Execution (date)'
+        name: OPERLSTSCHEDLDEXECENDDTE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 761885e6-35ff-426f-b9a213225f44
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 90b3b9cd-f82e-c227-d7e283cedbb8
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: 'Earliest scheduled finish: Execution (time)'
+        name: OPERLSTSCHEDLDEXECENDTME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 90b3b9cd-f82e-c227-d7e283cedbb8
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 858ba403-cfcc-9958-fe706ea460a9
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: 'Latest scheduled start: Execution (date)'
+        name: OPLTSTSCHEDLDEXECSTRTDTE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 858ba403-cfcc-9958-fe706ea460a9
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ff79d1c9-77db-08b2-1d664aeb8fe8
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: 'Latest scheduled start: Execution (time)'
+        name: OPLTSTSCHEDLDEXECSTRTTME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ff79d1c9-77db-08b2-1d664aeb8fe8
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 727b524b-85be-0b8d-f02649546b97
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: 'Latest scheduled finish: Execution (date)'
+        name: OPLTSTSCHEDLDEXECENDDTE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 727b524b-85be-0b8d-f02649546b97
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 253bc063-8ff3-3185-a1cdf3a6f96d
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: 'Latest scheduled finish: Execution (time)'
+        name: OPLTSTSCHEDLDEXECENDTME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 253bc063-8ff3-3185-a1cdf3a6f96d
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3283db4a-d34b-ab82-60cd73b3710b
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Actual Execution Start Date
+        name: OPACTUALEXECUTIONSTARTDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3283db4a-d34b-ab82-60cd73b3710b
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c06f8f3-8d4c-eedb-8e636182ace8
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: Actual Execution Start Time
+        name: OPACTUALEXECUTIONSTARTTIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6c06f8f3-8d4c-eedb-8e636182ace8
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1b1aa028-1109-b882-2b25dd255e40
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Actual Execution End Date
+        name: OPACTUALEXECUTIONENDDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1b1aa028-1109-b882-2b25dd255e40
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0d15a7f6-f38e-79d5-71b95ecb67f7
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: Actual Execution End Time
+        name: OPACTUALEXECUTIONENDTIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0d15a7f6-f38e-79d5-71b95ecb67f7
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 561ee9e5-24ce-c4da-1e21e0df8556
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: number(7,1)
+        defaultValue: ""
+        description: Forecasted work (actual + remaining)
+        name: FORECASTEDWORKQTY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 561ee9e5-24ce-c4da-1e21e0df8556
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 146cf90b-8db6-b6ab-261c53a1a3b1
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: number(13,3)
+        defaultValue: ""
+        description: Actual work
+        name: CONFIRMATIONTOTALQUANTITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 146cf90b-8db6-b6ab-261c53a1a3b1
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d1ebfba8-65ed-b686-59c827f91693
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: number(7,1)
+        defaultValue: ""
+        description: ""
+        name: OPPLANNEDPROCESSINGDURN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d1ebfba8-65ed-b686-59c827f91693
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa140372-9bed-e340-e3b2fe30d434
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: varchar(16777216)
+        defaultValue: ""
+        description: Unit of measure for processing time
+        name: OPPLANNEDPROCESSINGDURNUNIT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aa140372-9bed-e340-e3b2fe30d434
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 250316f1-8516-cf95-1ede1703b545
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: number(3)
+        defaultValue: ""
+        description: Total float (from forecast)
+        name: TOTALFLOATFORFORECASTEDDATES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 250316f1-8516-cf95-1ede1703b545
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b21730fa-9595-d22a-fc09f4331827
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: number(3)
+        defaultValue: ""
+        description: Total float
+        name: TOTALFLOATFORBASICDATES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b21730fa-9595-d22a-fc09f4331827
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 70fd02f8-845d-bb1a-6e226566eff3
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Constraint on the basic start date for the activity
+        name: OPBSCSTARTDATECONSTRAINTTYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 70fd02f8-845d-bb1a-6e226566eff3
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 21fda158-0292-3213-e0a30c815f33
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Constraint for activity start (Basic)
+        name: CONSTRAINTDATEFORBSCSTARTDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 21fda158-0292-3213-e0a30c815f33
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 02fab926-033a-7194-6f63cad92aae
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: Constraint for activity start time (Basic)
+        name: CONSTRAINTTIMEFORBSCSTARTTIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 02fab926-033a-7194-6f63cad92aae
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 89ba4dc6-b6b6-2bb6-61327a0b19b6
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Constraint on the finish date of the activity
+        name: OPBSCENDDATECONSTRAINTTYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 89ba4dc6-b6b6-2bb6-61327a0b19b6
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 99a6a7e1-aa2f-7024-db87e1c81c84
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: date
+        defaultValue: ""
+        description: Constraint for Finish of Activity (Basic)
+        name: CONSTRAINTDATEFORBSCFINISHDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 99a6a7e1-aa2f-7024-db87e1c81c84
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6670a227-cf93-65c4-20d754baeb9f
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: time
+        defaultValue: ""
+        description: Basic finish time of the activity
+        name: CONSTRAINTTIMEFORBSCFINISHTIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6670a227-cf93-65c4-20d754baeb9f
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2b1669bf-d811-4f42-41229ba88807
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config:
+          is_hd: true
+        dataType: number(3)
+        defaultValue: ""
+        description: Free float
+        name: BASICDATESFREEFLOAT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2b1669bf-d811-4f42-41229ba88807
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config: {}
+        dataType: varchar(128)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 864db73b-0e88-7634-d048cff9b76c
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+                stepCounter: b05487c6-db81-bd16-fabc-8a7ebbac0088
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edd5202e-d0ea-4e06-5b6d1a61e9c2
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was retired.
+        name: DSS_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46d7db8a-c566-99e0-8f499655e4bf
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: CAST('1900-01-01 00:00:00' AS TIMESTAMP)
+        description: Datetime a business key was started.
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d9e3d8-fef2-f6e2-b22c7859468c
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config: {}
+        dataType: CHAR(1)
+        defaultValue: "'Y'"
+        description: Flag to indicate the current (latest) version of a business key.
+        name: DSS_CURRENT_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: DSS_DELETE_TIME
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfbf4ac-c17c-246a-54007c741909
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config: {}
+        dataType: INTEGER
+        defaultValue: "1"
+        description: Version number of a business key.
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 09e64974-be0c-375a-73d7-0f781c43a9d1
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: DSS_DELETE_FLAG
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_SAP_ZCMAINTORDOPVAL: b05487c6-db81-bd16-fabc-8a7ebbac0088
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: LOAD
+            nodeName: LOAD_SAP_ZCMAINTORDOPVAL
+        join:
+          joinCondition: |-
+            FROM {{ ref('LOAD', 'LOAD_SAP_ZCMAINTORDOPVAL') }} "LOAD_SAP_ZCMAINTORDOPVAL"
+        name: ODS_SAP_ZCMAINTORDOPVAL
+        noLinkRefs: []
+  name: ODS_SAP_ZCMAINTORDOPVAL
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node
