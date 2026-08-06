@@ -1,0 +1,221 @@
+fileVersion: 1
+id: 53f2ebb4-33df-7a36-2d10-ab0d6a57cc13
+name: DIM_RES_MANUAL_PRICING
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'DIM_RES_MANUAL_PRICING') }} AS DST\r\nWHERE NOT EXISTS (SELECT * FROM {{ ref ('STAGE_BT','STAGE_RES_MANUAL_PRICING') }} AS SRC \r\n   WHERE DST.DIM_ACCT_PER_DATE_KEY = SRC.DIM_ACCT_PER_DATE_KEY\r\n         AND DST.DIM_UOM_KEY = SRC.DIM_UOM_KEY\r\n         AND DST.PRODUCT = SRC.PRODUCT\r\n         AND DST.STREAM = SRC.STREAM\r\n         AND DST.VERSION = SRC.VERSION)\r\n;"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1ac004c7-86fd-7e5c-5c637f127911
+          stepCounter: 53f2ebb4-33df-7a36-2d10-ab0d6a57cc13
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_MANUAL_PRICING_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 021321e8-ba3a-e39c-e3a2e7b3ec87
+          stepCounter: 53f2ebb4-33df-7a36-2d10-ab0d6a57cc13
+        config: {}
+        dataType: varchar(259)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 021321e8-ba3a-e39c-e3a2e7b3ec87
+                stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2544e5b1-9a7b-a6f0-6444cc03d066
+          stepCounter: 53f2ebb4-33df-7a36-2d10-ab0d6a57cc13
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: PRODUCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2544e5b1-9a7b-a6f0-6444cc03d066
+                stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f05998d-cdc1-9b71-09549bbe2646
+          stepCounter: 53f2ebb4-33df-7a36-2d10-ab0d6a57cc13
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: STREAM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2f05998d-cdc1-9b71-09549bbe2646
+                stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0de9a6e8-c7b0-6200-4e187a3e82f5
+          stepCounter: 53f2ebb4-33df-7a36-2d10-ab0d6a57cc13
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: STAGE_RES_MANUAL_PRICING.CALENDAR_DATE=DIM_DATE.CALENDAR_DATE
+        isBusinessKey: true
+        name: DIM_ACCT_PER_DATE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0de9a6e8-c7b0-6200-4e187a3e82f5
+                stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 403b5a87-b884-eec9-180a24115dd6
+          stepCounter: 53f2ebb4-33df-7a36-2d10-ab0d6a57cc13
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        isBusinessKey: true
+        name: DIM_UOM_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 403b5a87-b884-eec9-180a24115dd6
+                stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6da7ab78-24c5-7919-aa4011b1392e
+          stepCounter: 53f2ebb4-33df-7a36-2d10-ab0d6a57cc13
+        config: {}
+        dataType: number(38,8)
+        defaultValue: ""
+        description: ""
+        name: PRICE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6da7ab78-24c5-7919-aa4011b1392e
+                stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 53f2ebb4-33df-7a36-2d10-ab0d6a57cc13
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 53f2ebb4-33df-7a36-2d10-ab0d6a57cc13
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STAGE_RES_MANUAL_PRICING: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_RES_MANUAL_PRICING
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_RES_MANUAL_PRICING') {{ ref ('STAGE_BT','STAGE_RES_MANUAL_PRICING"
+        name: DIM_RES_MANUAL_PRICING
+        noLinkRefs: []
+  name: DIM_RES_MANUAL_PRICING
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

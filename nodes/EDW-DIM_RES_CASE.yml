@@ -1,0 +1,177 @@
+fileVersion: 1
+id: 2b2f3982-757d-9345-9b9d-1167400e066f
+name: DIM_RES_CASE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'DIM_RES_CASE') }} AS DST\r\nWHERE NOT EXISTS (SELECT * FROM {{ ref ('STAGE_BT','STAGE_RES_CASE') }} AS SRC WHERE DST.CASE_ID = SRC.CASE_ID)\r\n;"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3386bdcc-9d3c-2a5d-0cfcc47280c3
+          stepCounter: 2b2f3982-757d-9345-9b9d-1167400e066f
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_CASE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f5b1c9a-4a7f-6304-4bdd37727dbc
+          stepCounter: 2b2f3982-757d-9345-9b9d-1167400e066f
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: CASE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f5b1c9a-4a7f-6304-4bdd37727dbc
+                stepCounter: c3c05493-074c-0068-c102-2d2a9d34ea76
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3a9e23ed-375f-e2e9-21a1b744fb19
+          stepCounter: 2b2f3982-757d-9345-9b9d-1167400e066f
+        config: {}
+        dataType: varchar(80)
+        defaultValue: ""
+        description: ""
+        name: CASE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a9e23ed-375f-e2e9-21a1b744fb19
+                stepCounter: c3c05493-074c-0068-c102-2d2a9d34ea76
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 729d14aa-ffc5-4df0-4e93f168905f
+          stepCounter: 2b2f3982-757d-9345-9b9d-1167400e066f
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: CASE_DESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 729d14aa-ffc5-4df0-4e93f168905f
+                stepCounter: c3c05493-074c-0068-c102-2d2a9d34ea76
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b80cd688-8420-e082-1d88a8bee0fd
+          stepCounter: 2b2f3982-757d-9345-9b9d-1167400e066f
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: ""
+        name: VINTAGE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b80cd688-8420-e082-1d88a8bee0fd
+                stepCounter: c3c05493-074c-0068-c102-2d2a9d34ea76
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 2b2f3982-757d-9345-9b9d-1167400e066f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 2b2f3982-757d-9345-9b9d-1167400e066f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STAGE_RES_CASE: c3c05493-074c-0068-c102-2d2a9d34ea76
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_RES_CASE
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_RES_CASE') }} "STAGE_RES_CASE"
+        name: DIM_RES_CASE
+        noLinkRefs: []
+  name: DIM_RES_CASE
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

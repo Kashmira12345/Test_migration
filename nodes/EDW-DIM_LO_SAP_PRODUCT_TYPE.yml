@@ -1,0 +1,197 @@
+fileVersion: 1
+id: ce9376dc-e726-3dab-204c-edf9da8e80a9
+name: DIM_LO_SAP_PRODUCT_TYPE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'DIM_LO_SAP_PRODUCT_TYPE') }} AS DST\r\nWHERE NOT EXISTS (SELECT * FROM {{ ref('STAGE_BT','STAGE_FIN_SAP_PRODUCT_TYPE') }} AS SRC WHERE DST.PROD_CODE = SRC.PROD_CODE);"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bfe2ba9f-8b26-84f3-13ca4c138cdd
+          stepCounter: ce9376dc-e726-3dab-204c-edf9da8e80a9
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_PRODUCT_TYPE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee2d495c-1f5d-7de5-9c47dee4bf43
+          stepCounter: ce9376dc-e726-3dab-204c-edf9da8e80a9
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The user-defined product code.
+        isBusinessKey: true
+        name: PROD_CODE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ee2d495c-1f5d-7de5-9c47dee4bf43
+                stepCounter: cf5917e9-d65f-c224-0de4-26ef3f61758a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 10901e27-b956-78df-d65bcad0087d
+          stepCounter: ce9376dc-e726-3dab-204c-edf9da8e80a9
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: The name of the product.
+        name: PROD_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 10901e27-b956-78df-d65bcad0087d
+                stepCounter: cf5917e9-d65f-c224-0de4-26ef3f61758a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ee1e3e2-2356-dbea-197718f92dad
+          stepCounter: ce9376dc-e726-3dab-204c-edf9da8e80a9
+        config: {}
+        dataType: number(14,10)
+        defaultValue: "1"
+        description: The conversion factor used from SI to Imperial.
+        name: SI_TO_IMP_CONV_FACTOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5ee1e3e2-2356-dbea-197718f92dad
+                stepCounter: cf5917e9-d65f-c224-0de4-26ef3f61758a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30c56fcf-0c6c-dc3c-3bc4d38113dd
+          stepCounter: ce9376dc-e726-3dab-204c-edf9da8e80a9
+        config: {}
+        dataType: number(8,5)
+        defaultValue: "1"
+        description: Conversion factor for barrel of oil equivalent in thermal quantities.  For example, BTUs, Joules.
+        name: BOE_THERMAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 30c56fcf-0c6c-dc3c-3bc4d38113dd
+                stepCounter: cf5917e9-d65f-c224-0de4-26ef3f61758a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b52d2c9d-2407-e0e3-e04a1bea3a58
+          stepCounter: ce9376dc-e726-3dab-204c-edf9da8e80a9
+        config: {}
+        dataType: number(8,5)
+        defaultValue: "1"
+        description: ""
+        name: M3_THERMAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b52d2c9d-2407-e0e3-e04a1bea3a58
+                stepCounter: cf5917e9-d65f-c224-0de4-26ef3f61758a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: ce9376dc-e726-3dab-204c-edf9da8e80a9
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: ce9376dc-e726-3dab-204c-edf9da8e80a9
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STAGE_FIN_SAP_PRODUCT_TYPE: cf5917e9-d65f-c224-0de4-26ef3f61758a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_FIN_SAP_PRODUCT_TYPE
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_FIN_SAP_PRODUCT_TYPE') }} "STAGE_FIN_SAP_PRODUCT_TYPE"
+        name: DIM_LO_SAP_PRODUCT_TYPE
+        noLinkRefs: []
+  name: DIM_LO_SAP_PRODUCT_TYPE
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

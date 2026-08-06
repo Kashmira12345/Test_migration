@@ -1,0 +1,197 @@
+fileVersion: 1
+id: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+name: DIM_LO_SAP_AFE_TYPE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'DIM_LO_SAP_AFE_TYPE') }} AS DST\r\nWHERE NOT EXISTS (SELECT * FROM {{ ref('STAGE_BT','STAGE_FIN_SAP_AFE_TYPE') }} AS SRC WHERE DST.AFE_TYPE = SRC.AFE_TYPE);"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 92240b03-5455-41ea-83e085a1080a
+          stepCounter: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_AFE_TYPE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4a97f64-fc98-8310-001ec71675d6
+          stepCounter: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: AFE_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c4a97f64-fc98-8310-001ec71675d6
+                stepCounter: 347396ec-1904-b8d7-2e02-5b0d90d175d8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 05e010cb-11ab-2642-992b57391966
+          stepCounter: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+        config: {}
+        dataType: varchar(80)
+        defaultValue: ""
+        description: Description for the code.
+        name: AFE_TYPE_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 05e010cb-11ab-2642-992b57391966
+                stepCounter: 347396ec-1904-b8d7-2e02-5b0d90d175d8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 811e381a-16ef-a274-97da13529122
+          stepCounter: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: LINE_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 811e381a-16ef-a274-97da13529122
+                stepCounter: 347396ec-1904-b8d7-2e02-5b0d90d175d8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bab89f34-0880-a1cf-03cb1776f48e
+          stepCounter: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: LINE_NO_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bab89f34-0880-a1cf-03cb1776f48e
+                stepCounter: 347396ec-1904-b8d7-2e02-5b0d90d175d8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2cc44b88-cbe3-3fd3-6795f56aea66
+          stepCounter: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: "One of: 'Y', 'N'"
+        name: NON_CAPITAL_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2cc44b88-cbe3-3fd3-6795f56aea66
+                stepCounter: 347396ec-1904-b8d7-2e02-5b0d90d175d8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STAGE_FIN_SAP_AFE_TYPE: 347396ec-1904-b8d7-2e02-5b0d90d175d8
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_FIN_SAP_AFE_TYPE
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_FIN_SAP_AFE_TYPE') }} "STAGE_FIN_SAP_AFE_TYPE"
+        name: DIM_LO_SAP_AFE_TYPE
+        noLinkRefs: []
+  name: DIM_LO_SAP_AFE_TYPE
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

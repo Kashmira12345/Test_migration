@@ -1,0 +1,534 @@
+fileVersion: 1
+id: 2b677a6d-d947-4700-f3f2-5db178d29b02
+name: VIEW_FIN_WBS_ELEMENTS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5c9a0793-a4d1-64ea-233d7e95bbe3
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(24)
+        defaultValue: ""
+        description: ""
+        name: WBS_ELEMENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 919cc08e-acd1-ccb6-27f55ebc3a08
+                stepCounter: 7db52294-66f6-c520-8d20-27917dba97a7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8781383a-923c-af65-cd4d26e9a956
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: WBS_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6782de64-5591-6dab-a2d7d930509c
+                stepCounter: 7db52294-66f6-c520-8d20-27917dba97a7
+            transform: "TRANSLATE(DIM_LO_SAP_AFE.AFE_NAME, chr(10)||chr(13), '  ')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 48a58b02-0355-e95c-1f5ab0126ec3
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: WBS_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c4a97f64-fc98-8310-001ec71675d6
+                stepCounter: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78fe1721-7cac-af6b-c2852f4f5ee7
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(80)
+        defaultValue: ""
+        description: ""
+        name: WBS_TYPE_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 05e010cb-11ab-2642-992b57391966
+                stepCounter: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5789647f-bdc2-72a0-b3dfb6d44ea8
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        name: CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 458a1612-99a9-f82b-e9c9561c9129
+                stepCounter: 7db52294-66f6-c520-8d20-27917dba97a7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 42720866-91a0-7867-b4a1fd5ac387
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: CORP_PLANNING_PROJECT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 42720866-91a0-7867-b4a1fd5ac387
+                stepCounter: 7db52294-66f6-c520-8d20-27917dba97a7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7ec1d706-8201-18b7-6ed70466c73e
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: ENTITY_UUID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7ec1d706-8201-18b7-6ed70466c73e
+                stepCounter: 475e1f90-a425-ed23-8865-b7838d01aaf2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 85ca6da7-0c83-e206-0f9cadcbbb33
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: number(15,2)
+        defaultValue: ""
+        description: ""
+        name: ALLOC_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 85ca6da7-0c83-e206-0f9cadcbbb33
+                stepCounter: 7db52294-66f6-c520-8d20-27917dba97a7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c13acb02-cd14-46aa-de866e4ce0f6
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: number(15,2)
+        defaultValue: ""
+        description: ""
+        name: OP_ALLOC_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c13acb02-cd14-46aa-de866e4ce0f6
+                stepCounter: 7db52294-66f6-c520-8d20-27917dba97a7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a52c243-5c33-1362-c9a1d59c35e3
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: OP_CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a52c243-5c33-1362-c9a1d59c35e3
+                stepCounter: 7db52294-66f6-c520-8d20-27917dba97a7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 811e381a-16ef-a274-97da13529122
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: LINE_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 811e381a-16ef-a274-97da13529122
+                stepCounter: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bab89f34-0880-a1cf-03cb1776f48e
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: LINE_NO_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bab89f34-0880-a1cf-03cb1776f48e
+                stepCounter: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e4674d03-84b2-e866-bb3cbe3ec4a1
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: ""
+        name: COMPANY_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: daaa9168-3558-3f87-6baf536455d9
+                stepCounter: 7db52294-66f6-c520-8d20-27917dba97a7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a29c3607-0f54-a947-1ac73492c95f
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: COUNTRY_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a29c3607-0f54-a947-1ac73492c95f
+                stepCounter: 708fd649-6097-9913-de66-f7bca879c8c8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ff4dfa1-afdc-b7a5-61f046020ba9
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: PROV_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ff4dfa1-afdc-b7a5-61f046020ba9
+                stepCounter: 708fd649-6097-9913-de66-f7bca879c8c8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a7252aca-bce9-ce1c-a20be417c256
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: ""
+        name: COREAREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a7252aca-bce9-ce1c-a20be417c256
+                stepCounter: 708fd649-6097-9913-de66-f7bca879c8c8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: be72a29b-4dd7-5d69-cfb9365d5896
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: ""
+        name: AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be72a29b-4dd7-5d69-cfb9365d5896
+                stepCounter: 708fd649-6097-9913-de66-f7bca879c8c8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5fd5ce6d-fe7a-7339-1bdbaace8903
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(300)
+        defaultValue: ""
+        description: ""
+        name: OPERATOR_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5fd5ce6d-fe7a-7339-1bdbaace8903
+                stepCounter: 92422852-c141-a115-6f61-583208be58f4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 77f195ed-4030-da81-0af29b5b4383
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: UWI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 77f195ed-4030-da81-0af29b5b4383
+                stepCounter: 7db52294-66f6-c520-8d20-27917dba97a7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 079e88f2-baac-4fb7-e9f842ef6b2a
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: number(9,6)
+        defaultValue: ""
+        description: ""
+        name: VET_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0ce7915a-e062-58fa-feb236d32636
+                stepCounter: 7db52294-66f6-c520-8d20-27917dba97a7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b92fac62-9f51-accd-c260b776436a
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        name: COST_CENTER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+                stepCounter: 7db52294-66f6-c520-8d20-27917dba97a7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 58775d26-0b51-59b2-c611ea653c9e
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: SYSTEM_STATUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9fe71bbd-791b-9d11-34eea3b3fb57
+                stepCounter: 7db52294-66f6-c520-8d20-27917dba97a7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 542e2db5-cda9-0815-f6f93415cece
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: USER_STATUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0c96d6f3-ce05-4a45-0cb8426fb04b
+                stepCounter: 7db52294-66f6-c520-8d20-27917dba97a7
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30a7fc10-08cf-30e2-a4250f8597f9
+          stepCounter: 2b677a6d-d947-4700-f3f2-5db178d29b02
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: PERSON_RESPONSIBLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: efa9413b-77f8-d2da-8e4d92ca3f19
+                stepCounter: 7db52294-66f6-c520-8d20-27917dba97a7
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_LO_SAP_AFE: 7db52294-66f6-c520-8d20-27917dba97a7
+          DIM_LO_SAP_AFE_TYPE: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+          DIM_LO_SAP_CC_CORP_HIER_CURRENT: 708fd649-6097-9913-de66-f7bca879c8c8
+          DIM_LO_SAP_COST_CENTER: 92422852-c141-a115-6f61-583208be58f4
+          ODS_SAP_ZCZFINMOSAICPRJ: 475e1f90-a425-ed23-8865-b7838d01aaf2
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW [TABLEOWNER].[VIEW_FIN_WBS_ELEMENTS] AS\r\nSELECT\r\n    DA.AFE_NUM WBS_ELEMENT,\r\n    TRANSLATE(DA.AFE_NAME,chr(10)||chr(13),'  ') WBS_DESC,\r\n    DAT.AFE_TYPE WBS_TYPE,\r\n    DAT.AFE_TYPE_DESC WBS_TYPE_DESC,\r\n    DA.AFE_CREATE_DATE CREATE_DATE,\r\n    NVL(DA.CORP_PLANNING_PROJECT,'$PMOSAIC_CDM_UNBUDGETED_ENTITY_NAME$') CORP_PLANNING_PROJECT,\r\n    NVL(ZMP.ENTITY_UUID,'$PMOSAIC_CDM_UNBUDGETED_ENTITY_UUID$') ENTITY_UUID,\r\n    DA.ALLOC_AMT,\r\n    DA.OP_ALLOC_AMT,\r\n    DA.OP_CURR_CODE,\r\n    DAT.LINE_NO,\r\n    DAT.LINE_NO_DESC,\r\n    DA.MANAGING_ORG_ID COMPANY_CODE,\r\n    DCCH.COUNTRY_CODE,\r\n    DCCH.PROV_CODE,\r\n    DCCH.COREAREA_NAME,\r\n    DCCH.AREA_NAME,\r\n    DCC.OPERATOR_NAME,\r\n    DA.UWI,\r\n    DA.VET_WBS_WI VET_WI,\r\n    DA.CC_NUM COST_CENTER,\r\n    DA.SYSTEM_STAT_CODES SYSTEM_STATUS,\r\n    DA.AFE_STAT_DESC USER_STATUS,\r\n    DA.ENGINEER_ASSIGNED PERSON_RESPONSIBLE\t\r\nFROM [TABLEOWNER].[DIM_LO_SAP_AFE] DA\r\n    JOIN [TABLEOWNER].[DIM_LO_SAP_AFE_TYPE] DAT\r\n        ON (DA.DIM_AFE_TYPE_KEY = DAT.DIM_AFE_TYPE_KEY)\r\n    JOIN [TABLEOWNER].[DIM_LO_SAP_COST_CENTER] DCC\r\n        ON (DA.CC_NUM = DCC.CC_NUM)\r\n    JOIN [TABLEOWNER].[DIM_LO_SAP_CC_CORP_HIER_CURRENT] DCCH\r\n        ON (DCC.DIM_CC_CORP_HIER_CURRENT_KEY = DCCH.DIM_CC_CORP_HIER_CURRENT_KEY)\r\n   LEFT JOIN DS_SAP.ZCZFINMOSAICPRJ ZMP\r\n      ON DA.CORP_PLANNING_PROJECT = ZMP.ZZMOSAIC_PRJ\r\nWHERE DA.DIM_AFE_KEY <> 0"
+        dependencies:
+          - locationName: EDW
+            nodeName: DIM_LO_SAP_AFE
+          - locationName: EDW
+            nodeName: DIM_LO_SAP_AFE_TYPE
+          - locationName: EDW
+            nodeName: DIM_LO_SAP_CC_CORP_HIER_CURRENT
+          - locationName: EDW
+            nodeName: DIM_LO_SAP_COST_CENTER
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_ZCZFINMOSAICPRJ
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('EDW','VIEW_FIN_WBS_ELEMENTS') }} "VIEW_FIN_WBS_ELEMENTS"
+        name: VIEW_FIN_WBS_ELEMENTS
+        noLinkRefs: []
+  name: VIEW_FIN_WBS_ELEMENTS
+  overrideSQL: true
+  schema: CLS_EDW
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

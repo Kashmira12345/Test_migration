@@ -1,0 +1,157 @@
+fileVersion: 1
+id: a61e5689-e9fd-3540-80d1-890a715d466d
+name: DIM_RES_VINTAGE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'DIM_RES_VINTAGE') }} AS DST\r\nWHERE NOT EXISTS (SELECT * FROM {{ ref ('STAGE_BT','STAGE_RES_VINTAGE') }} AS SRC WHERE DST.VINTAGE_ID = SRC.VINTAGE_ID);"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a0e66115-517b-2212-fca91533319e
+          stepCounter: a61e5689-e9fd-3540-80d1-890a715d466d
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_VINTAGE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b80cd688-8420-e082-1d88a8bee0fd
+          stepCounter: a61e5689-e9fd-3540-80d1-890a715d466d
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: VINTAGE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b80cd688-8420-e082-1d88a8bee0fd
+                stepCounter: f4091bb9-ea6b-c3fa-740e-7c588bdbcb7c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7034822-5d3f-c758-a73674e67613
+          stepCounter: a61e5689-e9fd-3540-80d1-890a715d466d
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: VINTAGE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e7034822-5d3f-c758-a73674e67613
+                stepCounter: f4091bb9-ea6b-c3fa-740e-7c588bdbcb7c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f0700349-03b7-a363-f77f4f0a7012
+          stepCounter: a61e5689-e9fd-3540-80d1-890a715d466d
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: VINTAGE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f0700349-03b7-a363-f77f4f0a7012
+                stepCounter: f4091bb9-ea6b-c3fa-740e-7c588bdbcb7c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: a61e5689-e9fd-3540-80d1-890a715d466d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: a61e5689-e9fd-3540-80d1-890a715d466d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STAGE_RES_VINTAGE: f4091bb9-ea6b-c3fa-740e-7c588bdbcb7c
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_RES_VINTAGE
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_RES_VINTAGE') {{ ref ('STAGE_BT','STAGE_RES_VINTAGE"
+        name: DIM_RES_VINTAGE
+        noLinkRefs: []
+  name: DIM_RES_VINTAGE
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

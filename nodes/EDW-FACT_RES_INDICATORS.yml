@@ -1,0 +1,181 @@
+fileVersion: 1
+id: 61201b69-e946-395b-e5f4-fff2aaf17d97
+name: FACT_RES_INDICATORS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: "Truncate and reload refresh due to size of dataset"
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5348af0b-4d72-f4c1-e75d18da70e3
+          stepCounter: 61201b69-e946-395b-e5f4-fff2aaf17d97
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        isBusinessKey: true
+        name: DIM_RESULT_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5348af0b-4d72-f4c1-e75d18da70e3
+                stepCounter: e417883b-5c43-7e59-2645-2a34368644ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b9fcf568-52bd-e6a0-fcbb85320c84
+          stepCounter: 61201b69-e946-395b-e5f4-fff2aaf17d97
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        isBusinessKey: true
+        name: DIM_VARIABLE_TYPE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b9fcf568-52bd-e6a0-fcbb85320c84
+                stepCounter: e417883b-5c43-7e59-2645-2a34368644ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 403b5a87-b884-eec9-180a24115dd6
+          stepCounter: 61201b69-e946-395b-e5f4-fff2aaf17d97
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        isBusinessKey: true
+        name: DIM_UOM_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 403b5a87-b884-eec9-180a24115dd6
+                stepCounter: e417883b-5c43-7e59-2645-2a34368644ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ecc2e9c3-ddb0-7e7d-a223c1dc5c3f
+          stepCounter: 61201b69-e946-395b-e5f4-fff2aaf17d97
+        config: {}
+        dataType: DECIMAL(38,12)
+        defaultValue: ""
+        description: Econmic Variable numeric value
+        name: VALUE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ecc2e9c3-ddb0-7e7d-a223c1dc5c3f
+                stepCounter: e417883b-5c43-7e59-2645-2a34368644ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+          stepCounter: 61201b69-e946-395b-e5f4-fff2aaf17d97
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: Row Level Security Role
+        name: BU_SF_ROLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+                stepCounter: e417883b-5c43-7e59-2645-2a34368644ae
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 61201b69-e946-395b-e5f4-fff2aaf17d97
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 61201b69-e946-395b-e5f4-fff2aaf17d97
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STAGE_RES_INDICATORS: e417883b-5c43-7e59-2645-2a34368644ae
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_RES_INDICATORS
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_RES_INDICATORS') {{ ref ('STAGE_BT','STAGE_RES_INDICATORS"
+        name: FACT_RES_INDICATORS
+        noLinkRefs: []
+  name: FACT_RES_INDICATORS
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "6"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,104 @@
+fileVersion: 1
+id: 36be18d3-12d9-9678-b65c-7d01e9b22730
+name: VIEW_CSLAND_CONTRACT_WELLS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c36f9b91-0a2f-33e0-646e7a33c056
+          stepCounter: 36be18d3-12d9-9678-b65c-7d01e9b22730
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: MINERAL_FILE_KEY
+        isBusinessKey: true
+        name: MINERAL_FILE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e683e107-5c2f-4bd8-0f0f6adac910
+                stepCounter: 1fa352f6-57e6-8e8e-e8a7-f5109b26dabb
+            transform: "TRIM(ODS_CSLAND_X_REFERENCE.FILE_NUMBER)||TRIM(ODS_CSLAND_X_REFERENCE.FILE_SUB)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8db9af4b-e584-2461-71b8a8e73d1c
+          stepCounter: 36be18d3-12d9-9678-b65c-7d01e9b22730
+        config: {}
+        dataType: char(10)
+        defaultValue: ""
+        description: WELL_FILE_KEY
+        isBusinessKey: true
+        name: WELL_FILE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a058d8b1-7f83-780c-678b72ae4752
+                stepCounter: 1fa352f6-57e6-8e8e-e8a7-f5109b26dabb
+            transform: "TRIM(ODS_CSLAND_X_REFERENCE.REL_FILE_NUMBER)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 45006100-2557-ac41-7aabbfc51fb6
+          stepCounter: 36be18d3-12d9-9678-b65c-7d01e9b22730
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: COMMENTS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 45006100-2557-ac41-7aabbfc51fb6
+                stepCounter: 1fa352f6-57e6-8e8e-e8a7-f5109b26dabb
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_CSLAND_X_REFERENCE: 1fa352f6-57e6-8e8e-e8a7-f5109b26dabb
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW [TABLEOWNER].[VIEW_CSLAND_CONTRACT_WELLS] AS \r\nSELECT \r\n    TRIM(XR.FILE_NUMBER)||TRIM(XR.FILE_SUB) \"CONTRACT_FILE_KEY\",\r\n    TRIM(XR.REL_FILE_NUMBER) \"WELL_FILE_KEY\",\r\n    XR.COMMENTS\r\nFROM DS_CSLAND.X_REFERENCE XR\r\nWHERE\r\n    XR.SUBSYSTEM = 'C'\r\n    AND XR.REL_SUBSYSTEM = 'W'"
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_CSLAND_X_REFERENCE
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('EDW','VIEW_CSLAND_CONTRACT_WELLS') }} "VIEW_CSLAND_CONTRACT_WELLS"
+        name: VIEW_CSLAND_CONTRACT_WELLS
+        noLinkRefs: []
+  name: VIEW_CSLAND_CONTRACT_WELLS
+  overrideSQL: true
+  schema: CLS_EDW
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

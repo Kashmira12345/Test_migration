@@ -1,0 +1,515 @@
+fileVersion: 1
+id: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+name: VIEW_GDC_VET_RAW_PRODUCTION
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 77f195ed-4030-da81-0af29b5b4383
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: UWI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 77f195ed-4030-da81-0af29b5b4383
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "TARGET.UWI"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a88821ee-3403-c388-77fde0e98394
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: ACTVY_PER_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7c32bc80-2d7b-83e5-7ec9d83f9ef8
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "LAST_DAY(TARGET.ACTIVITY_PERIOD)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1b6219cc-1e4e-3164-5c77c56f4648
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: int
+        defaultValue: ""
+        description: ""
+        name: ACTVY_PER_DATE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7c32bc80-2d7b-83e5-7ec9d83f9ef8
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "CASE WHEN TARGET.ACTIVITY_PERIOD IS NULL THEN - 1  ELSE CAST(TO_CHAR(LAST_DAY(TARGET.ACTIVITY_PERIOD), 'YYYYMMDD') AS INT)  END"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee09f659-41b5-5178-9c5c4937336e
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: number(26,4)
+        defaultValue: ""
+        description: ""
+        name: WATER_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2add2964-3909-9cb5-1edf4a4f5a70
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "TARGET.WATER"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e4dd3bfd-e166-144a-4f432886c1d7
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: number(26,4)
+        defaultValue: ""
+        description: ""
+        name: WATER_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2add2964-3909-9cb5-1edf4a4f5a70
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "TARGET.WATER * NVL(TARGET.LIQUID_BOE_THERMAL, 1)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 732fa8ff-b4ec-bcbd-787899c44b7b
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: number(26,4)
+        defaultValue: ""
+        description: ""
+        name: WATER_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2add2964-3909-9cb5-1edf4a4f5a70
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "TARGET.WATER * NVL(TARGET.LIQUID_BOE_THERMAL, 1)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 494a2307-22bb-d1c8-feffa025b769
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: number(26,4)
+        defaultValue: ""
+        description: ""
+        name: GAS_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 505273a0-a011-1a40-f6cccbc55d69
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "TARGET.GAS*NVL(TARGET.GAS_BOE_THERMAL,1)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91505492-4e67-572c-b43a7a2223d4
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: number(26,4)
+        defaultValue: ""
+        description: ""
+        name: GAS_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 505273a0-a011-1a40-f6cccbc55d69
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "TARGET.GAS"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 936c1cae-8ae3-a924-102f0a7b10eb
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: number(26,4)
+        defaultValue: ""
+        description: ""
+        name: GAS_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 505273a0-a011-1a40-f6cccbc55d69
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "TARGET.GAS*NVL(TARGET.GAS_SI_TO_IMP_CONV_FACTOR,1)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc5ac93a-f5f6-cea6-0a4164ff4e0a
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: number(26,4)
+        defaultValue: ""
+        description: ""
+        name: OIL_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a2eba965-fc28-d9d3-d5259d9b36de
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "TARGET.OIL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b8201500-1260-277d-871922da89ff
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: number(26,4)
+        defaultValue: ""
+        description: ""
+        name: OIL_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a2eba965-fc28-d9d3-d5259d9b36de
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "TARGET.OIL*NVL(TARGET.LIQUID_BOE_THERMAL,1)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c43cbe25-44dd-2435-ce57b0fe4f71
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: number(26,4)
+        defaultValue: ""
+        description: ""
+        name: OIL_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a2eba965-fc28-d9d3-d5259d9b36de
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "TARGET.OIL*NVL(TARGET.LIQUID_BOE_THERMAL,1)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4cb65ff1-52b4-ad7a-7f0c8eae934c
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: number(26,4)
+        defaultValue: ""
+        description: ""
+        name: CONDENSATE_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4ebd2be0-7481-f9d3-d2e498dc49b3
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "TARGET.COND*NVL(TARGET.LIQUID_BOE_THERMAL,1)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d6aa66f8-908e-5c2d-d6edd802bde6
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: number(26,4)
+        defaultValue: ""
+        description: ""
+        name: CONDENSATE_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4ebd2be0-7481-f9d3-d2e498dc49b3
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "TARGET.COND*NVL(TARGET.LIQUID_BOE_THERMAL,1)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dacb6a29-655e-151a-62032aa57490
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: number(26,4)
+        defaultValue: ""
+        description: ""
+        name: CONDENSATE_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4ebd2be0-7481-f9d3-d2e498dc49b3
+                stepCounter: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+            transform: "TARGET.COND"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        name: CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+                stepCounter: 04888569-0194-e44a-0268-742ada084f19
+            transform: "TARGET.CC_NUM"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f51bd8a6-f7b1-1562-982710534c5d
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: CC_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f51bd8a6-f7b1-1562-982710534c5d
+                stepCounter: 04888569-0194-e44a-0268-742ada084f19
+            transform: "TARGET.CC_NAME"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 97c15d9c-193e-729a-193275e914eb
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: CC_NUM_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 97c15d9c-193e-729a-193275e914eb
+                stepCounter: 04888569-0194-e44a-0268-742ada084f19
+            transform: "TARGET.CC_NUM_NAME"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 67336aee-88e8-aecb-ccf9e77a7597
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: Formatted UWI of the Cost Centre
+        name: FORMATTED_UWI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 67336aee-88e8-aecb-ccf9e77a7597
+                stepCounter: 04888569-0194-e44a-0268-742ada084f19
+            transform: "TARGET.FORMATTED_UWI"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a4258d33-470e-708e-a053fd516aad
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: number(14,11)
+        defaultValue: ""
+        description: The Land Percent.
+        name: WORKING_INTEREST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a4258d33-470e-708e-a053fd516aad
+                stepCounter: 04888569-0194-e44a-0268-742ada084f19
+            transform: "TARGET.WORKING_INTEREST"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: be72a29b-4dd7-5d69-cfb9365d5896
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be72a29b-4dd7-5d69-cfb9365d5896
+                stepCounter: 04888569-0194-e44a-0268-742ada084f19
+            transform: "TARGET.AREA_NAME"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a7252aca-bce9-ce1c-a20be417c256
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: COREAREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a7252aca-bce9-ce1c-a20be417c256
+                stepCounter: 04888569-0194-e44a-0268-742ada084f19
+            transform: "TARGET.COREAREA_NAME"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: afee24ed-c61a-882d-ef7658d67cca
+          stepCounter: 8b0645a3-2cdd-d4a8-0561-6c8354fb5c7e
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: PROV_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: afee24ed-c61a-882d-ef7658d67cca
+                stepCounter: 04888569-0194-e44a-0268-742ada084f19
+            transform: "TARGET.PROV_NAME"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_LO_SAP_COST_CENTER_HIER: 04888569-0194-e44a-0268-742ada084f19
+          VIEW_GDC_RAW_PRODUCTION: d08dcf8f-8cf2-2f62-ace3-9be111a0e031
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: EDW
+            nodeName: DIM_LO_SAP_COST_CENTER_HIER
+          - locationName: EDW
+            nodeName: VIEW_GDC_RAW_PRODUCTION
+        join:
+          joinCondition: |-
+            FROM ( SELECT VIEW_GDC_RAW_PRODUCTION.BA_NAME ,VIEW_GDC_RAW_PRODUCTION.UWI ,VIEW_GDC_RAW_PRODUCTION.ACTIVITY_PERIOD ,VIEW_GDC_RAW_PRODUCTION.WATER ,VIEW_GDC_RAW_PRODUCTION.GAS ,VIEW_GDC_RAW_PRODUCTION.OIL ,VIEW_GDC_RAW_PRODUCTION.COND ,DIM_LO_SAP_COST_CENTER_HIER.CC_NUM ,DIM_LO_SAP_COST_CENTER_HIER.CC_NAME ,DIM_LO_SAP_COST_CENTER_HIER.CC_NUM_NAME ,DIM_LO_SAP_COST_CENTER_HIER.FORMATTED_UWI ,VIEW_CSLAND_WELL_DETAIL.WI AS WORKING_INTEREST ,DIM_LO_SAP_COST_CENTER_HIER.AREA_NAME ,DIM_LO_SAP_COST_CENTER_HIER.COREAREA_NAME ,DIM_LO_SAP_COST_CENTER_HIER.COUNTRY_NAME ,DIM_LO_SAP_COST_CENTER_HIER.PROV_NAME ,DIM_LO_SAP_PRODUCT_TYPE.LIQUID_BOE_THERMAL ,DIM_LO_SAP_PRODUCT_TYPE.GAS_SI_TO_IMP_CONV_FACTOR ,DIM_LO_SAP_PRODUCT_TYPE.GAS_BOE_THERMAL
+            FROM {{ ref('EDW', 'VIEW_GDC_RAW_PRODUCTION') }} VIEW_GDC_RAW_PRODUCTION
+            LEFT JOIN {{ ref('EDW', 'DIM_LO_SAP_COST_CENTER_HIER') }} DIM_LO_SAP_COST_CENTER_HIER
+              ON VIEW_GDC_RAW_PRODUCTION.UWI = DIM_LO_SAP_COST_CENTER_HIER.UWI
+            LEFT JOIN [TABLEOWNER].[VIEW_CSLAND_WELL_DETAIL] VIEW_CSLAND_WELL_DETAIL
+              ON VIEW_GDC_RAW_PRODUCTION.UWI = VIEW_CSLAND_WELL_DETAIL.RAW_UWI
+            JOIN ( SELECT DISTINCT MAX(CASE WHEN PROD_CODE IN ('GAS', 'GCOMP', 'GGATH', 'GPROC') THEN SI_TO_IMP_CONV_FACTOR END) AS GAS_SI_TO_IMP_CONV_FACTOR , MAX(CASE WHEN PROD_CODE IN ('GAS', 'GCOMP', 'GGATH', 'GPROC') THEN BOE_THERMAL END) AS GAS_BOE_THERMAL , MAX(CASE WHEN PROD_CODE NOT IN ('GAS', 'GCOMP', 'GGATH', 'GPROC') THEN BOE_THERMAL END) AS LIQUID_BOE_THERMAL
+            FROM [TABLEOWNER].[DIM_LO_SAP_PRODUCT_TYPE] ) AS DIM_LO_SAP_PRODUCT_TYPE
+              ON 1 = 1
+            GROUP BY VIEW_GDC_RAW_PRODUCTION.BA_NAME ,VIEW_GDC_RAW_PRODUCTION.UWI ,VIEW_GDC_RAW_PRODUCTION.ACTIVITY_PERIOD ,VIEW_GDC_RAW_PRODUCTION.WATER ,VIEW_GDC_RAW_PRODUCTION.GAS ,VIEW_GDC_RAW_PRODUCTION.OIL ,VIEW_GDC_RAW_PRODUCTION.COND ,DIM_LO_SAP_COST_CENTER_HIER.CC_NUM ,DIM_LO_SAP_COST_CENTER_HIER.CC_NAME ,DIM_LO_SAP_COST_CENTER_HIER.CC_NUM_NAME ,DIM_LO_SAP_COST_CENTER_HIER.FORMATTED_UWI ,VIEW_CSLAND_WELL_DETAIL.WI ,DIM_LO_SAP_COST_CENTER_HIER.AREA_NAME ,DIM_LO_SAP_COST_CENTER_HIER.COREAREA_NAME ,DIM_LO_SAP_COST_CENTER_HIER.COUNTRY_NAME ,DIM_LO_SAP_COST_CENTER_HIER.PROV_NAME ,DIM_LO_SAP_PRODUCT_TYPE.LIQUID_BOE_THERMAL ,DIM_LO_SAP_PRODUCT_TYPE.GAS_SI_TO_IMP_CONV_FACTOR ,DIM_LO_SAP_PRODUCT_TYPE.GAS_BOE_THERMAL ) AS TARGET
+            WHERE TARGET.BA_NAME LIKE '%VERMILION%'
+        name: VIEW_GDC_VET_RAW_PRODUCTION
+        noLinkRefs: []
+  name: VIEW_GDC_VET_RAW_PRODUCTION
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,177 @@
+fileVersion: 1
+id: 2febea0a-2ae4-7801-4d0d-9267a5f87093
+name: DIM_LO_SAP_LEDGER
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'DIM_LO_SAP_LEDGER') }} AS DST\r\nWHERE NOT EXISTS (SELECT * FROM {{ ref('STAGE_BT','STAGE_FIN_SAP_LEDGER') }} AS SRC WHERE DST.LEDGER_CODE = SRC.LEDGER_CODE);"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 96e8c785-9ac3-8f89-cab7ea094f1b
+          stepCounter: 2febea0a-2ae4-7801-4d0d-9267a5f87093
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_LEDGER_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4196bb26-4899-5e3c-667c966c9fc7
+          stepCounter: 2febea0a-2ae4-7801-4d0d-9267a5f87093
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Ledger Code (ACDOCA.RLDNR)
+        isBusinessKey: true
+        name: LEDGER_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4196bb26-4899-5e3c-667c966c9fc7
+                stepCounter: cc7a0fbd-d682-c695-9dcf-3a51ca82bfb8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 40b3d11a-8fd5-7fe5-d45d2e074335
+          stepCounter: 2febea0a-2ae4-7801-4d0d-9267a5f87093
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Ledger Description
+        name: LEDGER_DESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 40b3d11a-8fd5-7fe5-d45d2e074335
+                stepCounter: cc7a0fbd-d682-c695-9dcf-3a51ca82bfb8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ef4b08b7-df00-9c94-bb7172b4d33f
+          stepCounter: 2febea0a-2ae4-7801-4d0d-9267a5f87093
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Ledger is Leading Ledger
+        name: LEADING_LEDGER_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ef4b08b7-df00-9c94-bb7172b4d33f
+                stepCounter: cc7a0fbd-d682-c695-9dcf-3a51ca82bfb8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9a6d411e-afcf-b87f-b84eeb84b137
+          stepCounter: 2febea0a-2ae4-7801-4d0d-9267a5f87093
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: ""
+        name: LEDGER_SORT_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9a6d411e-afcf-b87f-b84eeb84b137
+                stepCounter: cc7a0fbd-d682-c695-9dcf-3a51ca82bfb8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 2febea0a-2ae4-7801-4d0d-9267a5f87093
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 2febea0a-2ae4-7801-4d0d-9267a5f87093
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STAGE_FIN_SAP_LEDGER: cc7a0fbd-d682-c695-9dcf-3a51ca82bfb8
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_FIN_SAP_LEDGER
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_FIN_SAP_LEDGER') }} "STAGE_FIN_SAP_LEDGER"
+        name: DIM_LO_SAP_LEDGER
+        noLinkRefs: []
+  name: DIM_LO_SAP_LEDGER
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

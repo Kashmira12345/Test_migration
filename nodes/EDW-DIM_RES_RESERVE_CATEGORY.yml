@@ -1,0 +1,157 @@
+fileVersion: 1
+id: 589e5903-3c73-a7dc-6852-28e286e3e102
+name: DIM_RES_RESERVE_CATEGORY
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'DIM_RES_RESERVE_CATEGORY') }} AS DST\r\nWHERE NOT EXISTS (SELECT * FROM {{ ref ('STAGE_BT','STAGE_RES_RESERVE_CATEGORY') }} AS SRC \r\n   WHERE DST.RESERVE_CATEGORY_ID = SRC.RESERVE_CATEGORY_ID);"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2d0f99a-a382-40c0-87533282edc9
+          stepCounter: 589e5903-3c73-a7dc-6852-28e286e3e102
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_RESERVE_CATEGORY_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5b8f16e2-b1c6-7574-0d4ef8ae2a35
+          stepCounter: 589e5903-3c73-a7dc-6852-28e286e3e102
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: RESERVE_CATEGORY_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5b8f16e2-b1c6-7574-0d4ef8ae2a35
+                stepCounter: aeb5578f-114d-d614-a475-bdb7bca506e5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9502f173-d1e1-2f1e-798c51bd7bb0
+          stepCounter: 589e5903-3c73-a7dc-6852-28e286e3e102
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: CATEGORY_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9502f173-d1e1-2f1e-798c51bd7bb0
+                stepCounter: aeb5578f-114d-d614-a475-bdb7bca506e5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5d06aa6a-c0a0-d34e-1838404da22e
+          stepCounter: 589e5903-3c73-a7dc-6852-28e286e3e102
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        name: CATEGORY_VALUE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5d06aa6a-c0a0-d34e-1838404da22e
+                stepCounter: aeb5578f-114d-d614-a475-bdb7bca506e5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 589e5903-3c73-a7dc-6852-28e286e3e102
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 589e5903-3c73-a7dc-6852-28e286e3e102
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STAGE_RES_RESERVE_CATEGORY: aeb5578f-114d-d614-a475-bdb7bca506e5
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_RES_RESERVE_CATEGORY
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_RES_RESERVE_CATEGORY') {{ ref ('STAGE_BT','STAGE_RES_RESERVE_CATEGORY"
+        name: DIM_RES_RESERVE_CATEGORY
+        noLinkRefs: []
+  name: DIM_RES_RESERVE_CATEGORY
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

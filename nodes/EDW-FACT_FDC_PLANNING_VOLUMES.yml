@@ -1,0 +1,867 @@
+fileVersion: 1
+id: 89ceedb1-3580-a6cd-6296-18845bf1f617
+name: FACT_FDC_PLANNING_VOLUMES
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: "DELETE FROM {{ ref('EDW', 'FACT_FDC_PLANNING_VOLUMES') }} AS DST WHERE NOT EXISTS (SELECT * FROM {{ ref ('STAGE_BT','STAGE_PLANNING_VOLUMES') }} AS SRC WHERE DST.DIM_WELL_KEY = SRC.ENTITY_KEY AND DST.DIM_ACTIVITY_PERIOD_DATE_KEY =  SRC.ACTIVITY_DATE_KEY AND DST.DIM_GROSS_NET_KEY = SRC.GROSS_NET_KEY AND DST.DIM_SCENARIO_KEY = SRC.SCENARIO_KEY );"
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ed2fd51d-92a6-95cc-54bc892be32e
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: DIM_WELL_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c297c80e-0d13-4a65-d9d70315380d
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fe922c71-6d5d-e1e7-3ac215ea3a70
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: DIM_SCENARIO_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e278d5f3-d2ec-2fd7-8e981b3b81c8
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2698198b-77d9-afee-4d694f75cafd
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: int
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: DIM_GROSS_NET_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: af31a3b0-e2fb-1e27-73bbf8e709fc
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 37141a64-acba-89b1-a50684bcaec9
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: int
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: DIM_ACTIVITY_PERIOD_DATE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dbb72286-cc77-ff19-84fff9a466f4
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6fa46127-edac-f0e1-329e37099712
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        name: ACTIVITY_DATE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6fa46127-edac-f0e1-329e37099712
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a43552a2-cdbc-f4b3-2dfdbd46d220
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: int
+        defaultValue: ""
+        description: ""
+        name: DIM_NORMALIZED_DATE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 39f8a87c-ad4f-63e5-2820b669b747
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a8fa75dc-3aa0-bc5f-2265e606d4df
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: int
+        defaultValue: ""
+        description: ""
+        name: DIM_PRODUCING_DATE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ae551831-8c64-a1ad-4d7fb161010f
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba0e879d-2f14-96e5-f5ef8a82eb99
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: int
+        defaultValue: ""
+        description: ""
+        name: DIM_ON_PROD_DATE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c8255186-5f67-9775-030fbc804dd8
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: "  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc5ac93a-f5f6-cea6-0a4164ff4e0a
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: OIL_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cc5ac93a-f5f6-cea6-0a4164ff4e0a
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c43cbe25-44dd-2435-ce57b0fe4f71
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: OIL_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c43cbe25-44dd-2435-ce57b0fe4f71
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b8201500-1260-277d-871922da89ff
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: OIL_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b8201500-1260-277d-871922da89ff
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dacb6a29-655e-151a-62032aa57490
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: CONDENSATE_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dacb6a29-655e-151a-62032aa57490
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4cb65ff1-52b4-ad7a-7f0c8eae934c
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: CONDENSATE_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4cb65ff1-52b4-ad7a-7f0c8eae934c
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d6aa66f8-908e-5c2d-d6edd802bde6
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: CONDENSATE_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d6aa66f8-908e-5c2d-d6edd802bde6
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3f8e6301-4635-a307-f0aa04a3ac45
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: NGL_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3f8e6301-4635-a307-f0aa04a3ac45
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 11b65fe2-6e84-7908-65353f20d876
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: NGL_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 11b65fe2-6e84-7908-65353f20d876
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 19ae2f4f-3aae-3784-73c89897feaf
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: NGL_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 19ae2f4f-3aae-3784-73c89897feaf
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91505492-4e67-572c-b43a7a2223d4
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: GAS_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91505492-4e67-572c-b43a7a2223d4
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 936c1cae-8ae3-a924-102f0a7b10eb
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: GAS_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 936c1cae-8ae3-a924-102f0a7b10eb
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 494a2307-22bb-d1c8-feffa025b769
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: GAS_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 494a2307-22bb-d1c8-feffa025b769
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 10218a87-9a0f-49eb-5001bb239385
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: RAW_GAS_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 10218a87-9a0f-49eb-5001bb239385
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1aa7162a-4c8d-2012-684e90cad0e4
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: RAW_GAS_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1aa7162a-4c8d-2012-684e90cad0e4
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fc9c8bc3-e181-90ae-08d3febab0fb
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: RAW_GAS_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fc9c8bc3-e181-90ae-08d3febab0fb
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 63ff9664-b7de-1d1b-d5015473f4e9
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: ETHANE_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 63ff9664-b7de-1d1b-d5015473f4e9
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: faecd7d6-bf57-45de-9f6b96346d2a
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: ETHANE_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: faecd7d6-bf57-45de-9f6b96346d2a
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8c21429a-af0e-ee28-c295c11a9d43
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: ETHANE_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8c21429a-af0e-ee28-c295c11a9d43
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb464fc5-d3ca-5fca-23d95e1a302b
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: PROPANE_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb464fc5-d3ca-5fca-23d95e1a302b
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f3d103df-7ce1-42df-c89c4dea5482
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: PROPANE_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f3d103df-7ce1-42df-c89c4dea5482
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 20782bec-0860-8460-219166581a76
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: PROPANE_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 20782bec-0860-8460-219166581a76
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3b1237ed-0729-e492-35078aa00ebb
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: BUTANE_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b1237ed-0729-e492-35078aa00ebb
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 59eeb556-42b2-c858-c68f9a7c87a4
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: BUTANE_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 59eeb556-42b2-c858-c68f9a7c87a4
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b7f0b2f3-8fb0-730e-864a2b994828
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: BUTANE_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b7f0b2f3-8fb0-730e-864a2b994828
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cb6ce8da-ac0f-576b-edbbe38b2e4d
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: PENTANE_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cb6ce8da-ac0f-576b-edbbe38b2e4d
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e23aca76-e024-6793-c0700dd6a162
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: PENTANE_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e23aca76-e024-6793-c0700dd6a162
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30f8ad57-69f5-ce82-01ac8db3a804
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: PENTANE_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 30f8ad57-69f5-ce82-01ac8db3a804
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7386070c-607c-8d7b-014c1eec1466
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: COMMENT_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7386070c-607c-8d7b-014c1eec1466
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2cd320b-7434-dd48-d81b165ea956
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: COMMENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f2cd320b-7434-dd48-d81b165ea956
+                stepCounter: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: BU_SF_ROLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+                stepCounter: b2b8992f-c6a9-5415-8ffa-78b1be436bd5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: DSS_CREATE_TIME
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 89ceedb1-3580-a6cd-6296-18845bf1f617
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: DSS_UPDATE_TIME
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_FDC_WELL: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+          STAGE_PLANNING_VOLUMES: 78cf96ff-9c76-92a5-d354-3ba1c7a96b07
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: DIM_FDC_WELL
+          - locationName: STAGE_BT
+            nodeName: STAGE_PLANNING_VOLUMES
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_PLANNING_VOLUMES') }} "STAGE_PLANNING_VOLUMES"
+            LEFT JOIN {{ ref('EDW', 'DIM_FDC_WELL') }} "DIM_FDC_WELL"
+              ON STAGE_PLANNING_VOLUMES.ENTITY_KEY = DIM_FDC_WELL.DIM_WELL_KEY
+        name: FACT_FDC_PLANNING_VOLUMES
+        noLinkRefs: []
+  name: FACT_FDC_PLANNING_VOLUMES
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "6"
+  type: sql
+  version: 1
+type: Node
