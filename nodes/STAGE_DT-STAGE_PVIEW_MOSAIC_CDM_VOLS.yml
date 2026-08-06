@@ -1,0 +1,951 @@
+fileVersion: 1
+id: 1f568143-c904-74ef-efbd-144b65087f05
+name: STAGE_PVIEW_MOSAIC_CDM_VOLS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_DT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f1d1fc2a-1323-fe78-868aba0e1bca
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: WELL_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b00da030-337e-bc40-610428b83369
+                stepCounter: b4c98ea3-3296-9dcd-35cb-4170801715d6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 014e1eda-4109-b065-12edddc12e46
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: PRODUCTION_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2fe9900-086f-27d3-824d84adc8f4
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d2c4e726-6fae-0f5f-3c3b8fede513
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: PERIOD_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ab9376a-a83e-84e9-4bcb25aa8cbd
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: HOURS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e102dff6-81e9-ab9b-24784345b2dd
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a150db0-4323-b5b9-de4998e93709
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: HOURS_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e102dff6-81e9-ab9b-24784345b2dd
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a2eba965-fc28-d9d3-d5259d9b36de
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: OIL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 25bbb858-dc92-64af-516121e2d705
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 505273a0-a011-1a40-f6cccbc55d69
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: GAS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 12388273-c8c7-6215-6d33fc52d809
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 849324e1-2305-13bb-068a7c06b31a
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: GAS_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0aa4d33a-6217-ed01-292eea9267c5
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 69138788-9128-ff32-87946f2e46cd
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: GAS_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2add2964-3909-9cb5-1edf4a4f5a70
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: WATER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be3a1791-3e8c-0edb-8042980d61df
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aff4900c-5885-41d5-c247c68e0e29
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: WATER_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 95ddacbe-3bc1-d86d-48318f700b67
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bb3863d2-fccc-37f8-6699467aae23
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: WATER_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8b8d085d-e680-d398-86fb6216ede0
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: FIELD_CONDENSATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4dccb4a2-b864-0531-176cc19f6611
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: ETHANE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 97526ae6-cbeb-b424-6c47786219d3
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: ETHANE_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3bae537f-96c6-1aa7-a414cfeb98d8
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: PROPANE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 70451b22-f721-5f62-da6bb4016e78
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: PROPANE_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f5f4a74-7571-ed7b-3dad6539d66e
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: BUTANE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7aaf8b18-3afb-2aea-f9ab6158addc
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: BUTANE_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84634d22-5a14-8c95-2acfad1f4b0b
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: PENTANE_PLUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a0cf8acf-c453-975b-317e8a5e4e61
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3fc69351-eaa6-acfd-a331cf340ee2
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: PENTANE_PLUS_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e3ccaa8-90b3-f376-52756237b97e
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: SULPHUR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 454e2068-496c-445d-eceb9a501b82
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: FLUID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fce8de0e-a2a7-f80b-ebb147aa22c6
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: NGL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ab3874d4-1619-70ea-783bc4d1a921
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: efb24377-4708-b0a2-d000fb1be8b7
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: HELIUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 51547885-d0da-6db8-89a57936302e
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: HELIUM_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0d9ca91-fe1b-85ca-c55a9f66b03d
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: HELIUM_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cac6a58a-e005-781b-5f99c6b4db2e
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: CARBON_DIOXIDE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 99a0e71c-80fc-f554-1caaa1767af3
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: CARBON_DIOXIDE_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a5300ffa-fc43-e761-f74ad0e426a6
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: CARBON_DIOXIDE_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd8b86e7-b75c-7c92-24089b4f239b
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: SAND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 60bc6492-42ba-4574-e9fefad9bd9c
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: SAND_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 976dd240-d8a5-8e48-89260754b24c
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: STEAM_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9e320fe7-5467-3637-877ba24a9025
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: POLYMER_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9f61b02d-cddd-b1d3-5fd1ae09d394
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: SOLVENT_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 478fd999-8114-b809-700e3c83210f
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: ALKALI_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b3aa25fb-c62f-2a69-4a1df7613fc6
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: DILUENT_INJ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 777c6dee-6317-c59b-01235aaf3e36
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: DILUENT_COST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd517705-4dad-cc98-352332f8ee04
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: FWHP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bd098d5f-fb0c-d664-8016629287f3
+                stepCounter: 0bda6665-d7cf-a7f9-35c8-19a99ec575b3
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a97a34a3-820c-6bb9-0d94bcd00524
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: FBHP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb4d0de9-6fed-2518-4da74b49455b
+                stepCounter: 0bda6665-d7cf-a7f9-35c8-19a99ec575b3
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e9232d76-a0f3-0b7d-79199d9fb075
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: CASING_PRESSURE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ca789e66-0983-b56d-c819c671b2f0
+                stepCounter: 0bda6665-d7cf-a7f9-35c8-19a99ec575b3
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2204b9ab-d42b-d57d-d2bfbf5e0c3b
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: TUBING_PRESSURE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: da222ec1-bb4a-9c8a-0b9e1ef6322c
+                stepCounter: 0bda6665-d7cf-a7f9-35c8-19a99ec575b3
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 21d9a716-8fe6-f548-996056a113a4
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: LINE_PRESSURE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 307af5a2-ac6b-c657-26161258af27
+                stepCounter: 0bda6665-d7cf-a7f9-35c8-19a99ec575b3
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0ef0d0f9-5111-f656-bde5a3e36322
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: PERFORMANCE_INDEX
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: afc67f37-000a-b982-a9b24e44a637
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: CHOKE_SIZE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3aa0578c-6584-b0f5-12d29b2987d8
+                stepCounter: 0bda6665-d7cf-a7f9-35c8-19a99ec575b3
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd75338c-ff84-8ad0-b2b3b1c1dd36
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: WELL_IDREC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8683c3b-6830-536a-3ae2e9baf7d8
+                stepCounter: b4c98ea3-3296-9dcd-35cb-4170801715d6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e8f8130d-6160-3110-e728e46e6a38
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: varchar
+        defaultValue: ""
+        description: ""
+        name: DAY_IDREC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8683c3b-6830-536a-3ae2e9baf7d8
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 1f568143-c904-74ef-efbd-144b65087f05
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+          ODS_PVIEW_PVT_PVUNITCOMP: b4c98ea3-3296-9dcd-35cb-4170801715d6
+          ODS_PVIEW_PVT_PVUNITCOMPPARAM: 0bda6665-d7cf-a7f9-35c8-19a99ec575b3
+        customSQL:
+          customSQL: "CREATE VIEW [TABLEOWNER].[STAGE_PVIEW_MOSAIC_CDM_VOLS] as \n\nWITH GasVolumes AS(\n    SELECT p.dttm,\n        p.idflownet,\n        p.volnewprodallocgas,\n        p.idrec,\n        CASE\n            WHEN p.idflownet = '966E2E4C11274A8E88B00B7D5E37FA4A' THEN (p.volnewprodallocgas * 1.0494811) / 1000 \n            WHEN p.idflownet = 'D31DB03FC64C4413B39FEBBED5004D42' THEN (p.volnewprodallocgas * 1.0494811) / 1000 \n            WHEN p.idflownet = 'E6FCADB21222494393E582D914245BBF' THEN (p.volnewprodallocgas * 1.0494811) / 1000 \n            WHEN p.idflownet = '13520ED8659449F38B5085DA7F464CDB' THEN (p.volnewprodallocgas * 1.0494811) / 1000 \r\n    \t\tWHEN upper(u.district) in ('DEEP BASIN NORTH','DEEP BASIN SOUTH','ALBERTA GENERAL') THEN p.volprodgathgas / 1000 \n            ELSE p.volnewprodallocgas / 1000\n        END AS gas,\n        CASE\n            WHEN p.idflownet = '966E2E4C11274A8E88B00B7D5E37FA4A' THEN (p.volinjectgas * 1.0494811) / 1000\n            ELSE p.volinjectgas / 1000\n        END AS injgas\n    FROM DS_PRODVIEW.PVT_pvunitallocmonthday p\n    INNER JOIN DS_PRODVIEW.PVT_pvunit u on p.idrecunit = u.idrec\n),\nsaskGasVolumes AS(\n    select fd.balfactgas, f.idrec as idrecfacility, fd.dttm\n    from DS_PRODVIEW.pvt_pvfacilitymonthdaycalc fd\n    join DS_PRODVIEW.pvt_pvfacilitymonthcalc fm on fd.idrecparent = fm.idrec\n    join DS_PRODVIEW.pvt_pvfacility f on fm.idrecparent = f.idrec\n),\nsaskFacilities AS (\n    SELECT DISTINCT f.idrec\n    FROM DS_PRODVIEW.PVT_pvfacility f\n    WHERE typ2 = '322'\n    AND typregulatory = 'Crude Oil Multiwell Proration Battery'\n),\nab_bc_volumes AS (\n\tselect\n\t\td.idrec\n\t\t, d.dttm as production_date\n\t\t, d.idflownet\n\t\t, d.idrecunit\n\t\t, d.idrecparam\n\t\t, d.durop * 24 AS hours\n\t\t, d.durop * 24 AS hours_inj\n\t\t, d.volprodgathgas / 1000 as gas \n\t\t, d.volnewprodallocoil as oil\n\t\t, d.volnewprodallocwater AS water\n\t\t, NULL as ngl\n\t\t, d.volnewprodalloccond as cond\n\t\t, d.volinjectgas / 1000 as inj_gas\n\t\t, d.volinjectwater as inj_water\n\tfrom\n\t\tDS_PRODVIEW.PVT_pvunitallocmonthday d\n\t\tjoin DS_PRODVIEW.PVT_pvunit u on d.idrecunit = u.idrec\n\twhere\n\t\tupper(u.district) in ('DEEP BASIN NORTH','DEEP BASIN SOUTH','ALBERTA GENERAL')\n), \nab_bc_ngls as (\n\tselect\n\t\tp.idflownet\n\t\t, p.idrecunit\n\t\t, p.dttm as production_date\n\t\t, sum(coalesce(p.volc1liq, 0)) as methane\n\t\t, sum(coalesce(p.volc2liq, 0)) as ethane\n\t\t, sum(coalesce(p.volc3liq, 0)) as propane\n\t\t, sum(coalesce(p.volic4liq, 0) + coalesce(p.volnc4liq, 0)) as butane\n\t\t, sum(coalesce(p.volc6liq, 0) + coalesce(p.volc7liq, 0)) as pentane\n\t\t, sum(coalesce(p.volic5liq, 0) + coalesce(p.volnc5liq, 0)) as field_condensate\n\tfrom\n\t\tDS_PRODVIEW.PVT_pvunitdispmonthday p\n\t\tjoin DS_PRODVIEW.PVT_pvunit u on p.idrecunit = u.idrec\n\t\tleft join DS_PRODVIEW.PVT_pvunitnode n on p.idrecdispunitnode = n.idrec\n\twhere\n\t\tlower(n.typdisphcliq) = 'ngl'\n\t\tand upper(u.district) in ('DEEP BASIN NORTH','DEEP BASIN SOUTH','ALBERTA GENERAL','BRITISH COLUMBIA')\n\tgroup by\n\t\tp.idflownet\n\t\t, p.idrecunit\n\t\t, p.dttm\n)\n\nSELECT \n    CAST(w.wellidregulatory as varchar(50)) as well_name,\n    d.dttm as production_date,\n    CAST('D' as varchar(1)) as period_type,\n    CAST((d.durop * 24) as float) as hours,\n    CAST((d.durop * 24) as float) as hours_inj,\n    CAST(d.volnewprodallocoil as float) as oil,\n    CAST(CASE\n           WHEN d.idrecfacility IN (saskFacilities.idrec) THEN saskGasVolumes.balfactgas * d.volprodgathgas / 1000\n           ELSE GasVolumes.gas\n        END as float) AS gas,\n    CAST(GasVolumes.injgas as float) as gas_inj,\n    CAST(null as float) as gas_cost,\n    CAST(d.volnewprodallocwater as float) as water,\n    CAST(d.volinjectwater as float) as water_inj,\n    CAST(null as float) as water_cost,\n    CAST(abbcvol.cond as float) as field_condensate,\n    CAST(abbcngl.ethane as float) as ethane,\n    CAST(null as float) as ethane_inj,\n    CAST(abbcngl.propane as float) as propane,\n    CAST(null as float) as propane_inj,\n  \
+            \  CAST(abbcngl.butane as float) as butane,\n    CAST(null as float) as butane_inj,\n    CAST(\n       CASE\n\t      WHEN abbcngl.production_date is not null \n             THEN abbcngl.field_condensate\n\t      ELSE  d.volnewprodalloccond \n       END\n    as float) as pentane_plus,\n    CAST(null as float) as pentane_plus_inj,\n    CAST(null as float) as sulphur,\n    CAST(null as float) as fluid,\n    CAST(\n       CASE\n       WHEN u.division = 'UNITED STATES' \n          THEN d.volnewprodallocngl \n       ELSE null \n    END    \n    as float) as ngl,\n    CAST(null as float) as helium,\n    CAST(null as float) as helium_inj,\n    CAST(null as float) as helium_cost,\n    CAST(null as float) as carbon_dioxide,\n    CAST(null as float) as carbon_dioxide_inj,\n    CAST(null as float) as carbon_dioxide_cost,\n    CAST(null as float) as sand,\n    CAST(null as float) as sand_inj,\n    CAST(null as float) as steam_inj,\n    CAST(null as float) as polymer_inj,\n    CAST(null as float) as solvent_inj,\n    CAST(null as float) as alkali_inj,\n    CAST(null as float) as diluent_inj,\n    CAST(null as float) as diluent_cost,\n    CAST(p.preswh as float) as fwhp,\n    CAST(p.presbh as float) as fbhp,\n    CAST(p.prescas as float) as casing_pressure,\n    CAST(p.prestub as float) as tubing_pressure,\n    CAST(p.presline as float) as line_pressure,\n    CAST(null as float) as performance_index,\n    CAST(p.szchoke as float) as choke_size,\n    CAST(w.idrec as varchar(32)) well_idrec,\n    CAST(d.idrec as varchar(32)) day_idrec,\n    CAST(current_timestamp() as timestamp_ntz) as DSS_LOAD_DATE\nFROM DS_PRODVIEW.PVT_pvunitcomp AS w\n    INNER JOIN DS_PRODVIEW.PVT_pvunitallocmonth m ON w.idrecparent = m.idrecparent\n    INNER JOIN DS_PRODVIEW.PVT_pvunitallocmonthday d ON d.idrecparent = m.idrec\n\tINNER JOIN DS_PRODVIEW.PVT_pvunit u on d.idrecunit = u.idrec    \n    LEFT JOIN DS_PRODVIEW.PVT_pvUnitCompParam p ON d.idrecparam = p.idrec\n    INNER JOIN GasVolumes ON GasVolumes.idrec = d.idrec\n    LEFT JOIN saskGasVolumes ON (saskGasVolumes.idrecfacility = d.idrecfacility AND saskGasVolumes.dttm = d.dttm)\n    LEFT JOIN saskFacilities ON saskFacilities.idrec = d.idrecfacility\n\tLEFT OUTER JOIN ab_bc_volumes abbcvol ON abbcvol.idrecunit = d.idrecunit AND abbcvol.production_date = d.dttm\n\tLEFT OUTER JOIN ab_bc_ngls abbcngl ON abbcngl.idrecunit = d.idrecunit AND abbcngl.production_date = d.dttm\nwhere m.dttmstart >= DATE_TRUNC('Month', ADD_MONTHS(CURRENT_DATE(), -10))\n    and w.wellidregulatory is not NULL;"
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNITCOMP
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNITCOMPPARAM
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('STAGE_DT','STAGE_PVIEW_MOSAIC_CDM_VOLS') }} "STAGE_PVIEW_MOSAIC_CDM_VOLS"
+        name: STAGE_PVIEW_MOSAIC_CDM_VOLS
+        noLinkRefs: []
+  name: STAGE_PVIEW_MOSAIC_CDM_VOLS
+  overrideSQL: true
+  schema: CLS_STAGE_DT
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

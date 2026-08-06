@@ -1,0 +1,165 @@
+fileVersion: 1
+id: 7f8b6059-3e59-d861-9548-e1cca5d81b83
+name: STAGE_EDW_PVIEW_MSTR_DATA_PARTNER_WI
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "Staging view for ProdView Master Data Integration"
+  isMultisource: false
+  locationName: STAGE_DT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 124540a0-99f7-c2c7-ab43478346f5
+          stepCounter: 7f8b6059-3e59-d861-9548-e1cca5d81b83
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: PVT_PVUNIT_idrec
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8683c3b-6830-536a-3ae2e9baf7d8
+                stepCounter: 25548ef3-08f5-5812-b243-6c4f50853ef8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 71bf2e0b-ca62-4fb0-0818e7371410
+          stepCounter: 7f8b6059-3e59-d861-9548-e1cca5d81b83
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: PVT_PVUNIT_name
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad32e604-67fc-4355-38334fbddf3e
+                stepCounter: 25548ef3-08f5-5812-b243-6c4f50853ef8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 32725a54-0ee9-cf60-46631749a8d1
+          stepCounter: 7f8b6059-3e59-d861-9548-e1cca5d81b83
+        config: {}
+        dataType: varchar(8)
+        defaultValue: ""
+        description: ""
+        name: PVT_PVUNITAGREEMENT_dttmstart
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 04823709-781b-f5eb-e523b7ee65e8
+                stepCounter: 5186fd15-04b5-e3d0-ad7a-ecb330af0243
+            transform: "TO_CHAR(VIEW_CSLAND_PVIEW_PARTNERS.EFFECTIVE_DATE,'YYYYMMDD')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b20d2b9e-e17e-e463-cce9b029cf0c
+          stepCounter: 7f8b6059-3e59-d861-9548-e1cca5d81b83
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: PVT_PVPARTNER_partnername
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 683b3e0f-caed-b37e-339ad6d9fb9d
+                stepCounter: 5186fd15-04b5-e3d0-ad7a-ecb330af0243
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 29a6cdf7-6089-cb24-2728744b84f9
+          stepCounter: 7f8b6059-3e59-d861-9548-e1cca5d81b83
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: PVT_PVUNITAGREEMENTPARTNER_interest
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fb59ea78-ecd0-63b2-4b3d26e3464a
+                stepCounter: 5186fd15-04b5-e3d0-ad7a-ecb330af0243
+            transform: "TO_CHAR(VIEW_CSLAND_PVIEW_PARTNERS.PARTNER_PERCENT)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d9625a77-4141-d33d-c390bedbd6e5
+          stepCounter: 7f8b6059-3e59-d861-9548-e1cca5d81b83
+        config: {}
+        dataType: varchar(19)
+        defaultValue: ""
+        description: ""
+        name: PVT_PVUNITAGREEMENTPARTNER_com
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eaaf533f-0a4b-b2a4-737cdbc075a9
+                stepCounter: 5186fd15-04b5-e3d0-ad7a-ecb330af0243
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_PVIEW_PVT_PVUNIT: 25548ef3-08f5-5812-b243-6c4f50853ef8
+          VIEW_CSLAND_PVIEW_PARTNERS: 5186fd15-04b5-e3d0-ad7a-ecb330af0243
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW [TABLEOWNER].[STAGE_EDW_PVIEW_MSTR_DATA_PARTNER_WI] \r\nAS\r\n(SELECT\r\n   PVT_PVUNIT.IDREC \"PVT_PVUNIT_idrec\",\r\n   PVT_PVUNIT.NAME \"PVT_PVUNIT_name\",\r\n   TO_CHAR(VIEW_CSLAND_PVIEW_PARTNERS.EFFECTIVE_DATE,'YYYYMMDD') \"PVT_PVUNITAGREEMENT_dttmstart\",\r\n   VIEW_CSLAND_PVIEW_PARTNERS.PARTNER_NAME \"PVT_PVPARTNER_partnername\",\r\n   TO_CHAR(VIEW_CSLAND_PVIEW_PARTNERS.PARTNER_PERCENT) \"PVT_PVUNITAGREEMENTPARTNER_interest\",\r\n   'CS file: ' || VIEW_CSLAND_PVIEW_PARTNERS.WELL_FILE_NUMBER \"PVT_PVUNITAGREEMENTPARTNER_com\"\r\nFROM [TABLEOWNER].[VIEW_CSLAND_PVIEW_PARTNERS] VIEW_CSLAND_PVIEW_PARTNERS\r\n   INNER JOIN DS_PRODVIEW.PVT_PVUNITCOMP PVT_PVUNITCOMP ON \r\n      VIEW_CSLAND_PVIEW_PARTNERS.WELL_UWI =  PVT_PVUNITCOMP.WELLIDREGULATORY\r\n   INNER JOIN DS_PRODVIEW.PVT_PVUNIT PVT_PVUNIT ON \r\n      PVT_PVUNITCOMP.IDRECPARENT = PVT_PVUNIT.IDREC)\r\nUNION\r\n(SELECT 'Partner Agreement' \"PVT_PVUNIT_idrec\",NULL,NULL,NULL,NULL,NULL)\r\nORDER BY DECODE(\"PVT_PVUNIT_idrec\",'Partner Agreement',0,1) ASC\t  "
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNIT
+          - locationName: EDW
+            nodeName: VIEW_CSLAND_PVIEW_PARTNERS
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('STAGE_DT','STAGE_EDW_PVIEW_MSTR_DATA_PARTNER_WI') }} "STAGE_EDW_PVIEW_MSTR_DATA_PARTNER_WI"
+        name: STAGE_EDW_PVIEW_MSTR_DATA_PARTNER_WI
+        noLinkRefs: []
+  name: STAGE_EDW_PVIEW_MSTR_DATA_PARTNER_WI
+  overrideSQL: true
+  schema: CLS_STAGE_DT
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

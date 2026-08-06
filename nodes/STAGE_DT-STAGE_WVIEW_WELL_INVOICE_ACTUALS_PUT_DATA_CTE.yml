@@ -1,0 +1,125 @@
+fileVersion: 1
+id: 9c7561b6-671e-bb26-eb41-ac9f3a2d573b
+name: STAGE_WVIEW_WELL_INVOICE_ACTUALS_PUT_DATA_CTE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_DT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b4f72e4-bda1-197f-9cd097819bf2
+          stepCounter: 9c7561b6-671e-bb26-eb41-ac9f3a2d573b
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: idwell
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 267f6b19-bda4-52a2-7be3d6360928
+                stepCounter: a1bfdd74-2764-00fd-1109-7d28b5b3452b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dfd976c8-1cc0-9fce-e81656aae58f
+          stepCounter: 9c7561b6-671e-bb26-eb41-ac9f3a2d573b
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: idrec
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8683c3b-6830-536a-3ae2e9baf7d8
+                stepCounter: f982363d-abe1-a43a-7d92-6a1a7ae159fb
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3420e2fb-67e1-5d74-a5befd32c74b
+          stepCounter: 9c7561b6-671e-bb26-eb41-ac9f3a2d573b
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: ""
+        name: idrec_amount
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d01105a4-0b87-eab3-d6c69be43a08
+                stepCounter: f982363d-abe1-a43a-7d92-6a1a7ae159fb
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e9f40e1f-5868-1dad-2dac4ae0971e
+          stepCounter: 9c7561b6-671e-bb26-eb41-ac9f3a2d573b
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: ""
+        name: amount
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 39d04f4b-7aae-c9af-2219c766de38
+                stepCounter: a1bfdd74-2764-00fd-1109-7d28b5b3452b
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_WVIEW_WVT_WVJOBAFEFINALINVOICECOST: f982363d-abe1-a43a-7d92-6a1a7ae159fb
+          VIEW_WVIEW_WBS_INVOICE_ACTUALS: a1bfdd74-2764-00fd-1109-7d28b5b3452b
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW WS_STAGE_DT.STAGE_WVIEW_WELL_INVOICE_ACTUALS_PUT_DATA_CTE AS\nSELECT\n    WELLHEADER_IDWELL as \"idwell\",\n    load.idrec as \"idrec\",\n    sum(wvInvoiceCost.amount) as \"idrec_amount\",\n    sum(CAD_AMT_FLPD) as \"amount\"  \nFROM\n    WS_EDW.VIEW_WVIEW_WBS_INVOICE_ACTUALS VWWIA\n    LEFT JOIN MAT_LOAD.LOAD_WVIEW_WVJOBAFEFINALINVOICECOST_RTN load on \n        VWWIA.WELLHEADER_IDWELL = load.idwell \n        and VWWIA.GL_ACCOUNT = load.code3\n        and VWWIA.JOBAFE_IDREC = load.idrecparent   \n        and coalesce(VWWIA.BUSINESS_ASSOCIATE_ID, 'UNKNOWN') = coalesce(load.vendorcode, 'UNKNOWN') \n        and coalesce(VWWIA.INVOICE_NUM, 'UNKNOWN') = coalesce(load.invoicerefno, 'UNKNOWN')\n    LEFT JOIN DS_WELLVIEW.WVT_WVJOBAFEFINALINVOICECOST wvInvoiceCost ON\n        load.idrec = wvInvoiceCost.idrec\nWHERE  \n    VWWIA.GL_ACCOUNT <> '600020'\n    AND load.idrec is not null \nGROUP BY\n    VWWIA.WELLHEADER_IDWELL,\n    load.idrec\n;"
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_WVIEW_WVT_WVJOBAFEFINALINVOICECOST
+          - locationName: EDW
+            nodeName: VIEW_WVIEW_WBS_INVOICE_ACTUALS
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('STAGE_DT','STAGE_WVIEW_WELL_INVOICE_ACTUALS_PUT_DATA_CTE') }} "STAGE_WVIEW_WELL_INVOICE_ACTUALS_PUT_DATA_CTE"
+        name: STAGE_WVIEW_WELL_INVOICE_ACTUALS_PUT_DATA_CTE
+        noLinkRefs: []
+  name: STAGE_WVIEW_WELL_INVOICE_ACTUALS_PUT_DATA_CTE
+  overrideSQL: true
+  schema: CLS_STAGE_DT
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

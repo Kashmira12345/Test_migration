@@ -1,0 +1,201 @@
+fileVersion: 1
+id: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+name: VIEW_DIM_FDC_ON_PROD_DATE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aec04c15-1bd9-7440-417995c5705c
+          stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated key for the date dimension. Nominal format is YYYYMMDD, but DD equal to 0 and greater than 31 permited for special date handling.
+        name: DIM_DATE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aec04c15-1bd9-7440-417995c5705c
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6922a2ae-7004-c486-e9a6457d393c
+          stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: The calendar date for this row.
+        name: CALENDAR_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6922a2ae-7004-c486-e9a6457d393c
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1a0d6243-95eb-17ba-dde124097916
+          stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: The calendar year. Format YYYY
+        name: YEAR_SORT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2f36bb0-57a6-1167-6a3a39d3a261
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5d216120-3418-eb3b-af91bdf5af30
+          stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: The calendar year. Format YYYY
+        name: YEAR_GROUPING
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2f36bb0-57a6-1167-6a3a39d3a261
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: "'On Prod ' || VIEW_DIM_FDC_ON_PROD_DATE.CAL_YEAR"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6381971d-1f4c-7079-fe83213dc624
+          stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: The calendar quarter number 1-4.
+        name: QUARTER_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4055c224-67ab-0a94-43509c57c1c2
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: "'On Prod ' || VIEW_DIM_FDC_ON_PROD_DATE.CAL_YEAR || ' Q' || VIEW_DIM_FDC_ON_PROD_DATE.CAL_QUARTER_NO"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57b7b5e2-7fcd-22c3-7d67f7a09c8e
+          stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: The calendar month number 1-12.
+        name: CAL_MONTH_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 57b7b5e2-7fcd-22c3-7d67f7a09c8e
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2134ce3-17ac-3107-b060860b05c7
+          stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: 'The calendar month name. Format MON. Examples: jan, feb, mar.'
+        name: CAL_MONTH_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2134ce3-17ac-3107-b060860b05c7
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: "'On Prod ' || VIEW_DIM_FDC_ON_PROD_DATE.CAL_MONTH_NAME || ' ' || VIEW_DIM_FDC_ON_PROD_DATE.CAL_YEAR"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae2016a3-c1de-ca92-c852152caf69
+          stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: The calendar quarter representation. Format YYYYQQ. Example 200204.
+        name: MONTH_SORT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: caa5d64a-acc8-b7fb-68f2e56b962c
+                stepCounter: e7764019-2d34-3fed-7ab8-a3cde8a8222a
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: "\nCREATE OR REPLACE VIEW [TABLEOWNER].[VIEW_DIM_FDC_ON_PROD_DATE] \nAS\nSELECT \r\n'-1' AS DIM_DATE_KEY,\r\n'1900-01-01' AS CALENDAR_DATE,\r\n'1900' AS YEAR_SORT,\r\n'Unknown On Prod Date' AS YEAR_GROUPING,\r\n'Unknown On Prod Date' AS QUARTER_NAME,\r\nNULL AS CAL_MONTH_NO,\r\n'Unknown On Prod Date' AS CAL_MONTH_NAME,\r\nNULL AS MONTH_SORT\r\n\r\nUNION ALL\r\n\r\nSELECT \r\nDIM_DATE_SF.DIM_DATE_KEY AS DIM_DATE_KEY,\r\nDIM_DATE_SF.CALENDAR_DATE AS CALENDAR_DATE,\r\nDIM_DATE_SF.CAL_YEAR AS YEAR_SORT,\r\n'On Prod ' || DIM_DATE_SF.CAL_YEAR AS YEAR_GROUPING,\r\n'On Prod ' || DIM_DATE_SF.CAL_YEAR || ' Q' || DIM_DATE_SF.CAL_QUARTER_NO AS QUARTER_NAME,\r\nDIM_DATE_SF.CAL_MONTH_NO AS CAL_MONTH_NO,\r\n'On Prod ' || DIM_DATE_SF.CAL_MONTH_NAME || ' ' || DIM_DATE_SF.CAL_YEAR AS CAL_MONTH_NAME,\r\nDIM_DATE_SF.CAL_QUARTER AS MONTH_SORT\r\nFROM \"WS_EDW\".\"DIM_DATE_SF\" DIM_DATE_SF\r\nWHERE DIM_DATE_SF.DIM_DATE_KEY != 0\n;\n\n"
+        dependencies:
+          - locationName: ''
+            nodeName: ''
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('STAGE_BT','VIEW_DIM_FDC_ON_PROD_DATE') }} "VIEW_DIM_FDC_ON_PROD_DATE"
+        name: VIEW_DIM_FDC_ON_PROD_DATE
+        noLinkRefs: []
+  name: VIEW_DIM_FDC_ON_PROD_DATE
+  overrideSQL: true
+  schema: STAGE_BT
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

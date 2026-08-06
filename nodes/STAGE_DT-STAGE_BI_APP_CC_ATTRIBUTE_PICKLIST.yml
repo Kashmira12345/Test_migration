@@ -1,0 +1,147 @@
+fileVersion: 1
+id: c38b7c4f-33cc-30e7-d599-c68fe1075925
+name: STAGE_BI_APP_CC_ATTRIBUTE_PICKLIST
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_DT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6461230c-3a1f-1091-515aa3071f31
+          stepCounter: c38b7c4f-33cc-30e7-d599-c68fe1075925
+        config: {}
+        dataType: varchar(14)
+        defaultValue: ""
+        description: ""
+        name: ATTRIBUTE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c19c5bd7-beb2-6ccf-ef59eb6a327c
+          stepCounter: c38b7c4f-33cc-30e7-d599-c68fe1075925
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: ATTRIBUTE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ecc2e9c3-ddb0-7e7d-a223c1dc5c3f
+          stepCounter: c38b7c4f-33cc-30e7-d599-c68fe1075925
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: VALUE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a7252aca-bce9-ce1c-a20be417c256
+          stepCounter: c38b7c4f-33cc-30e7-d599-c68fe1075925
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: ""
+        name: COREAREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: be72a29b-4dd7-5d69-cfb9365d5896
+          stepCounter: c38b7c4f-33cc-30e7-d599-c68fe1075925
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: ""
+        name: AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: c38b7c4f-33cc-30e7-d599-c68fe1075925
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW [TABLEOWNER].[STAGE_BI_APP_CC_ATTRIBUTE_PICKLIST] AS\r\n\r\nselect\r\n    distinct attribute,\r\n    attribute_key,\r\n    value,\r\n    corearea_name,\r\n    area_name,\r\n    CAST(current_timestamp() AS timestamp_ntz) as DSS_LOAD_DATE\r\nfrom\r\n    (\r\n        select\r\n            distinct 'BATTERY' as attribute,\r\n            u.usertxt2 as attribute_key,\r\n            u.usertxt2 as value,\r\n            u.costcenterida as cc_num\r\n        from\r\n            ds_prodview.pvt_pvunit u\r\n        where u.usertxt2 is not null\r\n            --\r\n        union all\r\n            --\r\n        select\r\n            distinct 'MANUAL_FOREMAN' as attribute,\r\n            'MANUAL_FOREMAN' as attribute_key,\r\n            MANUAL_FOREMAN as value,\r\n            first_value(cc_num) over (\r\n                partition by area_name\r\n                order by\r\n                    cc_num\r\n            ) as cc_num\r\n        from\r\n            [TABLEOWNER].[DIM_LO_COST_CENTER_HIER]\r\n        where\r\n            MANUAL_FOREMAN is not null\r\n    ) v\r\n    join [TABLEOWNER].[DIM_LO_COST_CENTER_HIER] cc on v.cc_num = cc.cc_num"
+        dependencies: []
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('STAGE_DT','STAGE_BI_APP_CC_ATTRIBUTE_PICKLIST') }} "STAGE_BI_APP_CC_ATTRIBUTE_PICKLIST"
+        name: STAGE_BI_APP_CC_ATTRIBUTE_PICKLIST
+        noLinkRefs: []
+  name: STAGE_BI_APP_CC_ATTRIBUTE_PICKLIST
+  overrideSQL: true
+  schema: CLS_STAGE_DT
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

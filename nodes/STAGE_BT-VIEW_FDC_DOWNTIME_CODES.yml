@@ -1,0 +1,129 @@
+fileVersion: 1
+id: a68d90b3-70d1-1cb3-d2e7-a1ececf49009
+name: VIEW_FDC_DOWNTIME_CODES
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e278d5f3-d2ec-2fd7-8e981b3b81c8
+          stepCounter: a68d90b3-70d1-1cb3-d2e7-a1ececf49009
+        config: {}
+        dataType: varchar(753)
+        defaultValue: ""
+        description: ""
+        name: SCENARIO_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a5fe1afe-0404-61bd-ca9c66aef70c
+          stepCounter: a68d90b3-70d1-1cb3-d2e7-a1ececf49009
+        config: {}
+        dataType: varchar(150)
+        defaultValue: ""
+        description: ""
+        name: CODE1
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f656acdb-f5bb-e4fb-721ec88f191e
+          stepCounter: a68d90b3-70d1-1cb3-d2e7-a1ececf49009
+        config: {}
+        dataType: varchar(150)
+        defaultValue: ""
+        description: ""
+        name: CODE2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9ff8e8f1-6124-21ff-f6783df3e70b
+          stepCounter: a68d90b3-70d1-1cb3-d2e7-a1ececf49009
+        config: {}
+        dataType: varchar(150)
+        defaultValue: ""
+        description: ""
+        name: CODE3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ddc09dc-01d9-854e-9fe670374eb2
+          stepCounter: a68d90b3-70d1-1cb3-d2e7-a1ececf49009
+        config: {}
+        dataType: varchar(300)
+        defaultValue: ""
+        description: ""
+        name: COUNTRY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW [TABLEOWNER].[VIEW_FDC_DOWNTIME_CODES] AS\r\n\r\nSELECT DISTINCT NVL(UPPER(TRIM(CODEDOWNTM1)), 'UNKNOWN') || '-' || NVL(UPPER(TRIM(CODEDOWNTM2)), 'UNKNOWN') || '-' || NVL(UPPER(TRIM(CODEDOWNTM3)), 'UNKNOWN') || '-' || NVL(UPPER(TRIM(W.COUNTRY)), 'UNKNOWN') AS SCENARIO_KEY\r\n\t,NVL(UPPER(TRIM(CODEDOWNTM1)), 'UNKNOWN') AS CODE1\r\n\t,CASE \r\n\t\tWHEN UPPER(REPLACE(TRIM(CODEDOWNTM2), ' ', '')) IN ('PLANT/BATTERY/SALESLINE', 'PROCESSINGPLANT/BATTERY/SALES LINE', 'PROCESSINGPLATFORM/SALES') THEN 'PROCESSING PLANT/BATTERY/SALES LINE'\r\n\t\tWHEN UPPER(REPLACE(TRIM(CODEDOWNTM2), ' ', '')) = 'SURFACELEASE/GATHERINGSYSTEM' THEN 'SURFACE LEASE/GATHERING SYSTEM'\r\n\t\tELSE NVL(UPPER(TRIM(CODEDOWNTM2)), 'UNKNOWN') END AS CODE2\r\n\t,NVL(UPPER(TRIM(CODEDOWNTM3)), 'UNKNOWN') AS CODE3\r\n\t,NVL(UPPER(TRIM(W.COUNTRY)), 'UNKNOWN') AS DIVISION\r\nFROM [TABLEOWNER].[ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY] P\r\nLEFT JOIN [TABLEOWNER].[ODS_PVIEW_PVT_PVUNITCOMPDOWNTM] DT ON DT.IDREC = P.IDRECDOWNTIME AND DT.DSS_CURRENT_FLAG = 'Y' AND DT.DSS_DELETE_FLAG != 'Y'\r\nJOIN [TABLEOWNER].[STAGE_PRODVIEW_WELLS] W ON P.IDFLOWNET = W.IDFLOWNET\r\nAND P.IDRECUNIT = W.ENTITY_KEY\r\nWHERE W.COUNTRY IS NOT NULL\r\nAND P.DSS_CURRENT_FLAG = 'Y' AND P.DSS_DELETE_FLAG != 'Y'\r\nAND YEAR(P.DTTM) > $PFDC_DOWNTIME_CODES_YEAR$"
+        dependencies: []
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('STAGE_BT','VIEW_FDC_DOWNTIME_CODES') }} "VIEW_FDC_DOWNTIME_CODES"
+        name: VIEW_FDC_DOWNTIME_CODES
+        noLinkRefs: []
+  name: VIEW_FDC_DOWNTIME_CODES
+  overrideSQL: true
+  schema: STAGE_BT
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

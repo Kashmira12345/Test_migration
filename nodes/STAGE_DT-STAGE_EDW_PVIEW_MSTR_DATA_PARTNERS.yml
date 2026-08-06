@@ -1,0 +1,125 @@
+fileVersion: 1
+id: 2e2244f9-b753-bf4e-a055-f66fd746da02
+name: STAGE_EDW_PVIEW_MSTR_DATA_PARTNERS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "Staging view for ProdView Master Data Integration"
+  isMultisource: false
+  locationName: STAGE_DT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 73062981-b8fb-8190-1164ab93889c
+          stepCounter: 2e2244f9-b753-bf4e-a055-f66fd746da02
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: PVT_PVUNITCOMP_idflownet
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ec8796fd-3c92-085b-d53f4892020c
+                stepCounter: b4c98ea3-3296-9dcd-35cb-4170801715d6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b20d2b9e-e17e-e463-cce9b029cf0c
+          stepCounter: 2e2244f9-b753-bf4e-a055-f66fd746da02
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: PVT_PVPARTNER_partnername
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 683b3e0f-caed-b37e-339ad6d9fb9d
+                stepCounter: 5186fd15-04b5-e3d0-ad7a-ecb330af0243
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7ef89f4-5e73-86ed-99969ebb7732
+          stepCounter: 2e2244f9-b753-bf4e-a055-f66fd746da02
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: PVT_PVPARTNER_partnerida
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8db3ec1c-5ab5-cd72-7926978305df
+                stepCounter: 5186fd15-04b5-e3d0-ad7a-ecb330af0243
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: adcf420a-691e-790d-60ed7ada6289
+          stepCounter: 2e2244f9-b753-bf4e-a055-f66fd746da02
+        config: {}
+        dataType: number
+        defaultValue: ""
+        description: ""
+        name: PVT_PVPARTNER_includeinnet
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 683b3e0f-caed-b37e-339ad6d9fb9d
+                stepCounter: 5186fd15-04b5-e3d0-ad7a-ecb330af0243
+            transform: "CASE WHEN CHARINDEX('VERMILION',VIEW_CSLAND_PVIEW_PARTNERS.PARTNER_NAME) = 0 THEN NULL ELSE 1 END"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_PVIEW_PVT_PVUNITCOMP: b4c98ea3-3296-9dcd-35cb-4170801715d6
+          VIEW_CSLAND_PVIEW_PARTNERS: 5186fd15-04b5-e3d0-ad7a-ecb330af0243
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW [TABLEOWNER].[STAGE_EDW_PVIEW_MSTR_DATA_PARTNERS] \r\nAS\r\n(SELECT DISTINCT\r\n   PVT_PVUNITCOMP.IDFLOWNET \"PVT_PVUNITCOMP_idflownet\",\r\n   VIEW_CSLAND_PVIEW_PARTNERS.PARTNER_NAME \"PVT_PVPARTNER_partnername\",\r\n   VIEW_CSLAND_PVIEW_PARTNERS.PARTNER_BA \"PVT_PVPARTNER_partnerida\",\r\n   CASE WHEN CHARINDEX('VERMILION',VIEW_CSLAND_PVIEW_PARTNERS.PARTNER_NAME) = 0 THEN 'False' ELSE 'True' END \"PVT_PVPARTNER_includeinnet\"\r\nFROM [TABLEOWNER].[VIEW_CSLAND_PVIEW_PARTNERS] VIEW_CSLAND_PVIEW_PARTNERS\r\n   INNER JOIN DS_PRODVIEW.PVT_PVUNITCOMP PVT_PVUNITCOMP ON \r\n      VIEW_CSLAND_PVIEW_PARTNERS.WELL_UWI =  PVT_PVUNITCOMP.WELLIDREGULATORY)\r\nUNION\r\n(SELECT 'Partner' \"PVT_PVUNITCOMP_idflownet\",NULL,NULL,NULL)\r\nORDER BY DECODE(\"PVT_PVUNITCOMP_idflownet\",'Partner',0,1) ASC"
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNITCOMP
+          - locationName: EDW
+            nodeName: VIEW_CSLAND_PVIEW_PARTNERS
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('STAGE_DT','STAGE_EDW_PVIEW_MSTR_DATA_PARTNERS') }} "STAGE_EDW_PVIEW_MSTR_DATA_PARTNERS"
+        name: STAGE_EDW_PVIEW_MSTR_DATA_PARTNERS
+        noLinkRefs: []
+  name: STAGE_EDW_PVIEW_MSTR_DATA_PARTNERS
+  overrideSQL: true
+  schema: CLS_STAGE_DT
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

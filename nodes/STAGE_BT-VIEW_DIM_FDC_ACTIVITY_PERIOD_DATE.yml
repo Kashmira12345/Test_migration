@@ -1,0 +1,481 @@
+fileVersion: 1
+id: cb0c6390-d1d7-ced4-1f03-76f68679992f
+name: VIEW_DIM_FDC_ACTIVITY_PERIOD_DATE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 37141a64-acba-89b1-a50684bcaec9
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated key for the date dimension. Nominal format is YYYYMMDD, but DD equal to 0 and greater than 31 permited for special date handling.
+        name: DIM_ACTIVITY_PERIOD_DATE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aec04c15-1bd9-7440-417995c5705c
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d4b89190-5747-84fb-e4203df8b696
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: ""
+        name: ACTIVITY_YEAR_GROUP
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2f36bb0-57a6-1167-6a3a39d3a261
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "CASE   WHEN DIM_DATE.CAL_YEAR <= (TO_NUMBER(YEAR(GETDATE())) - 3)   THEN 'Prior Activity Periods'   WHEN DIM_DATE.CAL_YEAR >= (TO_NUMBER(YEAR(GETDATE())) + 3)   THEN 'Future Activity Periods'   ELSE 'ACTIVITY ' || TO_VARCHAR(DIM_DATE.CAL_YEAR) END"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dc05443f-1876-f4ee-8cb0cb64e8b0
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: The calendar date for this row.
+        name: FULL_DATE_DISPLAY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6922a2ae-7004-c486-e9a6457d393c
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8898d2cf-9a7b-654b-eacce53236f6
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: The calendar date for this row.
+        name: FULL_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6922a2ae-7004-c486-e9a6457d393c
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae57cae4-0986-807c-20064d38788a
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: The calendar year. Format YYYY
+        name: ACTIVITY_MONTH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2f36bb0-57a6-1167-6a3a39d3a261
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "TO_VARCHAR(CAL_YEAR) || ' - ' || CAL_MONTH_NAME"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b1b814d4-2fff-4aa2-1a9632dafea4
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: The calendar month number 1-12.
+        name: ACTIVITY_MONTH_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 57b7b5e2-7fcd-22c3-7d67f7a09c8e
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2b8b2a41-b2a3-5f2a-156fa3a1aa82
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: varchar(7)
+        defaultValue: ""
+        description: 'The calendar month name. Format MON. Examples: jan, feb, mar.'
+        name: ACTIVITY_MONTH_NAME_SHORT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2134ce3-17ac-3107-b060860b05c7
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae2016a3-c1de-ca92-c852152caf69
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: 'The calendar month representation. Format YYYYMM. Example: 200206.'
+        name: MONTH_SORT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 01efe963-ba53-84fa-49187eee598e
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: da003912-2954-20c5-395fc2d23f44
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: The calendar year. Format YYYY
+        name: ACTIVITY_QUARTER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2f36bb0-57a6-1167-6a3a39d3a261
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "TO_VARCHAR(CAL_YEAR) || ' Q' || CAL_QUARTER_NO"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57950b8f-767a-881a-4d95e1ea6be2
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: The calendar quarter number 1-4.
+        name: ACTIVITY_QUARTER_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4055c224-67ab-0a94-43509c57c1c2
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5d6be524-9344-21f7-5c9d1c1b5d62
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: The calendar quarter number 1-4.
+        name: ACTIVITY_QUARTER_NAME_SHORT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4055c224-67ab-0a94-43509c57c1c2
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "'Q' || CAL_QUARTER_NO"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ef377532-f813-6886-3be2bfc0ba37
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: The calendar year. Format YYYY
+        name: QUARTER_SORT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2f36bb0-57a6-1167-6a3a39d3a261
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "TO_VARCHAR(CAL_YEAR) || RIGHT('0' || TO_VARCHAR(CAL_QUARTER_NO),2)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f23f8e2-28e4-e559-2d4ae5724403
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: The calendar year. Format YYYY
+        name: ACTIVITY_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2f36bb0-57a6-1167-6a3a39d3a261
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "'ACTIVITY ' || TO_VARCHAR(CAL_YEAR)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9c756e00-f56f-d745-eb09b1b8fef0
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: The calendar year. Format YYYY
+        name: ACTIVITY_YEAR_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2f36bb0-57a6-1167-6a3a39d3a261
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 696f0570-3fe5-edf5-fbe745e9dd47
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: The calendar date for this row.
+        name: WEEK_SPAN_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6922a2ae-7004-c486-e9a6457d393c
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "LEFT(TO_VARCHAR(DATEADD(DD, CASE CAL_DAY_IN_WEEK_NO WHEN 7 THEN 0 ELSE CAL_DAY_IN_WEEK_NO * -1 END, CALENDAR_DATE)), 10) || ' - ' || LEFT(TO_VARCHAR(DATEADD(DD, 7 - CASE CAL_DAY_IN_WEEK_NO WHEN 7 THEN 1 ELSE CAL_DAY_IN_WEEK_NO + 1 END, CALENDAR_DATE)), 10)  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d10d516e-16a6-0133-aef5007178cf
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: The day number in the week. 1-7 where Sunday is day 1.
+        name: WEEK_START_DATE_FULL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 043c97c1-281e-3020-637f72ba77d1
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "DATEADD(DD, CASE CAL_DAY_IN_WEEK_NO   WHEN 7 THEN 0   ELSE CAL_DAY_IN_WEEK_NO * -1 END, CALENDAR_DATE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f53e6ab7-a0c0-6a7b-4bdb2368a11a
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: The day number in the week. 1-7 where Sunday is day 1.
+        name: WEEK_START_DATE_DD_MON_YYYY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 043c97c1-281e-3020-637f72ba77d1
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "TO_VARCHAR(DATEADD(DD, CASE CAL_DAY_IN_WEEK_NO WHEN 7 THEN 0 ELSE CAL_DAY_IN_WEEK_NO * -1 END, CALENDAR_DATE), 'DD_MON_YYYY')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec308f92-6511-76d6-6a3f6bf1bebb
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Flag to indicate if a week day Y=week day N=week end.
+        name: WEEKDAY_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4363327f-bd72-8aed-3c31c7670a2d
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9939eb79-6d8e-73d6-b5e81976dfe9
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: The calendar date for this row.
+        name: FIRST_DAY_OF_CALENDAR_MONTH_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6922a2ae-7004-c486-e9a6457d393c
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "CASE WHEN TO_DATE(DATE_TRUNC(MM,CALENDAR_DATE)) = CALENDAR_DATE THEN 'Y' ELSE 'N' END"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 120270e6-ec55-7215-44140a0584a7
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: The calendar date for this row.
+        name: LAST_DAY_OF_CALENDAR_MONTH_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6922a2ae-7004-c486-e9a6457d393c
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "CASE WHEN TO_DATE(LAST_DAY(CALENDAR_DATE)) = CALENDAR_DATE THEN 'Y' ELSE 'N' END"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 49de56ef-0a98-f0a2-97463b21c8aa
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: NUMBER_OF_DAYS
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "1"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0c3a3cb8-01f0-d496-fa1a1fe0c685
+          stepCounter: cb0c6390-d1d7-ced4-1f03-76f68679992f
+        config: {}
+        dataType: varchar(5)
+        defaultValue: ""
+        description: The calendar date for this row.
+        name: YTD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6922a2ae-7004-c486-e9a6457d393c
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "CASE WHEN CALENDAR_DATE BETWEEN TO_DATE(TO_VARCHAR(DATE_PART(YY,GETDATE()) || '-01-01')) AND GETDATE() THEN 'YES' ELSE 'NO' END"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_DATE: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: EDW
+            nodeName: DIM_DATE
+        join:
+          joinCondition: |-
+            FROM {{ ref('EDW', 'DIM_DATE') }} "DIM_DATE"
+            WHERE DIM_DATE.DIM_DATE_KEY != 0
+        name: VIEW_DIM_FDC_ACTIVITY_PERIOD_DATE
+        noLinkRefs: []
+  name: VIEW_DIM_FDC_ACTIVITY_PERIOD_DATE
+  overrideSQL: false
+  schema: STAGE_BT
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

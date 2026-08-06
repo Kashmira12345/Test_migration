@@ -1,0 +1,75 @@
+fileVersion: 1
+id: ec1ab305-0b0b-f9b9-3941-a61f12274875
+name: VIEW_PWAPP_ATTRIBUTE_PICKLIST
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6461230c-3a1f-1091-515aa3071f31
+          stepCounter: ec1ab305-0b0b-f9b9-3941-a61f12274875
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: ATTRIBUTE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+          stepCounter: ec1ab305-0b0b-f9b9-3941-a61f12274875
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        name: CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW [TABLEOWNER].[VIEW_PWAPP_ATTRIBUTE_PICKLIST] AS\r\n\r\nselect\r\n    distinct attribute,\r\n    attribute_key,\r\n    value,\r\n    corearea_name,\r\n    area_name\r\nfrom\r\n    (\r\n        select\r\n            distinct 'BATTERY' as attribute,\r\n            u.usertxt2 as attribute_key,\r\n            u.usertxt2 as value,\r\n            u.costcenterida as cc_num\r\n        from\r\n            ds_prodview.pvt_pvunit u\r\n        where u.usertxt2 is not null\r\n            --\r\n        union all\r\n            --\r\n        select\r\n            distinct 'MANUAL_FOREMAN' as attribute,\r\n            'MANUAL_FOREMAN' as attribute_key,\r\n            MANUAL_FOREMAN as value,\r\n            first_value(cc_num) over (\r\n                partition by area_name\r\n                order by\r\n                    cc_num\r\n            ) as cc_num\r\n        from\r\n            \"WS_EDW\".\"DIM_LO_SAP_COST_CENTER_HIER\"\r\n        where\r\n            MANUAL_FOREMAN is not null\r\n    ) v\r\n    join \"WS_EDW\".\"DIM_LO_SAP_COST_CENTER_HIER\" cc on v.cc_num = cc.cc_num"
+        dependencies: []
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('STAGE_BT','VIEW_PWAPP_ATTRIBUTE_PICKLIST') }} "VIEW_PWAPP_ATTRIBUTE_PICKLIST"
+        name: VIEW_PWAPP_ATTRIBUTE_PICKLIST
+        noLinkRefs: []
+  name: VIEW_PWAPP_ATTRIBUTE_PICKLIST
+  overrideSQL: true
+  schema: STAGE_BT
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node
