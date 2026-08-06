@@ -1,0 +1,121 @@
+fileVersion: 1
+id: 8c87c9ad-cad1-13d0-e732-887d214f32d2
+name: VIEW_QBYTE_PRODUCT_RATES
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b02f1cd6-e879-afdb-ffcb1b015893
+          stepCounter: 8c87c9ad-cad1-13d0-e732-887d214f32d2
+        config: {}
+        dataType: number(14,10)
+        defaultValue: ""
+        description: The conversion factor used from SI to Imperial.
+        name: OIL_SI_TO_IMP_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5ee1e3e2-2356-dbea-197718f92dad
+                stepCounter: ce9376dc-e726-3dab-204c-edf9da8e80a9
+            transform: "sum(case prod_code when 'OIL' then si_to_imp_conv_factor else null end)  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c67a40a2-a3d6-6dd5-7373e2ab0b7f
+          stepCounter: 8c87c9ad-cad1-13d0-e732-887d214f32d2
+        config: {}
+        dataType: number(14,10)
+        defaultValue: ""
+        description: The conversion factor used from SI to Imperial.
+        name: NGL_SI_TO_IMP_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5ee1e3e2-2356-dbea-197718f92dad
+                stepCounter: ce9376dc-e726-3dab-204c-edf9da8e80a9
+            transform: "sum(case prod_code when 'NGL' then si_to_imp_conv_factor else null end)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4aa1f84c-4fb1-df83-c07c696c1c44
+          stepCounter: 8c87c9ad-cad1-13d0-e732-887d214f32d2
+        config: {}
+        dataType: number(14,10)
+        defaultValue: ""
+        description: The conversion factor used from SI to Imperial.
+        name: GAS_SI_TO_IMP_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5ee1e3e2-2356-dbea-197718f92dad
+                stepCounter: ce9376dc-e726-3dab-204c-edf9da8e80a9
+            transform: "sum(case prod_code when 'GAS' then si_to_imp_conv_factor else null end)  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae1543e3-90dc-1adf-8a066f8d107b
+          stepCounter: 8c87c9ad-cad1-13d0-e732-887d214f32d2
+        config: {}
+        dataType: number(8,5)
+        defaultValue: ""
+        description: Conversion factor for barrel of oil equivalent in thermal quantities.  For example, BTUs, Joules.
+        name: GAS_BOE_THERMAL_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 30c56fcf-0c6c-dc3c-3bc4d38113dd
+                stepCounter: ce9376dc-e726-3dab-204c-edf9da8e80a9
+            transform: "sum(case prod_code when 'GAS' then boe_thermal else null end)"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_LO_SAP_PRODUCT_TYPE: ce9376dc-e726-3dab-204c-edf9da8e80a9
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: EDW
+            nodeName: DIM_LO_SAP_PRODUCT_TYPE
+        join:
+          joinCondition: ""
+        name: VIEW_QBYTE_PRODUCT_RATES
+        noLinkRefs: []
+  name: VIEW_QBYTE_PRODUCT_RATES
+  overrideSQL: false
+  schema: CLS_EDW
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

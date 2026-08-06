@@ -1,0 +1,101 @@
+fileVersion: 1
+id: a55df0a8-41c3-3bf9-f565-6342064b8cc8
+name: VIEW_PVIEW_VRL_UNIT_REMARKS_MERGED_VW
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bb77343c-1622-8fbd-daaf43592ddb
+          stepCounter: a55df0a8-41c3-3bf9-f565-6342064b8cc8
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: UNIT_IDREC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb77343c-1622-8fbd-daaf43592ddb
+                stepCounter: a55df0a8-41c3-3bf9-f565-6342064b8cc8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2fe9900-086f-27d3-824d84adc8f4
+          stepCounter: a55df0a8-41c3-3bf9-f565-6342064b8cc8
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: DTTM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2fe9900-086f-27d3-824d84adc8f4
+                stepCounter: a55df0a8-41c3-3bf9-f565-6342064b8cc8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d47c174e-bdf0-6cfc-72763ab7970c
+          stepCounter: a55df0a8-41c3-3bf9-f565-6342064b8cc8
+        config: {}
+        dataType: varchar(16777216)
+        defaultValue: ""
+        description: ""
+        name: COM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d47c174e-bdf0-6cfc-72763ab7970c
+                stepCounter: a55df0a8-41c3-3bf9-f565-6342064b8cc8
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW [TABLEOWNER].[VIEW_PVIEW_VRL_UNIT_REMARKS_MERGED_VW] AS\r\nSELECT\n    rr.idrecparent unit_idrec, \n    rr.dttm, \n    SUBSTR(LISTAGG(r.com,', '),1,9999) AS com\nFROM EDW.DS_PRODVIEW.PVT_pvunitremark rr \n    INNER JOIN EDW.DS_PRODVIEW.PVT_pvunitremark r ON (\n        rr.idrecparent = r.idrecparent\n        AND rr.dttm = r.dttm)\nGROUP BY rr.idrecparent, rr.dttm"
+        dependencies:
+          - locationName: ''
+            nodeName: ''
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('EDW','VIEW_PVIEW_VRL_UNIT_REMARKS_MERGED_VW') }} "VIEW_PVIEW_VRL_UNIT_REMARKS_MERGED_VW"
+        name: VIEW_PVIEW_VRL_UNIT_REMARKS_MERGED_VW
+        noLinkRefs: []
+  name: VIEW_PVIEW_VRL_UNIT_REMARKS_MERGED_VW
+  overrideSQL: true
+  schema: CLS_EDW
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

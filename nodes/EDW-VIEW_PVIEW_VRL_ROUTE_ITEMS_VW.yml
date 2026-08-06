@@ -1,0 +1,125 @@
+fileVersion: 1
+id: 27be9233-c22d-13dd-d8e7-460114db2a8e
+name: VIEW_PVIEW_VRL_ROUTE_ITEMS_VW
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cb47cba9-d0ec-debf-725949f1c1ba
+          stepCounter: 27be9233-c22d-13dd-d8e7-460114db2a8e
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: ROUTE_IDREC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8683c3b-6830-536a-3ae2e9baf7d8
+                stepCounter: 74302c83-1608-725d-4e84-4d39d5929745
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d670f5bd-2df5-c5d1-112ec75d8514
+          stepCounter: 27be9233-c22d-13dd-d8e7-460114db2a8e
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: ROUTENAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad32e604-67fc-4355-38334fbddf3e
+                stepCounter: 74302c83-1608-725d-4e84-4d39d5929745
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46225838-9397-ba46-616fb48cce26
+          stepCounter: 27be9233-c22d-13dd-d8e7-460114db2a8e
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: UNIT_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad32e604-67fc-4355-38334fbddf3e
+                stepCounter: 25548ef3-08f5-5812-b243-6c4f50853ef8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bb77343c-1622-8fbd-daaf43592ddb
+          stepCounter: 27be9233-c22d-13dd-d8e7-460114db2a8e
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: UNIT_IDREC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8683c3b-6830-536a-3ae2e9baf7d8
+                stepCounter: 25548ef3-08f5-5812-b243-6c4f50853ef8
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_PVIEW_PVT_PVROUTESETROUTE: 74302c83-1608-725d-4e84-4d39d5929745
+          ODS_PVIEW_PVT_PVUNIT: 25548ef3-08f5-5812-b243-6c4f50853ef8
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW [TABLEOWNER].[VIEW_PVIEW_VRL_ROUTE_ITEMS_VW]\r\nAS\r\nSELECT n.idrec     route_idrec,\n       n.name as routename,\n       u.name      unit_name,\n       u.idrec     unit_idrec\n  FROM DS_PRODVIEW.PVT_pvrouteset s inner join DS_PRODVIEW.PVT_pvroutesetroute n  on s.idrec = n.idrecparent and s.activetodaycalc = 1\n  inner join DS_PRODVIEW.PVT_pvroutesetrouteunit i    on n.idrec = i.idrecparent \n inner join DS_PRODVIEW.PVT_pvunit u\n    on i.idrecunit = u.idrec\n   and u.typ1 = 'pvunitcomp'\nUNION\nSELECT n.idrec     route_idrec,\n       n.name as routename,\n       u.name      unit_name,\n       u.idrec     unit_idrec\n FROM DS_PRODVIEW.PVT_pvrouteset r inner join DS_PRODVIEW.PVT_pvroutesetroute n  on n.idrecparent = r.idrec and r.activetodaycalc is not null\n inner join DS_PRODVIEW.PVT_pvroutesetroutevwflowdiag i\n    on n.idrec = i.idrecparent\n inner join DS_PRODVIEW.PVT_pvunit u\n    on i.idrecunit = u.idrec\n   and u.typ1 = 'pvunitcomp'\r\n"
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVROUTESETROUTE
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNIT
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('EDW','VIEW_PVIEW_VRL_ROUTE_ITEMS_VW') }} "VIEW_PVIEW_VRL_ROUTE_ITEMS_VW"
+        name: VIEW_PVIEW_VRL_ROUTE_ITEMS_VW
+        noLinkRefs: []
+  name: VIEW_PVIEW_VRL_ROUTE_ITEMS_VW
+  overrideSQL: true
+  schema: CLS_EDW
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

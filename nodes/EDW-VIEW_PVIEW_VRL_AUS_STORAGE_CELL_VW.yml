@@ -1,0 +1,271 @@
+fileVersion: 1
+id: f3fab348-eb22-1bf6-ad1e-51ba77049513
+name: VIEW_PVIEW_VRL_AUS_STORAGE_CELL_VW
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "-- Storage section of daily report query  -- get the total oil in storage  -- get total capacity  -- get daily oil  -- calc remaining, num days, date tank tops"
+  isMultisource: false
+  locationName: EDW
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec8796fd-3c92-085b-d53f4892020c
+          stepCounter: f3fab348-eb22-1bf6-ad1e-51ba77049513
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: IDFLOWNET
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ec8796fd-3c92-085b-d53f4892020c
+                stepCounter: f766ece4-d7ae-59bf-1ded-1825e56f5578
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 633a6c7a-58f8-1742-50094daf1e6a
+          stepCounter: f3fab348-eb22-1bf6-ad1e-51ba77049513
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2fe9900-086f-27d3-824d84adc8f4
+                stepCounter: d797d9c8-9f12-abf2-40f7-ac36262ae166
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c18a71d-82c7-6633-c0ec8dfabc5c
+          stepCounter: f3fab348-eb22-1bf6-ad1e-51ba77049513
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: OIL_IN_STORAGE_STKL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24192c0d-7134-c2ca-c17cda4d07a9
+                stepCounter: d797d9c8-9f12-abf2-40f7-ac36262ae166
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5b3bc952-2198-1c4b-3b304fbd74f8
+          stepCounter: f3fab348-eb22-1bf6-ad1e-51ba77049513
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: CAPACITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 41c914d5-0d0d-ea89-244571257e0e
+                stepCounter: a7315a57-43f2-5173-c41d-0f2e7d2bbc85
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e66ee36e-aad4-0d63-850c1b7b8d03
+          stepCounter: f3fab348-eb22-1bf6-ad1e-51ba77049513
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: PERCENT_FULL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a7315a57-43f2-5173-c41d-0f2e7d2bbc85
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bc839cc2-ed6d-e00f-fd364d9d5701
+          stepCounter: f3fab348-eb22-1bf6-ad1e-51ba77049513
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: VOL_REMAINING
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a7315a57-43f2-5173-c41d-0f2e7d2bbc85
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6064857b-8920-7d84-74d4fc4cea82
+          stepCounter: f3fab348-eb22-1bf6-ad1e-51ba77049513
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: LAST_DAILY_PROD_OIL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24192c0d-7134-c2ca-c17cda4d07a9
+                stepCounter: ef4a30e7-b653-194a-4623-2b48351eff82
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b38523c3-7073-5b73-0d1137811349
+          stepCounter: f3fab348-eb22-1bf6-ad1e-51ba77049513
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: LAST_DATE_PROD_OIL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2fe9900-086f-27d3-824d84adc8f4
+                stepCounter: ef4a30e7-b653-194a-4623-2b48351eff82
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a284282b-9a0a-84f1-74a6be0c6e98
+          stepCounter: f3fab348-eb22-1bf6-ad1e-51ba77049513
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: NUM_DAYS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: ef4a30e7-b653-194a-4623-2b48351eff82
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e6e15b4f-7a0e-de45-ec68cd8e76f1
+          stepCounter: f3fab348-eb22-1bf6-ad1e-51ba77049513
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: DATE_TANK_TOPS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: ef4a30e7-b653-194a-4623-2b48351eff82
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+          stepCounter: f3fab348-eb22-1bf6-ad1e-51ba77049513
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: BU_SF_ROLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+                stepCounter: f766ece4-d7ae-59bf-1ded-1825e56f5578
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_PVIEW_PVT_PVFLOWNETHEADER: f766ece4-d7ae-59bf-1ded-1825e56f5578
+          ODS_PVIEW_PVT_PVUNITMETERLIQUIDENTRY: ef4a30e7-b653-194a-4623-2b48351eff82
+          ODS_PVIEW_PVT_PVUNITTANK: a7315a57-43f2-5173-c41d-0f2e7d2bbc85
+          ODS_PVIEW_PVT_PVUNITTANKENTRY: d797d9c8-9f12-abf2-40f7-ac36262ae166
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW [TABLEOWNER].[VIEW_PVIEW_VRL_AUS_STORAGE_CELL_VW] \r\nAS \r\nwith daily_oil as (\r\n        select n.idflownet,\r\n            e.dttm,\r\n            round (sum(e.volhcliqcalc), 2) as daily_produced_oil\r\n        from DS_PRODVIEW.PVT_pvflownetheader n\r\n            inner join DS_PRODVIEW.PVT_pvunit u on u.idflownet = n.idflownet\r\n            inner join DS_PRODVIEW.PVT_pvunitmeterliquid l on u.idrec = l.idrecparent\r\n\t\t\t\tand u.name like 'Wandoo Platform'\r\n            inner join DS_PRODVIEW.PVT_pvunitmeterliquidentry e on l.idrec = e.idrecparent\r\n        group by n.idflownet, e.dttm\r\n    ),\r\n    storage_tank as (\r\n        select t.idflownet,\r\n            sum(t.volcapacity) capacity,\r\n            e.dttm,\r\n            round(sum(e.volhcliqcalc), 2) as oil_in_storage_stkl,\r\n            case\r\n                when sum(t.volcapacity) = 0 then 0\r\n                else round(sum(e.volhcliqcalc) / sum(t.volcapacity) * 100, 2)\r\n            end as percent_full,\r\n            round(sum(t.volcapacity) - sum (e.volhcliqcalc), 2) as vol_remaining\r\n        from DS_PRODVIEW.PVT_pvflownetheader n\r\n            inner join DS_PRODVIEW.PVT_pvunittank t on n.idflownet = t.idflownet\r\n            inner join DS_PRODVIEW.PVT_pvunittankentry e on t.idrec = e.idrecparent\r\n\t\t\t\tand t.name like 'SC%'\r\n        group by t.idflownet, e.dttm\r\n    )\r\nselect d.idflownet,\r\n    CAST(s.dttm AS date) as date,\r\n    s.oil_in_storage_stkl,\r\n    s.capacity,\r\n    s.percent_full,\r\n    s.vol_remaining,\r\n    d.daily_produced_oil last_daily_prod_oil,\r\n    CAST(d.dttm AS date) as last_date_prod_oil,\r\n    case\r\n        when d.daily_produced_oil = 0 then 0\r\n        else floor (s.vol_remaining / d.daily_produced_oil)\r\n    end as num_days,\r\n    CAST(\r\n        dateadd(\r\n            d,\r\n            case\r\n                when d.daily_produced_oil = 0 then 0\r\n                else floor (s.vol_remaining / d.daily_produced_oil)\r\n            end,\r\n            s.dttm\r\n        ) AS date\r\n    ) as date_tank_tops,\r\n\tWS_EDW.PVIEW_SYSSECURITYTYP_VET_BU_ROLE(h.SYSSECURITYTYP) AS BU_SF_ROLE\r\nfrom storage_tank s,\r\n    daily_oil d,\r\n\tDS_PRODVIEW.PVT_pvflownetheader h \r\nwhere d.dttm = (\r\n        select max(dttm)\r\n        from daily_oil x\r\n        where x.daily_produced_oil != 0\r\n            and x.dttm <= s.dttm\r\n    )\r\n    and d.idflownet = s.idflownet\r\n\tand h.idflownet = s.idflownet"
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVFLOWNETHEADER
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNITMETERLIQUIDENTRY
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNITTANK
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNITTANKENTRY
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('EDW','VIEW_PVIEW_VRL_AUS_STORAGE_CELL_VW') }} "VIEW_PVIEW_VRL_AUS_STORAGE_CELL_VW"
+        name: VIEW_PVIEW_VRL_AUS_STORAGE_CELL_VW
+        noLinkRefs: []
+  name: VIEW_PVIEW_VRL_AUS_STORAGE_CELL_VW
+  overrideSQL: true
+  schema: CLS_EDW
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

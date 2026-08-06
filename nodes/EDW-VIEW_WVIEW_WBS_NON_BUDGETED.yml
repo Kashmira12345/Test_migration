@@ -1,0 +1,145 @@
+fileVersion: 1
+id: 222a9389-9b36-72e1-785e-3cf4dc929c21
+name: VIEW_WVIEW_WBS_NON_BUDGETED
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: EDW
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9c8be8df-82d2-e987-9cdffe1ce54f
+          stepCounter: 222a9389-9b36-72e1-785e-3cf4dc929c21
+        config: {}
+        dataType: varchar(200)
+        defaultValue: ""
+        description: ""
+        name: AFENUMBERCALC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9c8be8df-82d2-e987-9cdffe1ce54f
+                stepCounter: 444d12f5-fbb5-0796-3b6e-3b1c0840e09e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1c4d8c92-0d31-e22b-179d9dd8f711
+          stepCounter: 222a9389-9b36-72e1-785e-3cf4dc929c21
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: DTTMSTART
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1c4d8c92-0d31-e22b-179d9dd8f711
+                stepCounter: 444d12f5-fbb5-0796-3b6e-3b1c0840e09e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57a97ee2-1c84-35cb-0a0d27a197c7
+          stepCounter: 222a9389-9b36-72e1-785e-3cf4dc929c21
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: DTTMEND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 57a97ee2-1c84-35cb-0a0d27a197c7
+                stepCounter: 444d12f5-fbb5-0796-3b6e-3b1c0840e09e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b92fac62-9f51-accd-c260b776436a
+          stepCounter: 222a9389-9b36-72e1-785e-3cf4dc929c21
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: COST_CENTER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c920fca8-8934-7374-bbc0830080c7
+                stepCounter: c8d5871e-f0e2-3a87-16c9-2dfd301a22e2
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 03c5aba6-80a5-b994-b874080e0a84
+          stepCounter: 222a9389-9b36-72e1-785e-3cf4dc929c21
+        config: {}
+        dataType: float(38)
+        defaultValue: ""
+        description: ""
+        name: COSTTOTALCALC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 03c5aba6-80a5-b994-b874080e0a84
+                stepCounter: 444d12f5-fbb5-0796-3b6e-3b1c0840e09e
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_WVIEW_WVT_WVJOB: 444d12f5-fbb5-0796-3b6e-3b1c0840e09e
+          ODS_WVIEW_WVT_WVWELLHEADER: c8d5871e-f0e2-3a87-16c9-2dfd301a22e2
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW [TABLEOWNER].[VIEW_WVIEW_WBS_NON_BUDGETED] AS\nSELECT \n    J.AFENUMBERCALC,\n    J.DTTMSTART,\n    J.DTTMEND,\n    WH.USERTXT3 \"COST_CENTER\",\n    J.COSTTOTALCALC\nFROM (SELECT * FROM [TABLEOWNER].[ODS_WVIEW_WVT_WVJOB] \r\n      WHERE DSS_CURRENT_FLAG = 'Y' AND DSS_DELETE_FLAG != 'Y') J\n    LEFT JOIN (SELECT * FROM [TABLEOWNER].[ODS_WVIEW_WVT_WVWELLHEADER] \r\n              WHERE DSS_CURRENT_FLAG = 'Y' AND DSS_DELETE_FLAG != 'Y')WH\n        ON J.IDWELL = WH.IDWELL\nWHERE NVL(J.COSTTOTALCALC,0) <> 0 AND WH.USERTXT3 IS NOT NULL AND J.AFENUMBERCALC IS NOT NULL"
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_WVIEW_WVT_WVJOB
+          - locationName: DATA_STORE
+            nodeName: ODS_WVIEW_WVT_WVWELLHEADER
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('EDW','VIEW_WVIEW_WBS_NON_BUDGETED') }} "VIEW_WVIEW_WBS_NON_BUDGETED"
+        name: VIEW_WVIEW_WBS_NON_BUDGETED
+        noLinkRefs: []
+  name: VIEW_WVIEW_WBS_NON_BUDGETED
+  overrideSQL: true
+  schema: CLS_EDW
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

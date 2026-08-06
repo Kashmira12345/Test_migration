@@ -1,0 +1,914 @@
+fileVersion: 1
+id: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+name: VIEW_PVIEW_VRL_DAILY_ALLOC_PROD2_VW
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "-- This view gets the site production for the wells.  It is used  -- in the loader and many reports.  -- units : liquids assume m3 in database  --        gas - use calc settings of flow network basetemp   --        if 15 deg C then e3m3, if 0 deg C them e3"
+  isMultisource: false
+  locationName: EDW
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec8796fd-3c92-085b-d53f4892020c
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: IDFLOWNET
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ec8796fd-3c92-085b-d53f4892020c
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 97228679-5ed3-4ce4-dd4843297a17
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: TEMPBASE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 97228679-5ed3-4ce4-dd4843297a17
+                stepCounter: 425e1fc5-6323-1cc2-af0d-c8475d8ca47f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 77f195ed-4030-da81-0af29b5b4383
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: UWI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b00da030-337e-bc40-610428b83369
+                stepCounter: b4c98ea3-3296-9dcd-35cb-4170801715d6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5e1935e7-fb1a-b198-4a911f085fff
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: IDRECCOMPORIGIN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8683c3b-6830-536a-3ae2e9baf7d8
+                stepCounter: 5ae45c49-2458-60f1-be60-2acb26dc0bd0
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30f47e8d-619b-788e-a6814f98833f
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: IDRECUNITORIGIN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8683c3b-6830-536a-3ae2e9baf7d8
+                stepCounter: 25548ef3-08f5-5812-b243-6c4f50853ef8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5f26b744-b252-eda4-861562bf0068
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: PROD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2fe9900-086f-27d3-824d84adc8f4
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8384759b-396d-9af7-271ef4267248
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: OPHOURS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e102dff6-81e9-ab9b-24784345b2dd
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f95d907e-f786-d7dd-9d350a7211ab
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: WI_GAS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2769e2ce-1bf8-1981-810e11223408
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 37533f8e-e6f4-45d4-36609213572f
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: WI_OIL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c6e7aab6-b2ea-799e-b24cd4836c07
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a4258d33-470e-708e-a053fd516aad
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: WORKING_INTEREST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 567b9e07-7f94-f8cb-ae1c829d6df3
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: GAS_RAW_GROSS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 523c3aca-74f5-d2f3-d690e6323178
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: GAS_SALES_GROSS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e5fe91a5-0903-8876-e61a1533bd7f
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: GAS_SALES_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bbfef700-1695-dc86-a69cca2be134
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: GAS_GROSS_US
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ffdcb40-fda6-5b48-10994114cfb8
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: GAS_SALES_NRI_US
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 38886bbd-d739-2005-93ab023471eb
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: OIL_RAW_GROSS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 855716f5-58d8-b180-27a7749e80cd
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: OIL_ALLOC_GROSS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 656ce61e-adb4-108d-aaf739b3820b
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: OIL_ALLOC_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dc98feed-08e2-5017-6d8a4c1b3a1b
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: OIL_SALES_GROSS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a20b3a76-efd7-10f4-da2d238a771d
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: OIL_SALES_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ca8644c3-1c1c-3ed4-cdeca776b006
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: OIL_INV_GROSS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b68be0e-a662-f6ab-207bdf503e27
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: OIL_INV_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 40ba97b1-ee32-9afb-66783ae58621
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: NGL_ALLOC_GROSS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f9ade4a-fade-d9e2-dcd71e4853d2
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: COND_ALLOC_GROSS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 233e58cd-a188-9eb7-7f5096a68bd9
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: NGL_ALLOC_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3c45d5d8-cc1d-503e-760725dde31e
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: COND_ALLOC_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb2af586-ef44-7f0b-6d02098f2c3a
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: NGL_SALES_GROSS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 12afef46-8669-027f-5cf0a6bac71d
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: NGL_SALES_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 97731508-8547-53f1-665b0e93ae37
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: COND_SALES_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fcde55e2-01cb-6991-bfe7f04a294e
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: OIL_ALLOC_NRI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b7159ca2-6633-b805-913b9b0a404c
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: NGL_SALES_NRI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa1b7727-5d69-7b39-31f90e14af63
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: varchar(16777216)
+        defaultValue: ""
+        description: ""
+        name: NGL_INV_GROSS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 730ea31c-6615-bb92-d755d4f9d150
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: varchar(16777216)
+        defaultValue: ""
+        description: ""
+        name: NGL_INV_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e49b45c0-c368-14b3-1eab688c7d93
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: WATER_ALLOC_GROSS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f93ead62-7b34-a38c-3bdfb6d639ff
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: WATER_ALLOC_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ef04836-27c2-521a-4254982422ff
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: WATER_RAW_GROSS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d98b6b83-c663-fac5-43a902573ecc
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: BOE_ALLOC_GROSS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fee90b23-9644-9f2b-8a812c69a21b
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: BOE_ALLOC_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ae570a7-1c24-2efe-fd29b83058a2
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: BOE_SALES_GROSS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dc90f8d1-e332-28c3-39699f35035d
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: BOE_SALES_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0f262e38-2db9-731c-97762593f65e
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: BOE_SALES_GROSS_US
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e1575763-7ecd-0cc5-5742ade94514
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: double(38)
+        defaultValue: ""
+        description: ""
+        name: BOE_SALES_NRI_US
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: '0'
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+          stepCounter: d523b3ae-897a-d71a-0fcc-1dca70fa54f1
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: BU_SF_ROLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 391c997b-06ed-16fd-d9222ee090ed
+                stepCounter: f766ece4-d7ae-59bf-1ded-1825e56f5578
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_PVIEW_PVT_PVCALCSET: 425e1fc5-6323-1cc2-af0d-c8475d8ca47f
+          ODS_PVIEW_PVT_PVFLOWNETHEADER: f766ece4-d7ae-59bf-1ded-1825e56f5578
+          ODS_PVIEW_PVT_PVUNIT: 25548ef3-08f5-5812-b243-6c4f50853ef8
+          ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+          ODS_PVIEW_PVT_PVUNITCOMP: b4c98ea3-3296-9dcd-35cb-4170801715d6
+          ODS_PVIEW_PVT_PVUNITCOMPCYCLETM: 5ae45c49-2458-60f1-be60-2acb26dc0bd0
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW [TABLEOWNER].[VIEW_PVIEW_VRL_DAILY_ALLOC_PROD2_VW] AS\r\nselect d.idflownet,\r\n    s.tempbase,\r\n    c.wellidregulatory as uwi,\r\n    c.idrec as idreccomporigin,\r\n    u.idrec as idrecunitorigin,\r\n    d.dttm as prod_date,\r\n    d.durop * 24 as ophours,\r\n    d.wigas as wi_gas,\r\n    d.wihcliq as wi_oil,\r\n    CASE\r\n        WHEN IfNULL(d.wigas, 0) = 0 THEN IfNULL(d.wihcliq, 0)\r\n        ELSE IfNULL(d.wigas, 0)\r\n    END AS working_interest,\r\n    d.volprodgathgas / 1000 * case\r\n        when s.tempbase is null then 1\r\n        else 37.25 / 35.49373\r\n    end as gas_raw_gross,\r\n    d.voldispsalegas / 1000 * case\r\n        when s.tempbase is null then 1\r\n        else 37.25 / 35.49373\r\n    end as gas_sales_gross,\r\n    d.wigas * d.voldispsalegas / 1000 * case\r\n        when s.tempbase is null then 1\r\n        else 37.25 / 35.49373\r\n    end as gas_sales_wi,\r\n    d.volnewprodallocgas / 1000 * case\r\n        when s.tempbase is null then 1\r\n        else 37.25 / 35.49373\r\n    end as gas_gross_us,\r\n    d.wigas * d.voldispsalegas / 1000 * case\r\n        when s.tempbase is null then 1\r\n        else 37.25 / 35.49373\r\n    end as gas_sales_nri_us,\r\n    d.volprodgathhcliq as oil_raw_gross,\r\n    d.volnewprodallocoil as oil_alloc_gross,\r\n    d.wihcliq * d.volnewprodallocoil as oil_alloc_wi,\r\n    d.voldispsaleoil - ifnull(d.volrecovhcliq, 0) as oil_sales_gross,\r\n    d.wihcliq * (d.voldispsaleoil - ifnull(d.volrecovhcliq, 0)) as oil_sales_wi,\r\n    d.volchginvhcliq as oil_inv_gross,\r\n    d.wihcliq * d.volchginvhcliq as oil_inv_wi,\r\n    d.volnewprodallocngl as ngl_alloc_gross,\r\n    d.volnewprodalloccond as cond_alloc_gross,\r\n    d.wihcliq * d.volnewprodallocngl as ngl_alloc_wi,\r\n    d.wihcliq * d.volnewprodalloccond as cond_alloc_wi,\r\n    d.voldispsalengl + d.voldispsalecond as ngl_sales_gross,\r\n    d.wihcliq * d.voldispsalengl as ngl_sales_wi,\r\n    d.wihcliq * d.voldispsalecond as cond_sales_wi,\r\n    d.wihcliq * d.volnewprodallocoil as oil_alloc_nri,\r\n    d.wihcliq * d.voldispsalengl as ngl_sales_nri,\r\n    null as ngl_inv_gross,\r\n    null as ngl_inv_wi,\r\n    d.volnewprodallocwater as water_alloc_gross,\r\n    d.wiwater * d.volnewprodallocwater as water_alloc_wi,\r\n    d.volprodgathwater as water_raw_gross,\r\n    ifnull(d.volnewprodallochcliq, 0) + ifnull(d.voldispsalegas, 0) / 1000 * case\r\n        when s.tempbase is null then 1\r\n        else 37.25 / 35.49373\r\n    end * 35.49373 / 6 * 0.158910004497153 as boe_alloc_gross,\r\n    ifnull(d.volnewprodallochcliq * d.wihcliq, 0) + ifnull(d.voldispsalegas * d.wigas, 0) / 1000 * case\r\n        when s.tempbase is null then 1\r\n        else 37.25 / 35.49373\r\n    end * 35.49373 / 6 * 0.158910004497153 as boe_alloc_wi,\r\n    ifnull(d.voldispsalehcliq, 0) + ifnull(d.voldispsalegas, 0) / 1000 * case\r\n        when s.tempbase is null then 1\r\n        else 37.25 / 35.49373\r\n    end * 35.49373 / 6 * 0.158910004497153 as boe_sales_gross,\r\n    ifnull(d.voldispsalehcliq * d.wihcliq, 0) + ifnull(d.voldispsalegas * d.wigas, 0) / 1000 * case\r\n        when s.tempbase is null then 1\r\n        else 37.25 / 35.49373\r\n    end * 35.49373 / 6 * 0.158910004497153 as boe_sales_wi,\r\n    ifnull(d.volnewprodallocoil, 0) + ifnull(d.volnewprodallocgas, 0) / 1000 * case\r\n        when s.tempbase is null then 1\r\n        else 37.25 / 35.31778\r\n    end * 35.31778 / 6 * 0.158910004497153 as boe_sales_gross_us,\r\n    ifnull(d.volnewprodallocoil * d.wihcliq, 0) + ifnull(d.voldispsalengl * d.wihcliq, 0) + ifnull(d.voldispsalegas * d.wigas, 0) / 1000 * case\r\n        when s.tempbase is null then 1\r\n        else 37.25 / 35.31778\r\n    end * 35.31778 / 6 * 0.158910004497153 as boe_sales_nri_us,\r\n\tWS_EDW.PVIEW_SYSSECURITYTYP_VET_BU_ROLE(h.SYSSECURITYTYP) AS BU_SF_ROLE\r\nfrom DS_PRODVIEW.PVT_pvunitallocmonthday d\r\n    left join DS_PRODVIEW.PVT_pvcalcset s on s.idrec = d.idreccalcset\r\n\t\tand s.tempbase != 15\r\n    inner join DS_PRODVIEW.PVT_pvunitallocmonth m on d.idrecparent
+            = m.idrec\r\n    inner join DS_PRODVIEW.PVT_pvunit u on m.idrecparent = u.idrec\r\n    inner join DS_PRODVIEW.PVT_pvunitcomp c on u.idrec = c.idrecparent\r\n\tINNER JOIN DS_PRODVIEW.PVT_pvflownetheader h ON h.idflownet = d.idflownet"
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVCALCSET
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVFLOWNETHEADER
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNIT
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNITCOMP
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNITCOMPCYCLETM
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('EDW','VIEW_PVIEW_VRL_DAILY_ALLOC_PROD2_VW') }} "VIEW_PVIEW_VRL_DAILY_ALLOC_PROD2_VW"
+        name: VIEW_PVIEW_VRL_DAILY_ALLOC_PROD2_VW
+        noLinkRefs: []
+  name: VIEW_PVIEW_VRL_DAILY_ALLOC_PROD2_VW
+  overrideSQL: true
+  schema: CLS_EDW
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node
