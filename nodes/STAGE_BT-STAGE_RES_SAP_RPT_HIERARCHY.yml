@@ -1,0 +1,257 @@
+fileVersion: 1
+id: f0696157-2240-a391-9fe1-22a95b88df61
+name: STAGE_RES_SAP_RPT_HIERARCHY
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5a350ec3-5f5e-c37a-839d84af2b2f
+          stepCounter: f0696157-2240-a391-9fe1-22a95b88df61
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Source of Hierarchy Value
+        name: HIER_SRC_CODE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "TARGET.HIER_SRC_CODE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ddc09dc-01d9-854e-9fe670374eb2
+          stepCounter: f0696157-2240-a391-9fe1-22a95b88df61
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: COUNTRY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6ddc09dc-01d9-854e-9fe670374eb2
+                stepCounter: 232d3ce4-5d74-97ae-45aa-e0dbaf623c61
+            transform: "NVL(TARGET.COUNTRY,'Undefined')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 74c38114-8f39-8f43-0ba4e3a6f235
+          stepCounter: f0696157-2240-a391-9fe1-22a95b88df61
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: PROVINCE_STATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7fd69611-1a99-4c89-b613-b14f26305905
+                stepCounter: cd965ba6-e0f9-40c1-a2f4-6de132dee623
+            transform: "NVL(TARGET.PROVINCE_STATE,'Undefined')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 25f7049f-4310-b9b3-1145a7ceb79d
+          stepCounter: f0696157-2240-a391-9fe1-22a95b88df61
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: CURRENT_CORE_AREA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 25f7049f-4310-b9b3-1145a7ceb79d
+                stepCounter: 232d3ce4-5d74-97ae-45aa-e0dbaf623c61
+            transform: "NVL(TARGET.CURRENT_CORE_AREA,'Undefined')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5359e540-8a4f-3925-cdf8afbcc4d8
+          stepCounter: f0696157-2240-a391-9fe1-22a95b88df61
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: CURRENT_CORE_PROPERTY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5359e540-8a4f-3925-cdf8afbcc4d8
+                stepCounter: 232d3ce4-5d74-97ae-45aa-e0dbaf623c61
+            transform: "NVL(TARGET.CURRENT_CORE_PROPERTY,'Undefined')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc8f0c97-5e96-8986-08750e8ef8cc
+          stepCounter: f0696157-2240-a391-9fe1-22a95b88df61
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: ""
+        name: CORP_HIER_AREA_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: abb476be-4ce6-4a63-8b1e-8d766e9ae6ab
+                stepCounter: ffad18c1-7e29-4882-a50e-3dec32297c97
+            transform: "NVL(LOAD_VET_RES_XREF_RESERVE_HIER_CORP_HIER.CORP_HIER_AREA_CODE,'Undefined')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e12ecac1-b897-c623-8e841b57266b
+          stepCounter: f0696157-2240-a391-9fe1-22a95b88df61
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: Row Level Security Role
+        name: CORP_HIER_AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be72a29b-4dd7-5d69-cfb9365d5896
+                stepCounter: 708fd649-6097-9913-de66-f7bca879c8c8
+            transform: "NVL(DIM_LO_CC_CORP_HIER_CURRENT.AREA_NAME,'Undefined')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+          stepCounter: f0696157-2240-a391-9fe1-22a95b88df61
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: Row Level Security Role
+        name: BU_SF_ROLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+                stepCounter: 708fd649-6097-9913-de66-f7bca879c8c8
+            transform: "NVL(DIM_LO_CC_CORP_HIER_CURRENT.BU_SF_ROLE,    'CORP' || DECODE(CURRENT_DATABASE(),    'EDW_TST', '_TEST',    'EDW_DEV', '_DEV',    'EDW','')) "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: f0696157-2240-a391-9fe1-22a95b88df61
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: f0696157-2240-a391-9fe1-22a95b88df61
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_LO_SAP_CC_CORP_HIER_CURRENT: 708fd649-6097-9913-de66-f7bca879c8c8
+          DIM_RES_ENTITY: 232d3ce4-5d74-97ae-45aa-e0dbaf623c61
+          LOAD_VET_RES_HIERARCHY_MANUAL: 232d3ce4-5d74-97ae-45aa-e0dbaf623c61
+          LOAD_VET_RES_XREF_RESERVE_HIER_CORP_HIER: 232d3ce4-5d74-97ae-45aa-e0dbaf623c61
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: EDW
+            nodeName: DIM_LO_SAP_CC_CORP_HIER_CURRENT
+          - locationName: EDW
+            nodeName: DIM_RES_ENTITY
+          - locationName: EDW
+            nodeName: LOAD_VET_RES_HIERARCHY_MANUAL
+          - locationName: EDW
+            nodeName: LOAD_VET_RES_XREF_RESERVE_HIER_CORP_HIER
+        join:
+          joinCondition: |-
+            FROM ( SELECT DISTINCT 'ENTITY' HIER_SRC_CODE, COUNTRY, PROVINCE_STATE, CURRENT_CORE_AREA, CURRENT_CORE_PROPERTY
+            FROM {{ ref('EDW', 'DIM_RES_ENTITY') }}
+            UNION SELECT DISTINCT 'MANUAL' HIER_SRC_CODE,COUNTRY, PROVINCE_STATE, CURRENT_CORE_AREA, CURRENT_CORE_PROPERTY
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_RES_HIERARCHY_MANUAL') }} ) AS TARGET
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_RES_XREF_RESERVE_HIER_CORP_HIER') "LOAD_VET_RES_XREF_RESERVE_HIER_CORP_HIER"
+              ON TARGET.CURRENT_CORE_PROPERTY = LOAD_VET_RES_XREF_RESERVE_HIER_CORP_HIER.RES_HIER_CURRENT_CORE_PROPERTY
+            LEFT JOIN ( SELECT DISTINCT AREA_CODE, AREA_NAME, BU_SF_ROLE
+            FROM [TABLEOWNER') }}.[DIM_LO_SAP_CC_CORP_HIER_CURRENT') }}) DIM_LO_CC_CORP_HIER_CURRENT
+              ON LOAD_VET_RES_XREF_RESERVE_HIER_CORP_HIER.CORP_HIER_AREA_CODE = DIM_LO_CC_CORP_HIER_CURRENT.AREA_CODE
+            WHERE TARGET.COUNTRY IS NOT NULL
+                AND TARGET.PROVINCE_STATE IS NOT NULL
+                AND TARGET.CURRENT_CORE_AREA IS NOT NULL
+                AND TARGET.CURRENT_CORE_PROPERTY IS NOT NULL
+        name: STAGE_RES_SAP_RPT_HIERARCHY
+        noLinkRefs: []
+  name: STAGE_RES_SAP_RPT_HIERARCHY
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,191 @@
+fileVersion: 1
+id: e417883b-5c43-7e59-2645-2a34368644ae
+name: STAGE_RES_INDICATORS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5348af0b-4d72-f4c1-e75d18da70e3
+          stepCounter: e417883b-5c43-7e59-2645-2a34368644ae
+        config: {}
+        dataType: integer
+        defaultValue: "0"
+        description: STAGE_RES_INDICATORS.RESULT_ID=DIM_RES_RESULT.RESULT_ID
+        name: DIM_RESULT_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5348af0b-4d72-f4c1-e75d18da70e3
+                stepCounter: 57457772-9c62-1b71-73b3-289f111929b5
+            transform: "NVL(DIM_RES_RESULT.DIM_RESULT_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b9fcf568-52bd-e6a0-fcbb85320c84
+          stepCounter: e417883b-5c43-7e59-2645-2a34368644ae
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: STAGE_RES_INDICATORS.VARIABLE_TYPE_CODE=DIM_RES_VARIABLE_TYPE.VARIABLE_TYPE_CODE
+        isBusinessKey: true
+        name: DIM_VARIABLE_TYPE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b9fcf568-52bd-e6a0-fcbb85320c84
+                stepCounter: 74f3820a-df65-84a2-9837-c2b3cada650c
+            transform: "NVL(STAGE_RES_IND_DETAIL.DIM_VARIABLE_TYPE_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 403b5a87-b884-eec9-180a24115dd6
+          stepCounter: e417883b-5c43-7e59-2645-2a34368644ae
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        isBusinessKey: true
+        name: DIM_UOM_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 403b5a87-b884-eec9-180a24115dd6
+                stepCounter: 74f3820a-df65-84a2-9837-c2b3cada650c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 25a4ebb8-e006-f5bb-866806287a40
+          stepCounter: e417883b-5c43-7e59-2645-2a34368644ae
+        config: {}
+        dataType: number(18)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: RESULT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 25a4ebb8-e006-f5bb-866806287a40
+                stepCounter: 74f3820a-df65-84a2-9837-c2b3cada650c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5b8f16e2-b1c6-7574-0d4ef8ae2a35
+          stepCounter: e417883b-5c43-7e59-2645-2a34368644ae
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: RESERVE_CATEGORY_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5b8f16e2-b1c6-7574-0d4ef8ae2a35
+                stepCounter: 74f3820a-df65-84a2-9837-c2b3cada650c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ecc2e9c3-ddb0-7e7d-a223c1dc5c3f
+          stepCounter: e417883b-5c43-7e59-2645-2a34368644ae
+        config: {}
+        dataType: DECIMAL(38,12)
+        defaultValue: ""
+        description: Variable numeric value
+        name: VALUE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ecc2e9c3-ddb0-7e7d-a223c1dc5c3f
+                stepCounter: 74f3820a-df65-84a2-9837-c2b3cada650c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+          stepCounter: e417883b-5c43-7e59-2645-2a34368644ae
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: BU_SF_ROLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+                stepCounter: 57457772-9c62-1b71-73b3-289f111929b5
+            transform: "NVL(DIM_RES_RESULT.BU_SF_ROLE,    'CORP' || DECODE(CURRENT_DATABASE(),    'EDW_TST', '_TEST',    'EDW_DEV', '_DEV',    'EDW','')) "
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_RES_RESULT: 57457772-9c62-1b71-73b3-289f111929b5
+          STAGE_RES_IND_DETAIL: 74f3820a-df65-84a2-9837-c2b3cada650c
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: DIM_RES_RESULT
+          - locationName: STAGE_BT
+            nodeName: STAGE_RES_IND_DETAIL
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_RES_IND_DETAIL') {{ ref ('STAGE_BT','STAGE_RES_IND_DETAIL"
+            INNER JOIN {{ ref('EDW', 'DIM_RES_RESULT') "DIM_RES_RESULT"
+              ON STAGE_RES_IND_DETAIL.RESULT_ID = DIM_RES_RESULT.RESULT_ID
+        name: STAGE_RES_INDICATORS
+        noLinkRefs: []
+  name: STAGE_RES_INDICATORS
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,104 @@
+fileVersion: 1
+id: aeb5578f-114d-d614-a475-bdb7bca506e5
+name: STAGE_RES_RESERVE_CATEGORY
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5b8f16e2-b1c6-7574-0d4ef8ae2a35
+          stepCounter: aeb5578f-114d-d614-a475-bdb7bca506e5
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: RESERVE_CATEGORY_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5b8f16e2-b1c6-7574-0d4ef8ae2a35
+                stepCounter: 3b63f68e-1b3c-6990-d5de-1f1ca3e98cb6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9502f173-d1e1-2f1e-798c51bd7bb0
+          stepCounter: aeb5578f-114d-d614-a475-bdb7bca506e5
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: CATEGORY_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9502f173-d1e1-2f1e-798c51bd7bb0
+                stepCounter: 3b63f68e-1b3c-6990-d5de-1f1ca3e98cb6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5d06aa6a-c0a0-d34e-1838404da22e
+          stepCounter: aeb5578f-114d-d614-a475-bdb7bca506e5
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        name: CATEGORY_VALUE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5d06aa6a-c0a0-d34e-1838404da22e
+                stepCounter: 3b63f68e-1b3c-6990-d5de-1f1ca3e98cb6
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_MOSAIC_RES_RESERVE_CATEGORY: 3b63f68e-1b3c-6990-d5de-1f1ca3e98cb6
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_MOSAIC_RES_RESERVE_CATEGORY
+        join:
+          joinCondition: |-
+            FROM {{ ref('DATA_STORE', 'ODS_MOSAIC_RES_RESERVE_CATEGORY') "ODS_MOSAIC_RES_RESERVE"_CATEGORY
+            WHERE ODS_MOSAIC_RES_RESERVE_CATEGORY.DSS_CURRENT_FLAG = 'Y'
+        name: STAGE_RES_RESERVE_CATEGORY
+        noLinkRefs: []
+  name: STAGE_RES_RESERVE_CATEGORY
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

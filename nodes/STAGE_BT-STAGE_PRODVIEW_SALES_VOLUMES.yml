@@ -1,0 +1,930 @@
+fileVersion: 1
+id: 5080eab3-d982-4b88-8fa7-2c10576f3986
+name: STAGE_PRODVIEW_SALES_VOLUMES
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: "Prodview sales volumes"
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e011740c-c907-023b-8433e3890897
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: IDRECUNIT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e011740c-c907-023b-8433e3890897
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec8796fd-3c92-085b-d53f4892020c
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: IDFLOWNET
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ec8796fd-3c92-085b-d53f4892020c
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c297c80e-0d13-4a65-d9d70315380d
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: ENTITY_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c297c80e-0d13-4a65-d9d70315380d
+                stepCounter: d141ef69-3bff-6fdd-a775-989778fecfa4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e278d5f3-d2ec-2fd7-8e981b3b81c8
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: SCENARIO_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "'pv_sales'"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dbb72286-cc77-ff19-84fff9a466f4
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: int
+        defaultValue: ""
+        description: ""
+        name: ACTIVITY_DATE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2fe9900-086f-27d3-824d84adc8f4
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: "TO_VARCHAR(ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.DTTM, 'YYYYMMDD')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6fa46127-edac-f0e1-329e37099712
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        name: ACTIVITY_DATE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2fe9900-086f-27d3-824d84adc8f4
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 39f8a87c-ad4f-63e5-2820b669b747
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: int
+        defaultValue: ""
+        description: ""
+        name: NORMALIZED_DATE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c054bbba-05c3-780f-39774344b481
+                stepCounter: d141ef69-3bff-6fdd-a775-989778fecfa4
+            transform: "CASE   WHEN STAGE_PRODVIEW_WELLS.ON_PROD_DATE IS NULL THEN '-1'  WHEN STAGE_PRODVIEW_WELLS.ON_PROD_DATE > ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.DTTM THEN '-1'  ELSE DATEDIFF(DAY, STAGE_PRODVIEW_WELLS.ON_PROD_DATE, ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.DTTM) + 1   END  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae551831-8c64-a1ad-4d7fb161010f
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: int
+        defaultValue: ""
+        description: ""
+        name: PRODUCING_DATE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8255186-5f67-9775-030fbc804dd8
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: int
+        defaultValue: ""
+        description: ""
+        name: ON_PROD_DATE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "COALESCE(TO_VARCHAR(STAGE_PRODVIEW_WELLS.ON_PROD_DATE, 'YYYYMMDD'), '-1')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The cost centre which the reporting entity is representing.
+        name: CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+                stepCounter: d141ef69-3bff-6fdd-a775-989778fecfa4
+            transform: "COALESCE(STAGE_PRODVIEW_WELLS.CC_NUM, '-1')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d5f765df-632c-5c19-346293b4b06e
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: HOURS_ON
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e102dff6-81e9-ab9b-24784345b2dd
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: "ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.DUROP * 24"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d90fdcf2-d557-6b52-2cbdac4fa735
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: HOURS_DOWN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: efacc7e0-3c1c-923c-641892dc42fa
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: "ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.DURDOWN * 24"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91f3c913-d45c-0ca5-fa118774483c
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: HCLIQ_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e383401-8b5b-2c05-eafb20d91e3e
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc5ac93a-f5f6-cea6-0a4164ff4e0a
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: OIL_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c04388af-3fa0-8a37-9ec82d55375a
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dacb6a29-655e-151a-62032aa57490
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: CONDENSATE_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0b1a6a4d-558d-4784-659a56a829f5
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3f8e6301-4635-a307-f0aa04a3ac45
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: NGL_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fc90840e-d932-097f-28dc83542abc
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91505492-4e67-572c-b43a7a2223d4
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: GAS_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 05a4b4a6-be7e-c300-a8efbcfe7a24
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: "CASE WHEN STAGE_PRODVIEW_WELLS.QBYTE_PROVINCE_DISTRICT = 'BRITISH COLUMBIA'   THEN (ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.VOLDISPSALEGAS * COALESCE((ODS_PVIEW_PVT_PVUNITMETERRATEENTRY.RATE/100), 1))/1000  ELSE  ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.VOLDISPSALEGAS/1000 END"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee09f659-41b5-5178-9c5c4937336e
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: WATER_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 05c5eb3b-8926-b9d0-7b4387139d29
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: SAND_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 608653c6-383d-86fe-b2c035f6efc8
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: INJECTED_GAS_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a1b0cf2a-4094-5a84-63a5ccefafb2
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: INJECTED_HCLIQ_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8432474d-c30d-eff2-45a7fd7d9546
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: INJECTED_SAND_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3d5e052e-889d-4d76-2f864b1691d8
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: INJECTED_WATER_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c5dc034d-c0b2-2ea3-619befa6a70f
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: RECOVERED_GAS_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a57a5a74-438f-5204-c0acbb1cc120
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: RECOVERED_HCLIQ_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ebc9e714-ed76-df19-b2f90e78024c
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: RECOVERED_SAND_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5f95dc30-29f7-d43f-dffc70e7386e
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: RECOVERED_WATER_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ce34a71d-4a20-6e5f-1c4cb379a9f1
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: REMAINING_LIFT_GAS_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 65ede743-5ffa-05d2-567b7ccdb523
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: REMAINING_LOAD_HCLIQ_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 51c8b2bd-d8d3-63e6-9c4a2cab8fc1
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: REMAINING_LOAD_WATER_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 674f8f6a-1755-ec61-4ba11a3e51bc
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: REMAINING_LOAD_SAND_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 32771ded-069a-36e9-d7c8151eb164
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: METHANE_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 32771ded-069a-36e9-d7c8151eb164
+                stepCounter: d65a0934-4116-4188-db65-7400b89a937e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 63ff9664-b7de-1d1b-d5015473f4e9
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: ETHANE_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 63ff9664-b7de-1d1b-d5015473f4e9
+                stepCounter: d65a0934-4116-4188-db65-7400b89a937e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb464fc5-d3ca-5fca-23d95e1a302b
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: PROPANE_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb464fc5-d3ca-5fca-23d95e1a302b
+                stepCounter: d65a0934-4116-4188-db65-7400b89a937e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3b1237ed-0729-e492-35078aa00ebb
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: BUTANE_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b1237ed-0729-e492-35078aa00ebb
+                stepCounter: d65a0934-4116-4188-db65-7400b89a937e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cb6ce8da-ac0f-576b-edbbe38b2e4d
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: PENTANE_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cb6ce8da-ac0f-576b-edbbe38b2e4d
+                stepCounter: d65a0934-4116-4188-db65-7400b89a937e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2769e2ce-1bf8-1981-810e11223408
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: WIGAS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2769e2ce-1bf8-1981-810e11223408
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c6e7aab6-b2ea-799e-b24cd4836c07
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: WIHCLIQ
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c6e7aab6-b2ea-799e-b24cd4836c07
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e4872350-4302-8256-402fde4d90e5
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: WISAND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e4872350-4302-8256-402fde4d90e5
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b3019bd5-0f28-12b0-18a67e482432
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: WIWATER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b3019bd5-0f28-12b0-18a67e482432
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 732bbecb-46eb-7781-d25099d8dbca
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: FLAREGAS_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 35bee58f-19c6-dea8-e3ae00b6c0c2
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: VENTGAS_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83f73366-0b8f-7232-ce3a762cf905
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: FUELGAS_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 25aecb27-608c-337a-ad4d9963dcf7
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: BAT_PRO_GAS_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 68384a21-6a43-4408-628a6c04398f
+          stepCounter: 5080eab3-d982-4b88-8fa7-2c10576f3986
+        config: {}
+        dataType: decimal(24,8)
+        defaultValue: ""
+        description: ""
+        name: INJECTED_LIFT_GAS_METRIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+          ODS_PVIEW_PVT_PVUNITDISPMONTHDAY: d65a0934-4116-4188-db65-7400b89a937e
+          STAGE_PRODVIEW_WELLS: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNITDISPMONTHDAY
+          - locationName: DATA_STORE
+            nodeName: STAGE_PRODVIEW_WELLS
+        join:
+          joinCondition: |-
+            FROM {{ ref('DATA_STORE', 'ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY') }} "ODS_PVIEW_PVT_PVUNIT"ALLOCMONTHDAY
+            JOIN {{ ref('STAGE_BT', 'STAGE_PRODVIEW_WELLS') }} "STAGE_PRODVIEW_WELLS"
+              ON ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.IDFLOWNET = STAGE_PRODVIEW_WELLS.IDFLOWNET
+                AND ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.IDRECUNIT = STAGE_PRODVIEW_WELLS.ENTITY_KEY
+            LEFT JOIN ( SELECT ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.IDFLOWNET, ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.IDRECUNIT, ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.DTTM AS ACTIVITY_DATE, SUM(NVL(ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.VOLC1LIQ, 0)) AS METHANE_METRIC, SUM(NVL(ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.VOLC2LIQ, 0)) AS ETHANE_METRIC, SUM(NVL(ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.VOLC3LIQ, 0)) AS PROPANE_METRIC, SUM(NVL(ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.VOLIC4LIQ, 0) + NVL(ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.VOLNC4LIQ, 0)) AS BUTANE_METRIC, SUM(NVL(ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.VOLIC5LIQ, 0) + NVL(ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.VOLNC5LIQ, 0) + NVL(ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.VOLC6LIQ, 0) + NVL(ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.VOLC7LIQ, 0)) AS PENTANE_METRIC
+            FROM {{ ref('DATA_STORE', 'ODS_PVIEW_PVT_PVUNITDISPMONTHDAY') }} "ODS_PVIEW_PVT_PVUNIT"DISPMONTHDAY
+            LEFT JOIN {{ ref('DATA_STORE', 'ODS_PVIEW_PVT_PVUNITNODE') }} "ODS_PVIEW_PVT_PVUNIT"NODE
+              ON ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.IDRECDISPUNITNODE = ODS_PVIEW_PVT_PVUNITNODE.IDREC
+                AND ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.IDFLOWNET = ODS_PVIEW_PVT_PVUNITNODE.IDFLOWNET
+                AND ODS_PVIEW_PVT_PVUNITNODE.DSS_CURRENT_FLAG = 'Y'
+                AND ODS_PVIEW_PVT_PVUNITNODE.DSS_DELETE_FLAG != 'Y'
+            WHERE ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.DSS_CURRENT_FLAG = 'Y'
+                AND ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.DSS_DELETE_FLAG != 'Y'
+                AND ODS_PVIEW_PVT_PVUNITNODE.TYPDISPHCLIQ = 'ngl'
+            GROUP BY ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.IDFLOWNET, ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.IDRECUNIT, ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.DTTM ) ODS_PVIEW_PVT_PVUNITDISPMONTHDAY
+              ON ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.IDRECUNIT = ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.IDRECUNIT
+                AND ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.DTTM = ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.ACTIVITY_DATE
+                AND ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.IDFLOWNET = ODS_PVIEW_PVT_PVUNITDISPMONTHDAY.IDFLOWNET
+            LEFT JOIN ( SELECT DTTM AS START_DATE, COALESCE(DATEADD(DAY, -1, LEAD(DTTM) OVER (ORDER BY DTTM)), '2999-12-31') AS END_DATE, RATE
+            FROM {{ ref('DATA_STORE', 'ODS_PVIEW_PVT_PVUNITMETERRATEENTRY') }} "ODS_PVIEW_PVT_PVUNIT"METERRATEENTRY
+            WHERE ODS_PVIEW_PVT_PVUNITMETERRATEENTRY.IDRECPARENT = 'B4E41CDA995F4FD0BDEF2233B7D9D8B8'
+                AND ODS_PVIEW_PVT_PVUNITMETERRATEENTRY.DSS_CURRENT_FLAG = 'Y'
+                AND ODS_PVIEW_PVT_PVUNITMETERRATEENTRY.DSS_DELETE_FLAG != 'Y' ) ODS_PVIEW_PVT_PVUNITMETERRATEENTRY
+              ON ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.DTTM BETWEEN ODS_PVIEW_PVT_PVUNITMETERRATEENTRY.START_DATE
+                AND ODS_PVIEW_PVT_PVUNITMETERRATEENTRY.END_DATE
+            WHERE ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.DSS_CURRENT_FLAG = 'Y'
+                AND ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.DSS_DELETE_FLAG != 'Y'
+        name: STAGE_PRODVIEW_SALES_VOLUMES
+        noLinkRefs: []
+  name: STAGE_PRODVIEW_SALES_VOLUMES
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,172 @@
+fileVersion: 1
+id: ebae8fe5-88f2-6063-1a7c-c0dff0f0d888
+name: STAGE_PRODVIEW_LATEST_WI
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e011740c-c907-023b-8433e3890897
+          stepCounter: ebae8fe5-88f2-6063-1a7c-c0dff0f0d888
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: IDRECUNIT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8683c3b-6830-536a-3ae2e9baf7d8
+                stepCounter: 25548ef3-08f5-5812-b243-6c4f50853ef8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0f4a7d57-aef5-0db4-ba9580235389
+          stepCounter: ebae8fe5-88f2-6063-1a7c-c0dff0f0d888
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: GAS_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2769e2ce-1bf8-1981-810e11223408
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: "FIRST_VALUE(ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.WIGAS) OVER (PARTITION BY IDRECUNIT ORDER BY DTTM DESC)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e30b001e-d48a-f5e5-33ec6375946d
+          stepCounter: ebae8fe5-88f2-6063-1a7c-c0dff0f0d888
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: HCLIQ_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c6e7aab6-b2ea-799e-b24cd4836c07
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: "FIRST_VALUE(ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.WIHCLIQ) OVER (PARTITION BY IDRECUNIT ORDER BY DTTM DESC)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fef9e7b3-eb33-3371-e6de452a97ed
+          stepCounter: ebae8fe5-88f2-6063-1a7c-c0dff0f0d888
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: SAND_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e4872350-4302-8256-402fde4d90e5
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: "FIRST_VALUE(ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.WISAND) OVER (PARTITION BY IDRECUNIT ORDER BY DTTM DESC)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8d064e36-42c1-c4ad-3270ef7f6f1b
+          stepCounter: ebae8fe5-88f2-6063-1a7c-c0dff0f0d888
+        config: {}
+        dataType: float
+        defaultValue: ""
+        description: ""
+        name: WATER_WI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b3019bd5-0f28-12b0-18a67e482432
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: "FIRST_VALUE(ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.WIWATER) OVER (PARTITION BY IDRECUNIT ORDER BY DTTM DESC)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 06f7587b-d62c-6795-ef630cbd4af1
+          stepCounter: ebae8fe5-88f2-6063-1a7c-c0dff0f0d888
+        config: {}
+        dataType: varchar(26)
+        defaultValue: ""
+        description: ""
+        name: LATEST_PUMP_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: da3c4feb-13ad-3b0d-d428fee7f0ad
+                stepCounter: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+            transform: "FIRST_VALUE(ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.IDRECPUMPENTRYTK) OVER (PARTITION BY IDRECUNIT ORDER BY DTTM DESC)"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_PVIEW_PVT_PVUNIT: 25548ef3-08f5-5812-b243-6c4f50853ef8
+          ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY: a88a5390-bf3b-3ee4-889a-d0fd0c7466a6
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNIT
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY
+        join:
+          joinCondition: |-
+            FROM {{ ref('DATA_STORE', 'ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY') }} "ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY"
+            JOIN {{ ref('DATA_STORE', 'ODS_PVIEW_PVT_PVUNIT') }} "ODS_PVIEW_PVT_PVUNIT"
+              ON ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.IDFLOWNET = ODS_PVIEW_PVT_PVUNIT.IDFLOWNET
+                AND ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.IDRECUNIT = ODS_PVIEW_PVT_PVUNIT.IDREC
+                AND ODS_PVIEW_PVT_PVUNIT.DSS_CURRENT_FLAG = 'Y'
+                AND ODS_PVIEW_PVT_PVUNIT.DSS_DELETE_FLAG != 'Y'
+            WHERE ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.DSS_CURRENT_FLAG = 'Y'
+                AND ODS_PVIEW_PVT_PVUNITALLOCMONTHDAY.DSS_DELETE_FLAG != 'Y'
+        name: STAGE_PRODVIEW_LATEST_WI
+        noLinkRefs: []
+  name: STAGE_PRODVIEW_LATEST_WI
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,104 @@
+fileVersion: 1
+id: f4091bb9-ea6b-c3fa-740e-7c588bdbcb7c
+name: STAGE_RES_VINTAGE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b80cd688-8420-e082-1d88a8bee0fd
+          stepCounter: f4091bb9-ea6b-c3fa-740e-7c588bdbcb7c
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: VINTAGE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b80cd688-8420-e082-1d88a8bee0fd
+                stepCounter: 167bbe2f-13d0-257a-20cb-2dee66d5dea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7034822-5d3f-c758-a73674e67613
+          stepCounter: f4091bb9-ea6b-c3fa-740e-7c588bdbcb7c
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: VINTAGE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e7034822-5d3f-c758-a73674e67613
+                stepCounter: 167bbe2f-13d0-257a-20cb-2dee66d5dea5
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f0700349-03b7-a363-f77f4f0a7012
+          stepCounter: f4091bb9-ea6b-c3fa-740e-7c588bdbcb7c
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: VINTAGE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f0700349-03b7-a363-f77f4f0a7012
+                stepCounter: 167bbe2f-13d0-257a-20cb-2dee66d5dea5
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_MOSAIC_RES_VINTAGE: 167bbe2f-13d0-257a-20cb-2dee66d5dea5
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_MOSAIC_RES_VINTAGE
+        join:
+          joinCondition: |-
+            FROM {{ ref('DATA_STORE', 'ODS_MOSAIC_RES_VINTAGE') "ODS_MOSAIC_RES_VINTAGE"
+            WHERE ODS_MOSAIC_RES_VINTAGE.DSS_CURRENT_FLAG = 'Y'
+        name: STAGE_RES_VINTAGE
+        noLinkRefs: []
+  name: STAGE_RES_VINTAGE
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

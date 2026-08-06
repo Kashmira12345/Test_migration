@@ -1,0 +1,179 @@
+fileVersion: 1
+id: 8d73e71d-e48a-4146-a9b3-3dc35771c422
+name: STAGE_RES_UOM
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ed211bc-42cd-6c2a-4a38484c39c6
+          stepCounter: 8d73e71d-e48a-4146-a9b3-3dc35771c422
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: UOM_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e1fef2b-7b59-4522-9d25-ca8b991fcc49
+                stepCounter: b3cb5429-f2eb-43aa-98b0-340bd6d7d1a0
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 14938a7a-da66-3732-29bea2412bf7
+          stepCounter: 8d73e71d-e48a-4146-a9b3-3dc35771c422
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: UOM_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 586bcc78-0372-49fd-a7d5-68e0984425ba
+                stepCounter: b3cb5429-f2eb-43aa-98b0-340bd6d7d1a0
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec3cd473-a355-dbe6-1ed8caf3fd12
+          stepCounter: 8d73e71d-e48a-4146-a9b3-3dc35771c422
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: UOM_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ccff0d70-3b51-492f-a094-9e2bae8959a8
+                stepCounter: b3cb5429-f2eb-43aa-98b0-340bd6d7d1a0
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 8d73e71d-e48a-4146-a9b3-3dc35771c422
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8ab4225d-c7d4-4657-99b5-85bfec56aa55
+                stepCounter: b3cb5429-f2eb-43aa-98b0-340bd6d7d1a0
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 8d73e71d-e48a-4146-a9b3-3dc35771c422
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1ddc47dc-d524-49bd-b6d7-ea7391578405
+                stepCounter: b3cb5429-f2eb-43aa-98b0-340bd6d7d1a0
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 8d73e71d-e48a-4146-a9b3-3dc35771c422
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 8d73e71d-e48a-4146-a9b3-3dc35771c422
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_VET_RES_UOM: b3cb5429-f2eb-43aa-98b0-340bd6d7d1a0
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_VET_RES_UOM
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_RES_UOM') "LOAD_VET_RES_UOM"
+        name: STAGE_RES_UOM
+        noLinkRefs: []
+  name: STAGE_RES_UOM
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

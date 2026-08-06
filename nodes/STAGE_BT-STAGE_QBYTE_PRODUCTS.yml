@@ -1,0 +1,162 @@
+fileVersion: 1
+id: 5e0a4d72-5ce2-608e-d13f-0a7dbf52eb27
+name: STAGE_QBYTE_PRODUCTS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b02f1cd6-e879-afdb-ffcb1b015893
+          stepCounter: 5e0a4d72-5ce2-608e-d13f-0a7dbf52eb27
+        config: {}
+        dataType: number(14,10)
+        defaultValue: ""
+        description: The conversion factor used from SI to Imperial.
+        name: OIL_SI_TO_IMP_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d96a1d8-1f9d-434f-96ef-b5f8cbc218ef
+                stepCounter: 00330be2-07af-4ef3-b21e-aabe059a155e
+            transform: "sum(case prod_code when 'OIL' then si_to_imp_conv_factor else null end)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c67a40a2-a3d6-6dd5-7373e2ab0b7f
+          stepCounter: 5e0a4d72-5ce2-608e-d13f-0a7dbf52eb27
+        config: {}
+        dataType: number(14,10)
+        defaultValue: ""
+        description: The conversion factor used from SI to Imperial.
+        name: NGL_SI_TO_IMP_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d96a1d8-1f9d-434f-96ef-b5f8cbc218ef
+                stepCounter: 00330be2-07af-4ef3-b21e-aabe059a155e
+            transform: "sum(case prod_code when 'NGL' then si_to_imp_conv_factor else null end)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4aa1f84c-4fb1-df83-c07c696c1c44
+          stepCounter: 5e0a4d72-5ce2-608e-d13f-0a7dbf52eb27
+        config: {}
+        dataType: number(14,10)
+        defaultValue: ""
+        description: The conversion factor used from SI to Imperial.
+        name: GAS_SI_TO_IMP_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d96a1d8-1f9d-434f-96ef-b5f8cbc218ef
+                stepCounter: 00330be2-07af-4ef3-b21e-aabe059a155e
+            transform: "sum(case prod_code when 'GAS' then si_to_imp_conv_factor else null end)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae1543e3-90dc-1adf-8a066f8d107b
+          stepCounter: 5e0a4d72-5ce2-608e-d13f-0a7dbf52eb27
+        config: {}
+        dataType: number(8,5)
+        defaultValue: ""
+        description: Conversion factor for barrel of oil equivalent in thermal quantities.  For example, BTUs, Joules.
+        name: GAS_BOE_THERMAL_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e800d14b-41ee-43b1-b0af-cab5fe8388e7
+                stepCounter: 00330be2-07af-4ef3-b21e-aabe059a155e
+            transform: "sum(case prod_code when 'GAS' then boe_thermal else null end)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7a28efb6-9032-f5ed-7a1b0542ae18
+          stepCounter: 5e0a4d72-5ce2-608e-d13f-0a7dbf52eb27
+        config: {}
+        dataType: number(14,10)
+        defaultValue: ""
+        description: ""
+        name: GAS_NM3_TO_IMP_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d96a1d8-1f9d-434f-96ef-b5f8cbc218ef
+                stepCounter: 00330be2-07af-4ef3-b21e-aabe059a155e
+            transform: "sum(case prod_code when 'NGAS' then si_to_imp_conv_factor else null end)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c541a368-e5c8-03b3-9b8d72a86dc7
+          stepCounter: 5e0a4d72-5ce2-608e-d13f-0a7dbf52eb27
+        config: {}
+        dataType: number(8,5)
+        defaultValue: ""
+        description: ""
+        name: GAS_M3_THERMAL_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 11370d77-775f-4c78-b754-f17089a0a118
+                stepCounter: 00330be2-07af-4ef3-b21e-aabe059a155e
+            transform: "sum(case prod_code when 'NGAS' then m3_thermal else null end)"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_QBYTE_PRODUCTS: 00330be2-07af-4ef3-b21e-aabe059a155e
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_QBYTE_PRODUCTS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_QBYTE_PRODUCTS') }} LOAD_QBYTE_PRODUCTS
+        name: STAGE_QBYTE_PRODUCTS
+        noLinkRefs: []
+  name: STAGE_QBYTE_PRODUCTS
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

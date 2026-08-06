@@ -1,0 +1,104 @@
+fileVersion: 1
+id: d12cf5ce-10b1-aaed-ed1e-098662ca6268
+name: STAGE_LO_SAP_ACTUALS_AVG_FX
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a9155f70-5bab-db8d-b853c168afd6
+          stepCounter: d12cf5ce-10b1-aaed-ed1e-098662ca6268
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ACTIVITY PERIOD DATE dimension key. Integer transformation of the Date value
+        isBusinessKey: true
+        name: DIM_ACTVY_PER_DATE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a9155f70-5bab-db8d-b853c168afd6
+                stepCounter: bc36bfee-5605-e4b2-e642-b5be500e446a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a52c243-5c33-1362-c9a1d59c35e3
+          stepCounter: d12cf5ce-10b1-aaed-ed1e-098662ca6268
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: OP_CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a52c243-5c33-1362-c9a1d59c35e3
+                stepCounter: bc36bfee-5605-e4b2-e642-b5be500e446a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fdab40ee-9a64-daa9-958fd6e7849d
+          stepCounter: d12cf5ce-10b1-aaed-ed1e-098662ca6268
+        config: {}
+        dataType: number(26,5)
+        defaultValue: ""
+        description: The Exchange rate for the transaction Only for Lease Ops reporting. Average of all line items
+        name: AVG_EXCHANGE_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c3767278-bb07-a329-47b98118bc60
+                stepCounter: bc36bfee-5605-e4b2-e642-b5be500e446a
+            transform: "AVG(DECODE(FACT_LO_SAP_ACTUALS.OP_CURR_CODE,'CAD',1,FACT_LO_SAP_ACTUALS.GLOP_EXCHANGE_RATE))"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          FACT_LO_SAP_ACTUALS: bc36bfee-5605-e4b2-e642-b5be500e446a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: EDW
+            nodeName: FACT_LO_SAP_ACTUALS
+        join:
+          joinCondition: |-
+            FROM {{ ref('EDW', 'FACT_LO_SAP_ACTUALS') }} FACT_LO_SAP_ACTUALSGROUP BY DIM_ACTVY_PER_DATE_KEY , OP_CURR_CODE
+        name: STAGE_LO_SAP_ACTUALS_AVG_FX
+        noLinkRefs: []
+  name: STAGE_LO_SAP_ACTUALS_AVG_FX
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

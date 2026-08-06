@@ -1,0 +1,252 @@
+fileVersion: 1
+id: a90d2b36-37bb-c7a1-2d91-83ff8e8cf5c9
+name: STAGE_RES_ECON_DETAIL_UNION
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "Combine expanded variable records with base data, excluding yearly summary records that were expanded"
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 25a4ebb8-e006-f5bb-866806287a40
+          stepCounter: a90d2b36-37bb-c7a1-2d91-83ff8e8cf5c9
+        config: {}
+        dataType: number(18)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: RESULT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 25a4ebb8-e006-f5bb-866806287a40
+                stepCounter: 5ae1bbdd-f59a-b515-8c62-3f01037b747b
+            transform: "TARGET.RESULT_ID"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5b8f16e2-b1c6-7574-0d4ef8ae2a35
+          stepCounter: a90d2b36-37bb-c7a1-2d91-83ff8e8cf5c9
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: Used as batch processing partition value (16 distinct values at creation time)
+        name: RESERVE_CATEGORY_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5b8f16e2-b1c6-7574-0d4ef8ae2a35
+                stepCounter: 052605ad-0db0-e99f-83df-db37e52730e7
+            transform: "TARGET.RESERVE_CATEGORY_ID"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d1810172-0479-023d-5eceeb29c9cf
+          stepCounter: a90d2b36-37bb-c7a1-2d91-83ff8e8cf5c9
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        name: YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d1810172-0479-023d-5eceeb29c9cf
+                stepCounter: 5ae1bbdd-f59a-b515-8c62-3f01037b747b
+            transform: "TARGET.YEAR"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 38331692-16ab-e5ab-e53370284a7f
+          stepCounter: a90d2b36-37bb-c7a1-2d91-83ff8e8cf5c9
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        name: MONTH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 38331692-16ab-e5ab-e53370284a7f
+                stepCounter: 5ae1bbdd-f59a-b515-8c62-3f01037b747b
+            transform: "TARGET.MONTH"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb7615c6-d006-02b3-b36289893ed8
+          stepCounter: a90d2b36-37bb-c7a1-2d91-83ff8e8cf5c9
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Last Day of Economics Details Month, Year
+        name: ACCT_PER_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fb7615c6-d006-02b3-b36289893ed8
+                stepCounter: 5ae1bbdd-f59a-b515-8c62-3f01037b747b
+            transform: "TARGET.ACCT_PER_DATE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84f89903-527e-12de-4ca0428f9442
+          stepCounter: a90d2b36-37bb-c7a1-2d91-83ff8e8cf5c9
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Reserve Economics Variable Type Code
+        name: VARIABLE_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 84f89903-527e-12de-4ca0428f9442
+                stepCounter: 5ae1bbdd-f59a-b515-8c62-3f01037b747b
+            transform: "TARGET.VARIABLE_TYPE_CODE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b9fcf568-52bd-e6a0-fcbb85320c84
+          stepCounter: a90d2b36-37bb-c7a1-2d91-83ff8e8cf5c9
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_VARIABLE_TYPE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b9fcf568-52bd-e6a0-fcbb85320c84
+                stepCounter: 5ae1bbdd-f59a-b515-8c62-3f01037b747b
+            transform: "TARGET.DIM_VARIABLE_TYPE_KEY"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 230dd3af-59d0-2893-ab880763b998
+          stepCounter: a90d2b36-37bb-c7a1-2d91-83ff8e8cf5c9
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: YR_TO_MTH_FLG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 230dd3af-59d0-2893-ab880763b998
+                stepCounter: 5ae1bbdd-f59a-b515-8c62-3f01037b747b
+            transform: "TARGET.YR_TO_MTH_FLG"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ed211bc-42cd-6c2a-4a38484c39c6
+          stepCounter: a90d2b36-37bb-c7a1-2d91-83ff8e8cf5c9
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Value UOM Code
+        name: UOM_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4ed211bc-42cd-6c2a-4a38484c39c6
+                stepCounter: 5ae1bbdd-f59a-b515-8c62-3f01037b747b
+            transform: "TARGET.UOM_CODE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ecc2e9c3-ddb0-7e7d-a223c1dc5c3f
+          stepCounter: a90d2b36-37bb-c7a1-2d91-83ff8e8cf5c9
+        config: {}
+        dataType: decimal(36,8)
+        defaultValue: ""
+        description: Variable numeric value
+        name: VALUE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ecc2e9c3-ddb0-7e7d-a223c1dc5c3f
+                stepCounter: 5ae1bbdd-f59a-b515-8c62-3f01037b747b
+            transform: "TARGET.VALUE"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STAGE_RES_ECON_DETAIL: 5ae1bbdd-f59a-b515-8c62-3f01037b747b
+          STAGE_RES_ECON_DETAIL_YR_TO_MTH: 052605ad-0db0-e99f-83df-db37e52730e7
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_RES_ECON_DETAIL
+          - locationName: STAGE_BT
+            nodeName: STAGE_RES_ECON_DETAIL_YR_TO_MTH
+        join:
+          joinCondition: |-
+            FROM ( SELECT RESULT_ID , RESERVE_CATEGORY_ID , YEAR , MONTH , ACCT_PER_DATE , VARIABLE_TYPE_CODE , DIM_VARIABLE_TYPE_KEY , YR_TO_MTH_FLG , UOM_CODE , VALUE
+            FROM {{ ref('STAGE_BT', 'STAGE_RES_ECON_DETAIL') }}
+            WHERE (YR_TO_MTH_FLG <> 'Y'
+                OR MONTH <> 0)
+                AND NVL(VALUE,0) <> 0
+            UNION ALL SELECT RESULT_ID , RESERVE_CATEGORY_ID , YEAR , NEW_MONTH AS MONTH , NEW_ACCT_PER_DATE AS ACCT_PER_DATE , VARIABLE_TYPE_CODE , DIM_VARIABLE_TYPE_KEY , YR_TO_MTH_FLG , UOM_CODE , NEW_MONTH_VALUE AS VALUE
+            FROM {{ ref('STAGE_BT', 'STAGE_RES_ECON_DETAIL_YR_TO_MTH') }} ) AS TARGET
+        name: STAGE_RES_ECON_DETAIL_UNION
+        noLinkRefs: []
+  name: STAGE_RES_ECON_DETAIL_UNION
+  overrideSQL: false
+  schema: STAGE_BT
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

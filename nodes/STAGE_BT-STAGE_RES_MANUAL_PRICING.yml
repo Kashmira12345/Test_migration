@@ -1,0 +1,316 @@
+fileVersion: 1
+id: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+name: STAGE_RES_MANUAL_PRICING
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: "Manual pricing transformed from VET_REF source and representing all ACCT_PER_DATE values between effective and expiry dates in source."
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 021321e8-ba3a-e39c-e3a2e7b3ec87
+          stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+        config: {}
+        dataType: varchar(259)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a613b58-f76c-4ec3-a8b5-9536690ddb57
+                stepCounter: ba2f4fc0-97d1-48b6-8b7e-c9a5ff8d4223
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0de9a6e8-c7b0-6200-4e187a3e82f5
+          stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: STAGE_RES_MANUAL_PRICING.CALENDAR_DATE=DIM_DATE.CALENDAR_DATE
+        isBusinessKey: true
+        name: DIM_ACCT_PER_DATE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aec04c15-1bd9-7440-417995c5705c
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: "NVL(DIM_DATE.DIM_DATE_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 403b5a87-b884-eec9-180a24115dd6
+          stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        isBusinessKey: true
+        name: DIM_UOM_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 403b5a87-b884-eec9-180a24115dd6
+                stepCounter: 979148e3-7d73-c560-5e72-2e4059825b56
+            transform: "NVL(DIM_RES_UOM.DIM_UOM_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2544e5b1-9a7b-a6f0-6444cc03d066
+          stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: PRODUCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 05020432-7329-4324-967c-f18b48d1edd8
+                stepCounter: ba2f4fc0-97d1-48b6-8b7e-c9a5ff8d4223
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f05998d-cdc1-9b71-09549bbe2646
+          stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: STREAM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a044f35d-29bc-43c5-bbc2-97d2bf590d2a
+                stepCounter: ba2f4fc0-97d1-48b6-8b7e-c9a5ff8d4223
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 04823709-781b-f5eb-e523b7ee65e8
+          stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: EFFECTIVE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a28205eb-3533-4faf-bbc3-195b71a2e768
+                stepCounter: ba2f4fc0-97d1-48b6-8b7e-c9a5ff8d4223
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb7615c6-d006-02b3-b36289893ed8
+          stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Accounting Period Date
+        name: ACCT_PER_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6922a2ae-7004-c486-e9a6457d393c
+                stepCounter: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5f09b072-6844-1e13-c0208b05fed9
+          stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: EXPIRY_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eeb7f0fd-934a-40f3-afb3-a3e4a22bce98
+                stepCounter: ba2f4fc0-97d1-48b6-8b7e-c9a5ff8d4223
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4078b56c-087a-7d22-3a5bdf104838
+          stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Currency Code. One of VET_RES_UOM.UOM_CODE
+        name: CURRENCY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f5f7b47d-4c89-4e31-b2d1-0438d39d0ab5
+                stepCounter: ba2f4fc0-97d1-48b6-8b7e-c9a5ff8d4223
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ed211bc-42cd-6c2a-4a38484c39c6
+          stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        name: UOM_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4ed211bc-42cd-6c2a-4a38484c39c6
+                stepCounter: 979148e3-7d73-c560-5e72-2e4059825b56
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6da7ab78-24c5-7919-aa4011b1392e
+          stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+        config: {}
+        dataType: number(38,8)
+        defaultValue: ""
+        description: ""
+        name: PRICE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b370347c-6e5d-47e4-91b0-6bf4b55e48e4
+                stepCounter: ba2f4fc0-97d1-48b6-8b7e-c9a5ff8d4223
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 0ee1872a-7b4e-ac97-839a-910dbaa672ac
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_DATE: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+          DIM_RES_UOM: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+          LOAD_VET_RES_MANUAL_PRICING: 92ac43fb-ac84-8ddc-3c39-b71e265b9690
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: DIM_DATE
+          - locationName: WHERESCAPE_LOAD
+            nodeName: DIM_RES_UOM
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_VET_RES_MANUAL_PRICING
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_RES_MANUAL_PRICING') "LOAD_VET_RES_MANUAL_PRICING"
+            INNER JOIN (SELECT *
+            FROM {{ ref('EDW', 'DIM_DATE') }}
+            WHERE CALENDAR_DATE = LAST_DAY(CALENDAR_DATE)) DIM_DATE
+              ON (DIM_DATE.CALENDAR_DATE >= LOAD_VET_RES_MANUAL_PRICING.EFFECTIVE_DATE
+                AND DIM_DATE.CALENDAR_DATE <= LOAD_VET_RES_MANUAL_PRICING.EXPIRY_DATE)
+            LEFT JOIN {{ ref('EDW', 'DIM_RES_UOM') "DIM_RES_UOM"
+              ON (DIM_RES_UOM.UOM_CODE = LOAD_VET_RES_MANUAL_PRICING.CURRENCY)
+        name: STAGE_RES_MANUAL_PRICING
+        noLinkRefs: []
+  name: STAGE_RES_MANUAL_PRICING
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

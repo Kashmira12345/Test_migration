@@ -1,0 +1,124 @@
+fileVersion: 1
+id: c3c05493-074c-0068-c102-2d2a9d34ea76
+name: STAGE_RES_CASE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f5b1c9a-4a7f-6304-4bdd37727dbc
+          stepCounter: c3c05493-074c-0068-c102-2d2a9d34ea76
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: CASE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f5b1c9a-4a7f-6304-4bdd37727dbc
+                stepCounter: d86cea9a-1dad-34e0-14bb-bc282a1d222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3a9e23ed-375f-e2e9-21a1b744fb19
+          stepCounter: c3c05493-074c-0068-c102-2d2a9d34ea76
+        config: {}
+        dataType: varchar(80)
+        defaultValue: ""
+        description: ""
+        name: CASE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a9e23ed-375f-e2e9-21a1b744fb19
+                stepCounter: d86cea9a-1dad-34e0-14bb-bc282a1d222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 729d14aa-ffc5-4df0-4e93f168905f
+          stepCounter: c3c05493-074c-0068-c102-2d2a9d34ea76
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: CASE_DESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 729d14aa-ffc5-4df0-4e93f168905f
+                stepCounter: d86cea9a-1dad-34e0-14bb-bc282a1d222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b80cd688-8420-e082-1d88a8bee0fd
+          stepCounter: c3c05493-074c-0068-c102-2d2a9d34ea76
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: ""
+        name: VINTAGE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b80cd688-8420-e082-1d88a8bee0fd
+                stepCounter: d86cea9a-1dad-34e0-14bb-bc282a1d222a
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_MOSAIC_RES_ECONOMIC_CASE: d86cea9a-1dad-34e0-14bb-bc282a1d222a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_MOSAIC_RES_ECONOMIC_CASE
+        join:
+          joinCondition: |-
+            FROM {{ ref('DATA_STORE', 'ODS_MOSAIC_RES_ECONOMIC_CASE') }} "ODS_MOSAIC_RES_ECONOMIC_CASE"
+            WHERE ODS_MOSAIC_RES_ECONOMIC_CASE.DSS_CURRENT_FLAG = 'Y'
+        name: STAGE_RES_CASE
+        noLinkRefs: []
+  name: STAGE_RES_CASE
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

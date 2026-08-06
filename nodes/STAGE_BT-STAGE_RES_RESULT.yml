@@ -1,0 +1,748 @@
+fileVersion: 1
+id: 97082564-2675-848f-5e60-b7df6ba56104
+name: STAGE_RES_RESULT
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3386bdcc-9d3c-2a5d-0cfcc47280c3
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: integer
+        defaultValue: "0"
+        description: STAGE_RES_RESULT.CASE_ID=DIM_RES_CASE.CASE_ID
+        name: DIM_CASE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3386bdcc-9d3c-2a5d-0cfcc47280c3
+                stepCounter: 2b2f3982-757d-9345-9b9d-1167400e066f
+            transform: "NVL(DIM_RES_CASE.DIM_CASE_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a0e66115-517b-2212-fca91533319e
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: integer
+        defaultValue: "0"
+        description: STAGE_RES_RESULT.VINTAGE_ID=DIM_RES_VINTAGE.VINTAGE_ID
+        name: DIM_VINTAGE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a0e66115-517b-2212-fca91533319e
+                stepCounter: a61e5689-e9fd-3540-80d1-890a715d466d
+            transform: "NVL(DIM_RES_VINTAGE.DIM_VINTAGE_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a3f694bd-d8f9-6fa4-5d085c20abc1
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: integer
+        defaultValue: "0"
+        description: STAGE_RES_RESULT.ENTITY_ID=DIM_RES_ENTITY.ENTITY_ID
+        name: DIM_ENTITY_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a3f694bd-d8f9-6fa4-5d085c20abc1
+                stepCounter: 232d3ce4-5d74-97ae-45aa-e0dbaf623c61
+            transform: "NVL(DIM_RES_ENTITY.DIM_ENTITY_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2d0f99a-a382-40c0-87533282edc9
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: STAGE_RES_RESULT.RESERVE_CATEGORY_ID=DIM_RES_RESERVE_CATEGORY.RESERVE_CATEGORY_ID
+        name: DIM_RESERVE_CATEGORY_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2d0f99a-a382-40c0-87533282edc9
+                stepCounter: 589e5903-3c73-a7dc-6852-28e286e3e102
+            transform: "NVL(DIM_RES_RESERVE_CATEGORY.DIM_RESERVE_CATEGORY_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 25a4ebb8-e006-f5bb-866806287a40
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: number(18)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: RESULT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 25a4ebb8-e006-f5bb-866806287a40
+                stepCounter: 19f1752c-226d-f2b5-f20e-e5c1f915604a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5b8f16e2-b1c6-7574-0d4ef8ae2a35
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: RESERVE_CATEGORY_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5b8f16e2-b1c6-7574-0d4ef8ae2a35
+                stepCounter: 19f1752c-226d-f2b5-f20e-e5c1f915604a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f5b1c9a-4a7f-6304-4bdd37727dbc
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        name: CASE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f5b1c9a-4a7f-6304-4bdd37727dbc
+                stepCounter: d86cea9a-1dad-34e0-14bb-bc282a1d222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b80cd688-8420-e082-1d88a8bee0fd
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: ""
+        name: VINTAGE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b80cd688-8420-e082-1d88a8bee0fd
+                stepCounter: d86cea9a-1dad-34e0-14bb-bc282a1d222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 80621601-194a-2bea-a89c575ebb77
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        name: PRICE_DECK_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 80621601-194a-2bea-a89c575ebb77
+                stepCounter: 26907f4c-4c96-0c1e-6071-686396017a64
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: db9686e8-b0de-b7fa-2dcf099868a1
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        name: ENTITY_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: db9686e8-b0de-b7fa-2dcf099868a1
+                stepCounter: 19f1752c-226d-f2b5-f20e-e5c1f915604a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a676d04c-58f4-12cf-9b1aa694a5c6
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: varchar(80)
+        defaultValue: ""
+        description: ""
+        name: ECONOMIC_CASE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a9e23ed-375f-e2e9-21a1b744fb19
+                stepCounter: d86cea9a-1dad-34e0-14bb-bc282a1d222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1477935a-92dd-b4f2-66d968ec4658
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: varchar(200)
+        defaultValue: ""
+        description: ""
+        name: PRICE_DECK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad32e604-67fc-4355-38334fbddf3e
+                stepCounter: 26907f4c-4c96-0c1e-6071-686396017a64
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4078b56c-087a-7d22-3a5bdf104838
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: ""
+        name: CURRENCY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf465209-b233-672d-3a279bb4044b
+                stepCounter: d86cea9a-1dad-34e0-14bb-bc282a1d222a
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e38583f3-fa2a-86a8-41b672aba548
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: CATEGORY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9502f173-d1e1-2f1e-798c51bd7bb0
+                stepCounter: 3b63f68e-1b3c-6990-d5de-1f1ca3e98cb6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bd1c7d03-e086-d504-edcc54e5e877
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: ""
+        name: CALCULATED_BY_RINGFENCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bd1c7d03-e086-d504-edcc54e5e877
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2a972a7-7371-bc1d-ac2588c0b8f9
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: FIRST_CAPITAL_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4a65be01-2631-fdbb-0e0a2dd2fd46
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 732036f9-7ae7-3625-4e69e6406c17
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: EARLIEST_PROD_DATE_FROM_ED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb72f991-b1e8-c8f6-e3b30bf97ac6
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a64e2ba2-42b2-c040-7e11c5d3635e
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: END_OF_LIFE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c07c3138-453a-c86b-61f5696ba113
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2e738d76-1e02-6275-842e9c89d0a1
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: number(24,8)
+        defaultValue: ""
+        description: ""
+        name: END_OF_LIFE_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6c8f6912-36af-40b4-0f2ba2cdb662
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 423c3f6b-e146-1334-ee2e7445bac3
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: number(24,8)
+        defaultValue: ""
+        description: ""
+        name: FIRST_YEAR_COSH_PROD
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c6870559-992b-34a6-246846782088
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fde63383-f562-5c21-fb8fda101ac4
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: number(24,8)
+        defaultValue: ""
+        description: ""
+        name: FIRST_YEAR_COSH_PROD_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 051751ba-aa34-e457-535163f8fc5f
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5010edf6-4a23-5397-940942ab68cd
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: LATEST_PROD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5010edf6-4a23-5397-940942ab68cd
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c054bbba-05c3-780f-39774344b481
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: ON_PROD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 943865d2-353c-c710-62b59478f0bc
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9848e5e5-4591-4bd7-ed4c5ca2b4ad
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: PAYOUT_DATE_BTAX
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9848e5e5-4591-4bd7-ed4c5ca2b4ad
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7eeeca1f-8b85-39fe-73859d3e3e37
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: number(24,8)
+        defaultValue: ""
+        description: ""
+        name: RESERVES_HALF_LIFE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7eeeca1f-8b85-39fe-73859d3e3e37
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 66e1b7f6-8b1e-cb48-24d6ed2e0649
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: number(24,8)
+        defaultValue: ""
+        description: ""
+        name: RESERVES_LIFE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 66e1b7f6-8b1e-cb48-24d6ed2e0649
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e18f00dd-8580-4599-0f2e29fe8c73
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: number(24,8)
+        defaultValue: ""
+        description: ""
+        name: RESERVES_LIFE_INDEX_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 20271db4-1165-3975-094bb0b0585d
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 62a0baf9-49e0-abfe-026edf048f2e
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: number(24,8)
+        defaultValue: ""
+        description: ""
+        name: RESERVES_LIFE_INDEX_PRODUCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 62a0baf9-49e0-abfe-026edf048f2e
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9049ac6c-f8ac-615b-0ab550a88268
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: RING_FENCE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 43b13a89-0fcf-9cd2-ff393e014a32
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fe647530-48a1-bfe7-c51d33099edf
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: RING_FENCE_VALUE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5fa0b190-eaa4-83c9-6af5f5c01841
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dcde5772-189b-eed9-6666e38d1469
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: FORECAST_END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b59fa56a-5bec-fb56-ebde8992a253
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+          stepCounter: 97082564-2675-848f-5e60-b7df6ba56104
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: Row Level Security Role
+        name: BU_SF_ROLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+                stepCounter: f0696157-2240-a391-9fe1-22a95b88df61
+            transform: "NVL(COALESCE(STAGE_RES_SAP_RPT_HIERARCHY.BU_SF_ROLE,STAGE_RES_QB_RPT_HIERARCHY.BU_SF_ROLE),    'CORP' || DECODE(CURRENT_DATABASE(),    'EDW_TST', '_TEST',    'EDW_DEV', '_DEV',    'EDW','')) "
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_RES_CASE: 19f1752c-226d-f2b5-f20e-e5c1f915604a
+          DIM_RES_ENTITY: 19f1752c-226d-f2b5-f20e-e5c1f915604a
+          DIM_RES_RESERVE_CATEGORY: 19f1752c-226d-f2b5-f20e-e5c1f915604a
+          DIM_RES_VINTAGE: 19f1752c-226d-f2b5-f20e-e5c1f915604a
+          ODS_MOSAIC_RES_ECONOMIC_CASE: d86cea9a-1dad-34e0-14bb-bc282a1d222a
+          ODS_MOSAIC_RES_ECONOMIC_INDICATOR: 79fe0e17-843b-5db9-c60d-6721d7394537
+          ODS_MOSAIC_RES_ECONOMIC_RESULT: 19f1752c-226d-f2b5-f20e-e5c1f915604a
+          ODS_MOSAIC_RES_PRICE_DECK: 26907f4c-4c96-0c1e-6071-686396017a64
+          ODS_MOSAIC_RES_RESERVE_CATEGORY: 3b63f68e-1b3c-6990-d5de-1f1ca3e98cb6
+          STAGE_RES_SAP_RPT_HIERARCHY: 19f1752c-226d-f2b5-f20e-e5c1f915604a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: DIM_RES_CASE
+          - locationName: DATA_STORE
+            nodeName: DIM_RES_ENTITY
+          - locationName: DATA_STORE
+            nodeName: DIM_RES_RESERVE_CATEGORY
+          - locationName: DATA_STORE
+            nodeName: DIM_RES_VINTAGE
+          - locationName: DATA_STORE
+            nodeName: ODS_MOSAIC_RES_ECONOMIC_CASE
+          - locationName: DATA_STORE
+            nodeName: ODS_MOSAIC_RES_ECONOMIC_INDICATOR
+          - locationName: DATA_STORE
+            nodeName: ODS_MOSAIC_RES_ECONOMIC_RESULT
+          - locationName: DATA_STORE
+            nodeName: ODS_MOSAIC_RES_PRICE_DECK
+          - locationName: DATA_STORE
+            nodeName: ODS_MOSAIC_RES_RESERVE_CATEGORY
+          - locationName: DATA_STORE
+            nodeName: STAGE_RES_SAP_RPT_HIERARCHY
+        join:
+          joinCondition: |-
+            FROM {{ ref('DATA_STORE', 'ODS_MOSAIC_RES_ECONOMIC_RESULT') "ODS_MOSAIC_RES_ECONOMIC_RESULT"
+            JOIN {{ ref('DATA_STORE', 'ODS_MOSAIC_RES_RESERVE_CATEGORY') "ODS_MOSAIC_RES_RESERVE"_CATEGORY
+              ON ODS_MOSAIC_RES_ECONOMIC_RESULT.RESERVE_CATEGORY_ID = ODS_MOSAIC_RES_RESERVE_CATEGORY.RESERVE_CATEGORY_ID
+                AND ODS_MOSAIC_RES_RESERVE_CATEGORY.DSS_CURRENT_FLAG = 'Y'
+            JOIN {{ ref('DATA_STORE', 'ODS_MOSAIC_RES_ECONOMIC_CASE') }} "ODS_MOSAIC_RES_ECONOMIC_CASE"
+              ON ODS_MOSAIC_RES_ECONOMIC_RESULT.CASE_ID = ODS_MOSAIC_RES_ECONOMIC_CASE.CASE_ID
+                AND ODS_MOSAIC_RES_ECONOMIC_CASE.DSS_CURRENT_FLAG = 'Y'
+            JOIN {{ ref('DATA_STORE', 'ODS_MOSAIC_RES_PRICE_DECK') "ODS_MOSAIC_RES_PRICE"_DECK
+              ON ODS_MOSAIC_RES_ECONOMIC_CASE.PRICE_DECK_ID = ODS_MOSAIC_RES_PRICE_DECK.PRICE_DECK_ID
+                AND ODS_MOSAIC_RES_PRICE_DECK.DSS_CURRENT_FLAG = 'Y'
+            LEFT JOIN {{ ref('DATA_STORE', 'ODS_MOSAIC_RES_ECONOMIC_INDICATOR') "ODS_MOSAIC_RES_ECONOMIC_INDICATOR"
+              ON ODS_MOSAIC_RES_ECONOMIC_RESULT.RESULT_ID = ODS_MOSAIC_RES_ECONOMIC_INDICATOR.RESULT_ID
+                AND ODS_MOSAIC_RES_ECONOMIC_INDICATOR.DSS_CURRENT_FLAG = 'Y'
+            LEFT JOIN {{ ref('EDW', 'DIM_RES_RESERVE_CATEGORY') "DIM_RES_RESERVE_CATEGORY"
+              ON ODS_MOSAIC_RES_ECONOMIC_RESULT.RESERVE_CATEGORY_ID = DIM_RES_RESERVE_CATEGORY.RESERVE_CATEGORY_ID
+            LEFT JOIN {{ ref('EDW', 'DIM_RES_CASE') "DIM_RES_CASE"
+              ON ODS_MOSAIC_RES_ECONOMIC_CASE.CASE_ID = DIM_RES_CASE.CASE_ID
+            LEFT JOIN {{ ref('EDW', 'DIM_RES_VINTAGE') "DIM_RES_VINTAGE"
+              ON ODS_MOSAIC_RES_ECONOMIC_CASE.VINTAGE_ID = DIM_RES_VINTAGE.VINTAGE_ID
+            LEFT JOIN {{ ref('EDW', 'DIM_RES_ENTITY') "DIM_RES_ENTITY"
+              ON ODS_MOSAIC_RES_ECONOMIC_RESULT.ENTITY_ID = DIM_RES_ENTITY.ENTITY_ID
+            LEFT JOIN ( SELECT COUNTRY, PROVINCE_STATE, CURRENT_CORE_AREA, CURRENT_CORE_PROPERTY, MIN(BU_SF_ROLE) BU_SF_ROLE
+            FROM {{ ref('STAGE_BT', 'STAGE_RES_SAP_RPT_HIERARCHY') }}
+            GROUP BY COUNTRY, PROVINCE_STATE, CURRENT_CORE_AREA, CURRENT_CORE_PROPERTY ) STAGE_RES_SAP_RPT_HIERARCHY
+              ON DIM_RES_ENTITY.COUNTRY = STAGE_RES_SAP_RPT_HIERARCHY.COUNTRY
+                AND DIM_RES_ENTITY.PROVINCE_STATE = STAGE_RES_SAP_RPT_HIERARCHY.PROVINCE_STATE
+                AND DIM_RES_ENTITY.CURRENT_CORE_AREA = STAGE_RES_SAP_RPT_HIERARCHY.CURRENT_CORE_AREA
+                AND DIM_RES_ENTITY.CURRENT_CORE_PROPERTY = STAGE_RES_SAP_RPT_HIERARCHY.CURRENT_CORE_PROPERTY
+            LEFT JOIN ( SELECT COUNTRY, PROVINCE_STATE, CURRENT_CORE_AREA, CURRENT_CORE_PROPERTY, MIN(BU_SF_ROLE) BU_SF_ROLE
+            FROM {{ ref('STAGE_BT', 'STAGE_RES_QB_RPT_HIERARCHY') }}
+            GROUP BY COUNTRY, PROVINCE_STATE, CURRENT_CORE_AREA, CURRENT_CORE_PROPERTY ) STAGE_RES_QB_RPT_HIERARCHY
+              ON DIM_RES_ENTITY.COUNTRY = STAGE_RES_QB_RPT_HIERARCHY.COUNTRY
+                AND DIM_RES_ENTITY.PROVINCE_STATE = STAGE_RES_QB_RPT_HIERARCHY.PROVINCE_STATE
+                AND DIM_RES_ENTITY.CURRENT_CORE_AREA = STAGE_RES_QB_RPT_HIERARCHY.CURRENT_CORE_AREA
+                AND DIM_RES_ENTITY.CURRENT_CORE_PROPERTY = STAGE_RES_QB_RPT_HIERARCHY.CURRENT_CORE_PROPERTY
+            WHERE ODS_MOSAIC_RES_ECONOMIC_RESULT.RISK IN ('B', 'Y')
+                AND ODS_MOSAIC_RES_ECONOMIC_RESULT.COMPANY_ID = 801
+                AND ODS_MOSAIC_RES_ECONOMIC_RESULT.DSS_CURRENT_FLAG = 'Y'
+        name: STAGE_RES_RESULT
+        noLinkRefs: []
+  name: STAGE_RES_RESULT
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

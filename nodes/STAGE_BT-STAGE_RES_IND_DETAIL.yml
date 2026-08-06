@@ -1,0 +1,226 @@
+fileVersion: 1
+id: 74f3820a-df65-84a2-9837-c2b3cada650c
+name: STAGE_RES_IND_DETAIL
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "This staging view contains all of the field mapping and calculations that translate field data from ECONOMIC_INDICATOR into Variable data in the Reserves Model. Created as UDV due to Wherescape statement length limitations (12000 chars, 170 lines)"
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 25a4ebb8-e006-f5bb-866806287a40
+          stepCounter: 74f3820a-df65-84a2-9837-c2b3cada650c
+        config: {}
+        dataType: number(18)
+        defaultValue: ""
+        description: ""
+        name: RESULT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 25a4ebb8-e006-f5bb-866806287a40
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d1810172-0479-023d-5eceeb29c9cf
+          stepCounter: 74f3820a-df65-84a2-9837-c2b3cada650c
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        name: YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d1810172-0479-023d-5eceeb29c9cf
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 38331692-16ab-e5ab-e53370284a7f
+          stepCounter: 74f3820a-df65-84a2-9837-c2b3cada650c
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        name: MONTH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 38331692-16ab-e5ab-e53370284a7f
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb7615c6-d006-02b3-b36289893ed8
+          stepCounter: 74f3820a-df65-84a2-9837-c2b3cada650c
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Last Day of Economics Details Month, Year
+        name: ACCT_PER_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fb7615c6-d006-02b3-b36289893ed8
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84f89903-527e-12de-4ca0428f9442
+          stepCounter: 74f3820a-df65-84a2-9837-c2b3cada650c
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Reserve Economics Variable Type Code
+        name: VARIABLE_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 84f89903-527e-12de-4ca0428f9442
+                stepCounter: b557ea68-d66f-2c8f-c4df-8b65e5b8c2c8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b9fcf568-52bd-e6a0-fcbb85320c84
+          stepCounter: 74f3820a-df65-84a2-9837-c2b3cada650c
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_VARIABLE_TYPE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b9fcf568-52bd-e6a0-fcbb85320c84
+                stepCounter: b557ea68-d66f-2c8f-c4df-8b65e5b8c2c8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ed211bc-42cd-6c2a-4a38484c39c6
+          stepCounter: 74f3820a-df65-84a2-9837-c2b3cada650c
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Value UOM Code
+        name: UOM_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4ed211bc-42cd-6c2a-4a38484c39c6
+                stepCounter: b557ea68-d66f-2c8f-c4df-8b65e5b8c2c8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 403b5a87-b884-eec9-180a24115dd6
+          stepCounter: 74f3820a-df65-84a2-9837-c2b3cada650c
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Generated artificial key
+        name: DIM_UOM_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 403b5a87-b884-eec9-180a24115dd6
+                stepCounter: b557ea68-d66f-2c8f-c4df-8b65e5b8c2c8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ecc2e9c3-ddb0-7e7d-a223c1dc5c3f
+          stepCounter: 74f3820a-df65-84a2-9837-c2b3cada650c
+        config: {}
+        dataType: decimal(36,8)
+        defaultValue: ""
+        description: Variable numeric value
+        name: VALUE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ecc2e9c3-ddb0-7e7d-a223c1dc5c3f
+                stepCounter: 79fe0e17-843b-5db9-c60d-6721d7394537
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_RES_VARIABLE_TYPE: b557ea68-d66f-2c8f-c4df-8b65e5b8c2c8
+          ODS_MOSAIC_RES_ECONOMIC_INDICATOR: 79fe0e17-843b-5db9-c60d-6721d7394537
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW [TABLEOWNER].[STAGE_RES_IND_DETAIL] AS\r\nSELECT TARGET.RESULT_ID AS RESULT_ID\r\n   , TARGET.RESERVE_CATEGORY_ID AS RESERVE_CATEGORY_ID\r\n   , TARGET.VARIABLE_TYPE_CODE AS VARIABLE_TYPE_CODE\r\n   , NVL(TARGET.DIM_VARIABLE_TYPE_KEY,0) AS DIM_VARIABLE_TYPE_KEY\r\n   , TARGET.UOM_CODE AS UOM_CODE\r\n   , NVL(DIM_RES_UOM.DIM_UOM_KEY,0) AS DIM_UOM_KEY\r\n   , TARGET.VALUE AS VALUE\r\nFROM (\r\nSELECT ODS_MOSAIC_RES_ECONOMIC_INDICATOR.RESULT_ID AS RESULT_ID\r\n\t , ODS_MOSAIC_RES_ECONOMIC_INDICATOR.RESERVE_CATEGORY_ID AS RESERVE_CATEGORY_ID\r\n\t , DIM_RES_VARIABLE_TYPE.VARIABLE_TYPE_CODE AS VARIABLE_TYPE_CODE\r\n\t , DIM_RES_VARIABLE_TYPE.DIM_VARIABLE_TYPE_KEY AS DIM_VARIABLE_TYPE_KEY\r\n\t , DIM_RES_VARIABLE_TYPE.UOM_CODE AS UOM_CODE\r\n\t , DECODE(DIM_RES_VARIABLE_TYPE.VARIABLE_TYPE_CODE\r\n\t\t, 'NPV_INVESTMENT_ATAX_0', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_investment_0_atax,0) \t\r\n\t\t, 'NPV_CASH_FLOW_BTAX_0', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_cash_flow_0_btax,0) \t\r\n\t\t, 'NPV_CASH_FLOW_BTAX_5', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_cash_flow_1_btax,0) \t\r\n\t\t, 'NPV_CASH_FLOW_BTAX_10', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_cash_flow_2_btax,0) \t\r\n\t\t, 'NPV_CASH_FLOW_BTAX_12', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_cash_flow_3_btax,0) \t\r\n\t\t, 'NPV_CASH_FLOW_BTAX_15', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_cash_flow_4_btax,0) \t\r\n\t\t, 'NPV_CASH_FLOW_BTAX_20', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_cash_flow_5_btax,0) \t\r\n\t\t, 'NPV_CASH_FLOW_ATAX_0', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_cash_flow_0_atax,0) \t\r\n\t\t, 'NPV_CASH_FLOW_ATAX_5', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_cash_flow_1_atax,0) \t\r\n\t\t, 'NPV_CASH_FLOW_ATAX_10', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_cash_flow_2_atax,0)\t\r\n\t\t, 'NPV_CASH_FLOW_ATAX_12', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_cash_flow_3_atax,0) \t\r\n\t\t, 'NPV_CASH_FLOW_ATAX_15', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_cash_flow_4_atax ,0)\t\r\n\t\t, 'NPV_CASH_FLOW_ATAX_20', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_cash_flow_5_atax,0) \r\n\t\t, 'NPV_DISC_INVEST_BTAX', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_cash_flow_detail_btax,0)\r\n\t\t, 'NPV_DISC_INVEST_BTAX_DENOM', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_investment_detail_btax,0) \t\r\n\t\t, 'BTAX_DISC_ROR', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.btax_dcf_ror,0) \t\t\t\t\t\t\t\t\t\t  \r\n\t\t, 'COST_OF_RESERVES', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_investment_0_btax,0)*1000\r\n\t\t, 'COST_OF_RESERVES_DENOM', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.boe_company_share_total,0)*1000\r\n\t\t, 'AVG_COSHARE_BURDEN_RATE', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.net_burdens_total,0)\r\n\t\t, 'AVG_COSHARE_BURDEN_RATE_DENOM', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.oil_co_share_revenue_total,0) + \r\n\t\t\t\t\t\t\t\t NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.gas_co_share_revenue_total,0) + \r\n\t\t\t\t\t\t\t\t NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.ngl_co_share_revenue_total,0) \t\t\r\n\t\t, 'AVG_OPCOST_PER_COSHARE_BOE', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.total_opcosts,0)*1000 \r\n\t\t, 'AVG_OPCOST_PER_COSHARE_BOE_DENOM', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.boe_company_share_total,0)*1000 \t\r\n\t\t, 'NETBACK_PER_COSHARE_BOE', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.npv_op_income_0_btax,0)*1000\r\n\t\t, 'NETBACK_PER_COSHARE_BOE_DENOM', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.boe_company_share_total,0)*1000\r\n\t\t, 'OIL_TECH_REM_REC', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.oil_tech_rem_rec,0) \t\r\n\t\t, 'OIL_TECH_ULT_REC', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.oil_tech_ult_rec,0) \t\r\n\t\t, 'GAS_TECH_REM_REC', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.gas_tech_rem_rec,0) \t\r\n\t\t, 'GAS_TECH_ULT_REC', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.gas_tech_ult_rec,0) \t\r\n\t\t, 'NGL_TECH_REM_REC', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.ngl_tech_rem_rec,0) \t\r\n\t\t, 'NGL_TECH_ULT_REC', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.ngl_tech_ult_rec,0) \t\r\n\t\t, 'OIL_GROSS_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.oil_gross_total,0) \t\r\n\t
+            \t, 'OIL_WI_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.oil_wi_total,0) \t\r\n\t\t, 'OIL_RI_TOTAL', (NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.oil_company_share_total,0) - NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.oil_wi_total,0)) \t\r\n\t\t, 'OIL_COMPANY_SHARE_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.oil_company_share_total,0) \t\r\n\t\t, 'OIL_COMPANY_NET_NRI_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.oil_company_net_total,0) \t\r\n\t\t, 'GAS_GROSS_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.gas_gross_total,0) \t\r\n\t\t, 'GAS_WI_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.gas_wi_total,0) \t\r\n\t\t, 'GAS_RI_TOTAL', (NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.gas_company_share_total,0) - NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.gas_wi_total,0)) \t\r\n\t\t, 'GAS_COMPANY_SHARE_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.gas_company_share_total,0) \t\r\n\t\t, 'GAS_COMPANY_NET_NRI_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.gas_company_net_total,0) \t\r\n\t\t, 'NGL_GROSS_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.ngl_gross_total,0) \t\r\n\t\t, 'NGL_WI_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.ngl_wi_total,0) \t\r\n\t\t, 'NGL_RI_TOTAL', (NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.ngl_company_share_total,0) - NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.ngl_wi_total,0)) \t\r\n\t\t, 'NGL_COMPANY_SHARE_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.ngl_company_share_total,0) \t\r\n\t\t, 'NGL_COMPANY_NET_NRI_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.ngl_company_net_total,0) \t\r\n\t\t, 'BOE_GROSS_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.boe_gross_total,0) \t\r\n\t\t, 'BOE_WI_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.boe_wi_total,0) \t\r\n\t\t, 'BOE_RI_TOTAL', (NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.boe_company_share_total,0) - NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.boe_wi_total,0)) \t\r\n\t\t, 'BOE_COMPANY_SHARE_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.boe_company_share_total,0) \t\r\n\t\t, 'BOE_COMPANY_NET_NRI_TOTAL', NVL(ODS_MOSAIC_RES_ECONOMIC_INDICATOR.boe_company_net_total,0) \t\r\n\t\t, NULL) AS VALUE\r\nFROM {{ ref ('DATA_STORE','ODS_MOSAIC_RES_ECONOMIC_INDICATOR') }} ODS_MOSAIC_RES_ECONOMIC_INDICATOR\r\n   CROSS JOIN (SELECT * FROM {{ ref ('EDW','DIM_RES_VARIABLE_TYPE') }} WHERE VARIABLE_TYPE_SRC = 'IND') DIM_RES_VARIABLE_TYPE\r\nWHERE\r\n   ODS_MOSAIC_RES_ECONOMIC_INDICATOR.DSS_CURRENT_FLAG = 'Y'   \r\n) AS TARGET\r\n LEFT JOIN {{ ref ('EDW','DIM_RES_UOM') }} DIM_RES_UOM ON TARGET.UOM_CODE = DIM_RES_UOM.UOM_CODE\r\nWHERE    \r\n VALUE <> 0"
+        dependencies:
+          - locationName: EDW
+            nodeName: DIM_RES_VARIABLE_TYPE
+          - locationName: DATA_STORE
+            nodeName: ODS_MOSAIC_RES_ECONOMIC_INDICATOR
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('STAGE_BT','STAGE_RES_IND_DETAIL') }} "STAGE_RES_IND_DETAIL"
+        name: STAGE_RES_IND_DETAIL
+        noLinkRefs: []
+  name: STAGE_RES_IND_DETAIL
+  overrideSQL: true
+  schema: STAGE_BT
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

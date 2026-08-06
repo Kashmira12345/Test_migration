@@ -1,0 +1,456 @@
+fileVersion: 1
+id: 1db5768b-b451-2224-1bce-73a8745bf72b
+name: STAGE_MOSAIC_CDM_BUDGET_CAPEX_1
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: "-- CAPTIAL PROCESSING PASS 1 -- Capital Type to AFE Type - Seismic / Studies / Captialized OH spilt out --"
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fdc0b485-e05a-0725-3fa5dda56002
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: ""
+        name: R_VERSION_IDX
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9d437eab-f77b-4e4a-ae4f-c3a078141d01
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 628d55e6-5c92-3959-212e6a5fb13a
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: BUDGET_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3cb2f103-6323-49c2-903a-e1f94f515f92
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 10d6484a-22d7-1202-98c0b8852988
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: BUDGET_EFFECTIVE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4c5f1402-7c9d-405c-9eab-7dd3c07f7641
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 39a27bc2-d1bb-353c-8b342259097a
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: ""
+        name: R_SRC_IDX
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 28889eba-1cd3-44d0-b56d-f0c127548715
+                stepCounter: 6078405a-1107-46c8-8c6a-0260b0ce2798
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f5b1c9a-4a7f-6304-4bdd37727dbc
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        name: CASE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f5b1c9a-4a7f-6304-4bdd37727dbc
+                stepCounter: cfc0d912-7484-709e-fb37-f2d5b387e3fe
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3a9e23ed-375f-e2e9-21a1b744fb19
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: varchar(80)
+        defaultValue: ""
+        description: ""
+        name: CASE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a9e23ed-375f-e2e9-21a1b744fb19
+                stepCounter: cfc0d912-7484-709e-fb37-f2d5b387e3fe
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b80cd688-8420-e082-1d88a8bee0fd
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        name: VINTAGE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b80cd688-8420-e082-1d88a8bee0fd
+                stepCounter: cfc0d912-7484-709e-fb37-f2d5b387e3fe
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7034822-5d3f-c758-a73674e67613
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: VINTAGE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e7034822-5d3f-c758-a73674e67613
+                stepCounter: cfc0d912-7484-709e-fb37-f2d5b387e3fe
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: db9686e8-b0de-b7fa-2dcf099868a1
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: number(9)
+        defaultValue: ""
+        description: ""
+        name: ENTITY_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: db9686e8-b0de-b7fa-2dcf099868a1
+                stepCounter: cfc0d912-7484-709e-fb37-f2d5b387e3fe
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aaf63e6c-ad49-08e3-28e1c32d954a
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: ENTITY_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aaf63e6c-ad49-08e3-28e1c32d954a
+                stepCounter: cfc0d912-7484-709e-fb37-f2d5b387e3fe
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7ec1d706-8201-18b7-6ed70466c73e
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: ENTITY_UUID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7ec1d706-8201-18b7-6ed70466c73e
+                stepCounter: cfc0d912-7484-709e-fb37-f2d5b387e3fe
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb7615c6-d006-02b3-b36289893ed8
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: ACCT_PER_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fb7615c6-d006-02b3-b36289893ed8
+                stepCounter: cfc0d912-7484-709e-fb37-f2d5b387e3fe
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4a97f64-fc98-8310-001ec71675d6
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: AFE_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b0449a57-01a5-4008-ae97-6469b8b8b9d9
+                stepCounter: e59a6f97-4834-4954-97d7-b20c0067a733
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa53ca0b-fd85-c4f5-9fa156f7a2cc
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: CC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aa53ca0b-fd85-c4f5-9fa156f7a2cc
+                stepCounter: cfc0d912-7484-709e-fb37-f2d5b387e3fe
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cd22d8d1-6a1f-3ee9-dbdcb90e7bc7
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: ""
+        name: DEST_ORG_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a211657-c59d-45d6-af79-1853c87f8fb3
+                stepCounter: 0ecc3a51-321e-483d-b37c-7b78b9167d26
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b3772b7-cc7a-21ff-cf9462714a73
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: GROSS_OR_NET_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "'N'"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1d12f379-e4e4-06f6-f66523c498b2
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: ""
+        name: CAD_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dd8edd23-68a4-325d-234c3644321c
+                stepCounter: cfc0d912-7484-709e-fb37-f2d5b387e3fe
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 404070e5-423c-6ac3-aa3066233222
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: ""
+        name: OP_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dd8edd23-68a4-325d-234c3644321c
+                stepCounter: cfc0d912-7484-709e-fb37-f2d5b387e3fe
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a52c243-5c33-1362-c9a1d59c35e3
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: OP_CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c5028d82-a53a-490f-bff4-71a9c8f51496
+                stepCounter: 0ecc3a51-321e-483d-b37c-7b78b9167d26
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 69efb1a2-d57c-016d-d1d2aeda3294
+          stepCounter: 1db5768b-b451-2224-1bce-73a8745bf72b
+        config: {}
+        dataType: number(14,10)
+        defaultValue: ""
+        description: ""
+        name: OP_FX
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eaa1bf75-16a7-4ba6-9676-d8b9eb85034f
+                stepCounter: 765e3903-8f5d-4d71-8e1e-636878ab8d17
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_BUDGET_R_SRC: 0ecc3a51-321e-483d-b37c-7b78b9167d26
+          LOAD_BUDGET_R_VERSION: 0ecc3a51-321e-483d-b37c-7b78b9167d26
+          LOAD_BUDGET_R_VERSION_FX: 0ecc3a51-321e-483d-b37c-7b78b9167d26
+          LOAD_BUDGET_X_AFE_TYPE_ATTR: 0ecc3a51-321e-483d-b37c-7b78b9167d26
+          LOAD_BUDGET_X_DISTRICT_ATTR: 0ecc3a51-321e-483d-b37c-7b78b9167d26
+          VW_BDGT_CDM_ECONOMICS: cfc0d912-7484-709e-fb37-f2d5b387e3fe
+        customSQL:
+          customSQL: "CREATE OR REPLACE VIEW [TABLEOWNER].[STAGE_MOSAIC_CDM_BUDGET_CAPEX_1] AS \r\nSELECT\r\n    R_VERSION_IDX,\r\n    BUDGET_NAME,\r\n    BUDGET_EFFECTIVE_DATE,\r\n    R_SRC_IDX,\r\n    CASE_ID,\r\n    CASE_NAME,\r\n    VINTAGE_ID,\r\n    VINTAGE_NAME,\r\n    ENTITY_ID,\r\n    ENTITY_NAME,\r\n    ENTITY_UUID,\r\n    ACCT_PER_DATE,\r\n    AFE_TYPE,\r\n    CC,\r\n    DEST_ORG_ID,\r\n    GROSS_OR_NET_CODE,\r\n    ROUND(CAD_AMT,2) \"CAD_AMT\",\r\n    ROUND((CAD_AMT * OP_FX),2) \"OP_AMT\",\r\n    OP_CURR_CODE,\r\n    OP_FX,\r\n    CREATE_DT\r\nFROM (\r\n    SELECT\r\n        RV.IDX \"R_VERSION_IDX\",\r\n        RV.VERSION_NAME \"BUDGET_NAME\",\r\n        RV.EFFECTIVE_DATE \"BUDGET_EFFECTIVE_DATE\",\r\n        RS.IDX \"R_SRC_IDX\",\r\n        RV.ECON_CASE_ID \"CASE_ID\",\r\n        RV.ECON_CASE_NAME \"CASE_NAME\",\r\n        RV.ECON_VINTAGE_ID \"VINTAGE_ID\",\r\n        RV.ECON_VINTAGE_NAME \"VINTAGE_NAME\",\r\n        E.ENTITY_ID,\r\n        E.ENTITY_NAME,\r\n        E.ENTITY_UUID,\r\n        E.ACCT_PER_DATE,\r\n        XA.AFE_TYPE,\r\n        E.CC,\r\n        XD.DEST_ORG_ID,\r\n        'N' \"GROSS_OR_NET_CODE\",\r\n        SUM(DECODE(XA.AFE_TYPE,\r\n            'SS', DECODE(E.CAPITAL_EXPENSE_CATEGORY,\r\n                           'Capitalized G&A',0, \r\n                           'IT', 0,\r\n                           NVL(E.SEISMIC_STUDIES_CAPITALIZED_OH,0)),\r\n            'GA', DECODE(E.CAPITAL_EXPENSE_CATEGORY,\r\n                           'Capitalized G&A', NVL(E.SEISMIC_STUDIES_CAPITALIZED_OH,0),\r\n                           'IT', NVL(E.SEISMIC_STUDIES_CAPITALIZED_OH,0),\r\n                           0),    \r\n            'MF', DECODE(E.CAPITAL_EXPENSE_CATEGORY,\r\n                           'Facility Maintenance', NVL(E.FACILITIES_MAJOR_PP,0),\r\n                           0),\r\n            'FA', DECODE(E.CAPITAL_EXPENSE_CATEGORY,\r\n                           'Facility Maintenance', 0,\r\n                           NVL(E.FACILITIES_MAJOR_PP,0)),                           \r\n             NULL) * 1000\r\n            ) \"CAD_AMT\",\r\n        XD.OP_CURR_CODE,\r\n        COALESCE(FX_DT.FX_RATE, FX_YR.FX_RATE, FX_VER.FX_RATE) \"OP_FX\",\r\n        SYSDATE() \"CREATE_DT\"\r\n    FROM \r\n        (SELECT * FROM DS_BUDGET.VW_BDGT_CDM_ECONOMICS WHERE ENTITY_STATE_ID = 4) E\r\n        JOIN (SELECT * FROM DS_BUDGET.R_VERSION WHERE NVL(FLG_ARCHIVE,'N') = 'N') RV \r\n            ON E.CASE_ID = RV.ECON_CASE_ID AND E.VINTAGE_ID = RV.ECON_VINTAGE_ID\r\n        JOIN (SELECT * FROM DS_BUDGET.R_SRC WHERE SRC_TYPE = 'EDW_CAP' AND SRC_TABLE LIKE 'CAP_PASS1_%') RS\r\n            ON RV.IDX = RS.FK_R_VERSION_IDX\r\n        LEFT JOIN DS_BUDGET.X_DISTRICT_ATTR XD \r\n            ON E.DISTRICT = XD.DISTRICT AND E.BUSINESS_UNIT = XD.BUSINESS_UNIT   \r\n        LEFT JOIN (SELECT * FROM DS_BUDGET.R_VERSION_FX WHERE ACCT_PER_YEAR IS NULL AND ACCT_PER_DATE IS NULL) FX_VER \r\n            ON XD.OP_CURR_CODE = FX_VER.OP_CURR_CODE AND RV.IDX = FX_VER.FK_R_VERSION_IDX\r\n        LEFT JOIN (SELECT * FROM DS_BUDGET.R_VERSION_FX WHERE ACCT_PER_YEAR IS NOT NULL AND ACCT_PER_DATE IS NULL) FX_YR \r\n            ON XD.OP_CURR_CODE = FX_YR.OP_CURR_CODE AND EXTRACT(YEAR FROM E.ACCT_PER_DATE) = FX_YR.ACCT_PER_YEAR AND RV.IDX = FX_YR.FK_R_VERSION_IDX\r\n        LEFT JOIN (SELECT * FROM DS_BUDGET.R_VERSION_FX WHERE ACCT_PER_YEAR IS NOT NULL AND ACCT_PER_DATE IS NOT NULL) FX_DT \r\n            ON XD.OP_CURR_CODE = FX_DT.OP_CURR_CODE AND E.ACCT_PER_DATE = FX_DT.ACCT_PER_DATE AND RV.IDX = FX_DT.FK_R_VERSION_IDX\r\n        CROSS JOIN (SELECT DISTINCT AFE_TYPE FROM DS_BUDGET.X_AFE_TYPE_ATTR WHERE PROCESSING_PASS = '1') XA\r\n    GROUP BY\r\n        RV.IDX,  \r\n        RV.VERSION_NAME,\r\n        RV.EFFECTIVE_DATE,\r\n        RS.IDX,\r\n        RV.ECON_CASE_ID,\r\n        RV.ECON_CASE_NAME,\r\n        RV.ECON_VINTAGE_ID,\r\n        RV.ECON_VINTAGE_NAME,\r\n        E.ENTITY_ID,\r\n        E.ENTITY_NAME,\r\n        E.ENTITY_UUID,   \r\n        E.ACCT_PER_DATE,\r\n        E.CC,\r\n        XA.AFE_TYPE,\r\n        XD.DEST_ORG_ID,\r\n        XD.OP_CURR_CODE,\r\
+            \n        COALESCE(FX_DT.FX_RATE, FX_YR.FX_RATE, FX_VER.FX_RATE),\r\n        XA.AFE_TYPE   \r\n    )        \r\nWHERE NVL(CAD_AMT,0) <> 0 AND NVL(OP_FX,0) <> 0    "
+        dependencies:
+          - locationName: LOAD
+            nodeName: LOAD_BUDGET_R_SRC
+          - locationName: LOAD
+            nodeName: LOAD_BUDGET_R_VERSION
+          - locationName: LOAD
+            nodeName: LOAD_BUDGET_R_VERSION_FX
+          - locationName: LOAD
+            nodeName: LOAD_BUDGET_X_AFE_TYPE_ATTR
+          - locationName: LOAD
+            nodeName: LOAD_BUDGET_X_DISTRICT_ATTR
+          - locationName: DS_BUDGET
+            nodeName: VW_BDGT_CDM_ECONOMICS
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('STAGE_BT','STAGE_MOSAIC_CDM_BUDGET_CAPEX_1') }} "STAGE_MOSAIC_CDM_BUDGET_CAPEX_1"
+        name: STAGE_MOSAIC_CDM_BUDGET_CAPEX_1
+        noLinkRefs: []
+  name: STAGE_MOSAIC_CDM_BUDGET_CAPEX_1
+  overrideSQL: true
+  schema: STAGE_BT
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node
