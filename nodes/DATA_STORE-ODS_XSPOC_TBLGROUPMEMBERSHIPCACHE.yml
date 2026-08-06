@@ -1,0 +1,196 @@
+fileVersion: 1
+id: 5d6a1023-253c-7b4f-150f-1837811904b0
+name: ODS_XSPOC_TBLGROUPMEMBERSHIPCACHE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d8b0281f-877e-859c-7838d5e559e4
+          stepCounter: 5d6a1023-253c-7b4f-150f-1837811904b0
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: NODEID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2458ef2b-bf12-46f9-b1df-5f13b4991344
+                stepCounter: 4b926f84-063a-45af-aa6f-7ac6af9be15c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f73eb69f-ce3e-350f-750d4900eed0
+          stepCounter: 5d6a1023-253c-7b4f-150f-1837811904b0
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: GROUPNAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d02af7d2-1945-4030-8ab1-b3faf49be744
+                stepCounter: 4b926f84-063a-45af-aa6f-7ac6af9be15c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 5d6a1023-253c-7b4f-150f-1837811904b0
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 09ae9e41-3879-412a-bdb1-34126b4355d7
+                stepCounter: 4b926f84-063a-45af-aa6f-7ac6af9be15c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 5d6a1023-253c-7b4f-150f-1837811904b0
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 70a5c156-79e0-4dbd-9b13-da6fc1b13210
+                stepCounter: 4b926f84-063a-45af-aa6f-7ac6af9be15c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 5d6a1023-253c-7b4f-150f-1837811904b0
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 5d6a1023-253c-7b4f-150f-1837811904b0
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 5d6a1023-253c-7b4f-150f-1837811904b0
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 5d6a1023-253c-7b4f-150f-1837811904b0
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_XSPOC_TBLGROUPMEMBERSHIPCACHE: 4b926f84-063a-45af-aa6f-7ac6af9be15c
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_XSPOC_TBLGROUPMEMBERSHIPCACHE
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_XSPOC_TBLGROUPMEMBERSHIPCACHE') }} "LOAD_XSPOC_TBLGROUPMEMBERSHIPCACHE"
+        name: ODS_XSPOC_TBLGROUPMEMBERSHIPCACHE
+        noLinkRefs: []
+  name: ODS_XSPOC_TBLGROUPMEMBERSHIPCACHE
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node

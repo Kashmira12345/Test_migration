@@ -1,0 +1,196 @@
+fileVersion: 1
+id: 1313bfb0-9917-cb13-04f3-836fccee5214
+name: ODS_XSPOC_TBLPOCTYPEACTIONS
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Merge
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DATA_STORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0c0f9989-9cb0-d8bb-e8f60914aa13
+          stepCounter: 1313bfb0-9917-cb13-04f3-836fccee5214
+        config: {}
+        dataType: number
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: POCTYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d026f0b2-ed00-4c1e-9853-a3fb85736394
+                stepCounter: 79e3f104-6a47-47a9-b59f-5b2dad1aeb9e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f5ce224c-b72b-8a49-af94b466e5c8
+          stepCounter: 1313bfb0-9917-cb13-04f3-836fccee5214
+        config: {}
+        dataType: number
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: CONTROLACTIONID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 60f1b6e5-4de5-4c08-9da0-9baa325d5544
+                stepCounter: 79e3f104-6a47-47a9-b59f-5b2dad1aeb9e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 1313bfb0-9917-cb13-04f3-836fccee5214
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f52bf35c-de18-4311-b071-aae237dfd959
+                stepCounter: 79e3f104-6a47-47a9-b59f-5b2dad1aeb9e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 1313bfb0-9917-cb13-04f3-836fccee5214
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 32e40982-1f3b-4684-89e9-559de5494970
+                stepCounter: 79e3f104-6a47-47a9-b59f-5b2dad1aeb9e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 623c299e-16d3-cf22-a44671bf57ee
+          stepCounter: 1313bfb0-9917-cb13-04f3-836fccee5214
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Records time when record was set to Delete by the Load process
+        name: DSS_DELETE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c89217e-742d-a7c4-78d5e18c9b31
+          stepCounter: 1313bfb0-9917-cb13-04f3-836fccee5214
+        config: {}
+        dataType: char(1)
+        defaultValue: ""
+        description: Flag field to identify Deleted record
+        name: DSS_DELETE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 1313bfb0-9917-cb13-04f3-836fccee5214
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 1313bfb0-9917-cb13-04f3-836fccee5214
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_XSPOC_TBLPOCTYPEACTIONS: 79e3f104-6a47-47a9-b59f-5b2dad1aeb9e
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_XSPOC_TBLPOCTYPEACTIONS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_XSPOC_TBLPOCTYPEACTIONS') }} "LOAD_XSPOC_TBLPOCTYPEACTIONS"
+        name: ODS_XSPOC_TBLPOCTYPEACTIONS
+        noLinkRefs: []
+  name: ODS_XSPOC_TBLPOCTYPEACTIONS
+  overrideSQL: false
+  schema: CLS_DATA_STORE
+  sqlType: "5"
+  type: sql
+  version: 1
+type: Node
