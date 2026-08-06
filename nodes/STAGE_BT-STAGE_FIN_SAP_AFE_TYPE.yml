@@ -1,0 +1,157 @@
+fileVersion: 1
+id: 347396ec-1904-b8d7-2e02-5b0d90d175d8
+name: STAGE_FIN_SAP_AFE_TYPE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4a97f64-fc98-8310-001ec71675d6
+          stepCounter: 347396ec-1904-b8d7-2e02-5b0d90d175d8
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: AFE_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1eaa3e63-448f-05ea-9d6c78859377
+                stepCounter: 2ebe8935-e6d2-5690-75a6-91ca5e4e4d7b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 05e010cb-11ab-2642-992b57391966
+          stepCounter: 347396ec-1904-b8d7-2e02-5b0d90d175d8
+        config: {}
+        dataType: varchar(80)
+        defaultValue: ""
+        description: Description for the code.
+        name: AFE_TYPE_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1264dc62-ed6a-646f-6ebbae649087
+                stepCounter: 2ebe8935-e6d2-5690-75a6-91ca5e4e4d7b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 811e381a-16ef-a274-97da13529122
+          stepCounter: 347396ec-1904-b8d7-2e02-5b0d90d175d8
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: LINE_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 87ce6302-a480-4521-b2de-3f9f90e040d5
+                stepCounter: 6cfa180c-ab1c-4af6-919d-1ba8b0fa37dd
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bab89f34-0880-a1cf-03cb1776f48e
+          stepCounter: 347396ec-1904-b8d7-2e02-5b0d90d175d8
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: LINE_NO_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dc0b87a6-d8ac-44a6-af2a-1124112b6ee0
+                stepCounter: 4f10e7af-2eb4-4e98-adb8-ef8362a073d6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2cc44b88-cbe3-3fd3-6795f56aea66
+          stepCounter: 347396ec-1904-b8d7-2e02-5b0d90d175d8
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: "One of: 'Y', 'N'"
+        name: NON_CAPITAL_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e01b5ea-fdc0-44a9-be98-846cc31f5547
+                stepCounter: 6cfa180c-ab1c-4af6-919d-1ba8b0fa37dd
+            transform: "NVL(LOAD_VET_FIN_SAP_AFE_TYPE_ATTR.NON_CAPITAL_FLAG,'U')"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_VET_FIN_SAP_AFE_TYPE_ATTR: 2ebe8935-e6d2-5690-75a6-91ca5e4e4d7b
+          LOAD_VET_FIN_SAP_LEASE_OPS_HIER: 2ebe8935-e6d2-5690-75a6-91ca5e4e4d7b
+          ODS_SAP_TCJ1T: 2ebe8935-e6d2-5690-75a6-91ca5e4e4d7b
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: LOAD_VET_FIN_SAP_AFE_TYPE_ATTR
+          - locationName: DATA_STORE
+            nodeName: LOAD_VET_FIN_SAP_LEASE_OPS_HIER
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_TCJ1T
+        join:
+          joinCondition: |-
+            FROM (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_TCJ1T') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_TCJ1T
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_AFE_TYPE_ATTR') }} LOAD_VET_FIN_SAP_AFE_TYPE_ATTR
+              ON ODS_SAP_TCJ1T.PRART = LOAD_VET_FIN_SAP_AFE_TYPE_ATTR.AFE_TYPE
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_LEASE_OPS_HIER') "LOAD_VET_FIN_SAP_LEASE_OPS_HIER"
+              ON LOAD_VET_FIN_SAP_AFE_TYPE_ATTR.LINE_NO = LOAD_VET_FIN_SAP_LEASE_OPS_HIER.LINE_NO
+            WHERE ODS_SAP_TCJ1T.LANGU = 'E'
+        name: STAGE_FIN_SAP_AFE_TYPE
+        noLinkRefs: []
+  name: STAGE_FIN_SAP_AFE_TYPE
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

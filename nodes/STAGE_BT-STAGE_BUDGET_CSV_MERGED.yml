@@ -1,0 +1,539 @@
+fileVersion: 1
+id: b789ca07-4185-192d-c7da-00bd8933007f
+name: STAGE_BUDGET_CSV_MERGED
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: "re-combine CSV data into one source file  "
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0ba12d44-0088-79fc-01038ae10fd1
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Common ID amungst all csv files (last 14 digits - timestamp)
+        name: FILE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5b6d9b3c-af6d-46e1-bf3e-6afcd22218ec
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "SUBSTRING(TARGET.LOAD_FILENAME,POSITION('.csv',TARGET.LOAD_FILENAME)-14,14 )"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 50893012-7be9-c491-4d11cd937b03
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Type of data in source CSV file. Prefix code of CSV file
+        name: LOAD_FILE_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5b6d9b3c-af6d-46e1-bf3e-6afcd22218ec
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "SUBSTRING(TARGET.LOAD_FILENAME,1,3)  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78249657-653d-623c-42b6c0e11c46
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: ORG_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 302a883c-233f-4de2-8a87-7799db743068
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.ORG_ID"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7c039ad3-70ae-f36d-fdea14fc67ad
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: COST_CENTRE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 493355f7-f9a8-4f77-bf09-977591b4e699
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.COST_CENTRE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 759b1653-fdee-5721-c558aad497ba
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: FUNCTIONAL_AREA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7189696f-287a-4a2e-8fdc-58f2aace62bf
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.FUNCTIONAL_AREA"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c40eb667-28cf-dcfb-437c5d221bf6
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: ACCOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8f24bea-b66a-4edd-ac7c-8ac9f1838dac
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.ACCOUNT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4a97f64-fc98-8310-001ec71675d6
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: AFE_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d97caaf3-97f5-455f-a3ab-44d4d43f62f0
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.AFE_TYPE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1abf5347-72c5-1654-20d8ff72e5df
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: GROSS_OR_NET
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 59bb7218-7954-425d-ba55-a641178020ed
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.GROSS_OR_NET"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 92a3ce46-4379-bde2-001c1b4a9dc6
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: AMT_CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f1b68bf1-f81e-497a-af2a-338ef945386d
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.AMT_CURR_CODE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 902c0a03-5586-391a-320d8f4e2206
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: VOL_UOM_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8519f074-88ff-48ec-8d76-8ad9fdb4714d
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.VOL_UOM_CODE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a924d40-c242-5fa5-4a5ea6091564
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: JAN_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 50aa2906-d703-42f3-a5d2-e1e30ac85735
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.JAN_AMT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3c995eb7-eb53-3fa8-88513bf86295
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: FEB_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f29247d5-c4f4-43c3-a2cf-00fb29373dbf
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.FEB_AMT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4344772c-b3ee-e4a5-2cf3a53d6f11
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: MAR_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ccc6334b-ff67-4f38-b4dd-9902344014b6
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.MAR_AMT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3283f848-5461-ebb4-261e612fe424
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: APR_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 43d92e4a-82d0-4324-bec8-0670652484fb
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.APR_AMT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9627af4f-84b3-f017-2605df63b628
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: MAY_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: da3b08fc-8c10-4712-8ee8-67f3bbac072c
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.MAY_AMT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 991d9d1e-8402-9eb8-24f6c8eeb914
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: JUN_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8bbf0c20-3171-4ecf-ad68-5eefabe080e2
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.JUN_AMT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec9b8a4c-0ad3-d90a-4601381cde7c
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: JUL_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 00b0f88f-2112-4b4d-aad6-768e98c45d9d
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.JUL_AMT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec4727f4-00bb-896a-1a69b06d9ba0
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: AUG_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 61c70c8e-6645-4f23-85ce-2bc13cbe25ad
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.AUG_AMT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d1eaf837-50ba-3f75-b163df6a16af
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: SEP_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b2658b04-f385-4b61-aa44-2b689c03f9ae
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.SEP_AMT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5fa6edc0-9f85-c863-fa8566a08178
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: OCT_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2571847e-e9c5-49f9-b934-9adf94fa074f
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.OCT_AMT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3514534d-5d9e-8966-305b44731b5b
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: NOV_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: da9577e2-d317-4c72-b449-2dd2b7d9d0c1
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.NOV_AMT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 92059af6-76a9-7861-164cce634b4b
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: DEC_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 85aff528-42f8-4f1e-b236-6b4933ef03f4
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.DEC_AMT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bdc91136-d0ba-aeb3-c253b3d5af9d
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: ORIG_FILENAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4cca73d8-6e57-48b2-9c07-4525d566d5d6
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.ORIG_FILENAME"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1d51e98c-aa7a-deb4-c78e3aa11560
+          stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: LOAD_FILENAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5b6d9b3c-af6d-46e1-bf3e-6afcd22218ec
+                stepCounter: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+            transform: "TARGET.LOAD_FILENAME"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_BUDGET_CSV_GAA: 10e0cc31-bdea-4a45-816d-7a79edaf8a37
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_BUDGET_CSV_GAA
+        join:
+          joinCondition: |-
+            FROM ( SELECT *
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_BUDGET_CSV_GAA') }} LOAD_BUDGET_CSV_GAA
+            UNION ALL SELECT *
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_BUDGET_CSV_HEG') }} LOAD_BUDGET_CSV_HEG
+            UNION ALL SELECT *
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_BUDGET_CSV_OPX') }} LOAD_BUDGET_CSV_OPX
+            UNION ALL SELECT *
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_BUDGET_CSV_REV') }} LOAD_BUDGET_CSV_REV
+            UNION ALL SELECT *
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_BUDGET_CSV_ROY') }} LOAD_BUDGET_CSV_ROY
+            UNION ALL SELECT *
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_BUDGET_CSV_TRA') }} LOAD_BUDGET_CSV_TRA
+            UNION ALL SELECT *
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_BUDGET_CSV_TAX') }} LOAD_BUDGET_CSV_TAX
+            UNION ALL SELECT *
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_BUDGET_CSV_CAP') }} LOAD_BUDGET_CSV_CAP
+            UNION ALL SELECT *
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_BUDGET_CSV_VOL') }} LOAD_BUDGET_CSV_VOL ) AS TARGET
+        name: STAGE_BUDGET_CSV_MERGED
+        noLinkRefs: []
+  name: STAGE_BUDGET_CSV_MERGED
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

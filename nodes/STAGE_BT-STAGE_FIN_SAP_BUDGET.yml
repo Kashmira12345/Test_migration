@@ -1,0 +1,670 @@
+fileVersion: 1
+id: 85ab7519-1742-1589-4d47-cb087ba70107
+name: STAGE_FIN_SAP_BUDGET
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 96e8c785-9ac3-8f89-cab7ea094f1b
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_LEDGER_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 96e8c785-9ac3-8f89-cab7ea094f1b
+                stepCounter: 2febea0a-2ae4-7801-4d0d-9267a5f87093
+            transform: "NVL(DIM_LO_SAP_LEDGER.DIM_LEDGER_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ed01faae-0653-fdd2-12d32ff3be84
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_COST_CENTER_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ed01faae-0653-fdd2-12d32ff3be84
+                stepCounter: 92422852-c141-a115-6f61-583208be58f4
+            transform: "NVL(DIM_LO_SAP_COST_CENTER.DIM_COST_CENTER_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2062913-c6f4-65d1-32b14eabfc7d
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_DEST_ORGANIZATION_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f2062913-c6f4-65d1-32b14eabfc7d
+                stepCounter: c3153440-8da0-c5b4-5b56-ef8892af4363
+            transform: "NVL(DIM_LO_SAP_DEST_ORGANIZATION.DIM_DEST_ORGANIZATION_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 73dcde0e-7feb-f704-182dcfbe43b5
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_GL_ACCOUNT_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 73dcde0e-7feb-f704-182dcfbe43b5
+                stepCounter: 0bc3a8ed-ff52-307e-43bc-5d4e1ec52907
+            transform: "NVL(DIM_LO_SAP_GL_ACCOUNT.DIM_GL_ACCOUNT_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2698198b-77d9-afee-4d694f75cafd
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_GROSS_NET_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2698198b-77d9-afee-4d694f75cafd
+                stepCounter: 257830e3-dd76-b640-c462-62754c8cb0ba
+            transform: "NVL(DIM_LO_SAP_GROSS_NET.DIM_GROSS_NET_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 92240b03-5455-41ea-83e085a1080a
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_AFE_TYPE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 92240b03-5455-41ea-83e085a1080a
+                stepCounter: 85d9f49e-b9bc-a7e4-9aad-68289ce7ba27
+            transform: "NVL(DIM_LO_SAP_AFE_TYPE.DIM_AFE_TYPE_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bfe2ba9f-8b26-84f3-13ca4c138cdd
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_PRODUCT_TYPE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bfe2ba9f-8b26-84f3-13ca4c138cdd
+                stepCounter: ce9376dc-e726-3dab-204c-edf9da8e80a9
+            transform: "NVL(DIM_LO_SAP_PRODUCT_TYPE.DIM_PRODUCT_TYPE_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a9155f70-5bab-db8d-b853c168afd6
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_ACTVY_PER_DATE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f922b031-5429-40db-a639-36cd59aa15b2
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: "nvl(TO_NUMBER(TO_CHAR(LOAD_BUDGET_T_BUDGET.ACTVY_PER_DATE, 'YYYYMMDD'), '99999999'),0)  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0de9a6e8-c7b0-6200-4e187a3e82f5
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_ACCT_PER_DATE_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f2869a3c-9f8d-46ad-9563-f4853c829ff8
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: "nvl(TO_NUMBER(TO_CHAR(LOAD_BUDGET_T_BUDGET.ACCT_PER_DATE, 'YYYYMMDD'), '99999999'),0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ff095879-32d4-d7c5-f47b740a0616
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_BUDGET_VERSION_KEY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ff095879-32d4-d7c5-f47b740a0616
+                stepCounter: 4e67ddb9-b262-0fc3-96c4-6d01a84e7693
+            transform: "NVL(DIM_LO_SAP_BUDGET_VERSION.DIM_BUDGET_VERSION_KEY,0)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9f5d0e16-22b2-1f93-ddbf7fdc8ecf
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        name: DIM_ACTVY_PER_DATE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f922b031-5429-40db-a639-36cd59aa15b2
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d05f9cb9-730b-3459-470acb177ad7
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        name: DIM_ACCT_PER_DATE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f2869a3c-9f8d-46ad-9563-f4853c829ff8
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9fb7f799-1cbb-a17c-cf4a2245521f
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: varchar(38)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: LI_ID
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e29c9559-56a8-452c-8404-dc884259db58
+                stepCounter: 6078405a-1107-46c8-8c6a-0260b0ce2798
+            transform: "'BL'||  DIM_LO_SAP_DEST_ORGANIZATION.ORG_ID||  TO_CHAR(EXTRACT(YEAR FROM LOAD_BUDGET_R_VERSION.EFFECTIVE_DATE))||  RIGHT(TO_CHAR(LOAD_BUDGET_T_BUDGET.IDX), 20)  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d00ab80c-636f-4f4b-6234e872fbdb
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: GLOP_LINE_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 811e381a-16ef-a274-97da13529122
+                stepCounter: 10848aab-49e4-220c-53b0-8454feb3ee6b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e8918161-3b8f-0eba-1c53d29cb3ac
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        name: GLOP_AMT_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 392f09da-1ab5-f5a8-364bda8eb15e
+                stepCounter: 10848aab-49e4-220c-53b0-8454feb3ee6b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83206c67-8a8d-c095-10700c0db987
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: number(14,2)
+        defaultValue: ""
+        description: ""
+        name: GLOP_CAD_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6e7ca206-8094-4ad5-ac50-bd9c50d39521
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: "LOAD_BUDGET_T_BUDGET.CAD_AMT * DIM_LO_SAP_LEASE_OPS_HIER.FLIPSIGN_BDGT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c3767278-bb07-a329-47b98118bc60
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: number(14,2)
+        defaultValue: ""
+        description: Translation of T_BUDGET.OP_FX (CAD to OP rate) to GLOP_EXCHANGE_RATE (OP to CAD rate)
+        name: GLOP_EXCHANGE_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 57107061-1d07-4e87-9b1d-0425c8119fdc
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: "1/LOAD_BUDGET_T_BUDGET.OP_FX"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 404070e5-423c-6ac3-aa3066233222
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: number(14,2)
+        defaultValue: ""
+        description: ""
+        name: OP_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ed0e862a-e03d-4082-a221-aca8fe020f7e
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: "LOAD_BUDGET_T_BUDGET.OP_AMT * DIM_LO_SAP_LEASE_OPS_HIER.FLIPSIGN_BDGT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a52c243-5c33-1362-c9a1d59c35e3
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: OP_CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ca4ad990-7553-47fb-8ab1-adc791331ccc
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: "LOAD_BUDGET_T_BUDGET.OP_CURR_CODE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1d12f379-e4e4-06f6-f66523c498b2
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: number(14,2)
+        defaultValue: ""
+        description: Flipsign applied for GL/AFE items that are supplied as positives in the Budget process but negative in the Financial context
+        name: CAD_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6e7ca206-8094-4ad5-ac50-bd9c50d39521
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: "LOAD_BUDGET_T_BUDGET.CAD_AMT * DIM_LO_SAP_LEASE_OPS_HIER.FLIPSIGN_BDGT  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83035d88-b53d-d7ee-eb70c4423bc3
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: ""
+        name: LI_VOL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c7c60788-4198-494b-a55c-d382cb6c31ee
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: "LOAD_BUDGET_T_BUDGET.VOL * DIM_LO_SAP_LEASE_OPS_HIER.FLIPSIGN_BDGT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 14369c8e-753a-3374-9b724e1baea4
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: ""
+        name: LI_VOL_UOM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 318df115-39b8-4c5e-9d4f-4acdf2cbb002
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: "LOAD_BUDGET_T_BUDGET.VOL_UOM_CODE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a04d1813-7571-46b0-a9713f1e6ba2
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: ""
+        name: LI_VOL_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c7c60788-4198-494b-a55c-d382cb6c31ee
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: "LOAD_BUDGET_T_BUDGET.VOL * LOAD_VET_FIN_SAP_CONVERSION.LI_TO_BOE * DIM_LO_SAP_LEASE_OPS_HIER.FLIPSIGN_BDGT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aec106ab-9509-3e21-19ef0f85b54d
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: ""
+        name: LI_VOL_M3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c7c60788-4198-494b-a55c-d382cb6c31ee
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: "LOAD_BUDGET_T_BUDGET.VOL * LOAD_VET_FIN_SAP_CONVERSION.LI_TO_GLOP_METRIC * DIM_LO_SAP_LEASE_OPS_HIER.FLIPSIGN_BDGT  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 20137f87-dd9e-8731-85fe2318e410
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: ""
+        name: LI_VOL_NM3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c7c60788-4198-494b-a55c-d382cb6c31ee
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: "LOAD_BUDGET_T_BUDGET.VOL * LOAD_VET_FIN_SAP_CONVERSION.LI_TO_GLOP_METRIC * DIM_LO_SAP_LEASE_OPS_HIER.FLIPSIGN_BDGT  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 00811ed1-58cc-494d-abdc8e233a8d
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: ""
+        name: LI_VOL_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c7c60788-4198-494b-a55c-d382cb6c31ee
+                stepCounter: 0527917e-f017-429f-ac55-c0a89e38e527
+            transform: "LOAD_BUDGET_T_BUDGET.VOL * LOAD_VET_FIN_SAP_CONVERSION.LI_TO_GLOP_IMP * DIM_LO_SAP_LEASE_OPS_HIER.FLIPSIGN_BDGT  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b3772b7-cc7a-21ff-cf9462714a73
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates amounts are gross or net.
+        name: GROSS_OR_NET_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b3772b7-cc7a-21ff-cf9462714a73
+                stepCounter: 257830e3-dd76-b640-c462-62754c8cb0ba
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+          stepCounter: 85ab7519-1742-1589-4d47-cb087ba70107
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: BU_SF_ROLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+                stepCounter: 708fd649-6097-9913-de66-f7bca879c8c8
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_LO_SAP_AFE_TYPE: 0527917e-f017-429f-ac55-c0a89e38e527
+          DIM_LO_SAP_BUDGET_VERSION: 0527917e-f017-429f-ac55-c0a89e38e527
+          DIM_LO_SAP_CC_CORP_HIER_CURRENT: 0527917e-f017-429f-ac55-c0a89e38e527
+          DIM_LO_SAP_COST_CENTER: 0527917e-f017-429f-ac55-c0a89e38e527
+          DIM_LO_SAP_DEST_ORGANIZATION: 0527917e-f017-429f-ac55-c0a89e38e527
+          DIM_LO_SAP_GL_ACCOUNT: 0527917e-f017-429f-ac55-c0a89e38e527
+          DIM_LO_SAP_GROSS_NET: 0527917e-f017-429f-ac55-c0a89e38e527
+          DIM_LO_SAP_LEASE_OPS_HIER: 0527917e-f017-429f-ac55-c0a89e38e527
+          DIM_LO_SAP_LEDGER: 0527917e-f017-429f-ac55-c0a89e38e527
+          DIM_LO_SAP_PRODUCT_TYPE: 0527917e-f017-429f-ac55-c0a89e38e527
+          LOAD_BUDGET_R_SRC: 0527917e-f017-429f-ac55-c0a89e38e527
+          LOAD_BUDGET_T_BUDGET: 0527917e-f017-429f-ac55-c0a89e38e527
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: DIM_LO_SAP_AFE_TYPE
+          - locationName: WHERESCAPE_LOAD
+            nodeName: DIM_LO_SAP_BUDGET_VERSION
+          - locationName: WHERESCAPE_LOAD
+            nodeName: DIM_LO_SAP_CC_CORP_HIER_CURRENT
+          - locationName: WHERESCAPE_LOAD
+            nodeName: DIM_LO_SAP_COST_CENTER
+          - locationName: WHERESCAPE_LOAD
+            nodeName: DIM_LO_SAP_DEST_ORGANIZATION
+          - locationName: WHERESCAPE_LOAD
+            nodeName: DIM_LO_SAP_GL_ACCOUNT
+          - locationName: WHERESCAPE_LOAD
+            nodeName: DIM_LO_SAP_GROSS_NET
+          - locationName: WHERESCAPE_LOAD
+            nodeName: DIM_LO_SAP_LEASE_OPS_HIER
+          - locationName: WHERESCAPE_LOAD
+            nodeName: DIM_LO_SAP_LEDGER
+          - locationName: WHERESCAPE_LOAD
+            nodeName: DIM_LO_SAP_PRODUCT_TYPE
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_BUDGET_R_SRC
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_BUDGET_T_BUDGET
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_BUDGET_T_BUDGET') }} LOAD_BUDGET_T_BUDGET
+            JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_BUDGET_R_SRC') }} LOAD_BUDGET_R_SRC
+              ON LOAD_BUDGET_T_BUDGET.FK_R_SRC_IDX = LOAD_BUDGET_R_SRC.IDX
+            JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_BUDGET_R_VERSION') }} "LOAD_BUDGET_R_VERSION"
+              ON LOAD_BUDGET_T_BUDGET.FK_R_VERSION_IDX = LOAD_BUDGET_R_VERSION.IDX
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_AFE_TYPE_ATTR') }} LOAD_VET_FIN_SAP_AFE_TYPE_ATTR
+              ON LOAD_BUDGET_T_BUDGET.AFE_TYPE = LOAD_VET_FIN_SAP_AFE_TYPE_ATTR.AFE_TYPE
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_ACCOUNT_ATTR') }} LOAD_VET_FIN_SAP_ACCOUNT_ATTR
+              ON LOAD_BUDGET_T_BUDGET.ACCOUNT = LOAD_VET_FIN_SAP_ACCOUNT_ATTR.ACCOUNT
+                AND LOAD_BUDGET_T_BUDGET.FUNCTIONAL_AREA = LOAD_VET_FIN_SAP_ACCOUNT_ATTR.FAREA
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_CONVERSION') }} LOAD_VET_FIN_SAP_CONVERSION
+              ON LOAD_BUDGET_T_BUDGET.VOL_UOM_CODE = LOAD_VET_FIN_SAP_CONVERSION.LI_VOL_UOM
+                AND LOAD_VET_FIN_SAP_ACCOUNT_ATTR.PROD_CODE = LOAD_VET_FIN_SAP_CONVERSION.LI_PROD_CODE
+            JOIN {{ ref('EDW', 'DIM_LO_SAP_BUDGET_VERSION') }} DIM_LO_SAP_BUDGET_VERSION
+              ON LOAD_BUDGET_T_BUDGET.FK_R_VERSION_IDX = DIM_LO_SAP_BUDGET_VERSION.IDX
+                AND DIM_LO_SAP_BUDGET_VERSION.VERSION_TYPE='BUDGET'
+            LEFT JOIN {{ ref('EDW', 'DIM_LO_SAP_COST_CENTER') }} DIM_LO_SAP_COST_CENTER
+              ON LOAD_BUDGET_T_BUDGET.COST_CENTRE = DIM_LO_SAP_COST_CENTER.CC_NUM
+            LEFT JOIN {{ ref('EDW', 'DIM_LO_SAP_DEST_ORGANIZATION') }} DIM_LO_SAP_DEST_ORGANIZATION
+              ON LOAD_BUDGET_T_BUDGET.DEST_ORG_ID = DIM_LO_SAP_DEST_ORGANIZATION.org_id
+            LEFT JOIN {{ ref('EDW', 'DIM_LO_SAP_GL_ACCOUNT') }} DIM_LO_SAP_GL_ACCOUNT
+              ON LOAD_BUDGET_T_BUDGET.ACCOUNT = DIM_LO_SAP_GL_ACCOUNT.ACCOUNT
+            LEFT JOIN {{ ref('EDW', 'DIM_LO_SAP_GROSS_NET') }} DIM_LO_SAP_GROSS_NET
+              ON LOAD_BUDGET_T_BUDGET.GROSS_OR_NET_CODE = DIM_LO_SAP_GROSS_NET.GROSS_OR_NET_CODE
+            LEFT JOIN {{ ref('EDW', 'DIM_LO_SAP_AFE_TYPE') }} DIM_LO_SAP_AFE_TYPE
+              ON LOAD_BUDGET_T_BUDGET.AFE_TYPE = DIM_LO_SAP_AFE_TYPE.AFE_TYPE
+            LEFT JOIN {{ ref('EDW', 'DIM_LO_SAP_PRODUCT_TYPE') }} DIM_LO_SAP_PRODUCT_TYPE
+              ON LOAD_VET_FIN_SAP_ACCOUNT_ATTR.PROD_CODE = DIM_LO_SAP_PRODUCT_TYPE.PROD_CODE
+            LEFT JOIN {{ ref('EDW', 'DIM_LO_SAP_LEASE_OPS_HIER') "DIM_LO_SAP_LEASE_OPS_HIER"
+              ON COALESCE(LOAD_VET_FIN_SAP_ACCOUNT_ATTR.LINE_NO,LOAD_VET_FIN_SAP_AFE_TYPE_ATTR.LINE_NO) = DIM_LO_SAP_LEASE_OPS_HIER.LINE_NO
+            LEFT JOIN [TABLEOWNER') }}.[DIM_LO_SAP_CC_CORP_HIER_CURRENT') "DIM_LO_SAP_CC_CORP_HIER"_CURRENT
+              ON DIM_LO_SAP_COST_CENTER.DIM_CC_CORP_HIER_CURRENT_KEY=DIM_LO_SAP_CC_CORP_HIER_CURRENT.DIM_CC_CORP_HIER_CURRENT_KEY
+            CROSS JOIN (SELECT *
+            FROM {{ ref('EDW', 'DIM_LO_SAP_LEDGER') }}
+            WHERE LEDGER_CODE = '$PSAP_LEADING_LEDGER_CODE$') DIM_LO_SAP_LEDGER
+        name: STAGE_FIN_SAP_BUDGET
+        noLinkRefs: []
+  name: STAGE_FIN_SAP_BUDGET
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

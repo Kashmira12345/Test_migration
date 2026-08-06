@@ -1,0 +1,144 @@
+fileVersion: 1
+id: cf5917e9-d65f-c224-0de4-26ef3f61758a
+name: STAGE_FIN_SAP_PRODUCT_TYPE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: "This table is retained as-is from QB context. uom and conversion values are sync'd with SAP"
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee2d495c-1f5d-7de5-9c47dee4bf43
+          stepCounter: cf5917e9-d65f-c224-0de4-26ef3f61758a
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: The user-defined product code.
+        isBusinessKey: true
+        name: PROD_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ee2d495c-1f5d-7de5-9c47dee4bf43
+                stepCounter: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 10901e27-b956-78df-d65bcad0087d
+          stepCounter: cf5917e9-d65f-c224-0de4-26ef3f61758a
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: The name of the product.
+        name: PROD_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 10901e27-b956-78df-d65bcad0087d
+                stepCounter: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ee1e3e2-2356-dbea-197718f92dad
+          stepCounter: cf5917e9-d65f-c224-0de4-26ef3f61758a
+        config: {}
+        dataType: number(14,10)
+        defaultValue: ""
+        description: The conversion factor used from SI to Imperial.
+        name: SI_TO_IMP_CONV_FACTOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5ee1e3e2-2356-dbea-197718f92dad
+                stepCounter: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+            transform: "NVL(DIM_LO_QB_PRODUCT_TYPE.SI_TO_IMP_CONV_FACTOR,1)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30c56fcf-0c6c-dc3c-3bc4d38113dd
+          stepCounter: cf5917e9-d65f-c224-0de4-26ef3f61758a
+        config: {}
+        dataType: number(8,5)
+        defaultValue: ""
+        description: Conversion factor for barrel of oil equivalent in thermal quantities.  For example, BTUs, Joules.
+        name: BOE_THERMAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 30c56fcf-0c6c-dc3c-3bc4d38113dd
+                stepCounter: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+            transform: "nvl(DIM_LO_QB_PRODUCT_TYPE.BOE_THERMAL,1)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b52d2c9d-2407-e0e3-e04a1bea3a58
+          stepCounter: cf5917e9-d65f-c224-0de4-26ef3f61758a
+        config: {}
+        dataType: number(8,5)
+        defaultValue: ""
+        description: ""
+        name: M3_THERMAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b52d2c9d-2407-e0e3-e04a1bea3a58
+                stepCounter: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+            transform: "NVL(DIM_LO_QB_PRODUCT_TYPE.M3_THERMAL,1)"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_LO_QB_PRODUCT_TYPE: 6bfe3c73-d85c-53d5-a574-8e9b69f295ce
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: EDW
+            nodeName: DIM_LO_QB_PRODUCT_TYPE
+        join:
+          joinCondition: |-
+            FROM {{ ref('EDW', 'DIM_LO_QB_PRODUCT_TYPE') }} DIM_LO_QB_PRODUCT_TYPE
+            WHERE DIM_PRODUCT_TYPE_KEY <> 0
+        name: STAGE_FIN_SAP_PRODUCT_TYPE
+        noLinkRefs: []
+  name: STAGE_FIN_SAP_PRODUCT_TYPE
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

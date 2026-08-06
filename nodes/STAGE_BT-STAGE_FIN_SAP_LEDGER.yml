@@ -1,0 +1,123 @@
+fileVersion: 1
+id: cc7a0fbd-d682-c695-9dcf-3a51ca82bfb8
+name: STAGE_FIN_SAP_LEDGER
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4196bb26-4899-5e3c-667c966c9fc7
+          stepCounter: cc7a0fbd-d682-c695-9dcf-3a51ca82bfb8
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Ledger Code (ACDOCA.RLDNR)
+        isBusinessKey: true
+        name: LEDGER_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5cd97cb6-95ca-4f4d-828f-13f91d5100ec
+                stepCounter: 7b2584c6-03f3-40d4-b2d7-43cd86643161
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 40b3d11a-8fd5-7fe5-d45d2e074335
+          stepCounter: cc7a0fbd-d682-c695-9dcf-3a51ca82bfb8
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Ledger Description
+        name: LEDGER_DESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2f9e6602-f789-42f3-a14c-14a4a6814fac
+                stepCounter: 7b2584c6-03f3-40d4-b2d7-43cd86643161
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ef4b08b7-df00-9c94-bb7172b4d33f
+          stepCounter: cc7a0fbd-d682-c695-9dcf-3a51ca82bfb8
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Ledger is Leading Ledger
+        name: LEADING_LEDGER_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b5ef55c8-ac8f-443b-a668-4eb4a762b385
+                stepCounter: 7b2584c6-03f3-40d4-b2d7-43cd86643161
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9a6d411e-afcf-b87f-b84eeb84b137
+          stepCounter: cc7a0fbd-d682-c695-9dcf-3a51ca82bfb8
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: ""
+        name: LEDGER_SORT_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5be2a36d-4e8b-40c8-b26d-f3f0e4537b53
+                stepCounter: 7b2584c6-03f3-40d4-b2d7-43cd86643161
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_VET_FIN_SAP_LEDGER: 7b2584c6-03f3-40d4-b2d7-43cd86643161
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_VET_FIN_SAP_LEDGER
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_LEDGER') }} LOAD_VET_FIN_SAP_LEDGER
+        name: STAGE_FIN_SAP_LEDGER
+        noLinkRefs: []
+  name: STAGE_FIN_SAP_LEDGER
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

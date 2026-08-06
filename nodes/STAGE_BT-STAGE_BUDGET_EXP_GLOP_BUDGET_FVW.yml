@@ -1,0 +1,456 @@
+fileVersion: 1
+id: 45369e57-7cc2-dcce-f694-b791aed463a7
+name: STAGE_BUDGET_EXP_GLOP_BUDGET_FVW
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: "Budget Export Staging table for direct load into BI_REPORT.GLOP_BUDGET_FVW@BIPR"
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae4901df-7b48-75ca-35b1d1fa19c7
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: VERSION_NAME
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ab1a8ef9-42ab-560e-f0c71ef8bde8
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: VARCHAR(10)
+        defaultValue: ""
+        description: ACCT_DATE
+        name: ACCT_DATE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "TO_CHAR(FACT_LO_BUDGET.DIM_ACCT_PER_DATE,'YYYY-MM-DD')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 19caf0ae-fde6-7190-591c9214a00b
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: VARCHAR(10)
+        defaultValue: ""
+        description: ACTVY_DATE
+        name: ACTVY_DATE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "TO_CHAR(FACT_LO_BUDGET.DIM_ACTVY_PER_DATE,'YYYY-MM-DD')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c40eb667-28cf-dcfb-437c5d221bf6
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: ACCOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "DECODE(DIM_LO_GL_ACCOUNT.DIM_GL_ACCOUNT_KEY,0,NULL,DIM_LO_GL_ACCOUNT.ACCOUNT)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 61cf066e-0662-192e-8df3d8d153b6
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: MAJOR_ACCOUNT
+        name: MAJOR_ACCOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "DECODE(DIM_LO_GL_ACCOUNT.DIM_GL_ACCOUNT_KEY,0,NULL,DIM_LO_GL_ACCOUNT.MAJOR_ACCT)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 62e99b25-ad74-b9b9-302da72355f8
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: MINOR ACCOUNT
+        name: MINOR_ACCOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "DECODE(DIM_LO_GL_ACCOUNT.DIM_GL_ACCOUNT_KEY,0,NULL,DIM_LO_GL_ACCOUNT.MINOR_ACCT)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4a97f64-fc98-8310-001ec71675d6
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: AFE_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "DECODE(DIM_LO_AFE_TYPE.DIM_AFE_TYPE_KEY,0,NULL,DIM_LO_AFE_TYPE.AFE_TYPE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f41e0c5d-486f-5359-8d5f048de109
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: varchar(80)
+        defaultValue: ""
+        description: VAR_MATCH_NAME
+        name: VAR_MATCH_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "DECODE(DIM_LO_AFE_TYPE.DIM_AFE_TYPE_KEY,0,DECODE(DIM_LO_GL_ACCOUNT.DIM_GL_ACCOUNT_KEY,0,NULL,DIM_LO_GL_ACCOUNT.ACCT_DESC), DIM_LO_AFE_TYPE.AFE_TYPE_DESC)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ac36973a-5634-9610-649d6c388f9a
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: varchar(80)
+        defaultValue: ""
+        description: VARIABLE_NAME
+        name: VARIABLE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "INITCAP(DECODE(DIM_LO_AFE_TYPE.DIM_AFE_TYPE_KEY,0,DECODE(DIM_LO_GL_ACCOUNT.DIM_GL_ACCOUNT_KEY,0,NULL,DIM_LO_GL_ACCOUNT.ACCT_DESC), DIM_LO_AFE_TYPE.AFE_TYPE_DESC))"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b3772b7-cc7a-21ff-cf9462714a73
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates amounts are gross or net.
+        name: GROSS_OR_NET_CODE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "DECODE(DIM_LO_GROSS_NET.DIM_GROSS_NET_KEY,0,NULL,DIM_LO_GROSS_NET.GROSS_OR_NET_CODE)  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7c039ad3-70ae-f36d-fdea14fc67ad
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: COST_CENTRE
+        name: COST_CENTRE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "DECODE(DIM_LO_COST_CENTER.DIM_COST_CENTER_KEY,0,NULL,DIM_LO_COST_CENTER.CC_NUM)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78249657-653d-623c-42b6c0e11c46
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: number(4)
+        defaultValue: ""
+        description: ""
+        name: ORG_ID
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ddc09dc-01d9-854e-9fe670374eb2
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: Organization Country
+        name: COUNTRY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e5783529-6547-bfea-694e3a844ffd
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: number(14,2)
+        defaultValue: ""
+        description: CAD_AMOUNT
+        name: CAD_AMOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "SUM(NVL(FACT_LO_BUDGET.CAD_AMT,0))"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8790704-a735-ed9f-d63e03aba78a
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ACCT_GROUP_CODE
+        name: ACCT_GROUP_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "DECODE(DIM_LO_GL_ACCOUNT.DIM_GL_ACCOUNT_KEY,0,'x',DIM_LO_GL_ACCOUNT.ACCT_GROUP_CODE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: db8c193e-2d86-3171-945db1dde5ef
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: number(1)
+        defaultValue: ""
+        description: 'FACT_LEASE_OPS FLIPSIGN '
+        name: FLIPSIGN
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NVL(DECODE(NVL(DIM_LO_LEASE_OPS_HIER_AFE.DIM_LEASE_OPS_HIER_KEY,0),0,DIM_LO_LEASE_OPS_HIER_GL.FLIPSIGN,DIM_LO_LEASE_OPS_HIER_AFE.FLIPSIGN),1)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f56d6113-bc18-1455-05d2cc1d4d08
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: number(14,2)
+        defaultValue: ""
+        description: OPERATING_AMOUNT
+        name: OPERATING_AMOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "SUM(NVL(FACT_LO_BUDGET.OP_AMT,0))"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 23344b74-f2a3-244c-0573ccd4ee4b
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: METRIC_VOLUME
+        name: METRIC_VOLUME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "SUM(NVL(FACT_LO_BUDGET.LI_VOL_M3,0)*NVL(DECODE(NVL(DIM_LO_LEASE_OPS_HIER_AFE.DIM_LEASE_OPS_HIER_KEY,0),0,DIM_LO_LEASE_OPS_HIER_GL.FLIPSIGN,DIM_LO_LEASE_OPS_HIER_AFE.FLIPSIGN),1))"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a5a4383-ded3-3c1f-eedfff05d231
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: METRIC_NORMALIZED_VOLUME
+        name: METRIC_NORMALIZED_VOLUME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "SUM(NVL(FACT_LO_BUDGET.LI_VOL_NM3,0)*NVL(DECODE(NVL(DIM_LO_LEASE_OPS_HIER_AFE.DIM_LEASE_OPS_HIER_KEY,0),0,DIM_LO_LEASE_OPS_HIER_GL.FLIPSIGN,DIM_LO_LEASE_OPS_HIER_AFE.FLIPSIGN),1))"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3db9c89d-edea-2af2-58af978f3d74
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: IMPERIAL_VOLUME
+        name: IMPERIAL_VOLUME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "SUM(NVL(FACT_LO_BUDGET.LI_VOL_IMPERIAL,0)*NVL(DECODE(NVL(DIM_LO_LEASE_OPS_HIER_AFE.DIM_LEASE_OPS_HIER_KEY,0),0,DIM_LO_LEASE_OPS_HIER_GL.FLIPSIGN,DIM_LO_LEASE_OPS_HIER_AFE.FLIPSIGN),1))"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e60035b0-1001-bddd-36dafd78be18
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: BOE_VOLUME
+        name: BOE_VOLUME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "SUM(NVL(FACT_LO_BUDGET.LI_VOL_BOE,0)*NVL(DECODE(NVL(DIM_LO_LEASE_OPS_HIER_AFE.DIM_LEASE_OPS_HIER_KEY,0),0,DIM_LO_LEASE_OPS_HIER_GL.FLIPSIGN,DIM_LO_LEASE_OPS_HIER_AFE.FLIPSIGN),1))"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8c4c649a-e93a-f85d-dfcd38370c4d
+          stepCounter: 45369e57-7cc2-dcce-f694-b791aed463a7
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: OPERATING_CURRENCY
+        name: OPERATING_CURRENCY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: EDW
+            nodeName: FACT_LO_BUDGET
+        join:
+          joinCondition: |-
+            FROM {{ ref('EDW', 'FACT_LO_BUDGET') }} FACT_LO_BUDGET
+            JOIN [TABLEOWNER') }}.[DIM_LO_BUDGET_VERSION') }} DIM_LO_BUDGET_VERSION
+              ON FACT_LO_BUDGET.DIM_BUDGET_VERSION_KEY = DIM_LO_BUDGET_VERSION.DIM_BUDGET_VERSION_KEY
+            JOIN [TABLEOWNER') }}.[DIM_LO_AFE_TYPE') }} DIM_LO_AFE_TYPE
+              ON FACT_LO_BUDGET.DIM_AFE_TYPE_KEY = DIM_LO_AFE_TYPE.DIM_AFE_TYPE_KEY
+            JOIN [TABLEOWNER') }}.[DIM_LO_COST_CENTER') }} DIM_LO_COST_CENTER
+              ON FACT_LO_BUDGET.DIM_COST_CENTER_KEY = DIM_LO_COST_CENTER.DIM_COST_CENTER_KEY
+            JOIN [TABLEOWNER') }}.[DIM_LO_DEST_ORGANIZATION') }} DIM_LO_DEST_ORGANIZATION
+              ON FACT_LO_BUDGET.DIM_DEST_ORGANIZATION_KEY = DIM_LO_DEST_ORGANIZATION.DIM_DEST_ORGANIZATION_KEY
+            JOIN [TABLEOWNER') }}.[DIM_LO_GL_ACCOUNT') }} DIM_LO_GL_ACCOUNT
+              ON FACT_LO_BUDGET.DIM_GL_ACCOUNT_KEY = DIM_LO_GL_ACCOUNT.DIM_GL_ACCOUNT_KEY
+            JOIN [TABLEOWNER') }}.[DIM_LO_GROSS_NET') }} DIM_LO_GROSS_NET
+              ON FACT_LO_BUDGET.DIM_GROSS_NET_KEY = DIM_LO_GROSS_NET.DIM_GROSS_NET_KEY
+            LEFT JOIN [TABLEOWNER') }}.[DIM_LO_LEASE_OPS_HIER') }} DIM_LO_LEASE_OPS_HIER_GL
+              ON DIM_LO_GL_ACCOUNT.LINE_NO = DIM_LO_LEASE_OPS_HIER_GL.LINE_NO
+            LEFT JOIN [TABLEOWNER') }}.[DIM_LO_LEASE_OPS_HIER') }} DIM_LO_LEASE_OPS_HIER_AFE
+              ON DIM_LO_AFE_TYPE.LINE_NO = DIM_LO_LEASE_OPS_HIER_AFE.LINE_NO
+            WHERE FACT_LO_BUDGET.DIM_COST_CENTER_KEY <> 0
+                AND (NVL(FACT_LO_BUDGET.CAD_AMT,0)+NVL(FACT_LO_BUDGET.LI_VOL,0) <> 0)
+            GROUP BY DIM_LO_BUDGET_VERSION.VERSION_NAME ,FACT_LO_BUDGET.DIM_ACCT_PER_DATE ,FACT_LO_BUDGET.DIM_ACTVY_PER_DATE ,DIM_LO_GL_ACCOUNT.ACCOUNT ,DIM_LO_GL_ACCOUNT.MAJOR_ACCT ,DIM_LO_GL_ACCOUNT.MINOR_ACCT ,DIM_LO_AFE_TYPE.AFE_TYPE ,DIM_LO_GL_ACCOUNT.ACCT_DESC ,DIM_LO_AFE_TYPE.AFE_TYPE_DESC ,DIM_LO_COST_CENTER.CC_NUM ,DIM_LO_DEST_ORGANIZATION.ORG_ID ,DIM_LO_DEST_ORGANIZATION.COUNTRY ,DIM_LO_GL_ACCOUNT.ACCT_GROUP_CODE ,DIM_LO_GL_ACCOUNT.DIM_GL_ACCOUNT_KEY ,DIM_LO_GROSS_NET.GROSS_OR_NET_CODE ,DIM_LO_GROSS_NET.DIM_GROSS_NET_KEY ,DIM_LO_AFE_TYPE.DIM_AFE_TYPE_KEY ,DIM_LO_COST_CENTER.DIM_COST_CENTER_KEY ,DIM_LO_LEASE_OPS_HIER_AFE.DIM_LEASE_OPS_HIER_KEY ,DIM_LO_LEASE_OPS_HIER_GL.FLIPSIGN ,DIM_LO_LEASE_OPS_HIER_AFE.FLIPSIGN ,FACT_LO_BUDGET.OP_CURR_CODE
+        name: STAGE_BUDGET_EXP_GLOP_BUDGET_FVW
+        noLinkRefs: []
+  name: STAGE_BUDGET_EXP_GLOP_BUDGET_FVW
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

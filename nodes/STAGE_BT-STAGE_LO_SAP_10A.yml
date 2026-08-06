@@ -1,0 +1,627 @@
+fileVersion: 1
+id: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+name: STAGE_LO_SAP_10A
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 96e8c785-9ac3-8f89-cab7ea094f1b
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_LEDGER_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 96e8c785-9ac3-8f89-cab7ea094f1b
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a9155f70-5bab-db8d-b853c168afd6
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: date as integer
+        name: DIM_ACTVY_PER_DATE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a9155f70-5bab-db8d-b853c168afd6
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0de9a6e8-c7b0-6200-4e187a3e82f5
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: date as integer
+        name: DIM_ACCT_PER_DATE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0de9a6e8-c7b0-6200-4e187a3e82f5
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ed01faae-0653-fdd2-12d32ff3be84
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_COST_CENTER_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ed01faae-0653-fdd2-12d32ff3be84
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 92240b03-5455-41ea-83e085a1080a
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_AFE_TYPE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "0"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2062913-c6f4-65d1-32b14eabfc7d
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_DEST_ORGANIZATION_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f2062913-c6f4-65d1-32b14eabfc7d
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 73dcde0e-7feb-f704-182dcfbe43b5
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_GL_ACCOUNT_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "0"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2698198b-77d9-afee-4d694f75cafd
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_GROSS_NET_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2698198b-77d9-afee-4d694f75cafd
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0c980aff-afe1-09d4-9ec13fafe0a8
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_LEASE_OPS_HIER_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0c980aff-afe1-09d4-9ec13fafe0a8
+                stepCounter: 10848aab-49e4-220c-53b0-8454feb3ee6b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 97116024-1e80-ce6a-46b19788c455
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_LEASE_OPS_VERSION_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 97116024-1e80-ce6a-46b19788c455
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8c9e6799-3d8a-8126-03a4e37cc7bf
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_LINE_ITEM_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "0"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ca135ff9-e7a4-bbf5-688d7a8a8f23
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_VOUCHER_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "0"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a2903fc9-251f-be2a-162b6b045305
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_AFE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "0"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a0ca60c4-72e9-299a-f3c08e89c206
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_INVOICE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "0"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bfe2ba9f-8b26-84f3-13ca4c138cdd
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: DIM_PRODUCT_TYPE_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "0"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 811e381a-16ef-a274-97da13529122
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: LINE_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 811e381a-16ef-a274-97da13529122
+                stepCounter: 10848aab-49e4-220c-53b0-8454feb3ee6b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 404070e5-423c-6ac3-aa3066233222
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: ""
+        name: OP_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1d12f379-e4e4-06f6-f66523c498b2
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: ""
+        name: CAD_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7d35a022-e2f6-f156-684ce6331540
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: number(14,2)
+        defaultValue: ""
+        description: 'Gross Line Item Net Op Amount '
+        name: NET_OP_AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83035d88-b53d-d7ee-eb70c4423bc3
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: ""
+        name: LI_VOL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 83035d88-b53d-d7ee-eb70c4423bc3
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: "SUM(STAGE_LO_SAP_10.LI_VOL)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aec106ab-9509-3e21-19ef0f85b54d
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: Line item Volume in cubic meters (m3)
+        name: LI_VOL_M3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aec106ab-9509-3e21-19ef0f85b54d
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: "SUM(   DECODE(STAGE_LO_SAP_10.LINE_NO,    '10.4',STAGE_LO_SAP_10.LI_VOL_M3*'$PM3_BOE_FACTOR$',   STAGE_LO_SAP_10.LI_VOL_M3)  )"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 00811ed1-58cc-494d-abdc8e233a8d
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: Line item Volume in imperial measurement
+        name: LI_VOL_IMPERIAL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 00811ed1-58cc-494d-abdc8e233a8d
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: "SUM(   DECODE(STAGE_LO_SAP_10.LINE_NO,    '10.4',STAGE_LO_SAP_10.LI_VOL_IMPERIAL/'$PGAS_IMPERIAL_FACTOR$',   STAGE_LO_SAP_10.LI_VOL_IMPERIAL)  )"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a04d1813-7571-46b0-a9713f1e6ba2
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: Line item Volume in BOE (Barrel of Oil Equivalent)
+        name: LI_VOL_BOE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a04d1813-7571-46b0-a9713f1e6ba2
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: "SUM(STAGE_LO_SAP_10.LI_VOL_BOE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 20137f87-dd9e-8731-85fe2318e410
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: number(38,2)
+        defaultValue: ""
+        description: Line item Volume in normalized cubic meters (nm3)
+        name: LI_VOL_NM3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 20137f87-dd9e-8731-85fe2318e410
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: "SUM(   DECODE(STAGE_LO_SAP_10.LINE_NO,    '10.4',STAGE_LO_SAP_10.LI_VOL_NM3*'$PNM3_BOE_FACTOR$',   STAGE_LO_SAP_10.LI_VOL_NM3)  )"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9947f7c8-7e59-785b-bf2c0a14d24d
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: number(14,2)
+        defaultValue: ""
+        description: ""
+        name: EXCHANGE_RATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9947f7c8-7e59-785b-bf2c0a14d24d
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a52c243-5c33-1362-c9a1d59c35e3
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: OP_CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a52c243-5c33-1362-c9a1d59c35e3
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b3772b7-cc7a-21ff-cf9462714a73
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates amounts are gross or net.
+        name: GROSS_OR_NET_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b3772b7-cc7a-21ff-cf9462714a73
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 90038f7b-af46-1811-0a5f538d8b1c
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: LINE_NO_GROUP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 90038f7b-af46-1811-0a5f538d8b1c
+                stepCounter: 10848aab-49e4-220c-53b0-8454feb3ee6b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e54d70e1-03d7-ea6b-15a066ebb162
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: OP_NONOP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e54d70e1-03d7-ea6b-15a066ebb162
+                stepCounter: fbe1f6f8-4687-7692-f178-abaa68b9278c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee2d495c-1f5d-7de5-9c47dee4bf43
+          stepCounter: 68a2fc71-0c10-b96c-adfb-2a9963c7baad
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: ""
+        name: PROD_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_LO_SAP_LEASE_OPS_HIER: 10848aab-49e4-220c-53b0-8454feb3ee6b
+          STAGE_LO_SAP_10: fbe1f6f8-4687-7692-f178-abaa68b9278c
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: DIM_LO_SAP_LEASE_OPS_HIER
+          - locationName: STAGE_BT
+            nodeName: STAGE_LO_SAP_10
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE_BT', 'STAGE_LO_SAP_10') }} STAGE_LO_SAP_10
+            CROSS JOIN ( SELECT DIM_LEASE_OPS_HIER_KEY, LINE_NO, LINE_NO_GROUP
+            FROM {{ ref('EDW', 'DIM_LO_SAP_LEASE_OPS_HIER') }}
+            WHERE DIM_LO_SAP_LEASE_OPS_HIER.LINE_NO = '10A') DIM_LO_SAP_LEASE_OPS_HIER
+            GROUP BY STAGE_LO_SAP_10.DIM_LEDGER_KEY, STAGE_LO_SAP_10.DIM_ACTVY_PER_DATE_KEY, STAGE_LO_SAP_10.DIM_ACCT_PER_DATE_KEY, STAGE_LO_SAP_10.DIM_COST_CENTER_KEY, STAGE_LO_SAP_10.DIM_DEST_ORGANIZATION_KEY, STAGE_LO_SAP_10.DIM_GROSS_NET_KEY, DIM_LO_SAP_LEASE_OPS_HIER.DIM_LEASE_OPS_HIER_KEY, DIM_LO_SAP_LEASE_OPS_HIER.LINE_NO, DIM_LO_SAP_LEASE_OPS_HIER.LINE_NO_GROUP, STAGE_LO_SAP_10.DIM_LEASE_OPS_VERSION_KEY, STAGE_LO_SAP_10.EXCHANGE_RATE, STAGE_LO_SAP_10.OP_CURR_CODE, STAGE_LO_SAP_10.GROSS_OR_NET_CODE, STAGE_LO_SAP_10.OP_NONOP
+        name: STAGE_LO_SAP_10A
+        noLinkRefs: []
+  name: STAGE_LO_SAP_10A
+  overrideSQL: false
+  schema: STAGE_BT
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

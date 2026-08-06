@@ -1,0 +1,823 @@
+fileVersion: 1
+id: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+name: STAGE_FIN_SAP_COST_CENTER
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f8a9e69-afb8-d1a2-bce1ca3dbb15
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "NULLIF(TRIM(LTRIM(ODS_SAP_CSKS.KOSTL,'0'),' '),'')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f51bd8a6-f7b1-1562-982710534c5d
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: CC_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9a759361-42e2-2047-c2316ad946cb
+                stepCounter: 1a37c8d0-3342-f2e0-8637-008d2ba5397c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd35723d-1b89-ea91-db4dba63e34a
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: ""
+        name: CC_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d3e6687b-4fbc-39a0-e075ef2aa5b2
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 59eb5b76-14ee-14a3-64662d3c8b95
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: CODE_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7d08975a-eb4d-b6bf-7cb6d3c03053
+                stepCounter: b85c43f6-ce66-8858-caf2-7e45e5fcea01
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c77eb5a2-de24-8a33-aa5819056659
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: ""
+        name: OWNERSHIP_ORG_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ca1ae24a-0133-b2c4-942d8fc15fbf
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 16d1c423-b1d8-c650-397fb066c675
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: OWNERSHIP_ORGANIZATION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 771a25e4-2be3-6779-8fd20c5cb72d
+                stepCounter: 2b93073f-b0bc-77cb-283c-1f38c8a9afa0
+            transform: "  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 77f195ed-4030-da81-0af29b5b4383
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(200)
+        defaultValue: ""
+        description: UWI of the Cost Centre
+        name: UWI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dd8b3d3d-fea0-5673-731eb575842e
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "TRANSLATE(ODS_SAP_CSKS.ZZCCUWI,'/-','')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 67336aee-88e8-aecb-ccf9e77a7597
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(200)
+        defaultValue: ""
+        description: Formatted UWI of the Cost Centre
+        name: FORMATTED_UWI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dd8b3d3d-fea0-5673-731eb575842e
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9edd78a7-65ec-f307-d216bcbd9c59
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: OPERATOR_CLIENT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 562f5edb-7d54-9c8e-7c95a12d9ec6
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "LTRIM(ODS_SAP_CSKS.ZZOPERATOR,'0')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5fd5ce6d-fe7a-7339-1bdbaace8903
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(300)
+        defaultValue: ""
+        description: ""
+        name: OPERATOR_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8cb23992-60cd-7226-5fb801fbebae
+                stepCounter: 0036954f-6e70-984b-87b2-4e6e4e3ca685
+            transform: "ODS_SAP_BUT000_OP.NAME_ORG1"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c465ccec-a79a-2d20-3b25cc1fc593
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: CONTRACT_OPERATOR_CLIENT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 67453fc8-6e4d-b1d3-04cf28e19b95
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "LTRIM(ODS_SAP_CSKS.ZZCONTRACT_OPERATOR,'0')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 89bd1cbe-3ade-8754-139bcab0a235
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(300)
+        defaultValue: ""
+        description: ""
+        name: CONTRACT_OPERATOR_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8cb23992-60cd-7226-5fb801fbebae
+                stepCounter: 0036954f-6e70-984b-87b2-4e6e4e3ca685
+            transform: "ODS_SAP_BUT000_CO.NAME_ORG1"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5369504f-739c-18d0-4a888bab5dee
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        name: TERM_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5d25cabb-8200-1925-a7f1f96af0c5
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "DECODE(NULLIF(ODS_SAP_CSKS.BKZKP,''),NULL,NULL,DATEADD('DAY', -1, DATE_TRUNC('DAY', CURRENT_TIMESTAMP)))"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aeff3f3f-681b-2ed6-a27786a56203
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(2)
+        defaultValue: ""
+        description: ""
+        name: LOCKED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 49b5d687-aaab-410b-e40dc9324239
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "NULLIF(ODS_SAP_CSKS.BKZKP,'')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ff7edc55-3e01-b13f-3024d1ec44d3
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: ""
+        name: COST_CENTER_PROVINCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4e5158f5-7745-279d-c83ef77ea4d9
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bdf91c27-813a-e4a5-2da4cc07325d
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: ""
+        name: COST_CENTER_COUNTRY_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e76af4b9-f570-3aee-c15bea5065a9
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0ae5d3d0-282b-3962-4173338f43b4
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: COST_CENTER_COUNTRY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9e08c883-85a6-2fff-793bf57b7553
+                stepCounter: 547765fc-481c-0b86-66c8-f6cdfaa14157
+            transform: "  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 74adca67-86bc-7615-bc9235b2792d
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: IS_JIB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eabaa94b-102a-6bb7-d589c7c4d144
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: ALLOW_OTHER_ORGS_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f41dbb57-8c81-e9f1-be60d20cd253
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        name: OVERHEAD_METHOD_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1f1c5fe2-3f29-600c-39b72f650a89
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 855520d2-b1a6-4b93-9e7e30889e2a
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: RUN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43b69991-3756-7369-fc6354008255
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: ACQUISITION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8b0e3ca9-bb34-bee0-c0de9bf0cae5
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7316a25c-4804-1a68-e3b72b467144
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: GCA_FCC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 80eb4a86-6c75-2fa1-9300d8ce1e11
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e1ec6867-8126-f6ee-1aeeaeb5d166
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: Date when the cost center was created
+        name: CC_CREATE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e657ff05-b495-11b0-05d0f6cee65d
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d852b454-4cf7-fab0-84f29958cc9d
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: CBM_FORMATION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d6850309-160d-593a-f22a0ab5586c
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        name: UNIT_CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e54d70e1-03d7-ea6b-15a066ebb162
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: ""
+        name: OP_NONOP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad9a919b-8637-5f3a-a18eb7040599
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "DECODE(ODS_SAP_CSKS.ZZNONOP_FLAG,'X','NONOP','OP')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a4258d33-470e-708e-a053fd516aad
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: number(14,11)
+        defaultValue: ""
+        description: The Land Percent.
+        name: WORKING_INTEREST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 689c5332-bf00-9457-45c09adbbfb4
+                stepCounter: f81cd24d-d971-c4dd-0650-1fc0ad90e049
+            transform: "NVL(JV.VERM_SHARE,100)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30a7fc10-08cf-30e2-a4250f8597f9
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: PERSON_RESPONSIBLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bca370f3-11a8-eb0f-e763cc0b12a5
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 759b1653-fdee-5721-c558aad497ba
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: ""
+        name: FUNCTIONAL_AREA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9ba9545f-412c-2f92-c6a739f4708b
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3b3170a8-cf5f-bb22-fb1268df2d5c
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: ""
+        name: FUNCTIONAL_AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d5b86d50-0bac-8d65-dc4179915f94
+                stepCounter: a0617d71-ae05-d657-35d5-a9d106776f3b
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83b1f59b-8b93-9493-98fa5b095b50
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        name: JOINT_VENTURE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b857ce0-2eb0-ad8c-bd888851c4b2
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f698a011-55be-5710-1137bf238dab
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: ""
+        name: RECOVERY_INDICATOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b8f8aaac-6aa2-0447-cbe54c1247eb
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8c836278-2e2f-6da9-3fe5ba5e28d4
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: ""
+        name: EQUITY_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bcd84b23-4cda-c3aa-000ebbe8710b
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 385fbfac-14fe-bd58-6c48c954a494
+          stepCounter: 1696d4b3-aef2-89a6-bb38-f9a13d7068de
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: NULL or Cost Center Number for relating historic data
+        name: CC_NUM_HISTORIC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7c238834-b483-4444-bb23-efba4efbdfdd
+                stepCounter: e53b8ff2-04f5-438f-aae9-a06ceae671c8
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_VET_FIN_SAP_CC_ATTR: 0036954f-6e70-984b-87b2-4e6e4e3ca685
+          ODS_SAP_BUT000: 0036954f-6e70-984b-87b2-4e6e4e3ca685
+          ODS_SAP_CSKS: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+          ODS_SAP_CSKT: 1a37c8d0-3342-f2e0-8637-008d2ba5397c
+          ODS_SAP_T001: 2b93073f-b0bc-77cb-283c-1f38c8a9afa0
+          ODS_SAP_T005T: 547765fc-481c-0b86-66c8-f6cdfaa14157
+          ODS_SAP_T8J9A: f81cd24d-d971-c4dd-0650-1fc0ad90e049
+          ODS_SAP_TFKBT: a0617d71-ae05-d657-35d5-a9d106776f3b
+          ODS_SAP_TKT05: b85c43f6-ce66-8858-caf2-7e45e5fcea01
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: LOAD_VET_FIN_SAP_CC_ATTR
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_BUT000
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_CSKS
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_CSKT
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_T001
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_T005T
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_T8J9A
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_TFKBT
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_TKT05
+        join:
+          joinCondition: |-
+            FROM (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_CSKS') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_CSKS
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_CSKT') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y'
+                AND SPRAS = 'E') ODS_SAP_CSKT
+              ON ODS_SAP_CSKS.KOSTL = ODS_SAP_CSKT.KOSTL
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_BUT000') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_BUT000_CO
+              ON ODS_SAP_CSKS.ZZCONTRACT_OPERATOR = ODS_SAP_BUT000_CO.PARTNER
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_T005T') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y'
+                AND SPRAS = 'E') ODS_SAP_T005T
+              ON ODS_SAP_CSKS.LAND1 = ODS_SAP_T005T.LAND1
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_T001') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_T001
+              ON ODS_SAP_CSKS.BUKRS = ODS_SAP_T001.BUKRS
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_BUT000') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_BUT000_OP
+              ON ODS_SAP_CSKS.ZZOPERATOR = ODS_SAP_BUT000_OP.PARTNER
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_T8JV') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_T8JV
+              ON ODS_SAP_CSKS.VNAME = ODS_SAP_T8JV.VNAME
+                AND ODS_SAP_CSKS.BUKRS = ODS_SAP_T8JV.BUKRS
+            LEFT JOIN ( SELECT ODS_SAP_T8JG.BUKRS, ODS_SAP_T8JG.VNAME, ODS_SAP_T8JG.ETYPE, (ODS_SAP_T8J9A.OPSHARE + ODS_SAP_T8J9A.NOPSHARE) VERM_SHARE
+            FROM (SELECT *, MAX($PSAP_INVERTED_DATE_SUBTRACTOR$-TO_NUMBER(ODS_SAP_T8JG.FDATE)) OVER (PARTITION BY BUKRS, VNAME, ETYPE) AS MAX_FDATE
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_T8JG') }}
+            WHERE EGROUPACT = 'X'
+                AND DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_T8JG, (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_T8J9A') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_T8J9A
+            WHERE ($PSAP_INVERTED_DATE_SUBTRACTOR$-TO_NUMBER(ODS_SAP_T8JG.FDATE)) = ODS_SAP_T8JG.MAX_FDATE
+                AND ODS_SAP_T8J9A.BUKRS = ODS_SAP_T8JG.BUKRS
+                AND ODS_SAP_T8J9A.JOA = ODS_SAP_T8JG.VNAME
+                AND ODS_SAP_T8J9A.EGRUP = ODS_SAP_T8JG.EGRUP ) JV
+              ON ODS_SAP_CSKS.BUKRS = JV.BUKRS
+                AND ODS_SAP_CSKS.VNAME = JV.VNAME
+                AND ODS_SAP_CSKS.ETYPE = JV.ETYPE
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_TKT05') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y'
+                AND SPRAS = 'E') ODS_SAP_TKT05
+              ON ODS_SAP_CSKS.KOSAR = ODS_SAP_TKT05.KOSAR
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_TFKBT') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y'
+                AND SPRAS = 'E') ODS_SAP_TFKBT
+              ON ODS_SAP_CSKS.FUNC_AREA = ODS_SAP_TFKBT.FKBER
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_CC_ATTR') }} LOAD_VET_FIN_SAP_CC_ATTR
+              ON LTRIM(ODS_SAP_CSKS.KOSTL,'0') = LOAD_VET_FIN_SAP_CC_ATTR.CC_NUM
+        name: STAGE_FIN_SAP_COST_CENTER
+        noLinkRefs: []
+  name: STAGE_FIN_SAP_COST_CENTER
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

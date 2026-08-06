@@ -1,0 +1,125 @@
+fileVersion: 1
+id: 82d81a00-d38d-ee33-2f98-b82bd5df83dc
+name: STAGE_FIN_SAP_BI_APP_CC_ATTR
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+          stepCounter: 82d81a00-d38d-ee33-2f98-b82bd5df83dc
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+                stepCounter: e838b240-5401-1e50-c5fe-28d3cf70a1d6
+            transform: "TARGET.CC_NUM"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6504db6f-f23f-f4af-4943d9061d61
+          stepCounter: 82d81a00-d38d-ee33-2f98-b82bd5df83dc
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Foreman Name manually assigned to cost center
+        name: MANUAL_FOREMAN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ecc2e9c3-ddb0-7e7d-a223c1dc5c3f
+                stepCounter: e838b240-5401-1e50-c5fe-28d3cf70a1d6
+            transform: "TARGET.MANUAL_FOREMAN"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7e64f220-98ad-ef05-3289d3d319c0
+          stepCounter: 82d81a00-d38d-ee33-2f98-b82bd5df83dc
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: '"BATTERY" value manually assigned to Cost Center'
+        name: BATTERY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ecc2e9c3-ddb0-7e7d-a223c1dc5c3f
+                stepCounter: e838b240-5401-1e50-c5fe-28d3cf70a1d6
+            transform: "TARGET.BATTERY"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 82d81a00-d38d-ee33-2f98-b82bd5df83dc
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: DSS_UPDATE_TIME
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_BI_APP_T_APP_COST_CENTER_ATTRIBUTES_MANUAL: e838b240-5401-1e50-c5fe-28d3cf70a1d6
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_BI_APP_T_APP_COST_CENTER_ATTRIBUTES_MANUAL
+        join:
+          joinCondition: |-
+            FROM (SELECT C.CC_NUM, C.MANUAL_FOREMAN, C.BATTERY
+            FROM (SELECT CC_NUM, "'MANUAL_FOREMAN'" AS MANUAL_FOREMAN, "'BATTERY'" AS BATTERY
+            FROM ( SELECT CC_NUM ,ATTRIBUTE_KEY ,VALUE
+            FROM WS_DATA_STORE.ODS_BI_APP_T_APP_COST_CENTER_ATTRIBUTES_MANUAL
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') AS A PIVOT (MAX(A.VALUE) FOR A.ATTRIBUTE_KEY IN ('MANUAL_FOREMAN','BATTERY'))) AS C ) AS TARGET
+        name: STAGE_FIN_SAP_BI_APP_CC_ATTR
+        noLinkRefs: []
+  name: STAGE_FIN_SAP_BI_APP_CC_ATTR
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

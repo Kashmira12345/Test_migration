@@ -1,0 +1,262 @@
+fileVersion: 1
+id: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+name: STAGE_FIN_SAP_COST_CENTER_ECON_ATTR
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e60b4854-cfb2-d92a-a6f035171bb4
+          stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: UNION SOURCE
+        isBusinessKey: true
+        name: SOURCE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "'CDM_ECONOMICS'"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+          stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aa53ca0b-fd85-c4f5-9fa156f7a2cc
+                stepCounter: 0a05fcb7-1248-4861-983c-04342d77830f
+            transform: "NULLIF(TRIM(LTRIM(TARGET.CC,'0'),' '),'')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dee9f638-a88d-6849-e9af37b72adf
+          stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Number CC_NUM rows ordered by Status Date Descending
+        name: CC_OCCURRENCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "ROW_NUMBER() OVER (     PARTITION BY TARGET.CC      ORDER BY         TARGET.VOLUME_YEAR ASC,         TARGET.CAPITAL_YEAR ASC,         TARGET.BUDGET_YEAR ASC,         TARGET.PRODUCTION_ENGINEER DESC,         TARGET.EXPLOITATION_ENGINEER DESC,         TARGET.PLAY DESC,         TARGET.WELL_COUNT_YEAR DESC,         TARGET.RIG_RELEASE_DATE DESC     )  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9212ec3f-1f98-8570-d06d7c0c28f9
+          stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: BUDGET_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9212ec3f-1f98-8570-d06d7c0c28f9
+                stepCounter: 0a05fcb7-1248-4861-983c-04342d77830f
+            transform: "TARGET.BUDGET_YEAR"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1c8c220-68f4-30d7-6722e33524e1
+          stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: CAPITAL_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1c8c220-68f4-30d7-6722e33524e1
+                stepCounter: 0a05fcb7-1248-4861-983c-04342d77830f
+            transform: "TARGET.CAPITAL_YEAR"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3bd8cf44-827d-fb5a-e260d7826acd
+          stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: VOLUME_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3bd8cf44-827d-fb5a-e260d7826acd
+                stepCounter: 0a05fcb7-1248-4861-983c-04342d77830f
+            transform: "TARGET.VOLUME_YEAR"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ab62f4c9-dab8-3c9e-46cd168a7d1a
+          stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: PRODUCTION_ENGINEER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ab62f4c9-dab8-3c9e-46cd168a7d1a
+                stepCounter: 0a05fcb7-1248-4861-983c-04342d77830f
+            transform: "TARGET.PRODUCTION_ENGINEER"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6aed45f4-6ab9-f41d-7f9fd9c6bc4b
+          stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: EXPLOITATION_ENGINEER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6aed45f4-6ab9-f41d-7f9fd9c6bc4b
+                stepCounter: 0a05fcb7-1248-4861-983c-04342d77830f
+            transform: "TARGET.EXPLOITATION_ENGINEER"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a216efc-25c6-0a4a-4c0bc99ad77f
+          stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: ""
+        name: PLAY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a216efc-25c6-0a4a-4c0bc99ad77f
+                stepCounter: 0a05fcb7-1248-4861-983c-04342d77830f
+            transform: "TARGET.PLAY"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 359358f4-4d34-b26e-7761ff66b79b
+          stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: WELL_COUNT_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 359358f4-4d34-b26e-7761ff66b79b
+                stepCounter: 0a05fcb7-1248-4861-983c-04342d77830f
+            transform: "TARGET.WELL_COUNT_YEAR"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 226bda78-3977-3aca-a627d3ee3253
+          stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: RIG_RELEASE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 226bda78-3977-3aca-a627d3ee3253
+                stepCounter: 0a05fcb7-1248-4861-983c-04342d77830f
+            transform: "TARGET.RIG_RELEASE_DATE"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          VIEW_MOSAIC_CDM_ECONOMICS: 0a05fcb7-1248-4861-983c-04342d77830f
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: EDW
+            nodeName: VIEW_MOSAIC_CDM_ECONOMICS
+        join:
+          joinCondition: |-
+            FROM ( SELECT DISTINCT NULLIF(TRIM(LTRIM(CC,'0'),' '),'') AS CC, BUDGET_YEAR, CAPITAL_YEAR, VOLUME_YEAR, PRODUCTION_ENGINEER, EXPLOITATION_ENGINEER, PLAY, WELL_COUNT_YEAR, RIG_RELEASE_DATE
+            FROM {{ ref('EDW', 'VIEW_MOSAIC_CDM_ECONOMICS') }} VIEW_MOSAIC_CDM_ECONOMICS
+            WHERE VIEW_MOSAIC_CDM_ECONOMICS.ENTITY_STATE_ID = 0 ) AS TARGET
+        name: STAGE_FIN_SAP_COST_CENTER_ECON_ATTR
+        noLinkRefs: []
+  name: STAGE_FIN_SAP_COST_CENTER_ECON_ATTR
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

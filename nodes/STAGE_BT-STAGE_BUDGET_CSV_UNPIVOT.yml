@@ -1,0 +1,424 @@
+fileVersion: 1
+id: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+name: STAGE_BUDGET_CSV_UNPIVOT
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: "Unpivot month columns into ACCT_PER_DATE (Last Day Month)    ** Customized Update Script **"
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0ba12d44-0088-79fc-01038ae10fd1
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Common ID amungst all csv files (last 14 digits - timestamp)
+        name: FILE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0ba12d44-0088-79fc-01038ae10fd1
+                stepCounter: 9b4008c2-1515-80db-9e0d-aa63bed04787
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 50893012-7be9-c491-4d11cd937b03
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Type of data in source CSV file. Prefix code of CSV file
+        name: LOAD_FILE_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 50893012-7be9-c491-4d11cd937b03
+                stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9212ec3f-1f98-8570-d06d7c0c28f9
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: BUDGET_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9212ec3f-1f98-8570-d06d7c0c28f9
+                stepCounter: 9b4008c2-1515-80db-9e0d-aa63bed04787
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78249657-653d-623c-42b6c0e11c46
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: ORG_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 78249657-653d-623c-42b6c0e11c46
+                stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7c039ad3-70ae-f36d-fdea14fc67ad
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: COST_CENTRE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7c039ad3-70ae-f36d-fdea14fc67ad
+                stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 759b1653-fdee-5721-c558aad497ba
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: FUNCTIONAL_AREA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 759b1653-fdee-5721-c558aad497ba
+                stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c40eb667-28cf-dcfb-437c5d221bf6
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: ACCOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c40eb667-28cf-dcfb-437c5d221bf6
+                stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4a97f64-fc98-8310-001ec71675d6
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: AFE_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c4a97f64-fc98-8310-001ec71675d6
+                stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1abf5347-72c5-1654-20d8ff72e5df
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: GROSS_OR_NET
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1abf5347-72c5-1654-20d8ff72e5df
+                stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a88821ee-3403-c388-77fde0e98394
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        name: ACTVY_PER_DATE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "LAST_DAY(TO_DATE(BUDGET_YEAR||ACCT_PER_DATE_MNTH,'YYYYMMDD'))"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb7615c6-d006-02b3-b36289893ed8
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        name: ACCT_PER_DATE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "LAST_DAY(TO_DATE(BUDGET_YEAR||ACCT_PER_DATE_MNTH,'YYYYMMDD'))"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 93037c7a-1a0c-bac0-a08bc747c258
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: Monthly Amount
+        name: AMT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "ACCT_PER_DATE_AMT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 92a3ce46-4379-bde2-001c1b4a9dc6
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: AMT_CURR_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 92a3ce46-4379-bde2-001c1b4a9dc6
+                stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 902c0a03-5586-391a-320d8f4e2206
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(4000)
+        defaultValue: ""
+        description: ""
+        name: VOL_UOM_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 902c0a03-5586-391a-320d8f4e2206
+                stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bdc91136-d0ba-aeb3-c253b3d5af9d
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: ORIG_FILENAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bdc91136-d0ba-aeb3-c253b3d5af9d
+                stepCounter: 9b4008c2-1515-80db-9e0d-aa63bed04787
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c76c63cf-4afb-1304-b6b4b1550b84
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE_LI
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1d51e98c-aa7a-deb4-c78e3aa11560
+                stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eab0cfe3-5cdd-be5f-9ccdb14699ec
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE_HDR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1d51e98c-aa7a-deb4-c78e3aa11560
+                stepCounter: 9b4008c2-1515-80db-9e0d-aa63bed04787
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 32c07c82-512e-f282-1f9f-5a2d012f7c78
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+                stepCounter: b789ca07-4185-192d-c7da-00bd8933007f
+            transform: "CURRENT_TIMESTAMP()"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STAGE_BUDGET_CSV_HEADER: 9b4008c2-1515-80db-9e0d-aa63bed04787
+          STAGE_BUDGET_CSV_MERGED: b789ca07-4185-192d-c7da-00bd8933007f
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE_BT
+            nodeName: STAGE_BUDGET_CSV_HEADER
+          - locationName: STAGE_BT
+            nodeName: STAGE_BUDGET_CSV_MERGED
+        join:
+          joinCondition: |-
+            FROM ( SELECT * , '0101' AS ACCT_PER_DATE_MNTH , JAN_AMT AS ACCT_PER_DATE_AMT
+            FROM WS_STAGE_BT.STAGE_BUDGET_CSV_MERGED
+            UNION ALL SELECT * , '0201' AS ACCT_PER_DATE_MNTH , FEB_AMT AS ACCT_PER_DATE_AMT
+            FROM WS_STAGE_BT.STAGE_BUDGET_CSV_MERGED
+            UNION ALL SELECT * , '0301' AS ACCT_PER_DATE_MNTH , MAR_AMT AS ACCT_PER_DATE_AMT
+            FROM WS_STAGE_BT.STAGE_BUDGET_CSV_MERGED
+            UNION ALL SELECT * , '0401' AS ACCT_PER_DATE_MNTH , APR_AMT AS ACCT_PER_DATE_AMT
+            FROM WS_STAGE_BT.STAGE_BUDGET_CSV_MERGED
+            UNION ALL SELECT * , '0501' AS ACCT_PER_DATE_MNTH , MAY_AMT AS ACCT_PER_DATE_AMT
+            FROM WS_STAGE_BT.STAGE_BUDGET_CSV_MERGED
+            UNION ALL SELECT * , '0601' AS ACCT_PER_DATE_MNTH , JUN_AMT AS ACCT_PER_DATE_AMT
+            FROM WS_STAGE_BT.STAGE_BUDGET_CSV_MERGED
+            UNION ALL SELECT * , '0701' AS ACCT_PER_DATE_MNTH , JUL_AMT AS ACCT_PER_DATE_AMT
+            FROM WS_STAGE_BT.STAGE_BUDGET_CSV_MERGED
+            UNION ALL SELECT * , '0801' AS ACCT_PER_DATE_MNTH , AUG_AMT AS ACCT_PER_DATE_AMT
+            FROM WS_STAGE_BT.STAGE_BUDGET_CSV_MERGED
+            UNION ALL SELECT * , '0901' AS ACCT_PER_DATE_MNTH , SEP_AMT AS ACCT_PER_DATE_AMT
+            FROM WS_STAGE_BT.STAGE_BUDGET_CSV_MERGED
+            UNION ALL SELECT * , '1001' AS ACCT_PER_DATE_MNTH , OCT_AMT AS ACCT_PER_DATE_AMT
+            FROM WS_STAGE_BT.STAGE_BUDGET_CSV_MERGED
+            UNION ALL SELECT * , '1101' AS ACCT_PER_DATE_MNTH , NOV_AMT AS ACCT_PER_DATE_AMT
+            FROM WS_STAGE_BT.STAGE_BUDGET_CSV_MERGED
+            UNION ALL SELECT * , '1201' AS ACCT_PER_DATE_MNTH , DEC_AMT AS ACCT_PER_DATE_AMT
+            FROM WS_STAGE_BT.STAGE_BUDGET_CSV_MERGED ) STAGE_BUDGET_CSV_MERGED
+            JOIN WS_STAGE_BT.STAGE_BUDGET_CSV_HEADER
+              ON STAGE_BUDGET_CSV_HEADER.FILE_ID = STAGE_BUDGET_CSV_MERGED.FILE_ID
+        name: STAGE_BUDGET_CSV_UNPIVOT
+        noLinkRefs: []
+  name: STAGE_BUDGET_CSV_UNPIVOT
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

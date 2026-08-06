@@ -1,0 +1,100 @@
+fileVersion: 1
+id: 5ff50ac3-3ee8-5922-4e1b-ec001d532673
+name: STAGE_FIN_SAP_GROSS_NET
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b3772b7-cc7a-21ff-cf9462714a73
+          stepCounter: 5ff50ac3-3ee8-5922-4e1b-ec001d532673
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Indicates amounts are gross or net.
+        isBusinessKey: true
+        name: GROSS_OR_NET_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b3772b7-cc7a-21ff-cf9462714a73
+                stepCounter: 120d9554-abf5-401c-24c9-efb853e45a1d
+            transform: "TARGET.GROSS_OR_NET_CODE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 35ba4a26-2e21-0c23-a00a5601aba3
+          stepCounter: 5ff50ac3-3ee8-5922-4e1b-ec001d532673
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: DESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "TARGET.DESCRIPTION"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 49eeccb8-c80f-decc-ff6f7ba97193
+          stepCounter: 5ff50ac3-3ee8-5922-4e1b-ec001d532673
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: ""
+        name: SORT_KEY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "TARGET.SORT_KEY"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_SAP_SKA1: 120d9554-abf5-401c-24c9-efb853e45a1d
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_SKA1
+        join:
+          joinCondition: |-
+            FROM ( SELECT 'G' AS GROSS_OR_NET_CODE, 'Gross' AS DESCRIPTION, 1 as SORT_KEY
+            UNION SELECT 'N' AS GROSS_OR_NET_CODE, 'Net' AS DESCRIPTION, 2 as SORT_KEY ) AS TARGET
+        name: STAGE_FIN_SAP_GROSS_NET
+        noLinkRefs: []
+  name: STAGE_FIN_SAP_GROSS_NET
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

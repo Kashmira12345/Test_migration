@@ -1,0 +1,285 @@
+fileVersion: 1
+id: 498c46bd-3035-b424-75ff-6dbf6d523135
+name: STAGE_FIN_SAP_COST_CENTER_FDC_ATTR
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e60b4854-cfb2-d92a-a6f035171bb4
+          stepCounter: 498c46bd-3035-b424-75ff-6dbf6d523135
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: UNION SOURCE
+        name: SOURCE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "TARGET.SOURCE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+          stepCounter: 498c46bd-3035-b424-75ff-6dbf6d523135
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: The cost centre which the reporting entity is representing.
+        name: CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5a23dfc9-ff00-ded1-f4d7f5c4de47
+                stepCounter: 25548ef3-08f5-5812-b243-6c4f50853ef8
+            transform: "TARGET.CC_NUM  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dee9f638-a88d-6849-e9af37b72adf
+          stepCounter: 498c46bd-3035-b424-75ff-6dbf6d523135
+        config: {}
+        dataType: integer
+        defaultValue: ""
+        description: Number CC_NUM rows ordered by Status Date Descending
+        name: CC_OCCURRENCE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "ROW_NUMBER() OVER (PARTITION BY TARGET.CC_NUM ORDER BY TARGET.STATUS_DATE DESC, TARGET.IDFLOWNET, TARGET.FACILITY_IDREC)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec8796fd-3c92-085b-d53f4892020c
+          stepCounter: 498c46bd-3035-b424-75ff-6dbf6d523135
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: IDFLOWNET
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ec8796fd-3c92-085b-d53f4892020c
+                stepCounter: 25548ef3-08f5-5812-b243-6c4f50853ef8
+            transform: "TARGET.IDFLOWNET"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d693edcc-73ca-9607-76537f2cd6ec
+          stepCounter: 498c46bd-3035-b424-75ff-6dbf6d523135
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: NETWORK_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad32e604-67fc-4355-38334fbddf3e
+                stepCounter: f766ece4-d7ae-59bf-1ded-1825e56f5578
+            transform: "TARGET.NETWORK_NAME"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e576c324-1dad-a88e-d2c00f3c8b8a
+          stepCounter: 498c46bd-3035-b424-75ff-6dbf6d523135
+        config: {}
+        dataType: varchar(32)
+        defaultValue: ""
+        description: ""
+        name: FACILITY_IDREC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 42419fd8-fec4-69ad-45673d6f7b20
+                stepCounter: 25548ef3-08f5-5812-b243-6c4f50853ef8
+            transform: "TARGET.FACILITY_IDREC"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8eecbe65-d39d-54c1-739486ee7da1
+          stepCounter: 498c46bd-3035-b424-75ff-6dbf6d523135
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: FACILITY_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad32e604-67fc-4355-38334fbddf3e
+                stepCounter: a0862821-70ca-9351-60f8-c9d42bf3a640
+            transform: "TARGET.FACILITY_NAME"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7e64f220-98ad-ef05-3289d3d319c0
+          stepCounter: 498c46bd-3035-b424-75ff-6dbf6d523135
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: BATTERY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 734f2433-6eed-ea80-92de284ab60e
+                stepCounter: 25548ef3-08f5-5812-b243-6c4f50853ef8
+            transform: "TARGET.BATTERY"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6504db6f-f23f-f4af-4943d9061d61
+          stepCounter: 498c46bd-3035-b424-75ff-6dbf6d523135
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: MANUAL_FOREMAN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6504db6f-f23f-f4af-4943d9061d61
+                stepCounter: 82d81a00-d38d-ee33-2f98-b82bd5df83dc
+            transform: "TARGET.MANUAL_FOREMAN"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 88eec076-c04a-5878-4e6d16641b95
+          stepCounter: 498c46bd-3035-b424-75ff-6dbf6d523135
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: STATUS_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2fe9900-086f-27d3-824d84adc8f4
+                stepCounter: 5267f549-e2d8-0600-58e6-3e7c834b0957
+            transform: "TARGET.STATUS_DATE"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_PVIEW_PVT_PVFACILITY: a0862821-70ca-9351-60f8-c9d42bf3a640
+          ODS_PVIEW_PVT_PVFLOWNETHEADER: f766ece4-d7ae-59bf-1ded-1825e56f5578
+          ODS_PVIEW_PVT_PVUNIT: 25548ef3-08f5-5812-b243-6c4f50853ef8
+          ODS_PVIEW_PVT_PVUNITCOMPSTATUS: 5267f549-e2d8-0600-58e6-3e7c834b0957
+          STAGE_FIN_SAP_BI_APP_CC_ATTR: 82d81a00-d38d-ee33-2f98-b82bd5df83dc
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVFACILITY
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVFLOWNETHEADER
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNIT
+          - locationName: DATA_STORE
+            nodeName: ODS_PVIEW_PVT_PVUNITCOMPSTATUS
+          - locationName: STAGE_BT
+            nodeName: STAGE_FIN_SAP_BI_APP_CC_ATTR
+        join:
+          joinCondition: |-
+            FROM ( (SELECT DISTINCT 'DS_PRODVIEW' AS SOURCE, NULLIF(TRIM(LTRIM(ODS_PVIEW_PVT_PVUNIT.COSTCENTERIDA,'0'),' '),'') AS CC_NUM, ODS_PVIEW_PVT_PVUNIT.IDFLOWNET, ODS_PVIEW_PVT_PVFLOWNETHEADER.NAME AS NETWORK_NAME, ODS_PVIEW_PVT_PVUNIT.IDRECFACILITYCALC AS FACILITY_IDREC, ODS_PVIEW_PVT_PVFACILITY.NAME AS FACILITY_NAME, ODS_PVIEW_PVT_PVUNIT.USERTXT2 AS BATTERY, STAGE_FIN_SAP_BI_APP_CC_ATTR.MANUAL_FOREMAN AS MANUAL_FOREMAN, NVL(ODS_PVIEW_PVT_PVUNITCOMPSTATUS.DTTM,TO_TIMESTAMP('01011900','DDMMYYYY')) AS STATUS_DATE
+            FROM WS_DATA_STORE.ODS_PVIEW_PVT_PVUNIT ODS_PVIEW_PVT_PVUNIT
+            LEFT JOIN WS_DATA_STORE.ODS_PVIEW_PVT_PVUNITCOMP ODS_PVIEW_PVT_PVUNITCOMP
+              ON ODS_PVIEW_PVT_PVUNIT.IDFLOWNET = ODS_PVIEW_PVT_PVUNITCOMP.IDFLOWNET
+                AND ODS_PVIEW_PVT_PVUNIT.IDREC = ODS_PVIEW_PVT_PVUNITCOMP.IDRECPARENT
+                AND ODS_PVIEW_PVT_PVUNITCOMP.DSS_CURRENT_FLAG = 'Y'
+                AND ODS_PVIEW_PVT_PVUNITCOMP.DSS_DELETE_FLAG != 'Y'
+            LEFT JOIN WS_DATA_STORE.ODS_PVIEW_PVT_PVFLOWNETHEADER ODS_PVIEW_PVT_PVFLOWNETHEADER
+              ON ODS_PVIEW_PVT_PVUNIT.IDFLOWNET = ODS_PVIEW_PVT_PVFLOWNETHEADER.IDFLOWNET
+                AND ODS_PVIEW_PVT_PVFLOWNETHEADER.DSS_CURRENT_FLAG = 'Y'
+                AND ODS_PVIEW_PVT_PVFLOWNETHEADER.DSS_DELETE_FLAG != 'Y'
+            LEFT JOIN WS_DATA_STORE.ODS_PVIEW_PVT_PVFACILITY ODS_PVIEW_PVT_PVFACILITY
+              ON ODS_PVIEW_PVT_PVUNIT.IDRECFACILITYCALC = ODS_PVIEW_PVT_PVFACILITY.IDREC
+                AND ODS_PVIEW_PVT_PVFACILITY.DSS_CURRENT_FLAG = 'Y'
+                AND ODS_PVIEW_PVT_PVFACILITY.DSS_DELETE_FLAG != 'Y'
+            LEFT JOIN WS_DATA_STORE.ODS_PVIEW_PVT_PVROUTESETROUTE ODS_PVIEW_PVT_PVROUTESETROUTE
+              ON ODS_PVIEW_PVT_PVUNIT.IDRECROUTESETROUTECALC = ODS_PVIEW_PVT_PVROUTESETROUTE.IDREC
+                AND ODS_PVIEW_PVT_PVROUTESETROUTE.DSS_CURRENT_FLAG = 'Y'
+                AND ODS_PVIEW_PVT_PVROUTESETROUTE.DSS_DELETE_FLAG != 'Y'
+            LEFT JOIN WS_DATA_STORE.ODS_PVIEW_PVT_PVUNITCOMPSTATUS ODS_PVIEW_PVT_PVUNITCOMPSTATUS
+              ON ODS_PVIEW_PVT_PVUNITCOMP.IDFLOWNET = ODS_PVIEW_PVT_PVUNITCOMPSTATUS.IDFLOWNET
+                AND ODS_PVIEW_PVT_PVUNITCOMP.IDREC = ODS_PVIEW_PVT_PVUNITCOMPSTATUS.IDRECPARENT
+                AND ODS_PVIEW_PVT_PVUNITCOMPSTATUS.DSS_CURRENT_FLAG = 'Y'
+                AND ODS_PVIEW_PVT_PVUNITCOMPSTATUS.DSS_DELETE_FLAG != 'Y'
+            LEFT JOIN WS_STAGE_BT.STAGE_FIN_SAP_BI_APP_CC_ATTR STAGE_FIN_SAP_BI_APP_CC_ATTR
+              ON ODS_PVIEW_PVT_PVUNIT.COSTCENTERIDA = STAGE_FIN_SAP_BI_APP_CC_ATTR.CC_NUM
+            WHERE ODS_PVIEW_PVT_PVUNIT.COSTCENTERIDA IS NOT NULL
+                AND ODS_PVIEW_PVT_PVUNIT.DSS_CURRENT_FLAG = 'Y'
+                AND ODS_PVIEW_PVT_PVUNIT.DSS_DELETE_FLAG != 'Y' )
+            UNION (SELECT DISTINCT 'BI_APP' AS SOURCE, NULLIF(TRIM(LTRIM(STAGE_FIN_SAP_BI_APP_CC_ATTR.CC_NUM,'0'),' '),'') CC_NUM, NULL IDFLOWNET, NULL NETWORK_NAME, NULL FACILITY_IDREC, NULL FACILITY_NAME, STAGE_FIN_SAP_BI_APP_CC_ATTR.BATTERY, STAGE_FIN_SAP_BI_APP_CC_ATTR.MANUAL_FOREMAN, CAST(STAGE_FIN_SAP_BI_APP_CC_ATTR.DSS_UPDATE_TIME AS TIMESTAMP) AS STATUS_DATE
+            FROM WS_STAGE_BT.STAGE_FIN_SAP_BI_APP_CC_ATTR STAGE_FIN_SAP_BI_APP_CC_ATTR
+            WHERE NOT EXISTS (SELECT *
+            FROM WS_DATA_STORE.ODS_PVIEW_PVT_PVUNIT
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y'
+                AND COSTCENTERIDA = STAGE_FIN_SAP_BI_APP_CC_ATTR.CC_NUM) ) ) AS TARGET
+        name: STAGE_FIN_SAP_COST_CENTER_FDC_ATTR
+        noLinkRefs: []
+  name: STAGE_FIN_SAP_COST_CENTER_FDC_ATTR
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

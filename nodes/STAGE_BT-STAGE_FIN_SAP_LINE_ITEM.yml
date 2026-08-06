@@ -1,0 +1,1343 @@
+fileVersion: 1
+id: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+name: STAGE_FIN_SAP_LINE_ITEM
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9fb7f799-1cbb-a17c-cf4a2245521f
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(38)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: LI_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 56d604ee-9eec-a712-49ca4ad6fee5
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: "ODS_SAP_ACDOCA.RLDNR||  ODS_SAP_ACDOCA.RBUKRS||  TO_CHAR(ODS_SAP_ACDOCA.GJAHR)||  ODS_SAP_ACDOCA.BELNR||   ODS_SAP_ACDOCA.DOCLN"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b97391c1-8ba2-10fe-7252a3b752b5
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Company Code
+        name: DEST_ORG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: de3f16a7-f12a-cab8-9d3b1e368cc8
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6eea38e1-a06b-88d1-25482ffaa435
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: Company Name
+        name: DEST_ORG_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 771a25e4-2be3-6779-8fd20c5cb72d
+                stepCounter: 2b93073f-b0bc-77cb-283c-1f38c8a9afa0
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d6298608-dc87-d4bd-2d7bd82c657f
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: Undefined in SAP Context
+        name: GL_SUB_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a88821ee-3403-c388-77fde0e98394
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: Production Date
+        name: ACTVY_PER_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8b312cad-3fdb-0f8a-cd873927f4e1
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: "LAST_DAY(COALESCE(TO_DATE(PRODPER),BUDAT))"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb7615c6-d006-02b3-b36289893ed8
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: Posting Date
+        name: ACCT_PER_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e43841f4-1b61-8c14-c3e33e479664
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: "LAST_DAY(BUDAT)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3d738923-0215-aa49-8b71fe34f572
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: Undefined in SAP Context
+        name: ALLOC_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e1ff2f77-1a96-51a7-2878c51a15b7
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: Document Date
+        name: BILLED_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f3842a9a-9dd5-c9b6-8084bbffc291
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa58d543-5fa2-c1b2-a10016827dd4
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: number(10)
+        defaultValue: ""
+        description: Undefined in SAP Context
+        name: GOVERN_AGR_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b9d9d30d-b2e4-7ef6-9abc03f0379d
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Recovery Indicator
+        name: GOVERN_AGR_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b8f8aaac-6aa2-0447-cbe54c1247eb
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: "  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e4b41eef-ccaf-0de3-298a57b85f63
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(72)
+        defaultValue: ""
+        description: Custom Text Field
+        name: LI_REM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9de06bf9-0e48-3b61-9d16bbb87872
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: "  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26502b2d-157d-9e97-173505602bfa
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Base Unit of Measure
+        name: USER_DEFINED_TAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9b45ce37-c30e-1e56-5439d0fffe4c
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: "SUBSTR(ODS_SAP_ACDOCA.RUNIT,1,10)  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 948a3e48-b869-839d-0cf1846e4e56
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Undefined in SAP Context
+        name: GOVERN_AGR_OVERRIDE_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 48ff1203-1f36-cdb6-3dffa808f6cf
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: Undefined in SAP Context
+        name: JIB_REVERSED_FLAG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4196bb26-4899-5e3c-667c966c9fc7
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Ledger
+        name: LEDGER_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8adb82de-6336-ca4c-9d987f635432
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 130901da-efa1-0ec2-481b43b37434
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: number(4)
+        defaultValue: ""
+        description: Fiscal Year
+        name: POSTING_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8d442f8f-d254-f0da-bc92c62451b3
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 48e1b552-7b72-b60d-18211dc193e5
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Document Type Code
+        name: DOCUMENT_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bf806a84-22a3-4ace-f1c573f2b789
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3026bdc1-28d5-4230-45dea2cdeacf
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: Document Type
+        name: DOCUMENT_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9a759361-42e2-2047-c2316ad946cb
+                stepCounter: b9f12c00-96f4-e2f3-bf75-1f6949cab768
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5e85f4f1-664b-7901-d87e572aa297
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Document Number
+        name: DOCUMENT_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 56d604ee-9eec-a712-49ca4ad6fee5
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f3f515a3-926e-6ef5-bf71e45cc26a
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Document Line Number
+        name: DOCUMENT_LINE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b4861fea-3a8e-bc50-7755bcb65846
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83b1f59b-8b93-9493-98fa5b095b50
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(35)
+        defaultValue: ""
+        description: Joint Venture
+        name: JOINT_VENTURE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b857ce0-2eb0-ad8c-bd888851c4b2
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8c836278-2e2f-6da9-3fe5ba5e28d4
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Equity Type
+        name: EQUITY_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bcd84b23-4cda-c3aa-000ebbe8710b
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 08185629-5d83-3ddc-a292fee76f1b
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: Equity Group
+        name: EQUITY_GROUP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2b22b893-da13-be26-022621db995b
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b37a8072-a8e0-fcdb-2f5d7da65cc9
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Purchasing Document Number
+        name: PURCHASING_DOCUMENT_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6695a300-d5c2-52fd-7eef5f106ce1
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9ed8acdf-aad7-6069-b0b8e256ea4e
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Partner
+        name: PARTNER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 393d0b29-9dda-8e4e-cfbb246fbc24
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c40eb667-28cf-dcfb-437c5d221bf6
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: Account Number
+        name: ACCOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f8cd3f3-4b51-ff13-4080974ef7b6
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: "LTRIM(ODS_SAP_ACDOCA.RACCT,'0')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 759b1653-fdee-5721-c558aad497ba
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(16)
+        defaultValue: ""
+        description: Functional Area
+        name: FUNCTIONAL_AREA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b56cbd80-a826-4e7f-7dd45a43f6ff
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3b3170a8-cf5f-bb22-fb1268df2d5c
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: Functional Area Name
+        name: FUNCTIONAL_AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d5b86d50-0bac-8d65-dc4179915f94
+                stepCounter: a0617d71-ae05-d657-35d5-a9d106776f3b
+            transform: "ODS_SAP_TFKBT_LI.FKBTX"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(16)
+        defaultValue: ""
+        description: Cost Center
+        name: CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 64eb75a0-010e-63b4-d4d223b17018
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: "NULLIF(TRIM(LTRIM(ODS_SAP_ACDOCA.RCNTR,'0'),' '),'')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 919cc08e-acd1-ccb6-27f55ebc3a08
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(24)
+        defaultValue: ""
+        description: WBS Element
+        name: AFE_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e1f5304a-8300-2a60-22b6a67dc1af
+                stepCounter: 192e8a32-8e6f-53d8-1a44-e07dc2ea2843
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0be6599f-967b-e423-6be434b6f787
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: WBS Functional Area
+        name: AFE_FUNCTIONAL_AREA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9ba9545f-412c-2f92-c6a739f4708b
+                stepCounter: 192e8a32-8e6f-53d8-1a44-e07dc2ea2843
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2a137457-424b-29ff-843813222137
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: WBS Functional Area Name
+        name: AFE_FUNCTIONAL_AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d5b86d50-0bac-8d65-dc4179915f94
+                stepCounter: a0617d71-ae05-d657-35d5-a9d106776f3b
+            transform: "ODS_SAP_TFKBT_WBS.FKBTX"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 49215062-828a-e8b3-e6cf35408c88
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: WBS Requesting Cost Center
+        name: AFE_CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 34b0eb71-8cc9-70b6-152579e3aae1
+                stepCounter: 192e8a32-8e6f-53d8-1a44-e07dc2ea2843
+            transform: "NULLIF(TRIM(LTRIM(ODS_SAP_PRPS.AKSTL,'0'),' '),'')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ba7d47f-b5fd-e79d-55d7cd604b17
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(40)
+        defaultValue: ""
+        description: WBS Requesting Cost Center Functional Area
+        name: AFE_CC_FUNCTIONAL_AREA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9ba9545f-412c-2f92-c6a739f4708b
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "ODS_SAP_CSKS_WBS.FUNC_AREA"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 19a27866-19bc-4319-33e92781743d
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: WBS Requesting Cost Center Functional Area Name
+        name: AFE_CC_FUNCTIONAL_AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d5b86d50-0bac-8d65-dc4179915f94
+                stepCounter: a0617d71-ae05-d657-35d5-a9d106776f3b
+            transform: "ODS_SAP_TFKBT_WBS_CC.FKBTX"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7fde99d9-c095-e6b6-999e3c188a79
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(12)
+        defaultValue: ""
+        description: Order Number
+        name: ORDER_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f843c628-82af-241e-f9825d210111
+                stepCounter: 2f6ce941-964a-76a5-c5f9-d4469b754109
+            transform: "NULLIF(TRIM(LTRIM(ODS_SAP_ACDOCA.AUFNR,'0'),' '),'')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bc2d44ac-5982-065b-d76a2ab18cc9
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(16)
+        defaultValue: ""
+        description: Order Functional Area
+        name: ORDER_FUNCTIONAL_AREA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9ba9545f-412c-2f92-c6a739f4708b
+                stepCounter: 2f6ce941-964a-76a5-c5f9-d4469b754109
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4552c9f7-05b3-9ce3-21e499f0b8e8
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: Order Functional Area Name
+        name: ORDER_FUNCTIONAL_AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d5b86d50-0bac-8d65-dc4179915f94
+                stepCounter: a0617d71-ae05-d657-35d5-a9d106776f3b
+            transform: "ODS_SAP_TFKBT_ORDER.FKBTX"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 416d145e-78d3-3352-82a165eb9610
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Order Cost Center for Basic Settlement
+        name: ORDER_CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f8a9e69-afb8-d1a2-bce1ca3dbb15
+                stepCounter: 2f6ce941-964a-76a5-c5f9-d4469b754109
+            transform: "NULLIF(TRIM(LTRIM(ODS_SAP_AUFK.KOSTL,'0'),' '),'')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5d4ddafb-1d8b-6627-ed4ac24137c1
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Order Requesting Cost Center
+        name: ORDER_REQ_CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 34b0eb71-8cc9-70b6-152579e3aae1
+                stepCounter: 2f6ce941-964a-76a5-c5f9-d4469b754109
+            transform: "NULLIF(TRIM(LTRIM(ODS_SAP_AUFK.AKSTL,'0'),' '),'')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 04d64732-39d1-1707-0664bd026b73
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Order Responsible Cost Center
+        name: ORDER_RESP_CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 45d8973c-8d1f-8463-18e879105ca8
+                stepCounter: 2f6ce941-964a-76a5-c5f9-d4469b754109
+            transform: "NULLIF(TRIM(LTRIM(ODS_SAP_AUFK.KOSTV,'0'),' '),'')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f99ccfa1-7a61-4ebe-4ab1694e4cbe
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(16)
+        defaultValue: ""
+        description: Order Cost Center Functional Area
+        name: ORDER_CC_FUNCTIONAL_AREA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9ba9545f-412c-2f92-c6a739f4708b
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "ODS_SAP_CSKS_ORDER.FUNC_AREA"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: faf2528b-880a-742c-617521384854
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: Order Cost Center Functional Area Name
+        name: ORDER_CC_FUNCTIONAL_AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d5b86d50-0bac-8d65-dc4179915f94
+                stepCounter: a0617d71-ae05-d657-35d5-a9d106776f3b
+            transform: "ODS_SAP_TFKBT_ORDER_CC.FKBTX"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7b2f02f4-8bee-3d51-1dd2d34379c7
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(24)
+        defaultValue: ""
+        description: Work breakdown structure element (WBS element)
+        name: ORDER_AFE_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e1f5304a-8300-2a60-22b6a67dc1af
+                stepCounter: 192e8a32-8e6f-53d8-1a44-e07dc2ea2843
+            transform: "ODS_SAP_PRPS_ORDER.POSID"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5b3383dd-0704-c16d-e43c1428feeb
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(16)
+        defaultValue: ""
+        description: Order WBS Functional Area
+        name: ORDER_AFE_FUNCTIONAL_AREA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9ba9545f-412c-2f92-c6a739f4708b
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "ODS_SAP_PRPS_ORDER.FUNC_AREA"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 426f441f-f4a4-69a5-c6ce4eca09ed
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: Order WBS Functional Area Name
+        name: ORDER_AFE_FUNCTIONAL_AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d5b86d50-0bac-8d65-dc4179915f94
+                stepCounter: a0617d71-ae05-d657-35d5-a9d106776f3b
+            transform: "ODS_SAP_TFKBT_ORDER_WBS.FKBTX"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f072d4a1-87bb-7d73-a1cdd8c8dc9f
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Order WBS Cost Center
+        name: ORDER_AFE_CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 34b0eb71-8cc9-70b6-152579e3aae1
+                stepCounter: 192e8a32-8e6f-53d8-1a44-e07dc2ea2843
+            transform: "NULLIF(TRIM(LTRIM(ODS_SAP_PRPS_ORDER.AKSTL,'0'),' '),'')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7f0007d8-2445-c87f-3a1e50162aec
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(16)
+        defaultValue: ""
+        description: Order WBS Cost Center Functional Area
+        name: ORDER_AFE_CC_FUNCTIONAL_AREA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9ba9545f-412c-2f92-c6a739f4708b
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "ODS_SAP_CSKS_ORDER_WBS.FUNC_AREA"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7665e43b-64cd-5df8-066d4bab36ef
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(25)
+        defaultValue: ""
+        description: Order WBS Cost Center Functional Area Name
+        name: ORDER_AFE_CC_FUNCTIONAL_AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d5b86d50-0bac-8d65-dc4179915f94
+                stepCounter: a0617d71-ae05-d657-35d5-a9d106776f3b
+            transform: "ODS_SAP_TFKBT_ORDER_WBS_CC.FKBTX"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 811e381a-16ef-a274-97da13529122
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: Lease Ops Line Number via Account/Functional Area mapping
+        name: LINE_NO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb0becb1-7c11-49a9-89ef-dee9b11a951f
+                stepCounter: 4f10e7af-2eb4-4e98-adb8-ef8362a073d6
+            transform: "CASE --assign line no if Docment Type is not NULL and account >400000 XOR =120060 XOR <> 791000      WHEN NULLIF(ODS_SAP_ACDOCA.BLART,'') IS NULL THEN NULL   WHEN LTRIM(ODS_SAP_ACDOCA.RACCT,'0') = '791000' THEN NULL   WHEN TO_NUMBER(LTRIM(ODS_SAP_ACDOCA.RACCT,'0')) < 400000 AND LTRIM(ODS_SAP_ACDOCA.RACCT,'0') <> '120060' THEN NULL      ELSE     CASE     -- LI Order Reference     WHEN NULLIF(TRIM(LTRIM(ODS_SAP_ACDOCA.AUFNR,'0'),' '),'') IS NOT NULL THEN      CASE       -- Order Non-Capital WBS Reference      WHEN NVL(ODS_SAP_AUFK.PSPEL,0) <> 0 AND NVL(LOAD_VET_FIN_SAP_AFE_TYPE_ATTR_ORDER.NON_CAPITAL_FLAG,'Y') = 'Y' THEN       COALESCE(LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_WBS.LINE_NO,          LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_WBS_CC.LINE_NO,          LOAD_VET_FIN_SAP_LEASE_OPS_HIER_ORDER_FA.LINE_NO,          LOAD_VET_FIN_SAP_LEASE_OPS_HIER_ORDER_CC_FA.LINE_NO,                  LOAD_VET_FIN_SAP_LEASE_OPS_HIER_ORDER_WBS_FA.LINE_NO,          LOAD_VET_FIN_SAP_LEASE_OPS_HIER_ORDER_WBS_CC_FA.LINE_NO,                  LOAD_VET_FIN_SAP_LEASE_OPS_HIER_NO_FA.LINE_NO)       -- Order Capital WBS Reference      WHEN NVL(ODS_SAP_AUFK.PSPEL,0) <> 0 AND NVL(LOAD_VET_FIN_SAP_AFE_TYPE_ATTR_ORDER.NON_CAPITAL_FLAG,'Y') = 'N' THEN       COALESCE(LOAD_VET_FIN_SAP_AFE_TYPE_ATTR_ORDER.LINE_NO,          LOAD_VET_FIN_SAP_LEASE_OPS_HIER_ORDER_WBS_FA.LINE_NO,          LOAD_VET_FIN_SAP_LEASE_OPS_HIER_NO_FA.LINE_NO)           -- Order No WBS Reference      ELSE       COALESCE(LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER.LINE_NO,          LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_CC.LINE_NO,          LOAD_VET_FIN_SAP_LEASE_OPS_HIER_ORDER_FA.LINE_NO,          LOAD_VET_FIN_SAP_LEASE_OPS_HIER_ORDER_CC_FA.LINE_NO,          LOAD_VET_FIN_SAP_LEASE_OPS_HIER_NO_FA.LINE_NO)      END     -- No LI Order or WBS Reference AND Not Captial Inventory Account     WHEN NULLIF(TRIM(LTRIM(ODS_SAP_ACDOCA.AUFNR,'0'),' '),'') IS NULL AND NVL(ODS_SAP_ACDOCA.PS_PSP_PNR,0) = 0 AND LTRIM(ODS_SAP_ACDOCA.RACCT,'0') <> '120060' THEN      COALESCE(LOAD_VET_FIN_SAP_ACCOUNT_ATTR_LI.LINE_NO,         LOAD_VET_FIN_SAP_LEASE_OPS_HIER_LI_FA.LINE_NO,         LOAD_VET_FIN_SAP_LEASE_OPS_HIER_NO_FA.LINE_NO)      -- No LI Order Reference, LI Non-Captial WBS Reference     WHEN NULLIF(TRIM(LTRIM(ODS_SAP_ACDOCA.AUFNR,'0'),' '),'') IS NULL AND NVL(ODS_SAP_ACDOCA.PS_PSP_PNR,0) <> 0 AND NVL(LOAD_VET_FIN_SAP_AFE_TYPE_ATTR.NON_CAPITAL_FLAG,'Y') = 'Y' THEN      COALESCE(LOAD_VET_FIN_SAP_ACCOUNT_ATTR_LI.LINE_NO,         LOAD_VET_FIN_SAP_ACCOUNT_ATTR_WBS.LINE_NO,         LOAD_VET_FIN_SAP_ACCOUNT_ATTR_WBS_CC.LINE_NO,         LOAD_VET_FIN_SAP_LEASE_OPS_HIER_LI_FA.LINE_NO,         LOAD_VET_FIN_SAP_LEASE_OPS_HIER_WBS_FA.LINE_NO,         LOAD_VET_FIN_SAP_LEASE_OPS_HIER_WBS_CC_FA.LINE_NO,         LOAD_VET_FIN_SAP_LEASE_OPS_HIER_NO_FA.LINE_NO)      -- No LI Order Reference, LI Captial WBS Reference     WHEN NULLIF(TRIM(LTRIM(ODS_SAP_ACDOCA.AUFNR,'0'),' '),'') IS NULL AND NVL(ODS_SAP_PRPS.PSPNR,0) <> 0 AND NVL(LOAD_VET_FIN_SAP_AFE_TYPE_ATTR.NON_CAPITAL_FLAG,'Y') = 'N' THEN      COALESCE(LOAD_VET_FIN_SAP_AFE_TYPE_ATTR.LINE_NO,         LOAD_VET_FIN_SAP_LEASE_OPS_HIER_WBS_FA.LINE_NO,         LOAD_VET_FIN_SAP_LEASE_OPS_HIER_NO_FA.LINE_NO)       END  END"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee2d495c-1f5d-7de5-9c47dee4bf43
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: Product Code via Account/Functional Area mapping
+        name: PROD_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6e83332c-6289-41e6-b578-cb7ecc57058b
+                stepCounter: 8826d32a-e05e-4584-99e7-d50d1cbfbe67
+            transform: "DECODE(NULLIF(TRIM(LTRIM(ODS_SAP_ACDOCA.AUFNR,'0'),' '),''),   -- No LI Order Reference   NULL, DECODE(NVL(ODS_SAP_ACDOCA.PS_PSP_PNR,0),    -- No LI WBS Reference             0, LOAD_VET_FIN_SAP_ACCOUNT_ATTR_LI.PROD_CODE,    -- LI WBS Reference     DECODE(NVL(LOAD_VET_FIN_SAP_AFE_TYPE_ATTR.NON_CAPITAL_FLAG,'Y'),     --Non-Capital Project Type      'Y',        COALESCE(        LOAD_VET_FIN_SAP_ACCOUNT_ATTR_LI.PROD_CODE,        LOAD_VET_FIN_SAP_ACCOUNT_ATTR_WBS.PROD_CODE,        LOAD_VET_FIN_SAP_ACCOUNT_ATTR_WBS_CC.PROD_CODE),     --Capital Project Type      'N',        NULL)      ),   -- LI Order Reference   DECODE(NVL(ODS_SAP_AUFK.PSPEL,0),    -- No Order WBS Reference             0, LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER.PROD_CODE,     -- Order WBS Reference    DECODE(NVL(LOAD_VET_FIN_SAP_AFE_TYPE_ATTR_ORDER.NON_CAPITAL_FLAG,'Y'),     --Non-Capital Project Type      'Y',        COALESCE(        LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER.PROD_CODE,        LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_WBS.PROD_CODE,        LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_WBS_CC.PROD_CODE),     --Capital Project Type      'N',        NULL)   )  )"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8790704-a735-ed9f-d63e03aba78a
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(6)
+        defaultValue: ""
+        description: Account Group Code via Account/Functional Area mapping
+        name: ACCT_GROUP_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e06b2a4a-bf32-446d-9110-265c8fe6d784
+                stepCounter: 8826d32a-e05e-4584-99e7-d50d1cbfbe67
+            transform: "DECODE(NULLIF(TRIM(LTRIM(ODS_SAP_ACDOCA.AUFNR,'0'),' '),''),   -- No LI Order Reference   NULL, DECODE(NVL(ODS_SAP_ACDOCA.PS_PSP_PNR,0),    -- No LI WBS Reference             0, LOAD_VET_FIN_SAP_ACCOUNT_ATTR_LI.ACCT_GROUP_CODE,    -- LI WBS Reference     DECODE(NVL(LOAD_VET_FIN_SAP_AFE_TYPE_ATTR.NON_CAPITAL_FLAG,'Y'),     --Non-Capital Project Type      'Y',        COALESCE(        LOAD_VET_FIN_SAP_ACCOUNT_ATTR_LI.ACCT_GROUP_CODE,        LOAD_VET_FIN_SAP_ACCOUNT_ATTR_WBS.ACCT_GROUP_CODE,        LOAD_VET_FIN_SAP_ACCOUNT_ATTR_WBS_CC.ACCT_GROUP_CODE),     --Capital Project Type      'N',        NULL)      ),   -- LI Order Reference   DECODE(NVL(ODS_SAP_AUFK.PSPEL,0),    -- No Order WBS Reference             0, LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER.ACCT_GROUP_CODE,     -- Order WBS Reference    DECODE(NVL(LOAD_VET_FIN_SAP_AFE_TYPE_ATTR_ORDER.NON_CAPITAL_FLAG,'Y'),     --Non-Capital Project Type      'Y',        COALESCE(        LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER.ACCT_GROUP_CODE,        LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_WBS.ACCT_GROUP_CODE,        LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_WBS_CC.ACCT_GROUP_CODE),     --Capital Project Type      'N',        NULL)   )  )"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 791ff9f3-c7db-bf3a-564c6ef98c83
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(18)
+        defaultValue: ""
+        description: Assignment
+        name: ASSIGNMENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ba64e152-4271-3d3c-1eb8b2f061e2
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 383dc1af-f552-2b4b-2c05bbcb9796
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: number(6)
+        defaultValue: ""
+        description: Source Document Number
+        name: SRC_DOCUMENT_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b22e62fd-e392-ace3-297973029037
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 326c24b5-3d3f-0732-513a1e0624fe
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Source Document Line Item
+        name: SRC_DOCUMENT_LINE_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b25d747f-cea9-d7ba-054c51079930
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f050c591-d08f-e0a1-4f4cabb4b521
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Special G/L Indicator
+        name: SPECIAL_GL_IND
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 86804a31-4f97-5bc6-47c288007c9c
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e8c145ae-bfc3-79b3-ffc837bca289
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: number(21)
+        defaultValue: ""
+        description: Cutback Run ID
+        name: CUTBACK_RUN_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 239588ba-c909-69a9-72a36e133c61
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 66005535-66ea-a72c-b9b2ccdcf202
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: Offsetting Account
+        name: OFFSET_ACCOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 50edccc3-effb-bf03-6500fc5ac11e
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: "LTRIM(ODS_SAP_ACDOCA.GKONT,'0')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4359f6ab-5237-33a3-9d7ff7f36720
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: G/L Account Long Text or Business Partner Name
+        name: OFFSET_ACCOUNT_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 83350a4d-20e7-c789-763b86561748
+                stepCounter: 3ac84118-c11d-132f-bac0-cbe96aacb97e
+            transform: "CASE      WHEN ODS_SAP_ACDOCA.GKOAR IN ('D','K') THEN        COALESCE(NULLIF(NAME_ORG1,'')               ,NULLIF(NAME1_TEXT,'')               ,TRIM(NULLIF(NAME_FIRST,'')||' '||NULLIF(NAME_LAST,'')))      ELSE        NULLIF(ODS_SAP_SKAT.TXT50,'')  END   "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ab7b0bcd-2df6-8dcc-5b35ac3a89c6
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(2)
+        defaultValue: ""
+        description: Tax Code
+        name: TAX_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 189ffc7f-c445-0531-19359c2916c3
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a395d904-824c-ddc8-b9579dfdda49
+          stepCounter: f34eed82-1fb6-eec0-b472-9e26f1ae9d94
+        config: {}
+        dataType: varchar(5)
+        defaultValue: ""
+        description: Reference Procedure
+        name: REF_PROCEDURE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: baababc1-23b5-b394-3daf121b617f
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_VET_FIN_SAP_ACCOUNT_ATTR: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+          LOAD_VET_FIN_SAP_LEASE_OPS_HIER: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+          ODS_SAP_ACDOCA: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+          ODS_SAP_AUFK: 2f6ce941-964a-76a5-c5f9-d4469b754109
+          ODS_SAP_CSKS: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+          ODS_SAP_PRPS: 192e8a32-8e6f-53d8-1a44-e07dc2ea2843
+          ODS_SAP_SKAT: 3ac84118-c11d-132f-bac0-cbe96aacb97e
+          ODS_SAP_T001: 2b93073f-b0bc-77cb-283c-1f38c8a9afa0
+          ODS_SAP_T003T: b9f12c00-96f4-e2f3-bf75-1f6949cab768
+          ODS_SAP_TFKBT: a0617d71-ae05-d657-35d5-a9d106776f3b
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: LOAD_VET_FIN_SAP_ACCOUNT_ATTR
+          - locationName: DATA_STORE
+            nodeName: LOAD_VET_FIN_SAP_LEASE_OPS_HIER
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_ACDOCA
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_AUFK
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_CSKS
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_PRPS
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_SKAT
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_T001
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_T003T
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_TFKBT
+        join:
+          joinCondition: |-
+            EXTENDED
+            FROM (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_ACDOCA') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_ACDOCA -- Company
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_T001') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_T001
+              ON ODS_SAP_ACDOCA.RBUKRS = ODS_SAP_T001.BUKRS -- Company default WBS Elements for Captial Inventory case
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_CAP_INV_ORG_AFE') }} LOAD_VET_FIN_SAP_CAP_INV_ORG_AFE
+              ON ODS_SAP_ACDOCA.RBUKRS = LOAD_VET_FIN_SAP_CAP_INV_ORG_AFE.ORG_ID
+                AND LTRIM(ODS_SAP_ACDOCA.RACCT,'0') = '120060'
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_PRPS') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_PRPS_CAP_INV
+              ON LOAD_VET_FIN_SAP_CAP_INV_ORG_AFE.AFE_NUM = ODS_SAP_PRPS_CAP_INV.POSID -- * LI Order Reference * --
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_AUFK') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_AUFK
+              ON ODS_SAP_ACDOCA.AUFNR = ODS_SAP_AUFK.AUFNR -- Order Account Attributes
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_ACCOUNT_ATTR') }} LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER
+              ON LTRIM(ODS_SAP_ACDOCA.RACCT,'0') = LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER.ACCOUNT
+                AND ODS_SAP_AUFK.FUNC_AREA = LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER.FAREA -- Order Cost Center Account Attributes
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_CSKS') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_CSKS_ORDER
+              ON COALESCE(ODS_SAP_AUFK.KOSTL,ODS_SAP_AUFK.AKSTL,ODS_SAP_AUFK.KOSTV) = ODS_SAP_CSKS_ORDER.KOSTL
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_ACCOUNT_ATTR') }} LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_CC
+              ON LTRIM(ODS_SAP_ACDOCA.RACCT,'0') = LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_CC.ACCOUNT
+                AND ODS_SAP_CSKS_ORDER.FUNC_AREA = LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_CC.FAREA -- Order WBS Elements
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_PRPS') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_PRPS_ORDER
+              ON NULLIF(ODS_SAP_AUFK.PSPEL,0) = ODS_SAP_PRPS_ORDER.PSPNR -- Order WBS Type Attributes
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_AFE_TYPE_ATTR') }} LOAD_VET_FIN_SAP_AFE_TYPE_ATTR_ORDER
+              ON ODS_SAP_PRPS_ORDER.PRART = LOAD_VET_FIN_SAP_AFE_TYPE_ATTR_ORDER.AFE_TYPE -- Order WBS Non-Captial Account Attributes
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_ACCOUNT_ATTR') }} LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_WBS
+              ON LTRIM(ODS_SAP_ACDOCA.RACCT,'0') = LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_WBS.ACCOUNT
+                AND ODS_SAP_PRPS_ORDER.FUNC_AREA = LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_WBS.FAREA -- Order WBS Cost Center Account Attributes
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_CSKS') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_CSKS_ORDER_WBS
+              ON ODS_SAP_PRPS_ORDER.AKSTL = ODS_SAP_CSKS_ORDER_WBS.KOSTL
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_ACCOUNT_ATTR') }} LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_WBS_CC
+              ON LTRIM(ODS_SAP_ACDOCA.RACCT,'0') = LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_WBS_CC.ACCOUNT
+                AND ODS_SAP_CSKS_ORDER_WBS.FUNC_AREA = LOAD_VET_FIN_SAP_ACCOUNT_ATTR_ORDER_WBS_CC.FAREA -- * LI WBS Reference * -- -- WBS Elements (From LI
+                OR via Company default WBS when Captial Inventory case)
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_PRPS') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_PRPS
+              ON COALESCE(NULLIF(ODS_SAP_ACDOCA.PS_PSP_PNR,0),NULLIF(ODS_SAP_PRPS_CAP_INV.PSPNR,0)) = ODS_SAP_PRPS.PSPNR -- WBS Type Attributes
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_AFE_TYPE_ATTR') }} LOAD_VET_FIN_SAP_AFE_TYPE_ATTR
+              ON ODS_SAP_PRPS.PRART = LOAD_VET_FIN_SAP_AFE_TYPE_ATTR.AFE_TYPE -- WBS Non-Captial Account Attributes
+            LEFT JOIN {{ ref('WHERESCAPE_LOAD', 'LOAD_VET_FIN_SAP_ACCOUNT_ATTR') }} LOAD_VET_FIN_SAP_ACCOUNT_ATTR_WBS
+              ON LTRIM(ODS_SAP_ACDOCA.RACCT,'0') = LOAD_VET_FIN_SAP_ACCOUNT_ATTR_WBS.ACCOUNT
+                AND ODS_SAP_PRPS.FUNC_AREA = LOAD_VET_FIN_SAP_ACCOUNT_ATTR_WBS.FAREA -- WBS Cost Center Account Attributes
+            LEFT JOIN (SELECT *
+        name: STAGE_FIN_SAP_LINE_ITEM
+        noLinkRefs: []
+  name: STAGE_FIN_SAP_LINE_ITEM
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,275 @@
+fileVersion: 1
+id: ef3508a8-4d13-dcac-5855-8a01441070f9
+name: STAGE_FIN_SAP_INVOICE
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ccfc3cff-35f5-9eae-f0fc6484f80b
+          stepCounter: ef3508a8-4d13-dcac-5855-8a01441070f9
+        config: {}
+        dataType: varchar(28)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: INVOICE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 56d604ee-9eec-a712-49ca4ad6fee5
+                stepCounter: 499c2ef9-eb1f-0b60-41c1-b12b332c8f37
+            transform: "'0L'||  ODS_SAP_BKPF.BUKRS||  TO_CHAR(ODS_SAP_BKPF.GJAHR)||  ODS_SAP_BKPF.BELNR"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bbb7d9c2-d000-de0b-fbbc59ba7664
+          stepCounter: ef3508a8-4d13-dcac-5855-8a01441070f9
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        name: BUSINESS_ASSOCIATE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4c923bcd-132b-cf63-ffeb0e175681
+                stepCounter: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+            transform: "DECODE(ODS_SAP_BKPF.BLART,'DR',     ODS_SAP_ACDOCA.KUNNR,     ODS_SAP_ACDOCA.LIFNR)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3e966303-f793-6d2a-83022a183abf
+          stepCounter: ef3508a8-4d13-dcac-5855-8a01441070f9
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Name of a person, place or thing.
+        name: BUSINESS_ASSOCIATE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0187bb97-27d2-051c-0cd1ee53a878
+                stepCounter: 5964bc7f-eda4-4898-e94a-63e4af4982ff
+            transform: "DECODE(ODS_SAP_BKPF.BLART,'DR',     ODS_SAP_KNA1.NAME1,     ODS_SAP_LFA1.NAME1)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a81325b-9043-b68b-e1078bc1d302
+          stepCounter: ef3508a8-4d13-dcac-5855-8a01441070f9
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: ""
+        name: INVOICE_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ec978e9b-5213-72e3-d0dba98fc56c
+                stepCounter: 499c2ef9-eb1f-0b60-41c1-b12b332c8f37
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae3dad5b-f1d4-51a6-2919b58a3525
+          stepCounter: ef3508a8-4d13-dcac-5855-8a01441070f9
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        name: INVOICE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f3842a9a-9dd5-c9b6-8084bbffc291
+                stepCounter: 499c2ef9-eb1f-0b60-41c1-b12b332c8f37
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 14667387-4a1f-3708-7a74544b7abe
+          stepCounter: ef3508a8-4d13-dcac-5855-8a01441070f9
+        config: {}
+        dataType: varchar(3)
+        defaultValue: ""
+        description: The valid invoice type.
+        name: INVOICE_TYPE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bf806a84-22a3-4ace-f1c573f2b789
+                stepCounter: 499c2ef9-eb1f-0b60-41c1-b12b332c8f37
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 60800e24-1fc3-1fdb-ef4eb63e498a
+          stepCounter: ef3508a8-4d13-dcac-5855-8a01441070f9
+        config: {}
+        dataType: varchar(80)
+        defaultValue: ""
+        description: Invoice type description.
+        name: INVOICE_TYPE_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9a759361-42e2-2047-c2316ad946cb
+                stepCounter: b9f12c00-96f4-e2f3-bf75-1f6949cab768
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 725c8ac3-d26f-f34d-99a74b7cd80e
+          stepCounter: ef3508a8-4d13-dcac-5855-8a01441070f9
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The major portion of the control account.
+        name: CTRL_MAJOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26ad1191-fa14-a2c6-ef36e8406fc2
+          stepCounter: ef3508a8-4d13-dcac-5855-8a01441070f9
+        config: {}
+        dataType: varchar(4)
+        defaultValue: ""
+        description: The minor portion of the control account.
+        name: CTRL_MINOR_ACCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c40eb667-28cf-dcfb-437c5d221bf6
+          stepCounter: ef3508a8-4d13-dcac-5855-8a01441070f9
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: ACCOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_SAP_ACDOCA: 133ed8a6-8f20-8afe-139b-82edc45c3a69
+          ODS_SAP_BKPF: 499c2ef9-eb1f-0b60-41c1-b12b332c8f37
+          ODS_SAP_KNA1: 5964bc7f-eda4-4898-e94a-63e4af4982ff
+          ODS_SAP_T003T: b9f12c00-96f4-e2f3-bf75-1f6949cab768
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_ACDOCA
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_BKPF
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_KNA1
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_T003T
+        join:
+          joinCondition: |-
+            FROM (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_BKPF') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_BKPF
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_ACDOCA') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y'
+                AND DOCLN = '000001'
+                AND RLDNR = '0L') ODS_SAP_ACDOCA
+              ON ODS_SAP_BKPF.BELNR = ODS_SAP_ACDOCA.BELNR
+                AND ODS_SAP_BKPF.GJAHR = ODS_SAP_ACDOCA.GJAHR
+                AND ODS_SAP_BKPF.BUKRS = ODS_SAP_ACDOCA.RBUKRS
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_KNA1') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_KNA1
+              ON ODS_SAP_ACDOCA.KUNNR = ODS_SAP_KNA1.KUNNR
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_LFA1') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_LFA1
+              ON ODS_SAP_ACDOCA.LIFNR = ODS_SAP_LFA1.LIFNR
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_T003T') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_T003T
+              ON ODS_SAP_BKPF.BLART = ODS_SAP_T003T.BLART
+                AND ODS_SAP_T003T.SPRAS = 'E'
+            WHERE ODS_SAP_BKPF.BLART IN ('DR','KR','RE','OI','X5')
+        name: STAGE_FIN_SAP_INVOICE
+        noLinkRefs: []
+  name: STAGE_FIN_SAP_INVOICE
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

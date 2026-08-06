@@ -1,0 +1,136 @@
+fileVersion: 1
+id: fc5f9c2e-cf9b-972e-1d34-c94141c6148e
+name: STAGE_COST_CENTER_WI
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: ''
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: false
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+          stepCounter: fc5f9c2e-cf9b-972e-1d34-c94141c6148e
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: ""
+        name: CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+                stepCounter: 03cebcd2-b2f8-2887-e02e-7cb2636e6fb8
+            transform: "TARGET.CC_NUM"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b182f3a3-098e-04f7-a5e1c597ecbf
+          stepCounter: fc5f9c2e-cf9b-972e-1d34-c94141c6148e
+        config: {}
+        dataType: number(14,11)
+        defaultValue: ""
+        description: The Land Percent.
+        name: QBYTE_WORKING_INTEREST
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f9c0375e-8d49-5ac3-a469ea8b78c8
+                stepCounter: c9e1c1fe-3444-d13b-36d8-ed80a1d91c6a
+            transform: "TARGET.QBYTE_WORKING_INTEREST"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ODS_QBYTE_COST_CENTRES: 03cebcd2-b2f8-2887-e02e-7cb2636e6fb8
+          ODS_QBYTE_DOI_DECK_PARTNERS: c9e1c1fe-3444-d13b-36d8-ed80a1d91c6a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: ODS_QBYTE_COST_CENTRES
+          - locationName: DATA_STORE
+            nodeName: ODS_QBYTE_DOI_DECK_PARTNERS
+        join:
+          joinCondition: |-
+            FROM ( SELECT c.cc_num, sum(ddp.la_partner_pct) qbyte_working_interest
+            FROM (SELECT *
+            FROM [TABLEOWNER].[ODS_QBYTE_ownership_agreement_links]
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') oal, (SELECT *
+            FROM [TABLEOWNER].[ODS_QBYTE_cost_centres]
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') c, (SELECT *
+            FROM [TABLEOWNER].[ODS_QBYTE_doi_deck_partners]
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ddp, (SELECT *
+            FROM [TABLEOWNER].[ODS_QBYTE_business_associates]
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ba
+            WHERE c.cc_num = oal.cc_num
+                AND c.jib_flag = 'Y'
+                AND oal.agreement_id = ddp.doi_deck_id
+                AND ddp.partner_ba_id = ba.id
+                AND oal.afe_num is null
+                AND oal.major_acct is null
+                AND oal.expiry_date is null
+                AND oal.terminate_flag = 'N'
+                AND nvl(oal.acct_group_code,'x') in ('x', 'NPLAND')
+                AND ba.ref_org_id is not null
+                AND oal.cc_num || oal.effective_date || oal.ownership_link_id in (select l.cc_num || max(l.effective_date) || max(l.ownership_link_id)
+            FROM (SELECT *
+            FROM [TABLEOWNER].[ODS_QBYTE_ownership_agreement_links]
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') l
+            WHERE l.terminate_flag = 'N'
+                AND l.expiry_date is null
+                AND l.afe_num is null
+                AND l.major_acct is null
+                AND l.effective_date in (select max(l2.effective_date)
+            FROM (SELECT *
+            FROM [TABLEOWNER].[ODS_QBYTE_ownership_agreement_links]
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') l2
+            WHERE l2.terminate_flag = 'N'
+                AND l2.expiry_date is null
+                AND l2.afe_num is null
+                AND l2.major_acct is null
+                AND l2.cc_num = l.cc_num)
+                AND nvl(l.acct_group_code,'x') in ('x', 'NPLAND')
+            GROUP BY l.cc_num)
+            GROUP BY c.cc_num
+            UNION ALL select c.cc_num, 100.00 qbyte_working_interest
+            FROM (SELECT *
+            FROM [TABLEOWNER].[ODS_QBYTE_cost_centres]
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') c
+            WHERE c.jib_flag = 'N' ) AS TARGET
+        name: STAGE_COST_CENTER_WI
+        noLinkRefs: []
+  name: STAGE_COST_CENTER_WI
+  overrideSQL: false
+  schema: STAGE_BT
+  sqlType: "3"
+  type: sql
+  version: 1
+type: Node

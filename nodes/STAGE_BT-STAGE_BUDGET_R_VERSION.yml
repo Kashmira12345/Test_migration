@@ -1,0 +1,338 @@
+fileVersion: 1
+id: 5cf5c208-ec43-4353-d006-5faae6bf994a
+name: STAGE_BUDGET_R_VERSION
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d271b5bb-ca0b-69ec-d1a79650c6b5
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: ""
+        isBusinessKey: true
+        name: IDX
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9d437eab-f77b-4e4a-ae4f-c3a078141d01
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae4901df-7b48-75ca-35b1d1fa19c7
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: VERSION_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3cb2f103-6323-49c2-903a-e1f94f515f92
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 12cd1b12-f47f-2e3b-d5d7c1ef777c
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: Lease Op Version Type
+        name: VERSION_TYPE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "'BUDGET'"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 60cf3812-482a-fd86-d906c9c8c26c
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: varchar(1)
+        defaultValue: ""
+        description: ""
+        name: FLG_GLOP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8ca7a0bd-b41d-4fdb-8753-a8c6a92a0df1
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fc55e819-1d94-6096-34f7b4180045
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: CREATE_DT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0ea9a7e5-54ba-46e9-a2c9-9ae99c75b947
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4fb7ea68-639d-84f8-d9b07c33a3a5
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: UPDATE_DT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4cb61611-fb9d-4e46-a881-d5d1ad018fe5
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2e594a8a-7c77-1e64-222b110029a5
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: ECON_CASE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6e20b2c7-1957-44e4-81d3-47d9abfce995
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2d0e751-68c5-9ede-9d28dfe99170
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: ""
+        name: ECON_VINTAGE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9101b972-bb9c-43f1-82e0-479e5789f0bc
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 73024c7b-aa6e-6ccf-4e0ed55fbca7
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: ""
+        name: ECON_VINTAGE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0ece24a3-9396-4ea1-956a-50ad8d80d22a
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8b017568-58c8-818d-802f6d28e33a
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: number(38)
+        defaultValue: ""
+        description: ""
+        name: ECON_CASE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 96ccd962-e42e-4d18-90bd-cd690b449f60
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 04823709-781b-f5eb-e523b7ee65e8
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: EFFECTIVE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4c5f1402-7c9d-405c-9eab-7dd3c07f7641
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 864db73b-0e88-7634-d048cff9b76c
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: varchar(64)
+        defaultValue: ""
+        description: Record source.
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4fec33a3-211b-4e8d-8e0b-d353bbc7e541
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2e5dd61-accb-65e1-798ed5ced4bd
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: Load date.
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 854c6eea-319a-476f-a856-b6ff8023a93d
+                stepCounter: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56bbfdc8-ed63-06a7-b850a75a08e6
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was created in the data warehouse.
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 678005e7-9cf5-41cd-d309566a5711
+          stepCounter: 5cf5c208-ec43-4353-d006-5faae6bf994a
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: Date and time the row was updated in the data warehouse.
+        name: DSS_UPDATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_BUDGET_R_VERSION: b0c924e9-92f7-4d88-b6b5-113eb3c68d97
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WHERESCAPE_LOAD
+            nodeName: LOAD_BUDGET_R_VERSION
+        join:
+          joinCondition: |-
+            FROM {{ ref('WHERESCAPE_LOAD', 'LOAD_BUDGET_R_VERSION') }} "LOAD_BUDGET_R_VERSION"
+            WHERE FLG_GLOP = 'Y'
+        name: STAGE_BUDGET_R_VERSION
+        noLinkRefs: []
+  name: STAGE_BUDGET_R_VERSION
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node

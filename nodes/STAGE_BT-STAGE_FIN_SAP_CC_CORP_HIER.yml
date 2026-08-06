@@ -1,0 +1,813 @@
+fileVersion: 1
+id: 71b6b77c-49d0-1338-e2be-0ac87487f603
+name: STAGE_FIN_SAP_CC_CORP_HIER
+operation:
+  config:
+    disable_hwm: false
+    insertStrategy: Insert
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+    truncateBefore: true
+  database: EDW_DEV
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE_BT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c02c2ea1-5e3e-6c0b-6904169cedbe
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: The user-defined code to identify the hierarchy.
+        isBusinessKey: true
+        name: HIERARCHY_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 200043a9-bdb0-27ea-4c330067e122
+                stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+            transform: "ODS_SAP_HRRP_NODE_CC.HRYID || '.' || ODS_SAP_HRRP_NODE_CC.HRYVER"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 016679ba-ff58-f745-52f57f11ebe1
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(10)
+        defaultValue: ""
+        description: The cost centre which the reporting entity is representing.
+        isBusinessKey: true
+        name: CC_NUM
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f8a9e69-afb8-d1a2-bce1ca3dbb15
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "LTRIM(ODS_SAP_CSKS.KOSTL,'0')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f51bd8a6-f7b1-1562-982710534c5d
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(400)
+        defaultValue: ""
+        description: The cost centre which the reporting entity is representing.
+        name: CC_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9a759361-42e2-2047-c2316ad946cb
+                stepCounter: 1a37c8d0-3342-f2e0-8637-008d2ba5397c
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: be72a29b-4dd7-5d69-cfb9365d5896
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: AREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0fd01924-3f86-621c-8c4ff596129c
+                stepCounter: c4ec9569-41ab-0687-3908-3d651872905c
+            transform: "ODS_SAP_HRRP_NODET_AREA.NODETXT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0cb8e501-3b2b-3cee-ab24cdbbf7c7
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: AREA_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf6bebf3-0642-3f18-b0da929192af
+                stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+            transform: "ODS_SAP_HRRP_NODE_AREA.NODEVALUE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a7252aca-bce9-ce1c-a20be417c256
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: COREAREA_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0fd01924-3f86-621c-8c4ff596129c
+                stepCounter: c4ec9569-41ab-0687-3908-3d651872905c
+            transform: "ODS_SAP_HRRP_NODET_CORE_AREA.NODETXT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4d7c0027-ce55-22a0-c0c599e301ce
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: COREAREA_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf6bebf3-0642-3f18-b0da929192af
+                stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+            transform: "ODS_SAP_HRRP_NODE_CORE_AREA.NODEVALUE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: afee24ed-c61a-882d-ef7658d67cca
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: PROV_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0fd01924-3f86-621c-8c4ff596129c
+                stepCounter: c4ec9569-41ab-0687-3908-3d651872905c
+            transform: "ODS_SAP_HRRP_NODET_PROV.NODETXT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ff4dfa1-afdc-b7a5-61f046020ba9
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: PROV_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf6bebf3-0642-3f18-b0da929192af
+                stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+            transform: "ODS_SAP_HRRP_NODE_PROV.NODEVALUE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 34f5dfe9-43ff-13fa-e39325cea0e0
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: COUNTRY_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0fd01924-3f86-621c-8c4ff596129c
+                stepCounter: c4ec9569-41ab-0687-3908-3d651872905c
+            transform: "ODS_SAP_HRRP_NODET_COUNTRY.NODETXT"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a29c3607-0f54-a947-1ac73492c95f
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: The user-defined code for the reporting entity.
+        name: COUNTRY_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf6bebf3-0642-3f18-b0da929192af
+                stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+            transform: "ODS_SAP_HRRP_NODE_COUNTRY.NODEVALUE"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 81ae049d-5382-1176-a8d4874eea18
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(240)
+        defaultValue: ""
+        description: The name or description of the entity.
+        name: CC_CORP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "'Corporate Totals'"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b27f430e-df9b-2bf1-26b3122d7175
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Operator Run Corporate Hierarchy Attribute
+        name: ROUTE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a216efc-25c6-0a4a-4c0bc99ad77f
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: Play  - Mosaic CDM
+        name: PLAY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a216efc-25c6-0a4a-4c0bc99ad77f
+                stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d693edcc-73ca-9607-76537f2cd6ec
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Flow Network Name - ProdView
+        name: NETWORK_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d693edcc-73ca-9607-76537f2cd6ec
+                stepCounter: 498c46bd-3035-b424-75ff-6dbf6d523135
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ad175978-a792-8165-148cd89b3abb
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Facility Name - ProdView
+        name: FACILITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8eecbe65-d39d-54c1-739486ee7da1
+                stepCounter: 498c46bd-3035-b424-75ff-6dbf6d523135
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7e64f220-98ad-ef05-3289d3d319c0
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: ""
+        name: BATTERY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7e64f220-98ad-ef05-3289d3d319c0
+                stepCounter: 498c46bd-3035-b424-75ff-6dbf6d523135
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 429369f7-0ffd-d6c6-cf8e23857376
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Corporate Hierarchy Foreman
+        name: FOREMAN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 00e28a08-180a-4cba-883f-d69bda5283f7
+                stepCounter: bb6ee2e6-0d49-47c4-91e7-5a7d41a7004d
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6504db6f-f23f-f4af-4943d9061d61
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Foreman Name manually assigned to Cost Center
+        name: MANUAL_FOREMAN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6504db6f-f23f-f4af-4943d9061d61
+                stepCounter: 498c46bd-3035-b424-75ff-6dbf6d523135
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f5fbd33a-cc94-ef76-4af70fd6e61c
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Sales Point Corporate Hierarchy Attribute
+        name: SALES_POINT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ab62f4c9-dab8-3c9e-46cd168a7d1a
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Production Engineer  - Mosaic CDM
+        name: PRODUCTION_ENGINEER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ab62f4c9-dab8-3c9e-46cd168a7d1a
+                stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6aed45f4-6ab9-f41d-7f9fd9c6bc4b
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Exploitation Engineer  - Mosaic CDM
+        name: EXPLOITATION_ENGINEER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6aed45f4-6ab9-f41d-7f9fd9c6bc4b
+                stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5cf021d2-6b44-72da-56ad495c28d3
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Meter Station Corporate Hierarchy Attribute
+        name: METER_STATION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9212ec3f-1f98-8570-d06d7c0c28f9
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Budget Year  - Mosaic CDM
+        name: BUDGET_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9212ec3f-1f98-8570-d06d7c0c28f9
+                stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1c8c220-68f4-30d7-6722e33524e1
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Capital Year  - Mosaic CDM
+        name: CAPITAL_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1c8c220-68f4-30d7-6722e33524e1
+                stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3bd8cf44-827d-fb5a-e260d7826acd
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: Volume Year  - Mosaic CDM
+        name: VOLUME_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3bd8cf44-827d-fb5a-e260d7826acd
+                stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 359358f4-4d34-b26e-7761ff66b79b
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(250)
+        defaultValue: ""
+        description: ""
+        name: WELL_COUNT_YEAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 359358f4-4d34-b26e-7761ff66b79b
+                stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7f90e55a-99a5-79ae-d2bb6efd377b
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        name: CDM_RIG_RELEASE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 226bda78-3977-3aca-a627d3ee3253
+                stepCounter: 9e97d355-ca3c-aa99-00b7-8e9005a73587
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 14f3d3dd-2cbe-e76b-4f46e9ae5f12
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(30)
+        defaultValue: ""
+        description: License Operator Corporate Hierarchy Attribute
+        name: LICENSE_OPERATOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad9a919b-8637-5f3a-a18eb7040599
+                stepCounter: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+            transform: "DECODE(ODS_SAP_CSKS.ZZNONOP_FLAG,'X','NONOP','OP')"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 55943c73-08a6-7f22-f7f7f8f6c989
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(20)
+        defaultValue: ""
+        description: Physical Operator Corporate Hierarchy Attribute
+        name: PHYSICAL_OPERATOR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43b69991-3756-7369-fc6354008255
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(255)
+        defaultValue: ""
+        description: Acquisition Corporate Hierarchy Attribute
+        name: ACQUISITION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL  "
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e81df334-16e8-ab69-a8a1fab67bb3
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(50)
+        defaultValue: ""
+        description: Business Unit Code
+        name: BU_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf6bebf3-0642-3f18-b0da929192af
+                stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+            transform: "WS_EDW.SAP_COUNTRY_NODEVALUE_VET_BU_CODE(ODS_SAP_HRRP_NODE_COUNTRY.NODEVALUE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 33eaadc1-0149-fd0d-530c031bb0f6
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: Business Unit Description
+        name: BU_DESC
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0fd01924-3f86-621c-8c4ff596129c
+                stepCounter: c4ec9569-41ab-0687-3908-3d651872905c
+            transform: "WS_EDW.SAP_COUNTRY_NODE_VET_BU_DESC(ODS_SAP_HRRP_NODET_COUNTRY.NODETXT,ODS_SAP_HRRP_NODE_COUNTRY.NODEVALUE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ee9f414-cedf-e010-37fe2424d5b0
+          stepCounter: 71b6b77c-49d0-1338-e2be-0ac87487f603
+        config: {}
+        dataType: varchar(100)
+        defaultValue: ""
+        description: Row Level Security Role
+        name: BU_SF_ROLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf6bebf3-0642-3f18-b0da929192af
+                stepCounter: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+            transform: "WS_EDW.SAP_COUNTRY_NODEVALUE_VET_BU_ROLE(ODS_SAP_HRRP_NODE_COUNTRY.NODEVALUE)"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOAD_VET_FIN_SAP_CC_PR_FRMN: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+          ODS_SAP_CSKS: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+          ODS_SAP_CSKT: 1a37c8d0-3342-f2e0-8637-008d2ba5397c
+          ODS_SAP_HRRP_NODE: 2b601b85-5f2c-5a1b-5541-3ef10e63f78a
+          ODS_SAP_HRRP_NODET: c4ec9569-41ab-0687-3908-3d651872905c
+          STAGE_FIN_SAP_COST_CENTER_ECON_ATTR: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+          STAGE_FIN_SAP_COST_CENTER_FDC_ATTR: 12c5bbaa-0939-7662-35b9-a59329b6bd1c
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DATA_STORE
+            nodeName: LOAD_VET_FIN_SAP_CC_PR_FRMN
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_CSKS
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_CSKT
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_HRRP_NODE
+          - locationName: DATA_STORE
+            nodeName: ODS_SAP_HRRP_NODET
+          - locationName: DATA_STORE
+            nodeName: STAGE_FIN_SAP_COST_CENTER_ECON_ATTR
+          - locationName: DATA_STORE
+            nodeName: STAGE_FIN_SAP_COST_CENTER_FDC_ATTR
+        join:
+          joinCondition: |-
+            EXTENDED
+            FROM (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_CSKS') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y') ODS_SAP_CSKS
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_CSKT') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y'
+                AND SPRAS = 'E') ODS_SAP_CSKT
+              ON ODS_SAP_CSKS.KOSTL = ODS_SAP_CSKT.KOSTL
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_HRRP_NODE') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y'
+                AND HRYID = '$PSAP_CORP_HIER_HRYID$'
+                AND NODETYPE= 'L'
+                AND HRYLEVEL = 5) ODS_SAP_HRRP_NODE_CC
+              ON ODS_SAP_CSKS.KOSTL = ODS_SAP_HRRP_NODE_CC.LEAFVALUE
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_HRRP_NODE') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y'
+                AND HRYID = '$PSAP_CORP_HIER_HRYID$'
+                AND NODETYPE= 'N'
+                AND HRYLEVEL = 4) ODS_SAP_HRRP_NODE_AREA
+              ON ODS_SAP_HRRP_NODE_CC.PARNODE = ODS_SAP_HRRP_NODE_AREA.HRYNODE
+                AND ODS_SAP_HRRP_NODE_CC.HRYID = ODS_SAP_HRRP_NODE_AREA.HRYID
+                AND ODS_SAP_HRRP_NODE_CC.HRYVER = ODS_SAP_HRRP_NODE_AREA.HRYVER
+                AND ODS_SAP_HRRP_NODE_CC.NODECLS = ODS_SAP_HRRP_NODE_AREA.NODECLS
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_HRRP_NODET') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y'
+                AND HRYID = '$PSAP_CORP_HIER_HRYID$'
+                AND SPRAS = 'E' ) ODS_SAP_HRRP_NODET_AREA
+              ON ODS_SAP_HRRP_NODE_AREA.HRYNODE = ODS_SAP_HRRP_NODET_AREA.HRYNODE
+                AND ODS_SAP_HRRP_NODE_AREA.PARNODE = ODS_SAP_HRRP_NODET_AREA.PARNODE
+                AND ODS_SAP_HRRP_NODE_AREA.HRYID = ODS_SAP_HRRP_NODET_AREA.HRYID
+                AND ODS_SAP_HRRP_NODE_AREA.HRYVER = ODS_SAP_HRRP_NODET_AREA.HRYVER
+                AND ODS_SAP_HRRP_NODE_AREA.NODECLS = ODS_SAP_HRRP_NODET_AREA.NODECLS
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_HRRP_NODE') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y'
+                AND HRYID = '$PSAP_CORP_HIER_HRYID$'
+                AND NODETYPE= 'N'
+                AND HRYLEVEL = 3) ODS_SAP_HRRP_NODE_CORE_AREA
+              ON ODS_SAP_HRRP_NODE_AREA.PARNODE = ODS_SAP_HRRP_NODE_CORE_AREA.HRYNODE
+                AND ODS_SAP_HRRP_NODE_AREA.HRYID = ODS_SAP_HRRP_NODE_CORE_AREA.HRYID
+                AND ODS_SAP_HRRP_NODE_AREA.HRYVER = ODS_SAP_HRRP_NODE_CORE_AREA.HRYVER
+                AND ODS_SAP_HRRP_NODE_AREA.NODECLS = ODS_SAP_HRRP_NODE_CORE_AREA.NODECLS
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_HRRP_NODET') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y'
+                AND HRYID = '$PSAP_CORP_HIER_HRYID$'
+                AND SPRAS = 'E') ODS_SAP_HRRP_NODET_CORE_AREA
+              ON ODS_SAP_HRRP_NODE_CORE_AREA.HRYNODE = ODS_SAP_HRRP_NODET_CORE_AREA.HRYNODE
+                AND ODS_SAP_HRRP_NODE_CORE_AREA.PARNODE = ODS_SAP_HRRP_NODET_CORE_AREA.PARNODE
+                AND ODS_SAP_HRRP_NODE_CORE_AREA.HRYID = ODS_SAP_HRRP_NODET_CORE_AREA.HRYID
+                AND ODS_SAP_HRRP_NODE_CORE_AREA.HRYVER = ODS_SAP_HRRP_NODET_CORE_AREA.HRYVER
+                AND ODS_SAP_HRRP_NODE_CORE_AREA.NODECLS = ODS_SAP_HRRP_NODET_CORE_AREA.NODECLS
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_HRRP_NODE') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y'
+                AND HRYID = '$PSAP_CORP_HIER_HRYID$'
+                AND NODETYPE= 'N'
+                AND HRYLEVEL = 2) ODS_SAP_HRRP_NODE_PROV
+              ON ODS_SAP_HRRP_NODE_CORE_AREA.PARNODE = ODS_SAP_HRRP_NODE_PROV.HRYNODE
+                AND ODS_SAP_HRRP_NODE_CORE_AREA.HRYID = ODS_SAP_HRRP_NODE_PROV.HRYID
+                AND ODS_SAP_HRRP_NODE_CORE_AREA.HRYVER = ODS_SAP_HRRP_NODE_PROV.HRYVER
+                AND ODS_SAP_HRRP_NODE_CORE_AREA.NODECLS = ODS_SAP_HRRP_NODE_PROV.NODECLS
+            LEFT JOIN (SELECT *
+            FROM {{ ref('DATA_STORE', 'ODS_SAP_HRRP_NODET') }}
+            WHERE DSS_CURRENT_FLAG = 'Y'
+                AND DSS_DELETE_FLAG != 'Y'
+                AND HRYID = '$PSAP_CORP_HIER_HRYID$'
+                AND SPRAS = 'E') ODS_SAP_HRRP_NODET_PROV
+              ON ODS_SAP_HRRP_NODE_PROV.HRYNODE = ODS_SAP_HRRP_NODET_PROV.HRYNODE
+                AND ODS_SAP_HRRP_NODE_PROV.PARNODE = ODS_SAP_HRRP_NODET_PROV.PARNODE
+                AND ODS_SAP_HRRP_NODE_PROV.HRYID = ODS_SAP_HRRP_NODET_PROV.HRYID
+                AND ODS_SAP_HRRP_NODE_PROV.HRYV
+        name: STAGE_FIN_SAP_CC_CORP_HIER
+        noLinkRefs: []
+  name: STAGE_FIN_SAP_CC_CORP_HIER
+  overrideSQL: false
+  schema: CLS_STAGE_BT
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node
