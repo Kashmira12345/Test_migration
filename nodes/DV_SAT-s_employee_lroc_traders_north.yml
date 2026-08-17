@@ -185,7 +185,7 @@ operation:
             nodeName: stage_employee_traders_north
         join:
           joinCondition: |-
-            FROM "TABLEOWNER"."stage_employee_traders_north" AS stage_employee_traders_north
+            FROM {{ ref('DV_STG', 'stage_employee_traders_north') }} "stage_employee_traders_north"
             LEFT OUTER JOIN (SELECT s_employee_lroc_traders_north.hk_h_employee, MAX(s_employee_lroc_traders_north.dss_start_date) AS dss_start_date, MAX(s_employee_lroc_traders_north.dss_version) AS dss_version
             FROM "TABLEOWNER"."s_employee_lroc_traders_north" AS s_employee_lroc_traders_north
             GROUP BY s_employee_lroc_traders_north.hk_h_employee) AS current_rows
