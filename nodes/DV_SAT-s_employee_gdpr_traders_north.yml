@@ -3,18 +3,15 @@ id: 68ffd7ae-ec5f-4a79-b634-83de44e7e339
 name: s_employee_gdpr_traders_north
 operation:
   config:
-    disable_hwm: false
-    insertStrategy: Insert
     postSQL: ""
     preSQL: ""
     testsEnabled: false
-    truncateBefore: false
-  database: WS_MIGRATION
+  database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
   locationName: DV_SAT
-  materializationType: Table
+  materializationType: table
   metadata:
     appliedNodeTests: []
     columns:
@@ -405,13 +402,13 @@ operation:
             nodeName: stage_employee_traders_north
         join:
           joinCondition: |-
-            FROM "TABLEOWNER"."stage_employee_traders_north" AS stage_employee_traders_north
+            FROM {{ ref('DV_STG', 'stage_employee_traders_north') }} "stage_employee_traders_north"
             LEFT OUTER JOIN (SELECT s_employee_gdpr_traders_north.hk_h_employee, MAX(s_employee_gdpr_traders_north.dss_start_date) AS dss_start_date, MAX(s_employee_gdpr_traders_north.dss_version) AS dss_version
-            FROM "TABLEOWNER"."s_employee_gdpr_traders_north" AS s_employee_gdpr_traders_north
+            FROM {{ ref('DV_SAT', 's_employee_gdpr_traders_north') }} AS s_employee_gdpr_traders_north
             GROUP BY s_employee_gdpr_traders_north.hk_h_employee) AS current_rows
               ON stage_employee_traders_north.hk_h_employee = current_rows.hk_h_employee
             WHERE NOT EXISTS(SELECT 1
-            FROM "TABLEOWNER"."s_employee_gdpr_traders_north" AS s_employee_gdpr_traders_north
+            FROM {{ ref('DV_SAT', 's_employee_gdpr_traders_north') }} AS s_employee_gdpr_traders_north
             WHERE stage_employee_traders_north.hk_h_employee = s_employee_gdpr_traders_north.hk_h_employee
                 AND stage_employee_traders_north.dss_change_hash_employee_gdpr_traders_north = s_employee_gdpr_traders_north.dss_change_hash
                 AND current_rows.dss_start_date = s_employee_gdpr_traders_north.dss_start_date)
@@ -419,8 +416,8 @@ operation:
         noLinkRefs: []
   name: s_employee_gdpr_traders_north
   overrideSQL: false
-  schema: RDV
-  sqlType: "Satellite"
+  schema: ""
+  sqlType: "DV:::8"
   type: sql
   version: 1
 type: Node
