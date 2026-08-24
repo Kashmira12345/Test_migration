@@ -1,0 +1,363 @@
+fileVersion: 1
+id: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+name: stage_order_details_traders_north
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DV_STG
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bb33e4d0-3e2c-498d-a2ef-6b8dffcaf114
+          stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        config:
+          is_hk: true
+        dataType: CHAR(32)
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: MD5
+        hashedColumns:
+          - columnCounter: 4e94e708-b754-409c-b4dc-65b0228e2357
+            stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+          - columnCounter: 6369e0a1-6d7f-48fb-8ef7-9b27a1decb73
+            stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        name: hk_l_order_details
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4e94e708-b754-409c-b4dc-65b0228e2357
+                stepCounter: 1865a283-ee3e-4812-b740-10552548788e
+            transform: "CAST(MD5(COALESCE(CAST(load_orders_traders_north.orderid AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_products_traders_north.productname AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS hk_l_order_details"
+          - columnReferences:
+              - columnCounter: 6369e0a1-6d7f-48fb-8ef7-9b27a1decb73
+                stepCounter: 1865a283-ee3e-4812-b740-10552548788e
+            transform: "CAST(MD5(COALESCE(CAST(load_orders_traders_north.orderid AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_products_traders_north.productname AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS hk_l_order_details"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 545e9b66-25c1-4fb8-9637-40823eb44756
+          stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        config:
+          is_hd: true
+          is_hk: true
+        dataType: CHAR(32)
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: MD5
+        hashedColumns:
+          - columnCounter: 3b5284ea-daa6-486c-8743-4b317499effb
+            stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        name: hk_h_order
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b5284ea-daa6-486c-8743-4b317499effb
+                stepCounter: 1865a283-ee3e-4812-b740-10552548788e
+            transform: "CAST(MD5(COALESCE(CAST(load_orders_traders_north.orderid AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS hk_h_order"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a72f0cfe-ae06-4a3a-96c4-5b269c48b010
+          stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        config:
+          is_hd: true
+          is_hk: true
+        dataType: CHAR(32)
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: MD5
+        hashedColumns:
+          - columnCounter: cfd25b50-a94a-499d-853f-73ad036d15c6
+            stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        name: hk_h_product
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cfd25b50-a94a-499d-853f-73ad036d15c6
+                stepCounter: 1865a283-ee3e-4812-b740-10552548788e
+            transform: "CAST(MD5(COALESCE(CAST(load_products_traders_north.productname AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS hk_h_product"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26c84294-9ae8-43c1-8b19-e074066478b9
+          stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        config:
+          is_hd: true
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: order_number
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c094ff3e-6627-4e17-a8f7-f475ef0b96ab
+                stepCounter: 8988983c-cdc8-4b6f-adfe-f98f1599fd68
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2e565c32-e2bb-45fd-a2b3-58a34fb2680c
+          stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        config:
+          is_hd: true
+        dataType: VARCHAR(40)
+        defaultValue: ""
+        description: ""
+        name: product_name
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e10ea10d-0ff6-4d04-96d2-a435d4090673
+                stepCounter: f30b7f29-814e-4e57-8660-c9300600cd08
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0642033a-b414-433c-b6ea-886f5198ec17
+          stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        config:
+          is_hd: true
+        dataType: DATETIME2
+        defaultValue: ""
+        description: ""
+        name: orderdate
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9f7daa1b-795d-426b-9630-719e595105ff
+                stepCounter: 8988983c-cdc8-4b6f-adfe-f98f1599fd68
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4a2da39f-e403-44a9-8278-36925a66f62e
+          stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        config:
+          is_hd: true
+        dataType: MONEY
+        defaultValue: ""
+        description: ""
+        name: unitprice
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 61dd7336-30ec-44e9-8dab-1e0aed4b01d2
+                stepCounter: 0f84b489-746f-465a-bd78-bf7728470616
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 44f23af7-12e1-4a81-b365-0359bf33893f
+          stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        config:
+          is_hd: true
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: quantity
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4044d4aa-3923-4e4f-bbd0-313c163a3c24
+                stepCounter: 0f84b489-746f-465a-bd78-bf7728470616
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6916b54b-ac7a-41ee-a40e-426562191610
+          stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        config:
+          is_hd: true
+        dataType: REAL
+        defaultValue: ""
+        description: ""
+        name: discount
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ebeb46bf-5be6-4909-a29e-d7a767e8712f
+                stepCounter: 0f84b489-746f-465a-bd78-bf7728470616
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 376240c5-696c-4377-acdd-2c6ae147c9b2
+          stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        config:
+          is_hk: true
+        dataType: CHAR(32)
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: MD5
+        hashedColumns:
+          - columnCounter: 9f7daa1b-795d-426b-9630-719e595105ff
+            stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+          - columnCounter: 61dd7336-30ec-44e9-8dab-1e0aed4b01d2
+            stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+          - columnCounter: 4044d4aa-3923-4e4f-bbd0-313c163a3c24
+            stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+          - columnCounter: ebeb46bf-5be6-4909-a29e-d7a767e8712f
+            stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        name: dss_change_hash_order_details_transact_traders_north
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4044d4aa-3923-4e4f-bbd0-313c163a3c24
+                stepCounter: 1865a283-ee3e-4812-b740-10552548788e
+            transform: "CAST(MD5(COALESCE(CAST(load_orders_traders_north.orderdate AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_order_details_traders_north.unitprice AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_order_details_traders_north.quantity AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_order_details_traders_north.discount AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS dss_change_hash_order_details_transact_traders_north"
+          - columnReferences:
+              - columnCounter: 9f7daa1b-795d-426b-9630-719e595105ff
+                stepCounter: 1865a283-ee3e-4812-b740-10552548788e
+            transform: "CAST(MD5(COALESCE(CAST(load_orders_traders_north.orderdate AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_order_details_traders_north.unitprice AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_order_details_traders_north.quantity AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_order_details_traders_north.discount AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS dss_change_hash_order_details_transact_traders_north"
+          - columnReferences:
+              - columnCounter: 61dd7336-30ec-44e9-8dab-1e0aed4b01d2
+                stepCounter: 1865a283-ee3e-4812-b740-10552548788e
+            transform: "CAST(MD5(COALESCE(CAST(load_orders_traders_north.orderdate AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_order_details_traders_north.unitprice AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_order_details_traders_north.quantity AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_order_details_traders_north.discount AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS dss_change_hash_order_details_transact_traders_north"
+          - columnReferences:
+              - columnCounter: ebeb46bf-5be6-4909-a29e-d7a767e8712f
+                stepCounter: 1865a283-ee3e-4812-b740-10552548788e
+            transform: "CAST(MD5(COALESCE(CAST(load_orders_traders_north.orderdate AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_order_details_traders_north.unitprice AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_order_details_traders_north.quantity AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_order_details_traders_north.discount AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS dss_change_hash_order_details_transact_traders_north"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: afc6b5e0-aae7-4682-ace1-550d8f73276f
+          stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        isSystemRecordSource: true
+        name: dss_record_source
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55dc0483-1ca0-46e9-91ce-2c0c26d5a99b
+                stepCounter: 0f84b489-746f-465a-bd78-bf7728470616
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4cef9ac0-25f9-41e1-8e9b-554592d7365a
+          stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemLoadDate: true
+        name: dss_load_date
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91d1b797-2a08-4714-98c3-3cf1387fa17e
+                stepCounter: 0f84b489-746f-465a-bd78-bf7728470616
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7041e7a2-696a-4c43-8779-07ef9efd958b
+          stepCounter: 12a3e26d-7f41-4e65-9f3c-6e2e635f8dce
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemCreateDate: true
+        name: dss_create_time
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          load_orders_traders_north: 067623d9-6f4d-4a9f-bb7a-975798c288cc
+          load_products_traders_north: 16bb8c30-f773-4b47-9194-0fcdd4d4819b
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DV_LND
+            nodeName: load_orders_traders_north
+          - locationName: DV_LND
+            nodeName: load_products_traders_north
+        join:
+          joinCondition: |-
+            FROM "TABLEOWNER"."load_order_details_traders_north" AS load_order_details_traders_north
+            INNER JOIN {{ ref('DV_LND', 'load_orders_traders_north') }} "load_orders_traders_north"
+              ON load_order_details_traders_north.orderid = load_orders_traders_north.orderid
+            INNER JOIN {{ ref('DV_LND', 'load_products_traders_north') }} "load_products_traders_north"
+              ON load_order_details_traders_north.productid = load_products_traders_north.productid
+        name: stage_order_details_traders_north
+        noLinkRefs: []
+  name: stage_order_details_traders_north
+  overrideSQL: false
+  schema: ""
+  sqlType: Fact
+  type: sql
+  version: 1
+type: Node

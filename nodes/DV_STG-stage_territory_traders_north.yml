@@ -1,0 +1,191 @@
+fileVersion: 1
+id: 979a8cb7-68b3-4cfc-973e-292141111b79
+name: stage_territory_traders_north
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DV_STG
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 28bde88f-f4ac-42af-b1b9-64b35740eff2
+          stepCounter: 979a8cb7-68b3-4cfc-973e-292141111b79
+        config:
+          is_hk: true
+        dataType: CHAR(32)
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: MD5
+        hashedColumns:
+          - columnCounter: b0540a99-f8e3-4f4b-916a-8117a7c3a662
+            stepCounter: 979a8cb7-68b3-4cfc-973e-292141111b79
+        name: hk_h_territory
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b0540a99-f8e3-4f4b-916a-8117a7c3a662
+                stepCounter: 3a02fb01-5a39-476d-8efe-500a985fa1a7
+            transform: "CAST(MD5(COALESCE(CAST(load_territories_traders_north.territoryid AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS hk_h_territory"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 74d81834-4928-4cc8-956c-420f1e1d4edd
+          stepCounter: 979a8cb7-68b3-4cfc-973e-292141111b79
+        config:
+          is_hd: true
+        dataType: VARCHAR(20)
+        defaultValue: ""
+        description: ""
+        name: territory_id
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 48f7ab81-6808-4d87-829c-78df12324bdc
+                stepCounter: 16f756d0-8aa4-42bd-bcee-4a171203405f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bf3275bc-af4a-4956-a31b-c0a4e317a3b1
+          stepCounter: 979a8cb7-68b3-4cfc-973e-292141111b79
+        config:
+          is_hd: true
+        dataType: CHAR(50)
+        defaultValue: ""
+        description: ""
+        name: territorydescription
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f4ae1b96-6f72-47e2-8b6b-fda3d7a1b396
+                stepCounter: 16f756d0-8aa4-42bd-bcee-4a171203405f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8494b4a0-f0f8-4823-a337-3ed42048854a
+          stepCounter: 979a8cb7-68b3-4cfc-973e-292141111b79
+        config:
+          is_hk: true
+        dataType: CHAR(32)
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: MD5
+        hashedColumns:
+          - columnCounter: f4ae1b96-6f72-47e2-8b6b-fda3d7a1b396
+            stepCounter: 979a8cb7-68b3-4cfc-973e-292141111b79
+        name: dss_change_hash_territory_lroc_traders_north
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f4ae1b96-6f72-47e2-8b6b-fda3d7a1b396
+                stepCounter: 3a02fb01-5a39-476d-8efe-500a985fa1a7
+            transform: "CAST(MD5(COALESCE(CAST(load_territories_traders_north.territorydescription AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS dss_change_hash_territory_lroc_traders_north"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c250010e-6c1f-446a-ab44-2c3e1697b18e
+          stepCounter: 979a8cb7-68b3-4cfc-973e-292141111b79
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        isSystemRecordSource: true
+        name: dss_record_source
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55dc0483-1ca0-46e9-91ce-2c0c26d5a99b
+                stepCounter: 16f756d0-8aa4-42bd-bcee-4a171203405f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bd12efa9-cb52-4cac-9808-bfdae67e6e50
+          stepCounter: 979a8cb7-68b3-4cfc-973e-292141111b79
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemLoadDate: true
+        name: dss_load_date
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91d1b797-2a08-4714-98c3-3cf1387fa17e
+                stepCounter: 16f756d0-8aa4-42bd-bcee-4a171203405f
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: df7a9264-56fd-4442-bde6-efc67d8e45b8
+          stepCounter: 979a8cb7-68b3-4cfc-973e-292141111b79
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemCreateDate: true
+        name: dss_create_time
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: |-
+            FROM "TABLEOWNER"."load_territories_traders_north" AS load_territories_traders_north
+        name: stage_territory_traders_north
+        noLinkRefs: []
+  name: stage_territory_traders_north
+  overrideSQL: false
+  schema: ""
+  sqlType: Fact
+  type: sql
+  version: 1
+type: Node
