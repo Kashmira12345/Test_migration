@@ -1,0 +1,227 @@
+fileVersion: 1
+id: 253732a8-0443-40b7-b36d-054e18c7a71d
+name: s_product_hroc_traders_south
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DV_SAT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5f10822c-dc50-4252-82d8-0e20ef0e09c7
+          stepCounter: 253732a8-0443-40b7-b36d-054e18c7a71d
+        config: {}
+        dataType: CHAR(32)
+        defaultValue: ""
+        description: ""
+        name: hk_h_product
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6369e0a1-6d7f-48fb-8ef7-9b27a1decb73
+                stepCounter: 05884703-7acc-47cb-9d00-d589cce8dc24
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 95b7a67a-3180-481d-a61d-eb5ac9303820
+          stepCounter: 253732a8-0443-40b7-b36d-054e18c7a71d
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: unitsinstock
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d3e7f14-2d9b-4012-89ee-82abd9736d15
+                stepCounter: 05884703-7acc-47cb-9d00-d589cce8dc24
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ac4a757-da41-4f7e-86b4-6d2a3164bb87
+          stepCounter: 253732a8-0443-40b7-b36d-054e18c7a71d
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: unitsonorder
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f67ad344-57d6-42c1-9ae4-fb3c262ad18c
+                stepCounter: 05884703-7acc-47cb-9d00-d589cce8dc24
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 447c8ea8-8105-4612-867c-cd23f35b6a93
+          stepCounter: 253732a8-0443-40b7-b36d-054e18c7a71d
+        config: {}
+        dataType: CHAR(32)
+        defaultValue: ""
+        description: ""
+        name: dss_change_hash
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a455bb4b-6485-4b5e-b71d-9efe6a66eb1a
+                stepCounter: 05884703-7acc-47cb-9d00-d589cce8dc24
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0eb6e3bc-0062-4d20-ad88-54cec6b3610e
+          stepCounter: 253732a8-0443-40b7-b36d-054e18c7a71d
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        isSystemRecordSource: true
+        name: dss_record_source
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55dc0483-1ca0-46e9-91ce-2c0c26d5a99b
+                stepCounter: 05884703-7acc-47cb-9d00-d589cce8dc24
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f17e600c-746b-4065-a6a1-a638813d1f76
+          stepCounter: 253732a8-0443-40b7-b36d-054e18c7a71d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemLoadDate: true
+        name: dss_load_date
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91d1b797-2a08-4714-98c3-3cf1387fa17e
+                stepCounter: 05884703-7acc-47cb-9d00-d589cce8dc24
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 08c9ac94-5411-4b30-857c-547a02b36f3f
+          stepCounter: 253732a8-0443-40b7-b36d-054e18c7a71d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemStartDate: true
+        name: dss_start_date
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ffdd44f-d91a-4d12-bdbc-1fb04cd36908
+          stepCounter: 253732a8-0443-40b7-b36d-054e18c7a71d
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        isSystemVersion: true
+        name: dss_version
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "COALESCE(current_rows.dss_version, 0) + 1 AS dss_version"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f5e95c2f-6c17-43ff-874d-febca46494cb
+          stepCounter: 253732a8-0443-40b7-b36d-054e18c7a71d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemCreateDate: true
+        name: dss_create_time
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          stage_product_traders_south: 39a5f4b1-dba1-4bb1-94b1-5c161e6af8bd
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DV_STG
+            nodeName: stage_product_traders_south
+        join:
+          joinCondition: |-
+            FROM {{ ref('DV_STG', 'stage_product_traders_south') }} "stage_product_traders_south"" AS stage_product_traders_south
+            LEFT OUTER JOIN (SELECT s_product_hroc_traders_south.hk_h_product, MAX(s_product_hroc_traders_south.dss_start_date) AS dss_start_date, MAX(s_product_hroc_traders_south.dss_version) AS dss_version
+            FROM {{ ref('DV_SAT', 's_product_hroc_traders_south') }} "s_product_hroc_traders_south"" AS s_product_hroc_traders_south
+            GROUP BY s_product_hroc_traders_south.hk_h_product) AS current_rows
+              ON stage_product_traders_south.hk_h_product = current_rows.hk_h_product
+            WHERE NOT EXISTS(SELECT 1
+            FROM {{ ref('DV_SAT', 's_product_hroc_traders_south') }} "s_product_hroc_traders_south"" AS s_product_hroc_traders_south
+            WHERE stage_product_traders_south.hk_h_product = s_product_hroc_traders_south.hk_h_product
+                AND stage_product_traders_south.dss_change_hash_product_hroc_traders_south = s_product_hroc_traders_south.dss_change_hash
+                AND current_rows.dss_start_date = s_product_hroc_traders_south.dss_start_date)
+        name: s_product_hroc_traders_south
+        noLinkRefs: []
+  name: s_product_hroc_traders_south
+  overrideSQL: false
+  schema: ""
+  sqlType: DV:::8
+  type: sql
+  version: 1
+type: Node
