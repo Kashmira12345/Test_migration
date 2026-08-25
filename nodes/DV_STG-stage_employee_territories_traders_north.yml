@@ -1,0 +1,228 @@
+fileVersion: 1
+id: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+name: stage_employee_territories_traders_north
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DV_STG
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 93bc3bb2-aef8-45f9-9053-4eb21a685069
+          stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+        config:
+          is_hk: true
+        dataType: CHAR(32)
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: MD5
+        hashedColumns:
+          - columnCounter: 4b9dce65-145a-4528-8605-62d3ff3cb7f1
+            stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+          - columnCounter: b70cfc36-85c8-4a49-8fec-ed4f7722fce1
+            stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+        name: hk_l_employee_territories
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b9dce65-145a-4528-8605-62d3ff3cb7f1
+                stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+            transform: "CAST(MD5(COALESCE(CAST(load_employeeterritories_traders_north.employeeid AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_employeeterritories_traders_north.territoryid AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS hk_l_employee_territories"
+          - columnReferences:
+              - columnCounter: b70cfc36-85c8-4a49-8fec-ed4f7722fce1
+                stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+            transform: "CAST(MD5(COALESCE(CAST(load_employeeterritories_traders_north.employeeid AS VARCHAR(MAX)), 'null') + '||' + COALESCE(CAST(load_employeeterritories_traders_north.territoryid AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS hk_l_employee_territories"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b9dce65-145a-4528-8605-62d3ff3cb7f1
+          stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+        config:
+          is_hd: true
+          is_hk: true
+        dataType: CHAR(32)
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: MD5
+        hashedColumns:
+          - columnCounter: d86a6d7d-6bc7-4b98-ab73-ead834f839e0
+            stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+        name: hk_h_employee
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d86a6d7d-6bc7-4b98-ab73-ead834f839e0
+                stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+            transform: "CAST(MD5(COALESCE(CAST(load_employeeterritories_traders_north.employeeid AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS hk_h_employee"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b70cfc36-85c8-4a49-8fec-ed4f7722fce1
+          stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+        config:
+          is_hd: true
+          is_hk: true
+        dataType: CHAR(32)
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: MD5
+        hashedColumns:
+          - columnCounter: b0540a99-f8e3-4f4b-916a-8117a7c3a662
+            stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+        name: hk_h_territory
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b0540a99-f8e3-4f4b-916a-8117a7c3a662
+                stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+            transform: "CAST(MD5(COALESCE(CAST(load_employeeterritories_traders_north.territoryid AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS hk_h_territory"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d86a6d7d-6bc7-4b98-ab73-ead834f839e0
+          stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+        config:
+          is_hd: true
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: employee_id
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b4237e83-6925-4e87-981b-c751c3aaa468
+                stepCounter: dca6ea1f-9f25-45a2-99af-5e184774b9d4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b0540a99-f8e3-4f4b-916a-8117a7c3a662
+          stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+        config:
+          is_hd: true
+        dataType: VARCHAR(20)
+        defaultValue: ""
+        description: ""
+        name: territory_id
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 48f7ab81-6808-4d87-829c-78df12324bdc
+                stepCounter: dca6ea1f-9f25-45a2-99af-5e184774b9d4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 55dc0483-1ca0-46e9-91ce-2c0c26d5a99b
+          stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        isSystemRecordSource: true
+        name: dss_record_source
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55dc0483-1ca0-46e9-91ce-2c0c26d5a99b
+                stepCounter: dca6ea1f-9f25-45a2-99af-5e184774b9d4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d1b797-2a08-4714-98c3-3cf1387fa17e
+          stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemLoadDate: true
+        name: dss_load_date
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91d1b797-2a08-4714-98c3-3cf1387fa17e
+                stepCounter: dca6ea1f-9f25-45a2-99af-5e184774b9d4
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1a6d9d6b-e0fd-41ff-b7f1-7f3c47c29319
+          stepCounter: 35733e49-8f89-44bf-98f8-c9fcb8dc0558
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemCreateDate: true
+        name: dss_create_time
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          load_employeeterritories_traders_north: 58ab30ac-3af1-4b19-bc59-244924a6a0b5
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DV_STG
+            nodeName: load_employeeterritories_traders_north
+        join:
+          joinCondition: |-
+            FROM {{ ref('DV_STG', 'load_employeeterritories_traders_north') }} "load_employeeterritories_traders_north"
+        name: stage_employee_territories_traders_north
+        noLinkRefs: []
+  name: stage_employee_territories_traders_north
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
