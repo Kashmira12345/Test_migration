@@ -1,0 +1,191 @@
+fileVersion: 1
+id: d5aa0e95-4122-41ef-8fdc-85013273f375
+name: stage_region_traders_north
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DV_STG
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fd584950-4a5c-433a-a783-776aef11f8f8
+          stepCounter: d5aa0e95-4122-41ef-8fdc-85013273f375
+        config:
+          is_hk: true
+        dataType: CHAR(32)
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: MD5
+        hashedColumns:
+          - columnCounter: cddfa8d7-2474-41d2-8788-898bcc2f011c
+            stepCounter: d5aa0e95-4122-41ef-8fdc-85013273f375
+        name: hk_h_region
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cddfa8d7-2474-41d2-8788-898bcc2f011c
+                stepCounter: d5aa0e95-4122-41ef-8fdc-85013273f375
+            transform: "CAST(MD5(COALESCE(CAST(load_region_traders_north.regionid AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS hk_h_region"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cddfa8d7-2474-41d2-8788-898bcc2f011c
+          stepCounter: d5aa0e95-4122-41ef-8fdc-85013273f375
+        config:
+          is_hd: true
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: region_id
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eacb076d-9c73-4ef9-8290-58432e44f589
+                stepCounter: de0709bd-c3d1-42ec-8678-cf7e6490b6b6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: de0bd7f1-4439-41ef-a9bc-df638ce5001e
+          stepCounter: d5aa0e95-4122-41ef-8fdc-85013273f375
+        config:
+          is_hd: true
+        dataType: CHAR(50)
+        defaultValue: ""
+        description: ""
+        name: regiondescription
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: de0bd7f1-4439-41ef-a9bc-df638ce5001e
+                stepCounter: de0709bd-c3d1-42ec-8678-cf7e6490b6b6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5779d7b7-dce6-4d35-b6cc-aa13571fba9c
+          stepCounter: d5aa0e95-4122-41ef-8fdc-85013273f375
+        config:
+          is_hk: true
+        dataType: CHAR(32)
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: MD5
+        hashedColumns:
+          - columnCounter: de0bd7f1-4439-41ef-a9bc-df638ce5001e
+            stepCounter: d5aa0e95-4122-41ef-8fdc-85013273f375
+        name: dss_change_hash_region_lroc_traders_north
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: de0bd7f1-4439-41ef-a9bc-df638ce5001e
+                stepCounter: d5aa0e95-4122-41ef-8fdc-85013273f375
+            transform: "CAST(MD5(COALESCE(CAST(load_region_traders_north.regiondescription AS VARCHAR(MAX)), 'null')) AS CHAR(32)) AS dss_change_hash_region_lroc_traders_north"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 55dc0483-1ca0-46e9-91ce-2c0c26d5a99b
+          stepCounter: d5aa0e95-4122-41ef-8fdc-85013273f375
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        isSystemRecordSource: true
+        name: dss_record_source
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55dc0483-1ca0-46e9-91ce-2c0c26d5a99b
+                stepCounter: de0709bd-c3d1-42ec-8678-cf7e6490b6b6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d1b797-2a08-4714-98c3-3cf1387fa17e
+          stepCounter: d5aa0e95-4122-41ef-8fdc-85013273f375
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemLoadDate: true
+        name: dss_load_date
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91d1b797-2a08-4714-98c3-3cf1387fa17e
+                stepCounter: de0709bd-c3d1-42ec-8678-cf7e6490b6b6
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1a6d9d6b-e0fd-41ff-b7f1-7f3c47c29319
+          stepCounter: d5aa0e95-4122-41ef-8fdc-85013273f375
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemCreateDate: true
+        name: dss_create_time
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: |-
+            FROM {{ ref('DV_STG', 'load_region_traders_north') }} "load_region_traders_north"" AS load_region_traders_north
+        name: stage_region_traders_north
+        noLinkRefs: []
+  name: stage_region_traders_north
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
