@@ -1,0 +1,65 @@
+name: 080_SCHEMA_004__SAP_GOODS_RECEIPT_FACT_TEMP__create_table_as
+description: Auto-migrated from 080_SCHEMA_004__SAP_GOODS_RECEIPT_FACT_TEMP__create_table_as.sql
+nodeType: Stage
+locationName: ''
+metadata:
+  override:
+    create:
+      enabled: true
+      script: "CREATE or replace table SCHEMA_004.SAP_GOODS_RECEIPT_FACT_TEMP\nas \nselect grn_document_nbr_sk,\
+        \ source_system_sk, grn_doc_item_nbr_id, journal_entry_nbr_id, gr_document_type_cd, \nposting_key_nbr_id,\
+        \ reference_document_nbr_id, transaction_cd, user_nm, glaccount_nbr_id, clearing_dt, \nclearing_document_nbr_id,\
+        \ assignment_nbr_id, local_currency_cd, local_currency_amt,doc_currency_amt, source_system_cd,\
+        \ client_details_nbr, \nentity_cd, line_item_id, receipt_entry_dt, receipt_posting_dt, invoiced_quantity_nbr,\
+        \ movement_type_cd, \ngoods_quantity_nbr, grn_doc_creation_dt, item_batch_nbr_id, price_per_unit_amt,\
+        \ quality_status_cd, \nsource_supplier_nbr_id, source_item_nbr_id, source_location_cd, item_nbr_sk,\
+        \ supplier_nbr_sk, location_cd_sk, \nentity_sk, entity_nm, movement_type_nm, source_location_nm,\
+        \ po_cost_center_nm, po_nbr_id, po_line_item_id, \ninvoice_nbr_id, invoice_line_item_id, po_cost_center_cd,\
+        \ source_item_nm, source_item_dsc, asn_promise_dt, \nrequested_delivery_dt, PROFIT_CENTER_CD,\
+        \ create_ts, last_updt_ts, ingest_ts, dl_last_updt_ts, load_ts, \nroot_execn_pid, fiscal_year_cd,\
+        \ goods_debit_credit_nm, currency_cd, source_storage_location_cd, \nsource_storage_location_nm,\
+        \ curr_flg, source_system_nm, instance_nm, dbt_scd_id, ADF_PIPELINE_NM, \nADF_TRANSFORMATION_NM,\
+        \ ADF_SCRIPT_NM, BUSINESS_SEGMENT_NM, grn_nbr_id, goods_receipt_intg_id, UOM_CD, \ngrn_dsc, second_local_currency_amt,trading_partner_cd\n\
+        \ from SCHEMA_004.SAP_YRP_GOODS_RECEIPT_FACT_TEMP_union1\nunion all\nselect grn_document_nbr_sk,\
+        \ source_system_sk, grn_doc_item_nbr_id, journal_entry_nbr_id, gr_document_type_cd, \nposting_key_nbr_id,\
+        \ reference_document_nbr_id, transaction_cd, user_nm, glaccount_nbr_id, clearing_dt, \nclearing_document_nbr_id,\
+        \ assignment_nbr_id, local_currency_cd, local_currency_amt,doc_currency_amt, source_system_cd,\
+        \ client_details_nbr, \nentity_cd, line_item_id, receipt_entry_dt, receipt_posting_dt, invoiced_quantity_nbr,\
+        \ movement_type_cd, \ngoods_quantity_nbr, grn_doc_creation_dt, item_batch_nbr_id, price_per_unit_amt,\
+        \ quality_status_cd, \nsource_supplier_nbr_id, source_item_nbr_id, source_location_cd, item_nbr_sk,\
+        \ supplier_nbr_sk, location_cd_sk, \nentity_sk, entity_nm, movement_type_nm, source_location_nm,\
+        \ po_cost_center_nm, po_nbr_id, po_line_item_id, \ninvoice_nbr_id, invoice_line_item_id, po_cost_center_cd,\
+        \ source_item_nm, source_item_dsc, asn_promise_dt, \nrequested_delivery_dt, PROFIT_CENTER_CD,\
+        \ create_ts, last_updt_ts, ingest_ts, dl_last_updt_ts, load_ts, \nroot_execn_pid, fiscal_year_cd,\
+        \ goods_debit_credit_nm, currency_cd, source_storage_location_cd, \nsource_storage_location_nm,\
+        \ curr_flg, source_system_nm, instance_nm, dbt_scd_id, ADF_PIPELINE_NM, \nADF_TRANSFORMATION_NM,\
+        \ ADF_SCRIPT_NM, BUSINESS_SEGMENT_NM, grn_nbr_id, goods_receipt_intg_id, UOM_CD, \ngrn_dsc, second_local_currency_amt,trading_partner_cd\n\
+        \ from SCHEMA_004.SAP_YRP_GOODS_RECEIPT_FACT_TEMP_union2\nunion all\nselect grn_document_nbr_sk,\
+        \ source_system_sk, grn_doc_item_nbr_id, journal_entry_nbr_id, gr_document_type_cd, \nposting_key_nbr_id,\
+        \ reference_document_nbr_id, transaction_cd, user_nm, glaccount_nbr_id, clearing_dt, \nclearing_document_nbr_id,\
+        \ assignment_nbr_id, local_currency_cd, local_currency_amt,doc_currency_amt,source_system_cd,\
+        \ client_details_nbr, \nentity_cd, line_item_id, receipt_entry_dt, receipt_posting_dt, invoiced_quantity_nbr,\
+        \ movement_type_cd, \ngoods_quantity_nbr, grn_doc_creation_dt, item_batch_nbr_id, price_per_unit_amt,\
+        \ quality_status_cd, \nsource_supplier_nbr_id, source_item_nbr_id, source_location_cd, item_nbr_sk,\
+        \ supplier_nbr_sk, location_cd_sk, \nentity_sk, entity_nm, movement_type_nm, source_location_nm,\
+        \ po_cost_center_nm, po_nbr_id, po_line_item_id, \ninvoice_nbr_id, invoice_line_item_id, po_cost_center_cd,\
+        \ source_item_nm, source_item_dsc, asn_promise_dt, \nrequested_delivery_dt, PROFIT_CENTER_CD,\
+        \ create_ts, last_updt_ts, ingest_ts, dl_last_updt_ts, load_ts, \nroot_execn_pid, fiscal_year_cd,\
+        \ goods_debit_credit_nm, currency_cd, source_storage_location_cd, \nsource_storage_location_nm,\
+        \ curr_flg, source_system_nm, instance_nm, dbt_scd_id, ADF_PIPELINE_NM, \nADF_TRANSFORMATION_NM,\
+        \ ADF_SCRIPT_NM, BUSINESS_SEGMENT_NM, grn_nbr_id, goods_receipt_intg_id, UOM_CD, \ngrn_dsc, second_local_currency_amt,trading_partner_cd\n\
+        \ from SCHEMA_004.SAP_YRP_GOODS_RECEIPT_FACT_TEMP_union3\nunion all\nselect grn_document_nbr_sk,\
+        \ source_system_sk, grn_doc_item_nbr_id, journal_entry_nbr_id, gr_document_type_cd, \nposting_key_nbr_id,\
+        \ reference_document_nbr_id, transaction_cd, user_nm, glaccount_nbr_id, clearing_dt, \nclearing_document_nbr_id,\
+        \ assignment_nbr_id, local_currency_cd, local_currency_amt,doc_currency_amt, source_system_cd,\
+        \ client_details_nbr, \nentity_cd, line_item_id, receipt_entry_dt, receipt_posting_dt, invoiced_quantity_nbr,\
+        \ movement_type_cd, \ngoods_quantity_nbr, grn_doc_creation_dt, item_batch_nbr_id, price_per_unit_amt,\
+        \ quality_status_cd, \nsource_supplier_nbr_id, source_item_nbr_id, source_location_cd, item_nbr_sk,\
+        \ supplier_nbr_sk, location_cd_sk, \nentity_sk, entity_nm, movement_type_nm, source_location_nm,\
+        \ po_cost_center_nm, po_nbr_id, po_line_item_id, \ninvoice_nbr_id, invoice_line_item_id, po_cost_center_cd,\
+        \ source_item_nm, source_item_dsc, asn_promise_dt, \nrequested_delivery_dt, PROFIT_CENTER_CD,\
+        \ create_ts, last_updt_ts, ingest_ts, dl_last_updt_ts, load_ts, \nroot_execn_pid, fiscal_year_cd,\
+        \ goods_debit_credit_nm, currency_cd, source_storage_location_cd, \nsource_storage_location_nm,\
+        \ curr_flg, source_system_nm, instance_nm, dbt_scd_id, ADF_PIPELINE_NM, \nADF_TRANSFORMATION_NM,\
+        \ ADF_SCRIPT_NM, BUSINESS_SEGMENT_NM, grn_nbr_id, goods_receipt_intg_id, UOM_CD, \ngrn_dsc, second_local_currency_amt,trading_partner_cd\n\
+        \ from SCHEMA_004.SAP_YRP_GOODS_RECEIPT_FACT_TEMP_union4;\n"

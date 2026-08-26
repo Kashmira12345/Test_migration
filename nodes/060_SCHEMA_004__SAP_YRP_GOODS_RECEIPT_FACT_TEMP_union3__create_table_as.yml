@@ -1,0 +1,44 @@
+name: 060_SCHEMA_004__SAP_YRP_GOODS_RECEIPT_FACT_TEMP_union3__create_table_as
+description: Auto-migrated from 060_SCHEMA_004__SAP_YRP_GOODS_RECEIPT_FACT_TEMP_union3__create_table_as.sql
+nodeType: Stage
+locationName: ''
+metadata:
+  override:
+    create:
+      enabled: true
+      script: "--and (BSEG.XREF3 = CONCAT(BEF.fiscal_year_cd, BEF.MSEG_MBLNR, BEF.line_item_id) OR BSEG.XREF3\
+        \ IS NULL)\n\n\nCREATE or replace table SCHEMA_004.SAP_YRP_GOODS_RECEIPT_FACT_TEMP_union3\nas\
+        \ \n\nWITH cte_BKPF AS (\n    SELECT DISTINCT KURSF, WAERS, AWKEY, BUKRS, BELNR, GJAHR, blart,XBLNR\n\
+        \    FROM SAP.bkpf\n    WHERE AWTYP = 'MKPF'\n)\n-- 4: Valid PO in bef, no match in BSEG\n\nSELECT\
+        \ distinct \nbef.grn_document_nbr_sk,bef.source_system_sk,bef.grn_doc_item_nbr_id,bef.gr_document_type_cd,bef.transaction_cd,bef.user_nm,\n\
+        bef.source_system_cd,bef.client_details_nbr,bef.entity_cd,bef.line_item_id,bef.receipt_entry_dt,bef.receipt_posting_dt,\n\
+        bef.movement_type_cd,bef.goods_quantity_nbr,bef.grn_doc_creation_dt,bef.item_batch_nbr_id,bef.price_per_unit_amt,\n\
+        bef.quality_status_cd, bef.source_supplier_nbr_id, bef.source_item_nbr_id, bef.source_location_cd,\
+        \ \nbef.item_nbr_sk, bef.supplier_nbr_sk, bef.location_cd_sk, bef.entity_sk, bef.entity_nm, \n\
+        bef.movement_type_nm, bef.source_location_nm, bef.po_cost_center_nm, bef.po_nbr_id, \nbef.po_line_item_id,\
+        \ bef.po_cost_center_cd, bef.source_item_nm, bef.source_item_dsc, \nbef.asn_promise_dt, bef.requested_delivery_dt,\
+        \ bef.create_ts, bef.last_updt_ts, bef.ingest_ts, \nbef.dl_last_updt_ts, bef.load_ts, bef.root_execn_pid,\
+        \ bef.fiscal_year_cd, bef.goods_debit_credit_nm, \nbef.source_storage_location_cd, bef.source_storage_location_nm,\
+        \ bef.curr_flg, bef.source_system_nm, \nbef.instance_nm, bef.ADF_PIPELINE_NM, bef.ADF_TRANSFORMATION_NM,\
+        \ bef.ADF_SCRIPT_NM, \nbef.business_segment_nm, bef.dbt_scd_id, bef.grn_nbr_id, bef.goods_receipt_intg_id\
+        \ \n,bseg.belnr\t\t \t\t\t\t\t\t\t\t\t\t\t\tAS journal_entry_nbr_id\n,bseg.bschl \t\t\t\t\t\t\t\
+        \t\t\t\t\t\tAS posting_key_nbr_id\n,bseg.hkont\t\t\t\t\t\t\t\t\t\t\t\t\t\tAS glaccount_nbr_id\n\
+        ,case when bseg.augdt = '00000000' then null \n        else TO_DATE(bseg.augdt, 'YYYYMMDD') end\
+        \ \t\t\t\tAS CLEARING_DT\n--,bseg.augdt\t\t\t\t\t\t\t\t\t\t\t\t\t\tAS clearing_dt\n,bseg.augbl\
+        \ \t\t\t\t\t\t\t\t\t\t\t\t\tAS clearing_document_nbr_id\n,bseg.zuonr\t\t\t\t\t\t\t\t\t\t\t\t\t\
+        \tAS assignment_nbr_id\n,bseg.pswsl\t\t\t\t\t\t\t\t\t\t\t\t\t\tAS local_currency_cd\n,CASE WHEN\
+        \ bef.shkzg = 'S' then (-1) * BSEG.DMBTR else BSEG.DMBTR end AS local_currency_amt\n,CASE WHEN\
+        \ bef.shkzg = 'S' then (-1) * BSEG.WRBTR else BSEG.WRBTR end AS doc_currency_amt\n,CONCAT(bseg.belnr,'-',bseg.gjahr)\
+        \ \t\t\t\t\t\t\tAS invoice_nbr_id\n,BKPF.waers \t\t\t\t\t\t\t\t\t\t\t\tAS currency_cd\n,BSEG.BUZEI\t\
+        \t\t\t\t\t\t\t\t\t\t\t\tAS invoice_line_item_id\n,bseg.menge                                 \
+        \                AS invoiced_quantity_nbr\n,BSEG.meins\t\t\t\t\t\t\t\t\t\t\t\t\tAS UOM_CD\n,bseg.prctr\
+        \ \t\t\t\t\t\t\t\t\t\t\t\tas profit_center_cd\n,BKPF.XBLNR \t\t\t\t\t\t\t\t\t\t\t\tas reference_document_nbr_id\n\
+        ,bseg.sgtxt \t\t\t\t\t\t\t\t\t\t\t\tas grn_dsc\n,bseg.dmbe2\t\t\t\t\t\t\t\t\t\t\t\t\tas second_local_currency_amt\n\
+        ,bseg.vbund\t\t\t\t\t\t\t\t\t\t\t\t\tas trading_partner_cd\nFROM SCHEMA_004.SAP_YRP_GOODS_RECEIPT_FACT_TEMP_before\
+        \ bef\nLEFT JOIN cte_BKPF BKPF\n    ON BKPF.AWKEY = bef.CONCAT_AWKEY\n   AND BKPF.BUKRS = bef.entity_cd\n\
+        \   AND BKPF.blart = BEF.gr_document_type_cd\nLEFT JOIN SCHEMA_004.SAP_YRP_BSEG_TEMP BSEG\n  \
+        \  ON BKPF.BELNR = BSEG.BELNR\n   AND BKPF.GJAHR = BSEG.GJAHR\n   AND BKPF.BUKRS = BSEG.BUKRS\n\
+        \   --AND round(BEF.goods_quantity_nbr ,3) = round(BSEG.MENGE,3)\n   --AND BSEG.HKONT = '2101200000'\n\
+        \   AND bef.po_nbr_id = BSEG.EBELN\n   AND bef.po_line_item_id = BSEG.EBELP\nWHERE bef.po_nbr_id\
+        \ IS NOT NULL\n  AND bef.po_line_item_id <> '00000'\n  AND BSEG.EBELN IS NULL\n  AND BSEG.EBELP\
+        \ IS NULL;\n"
