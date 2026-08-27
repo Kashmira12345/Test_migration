@@ -1,0 +1,57 @@
+fileVersion: 1
+id: 345e87d3-64df-4756-8cd6-30b48db99ebc
+name: dim_order_date
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: "Dimension node for dim_order_date"
+  isMultisource: false
+  locationName: DM_DIM
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4044d4aa-3923-4e4f-bbd0-313c163a3c24
+          stepCounter: 345e87d3-64df-4756-8cd6-30b48db99ebc
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: quantity
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          stage_orders_shippers_employees_customers_traders_south: 0e5d6751-f613-4749-b712-6af6550a2e39
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DV_STG
+            nodeName: stage_orders_shippers_employees_customers_traders_south
+        join:
+          joinCondition: |-
+            FROM {{ ref('DV_STG', 'stage_orders_shippers_employees_customers_traders_south') }} "stage_orders_shippers_employees_customers_traders_south"
+        name: dim_order_date
+        noLinkRefs: []
+  name: dim_order_date
+  overrideSQL: false
+  schema: ""
+  sqlType: Dimension
+  type: sql
+  version: 1
+type: Node
