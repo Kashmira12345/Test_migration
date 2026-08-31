@@ -1,0 +1,95 @@
+fileVersion: 1
+id: 037476f5-efcc-46bd-b1b9-dda5a662d735
+name: fact_order_detail
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: "Fact node for fact_order_detail"
+  isMultisource: false
+  locationName: DM_FCT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 919b99d1-04c4-4f3f-8021-720f4c6efc83
+          stepCounter: 037476f5-efcc-46bd-b1b9-dda5a662d735
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: product_group
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4044d4aa-3923-4e4f-bbd0-313c163a3c24
+          stepCounter: 037476f5-efcc-46bd-b1b9-dda5a662d735
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: quantity
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4044d4aa-3923-4e4f-bbd0-313c163a3c24
+                stepCounter: 1865a283-ee3e-4812-b740-10552548788e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ffd1b05-53a3-41e5-9195-34f701bbcccb
+          stepCounter: 037476f5-efcc-46bd-b1b9-dda5a662d735
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: dss_update_time
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          stage_order_details_traders_north: 1865a283-ee3e-4812-b740-10552548788e
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DV_STG
+            nodeName: stage_order_details_traders_north
+        join:
+          joinCondition: |-
+            FROM {{ ref('DV_STG', 'stage_order_details_traders_north') }} "stage_order_details_traders_north"
+        name: fact_order_detail
+        noLinkRefs: []
+  name: fact_order_detail
+  overrideSQL: false
+  schema: ""
+  sqlType: Fact
+  type: sql
+  version: 1
+type: Node
