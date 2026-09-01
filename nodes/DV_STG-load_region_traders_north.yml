@@ -1,0 +1,101 @@
+fileVersion: 1
+id: 01a959d9-c2c8-48d5-b7f5-b3d99c7b4b0c
+name: load_region_traders_north
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "Load node for load_region_traders_north"
+  isMultisource: false
+  locationName: DV_STG
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cddfa8d7-2474-41d2-8788-898bcc2f011c
+          stepCounter: 01a959d9-c2c8-48d5-b7f5-b3d99c7b4b0c
+        config: {}
+        dataType: CHAR(32)
+        defaultValue: ""
+        description: ""
+        name: hk_h_region
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cddfa8d7-2474-41d2-8788-898bcc2f011c
+                stepCounter: cd35feee-47c7-4d24-85d0-58dbf6a657dd
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eacb076d-9c73-4ef9-8290-58432e44f589
+          stepCounter: 01a959d9-c2c8-48d5-b7f5-b3d99c7b4b0c
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: region_id
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eacb076d-9c73-4ef9-8290-58432e44f589
+                stepCounter: cd35feee-47c7-4d24-85d0-58dbf6a657dd
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: de0bd7f1-4439-41ef-a9bc-df638ce5001e
+          stepCounter: 01a959d9-c2c8-48d5-b7f5-b3d99c7b4b0c
+        config: {}
+        dataType: CHAR(50)
+        defaultValue: ""
+        description: ""
+        name: regiondescription
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: de0bd7f1-4439-41ef-a9bc-df638ce5001e
+                stepCounter: cd35feee-47c7-4d24-85d0-58dbf6a657dd
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          region_traders_north: cd35feee-47c7-4d24-85d0-58dbf6a657dd
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: region_traders_north
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'region_traders_north') }} "region_traders_north"
+        name: load_region_traders_north
+        noLinkRefs: []
+  name: load_region_traders_north
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
