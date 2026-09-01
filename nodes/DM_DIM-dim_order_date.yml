@@ -1,0 +1,190 @@
+fileVersion: 1
+id: 345e87d3-64df-4756-8cd6-30b48db99ebc
+name: dim_order_date
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: "Dimension node for dim_order_date"
+  isMultisource: false
+  locationName: DM_DIM
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 01f2b343-31de-4776-acf6-8b8af1e655f4
+          stepCounter: 345e87d3-64df-4756-8cd6-30b48db99ebc
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        isSurrogateKey: true
+        name: dim_order_date_key
+        nullable: true
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5c291ca8-5199-4975-b440-b2036e87ce3d
+          stepCounter: 345e87d3-64df-4756-8cd6-30b48db99ebc
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: orderdate
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9f7daa1b-795d-426b-9630-719e595105ff
+                stepCounter: 1865a283-ee3e-4812-b740-10552548788e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2069f472-7d50-4566-946e-4a2afab38ea5
+          stepCounter: 345e87d3-64df-4756-8cd6-30b48db99ebc
+        config: {}
+        dataType: DATE
+        defaultValue: ""
+        description: ""
+        name: calendar_date
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(orderdate AS DATE)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2667d454-7caa-4d70-be9b-8547685352da
+          stepCounter: 345e87d3-64df-4756-8cd6-30b48db99ebc
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: year
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "EXTRACT(year FROM orderdate)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a3626f06-8133-4042-99e2-780ea8285808
+          stepCounter: 345e87d3-64df-4756-8cd6-30b48db99ebc
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: month
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "EXTRACT(month FROM orderdate)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46bc2bdc-2892-45f3-8513-43308042c6bc
+          stepCounter: 345e87d3-64df-4756-8cd6-30b48db99ebc
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: day
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "EXTRACT(day FROM orderdate)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b9c563b-669b-47ff-8a72-f20a1ba44a4a
+          stepCounter: 345e87d3-64df-4756-8cd6-30b48db99ebc
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: dss_create_time
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f8edfa7e-ed43-441b-b3be-b82a91bc270e
+          stepCounter: 345e87d3-64df-4756-8cd6-30b48db99ebc
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: dss_update_time
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          stage_order_details_traders_north: 1865a283-ee3e-4812-b740-10552548788e
+          order_date: f4ec399c-250a-4e43-8656-5a91fc5144a0
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DV_STG
+            nodeName: stage_order_details_traders_north
+          - locationName: DM_DIM
+            nodeName: order_date
+        join:
+          joinCondition: |-
+            FROM {{ ref('DV_STG', 'stage_order_details_traders_north') }} "stage_order_details_traders_north"
+            JOIN {{ ref('DM_DIM', 'order_date') }} "order_date" ON stage_order_details_traders_north.dim_order_date_key = order_date.dim_order_date_key
+        name: dim_order_date
+        noLinkRefs: []
+  name: dim_order_date
+  overrideSQL: false
+  schema: ""
+  sqlType: Dimension
+  type: sql
+  version: 1
+type: Node
