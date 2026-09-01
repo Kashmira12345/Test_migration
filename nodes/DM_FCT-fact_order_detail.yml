@@ -1,0 +1,193 @@
+fileVersion: 1
+id: 037476f5-efcc-46bd-b1b9-dda5a662d735
+name: fact_order_detail
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: "Fact node for fact_order_detail"
+  isMultisource: false
+  locationName: DM_FCT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 919b99d1-04c4-4f3f-8021-720f4c6efc83
+          stepCounter: 037476f5-efcc-46bd-b1b9-dda5a662d735
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: product_group
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d8579d0-eb92-45d3-98a4-e1578d3e1ac4
+                stepCounter: 58a9816d-f8d8-4e67-9208-08a13092bb34
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4044d4aa-3923-4e4f-bbd0-313c163a3c24
+          stepCounter: 037476f5-efcc-46bd-b1b9-dda5a662d735
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: quantity
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4044d4aa-3923-4e4f-bbd0-313c163a3c24
+                stepCounter: 1865a283-ee3e-4812-b740-10552548788e
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ffd1b05-53a3-41e5-9195-34f701bbcccb
+          stepCounter: 037476f5-efcc-46bd-b1b9-dda5a662d735
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: dss_update_time
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8eca7233-08f2-4125-ba40-d37b544e4f68
+          stepCounter: 037476f5-efcc-46bd-b1b9-dda5a662d735
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: dim_customer_key
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 30a2b9b5-8ab8-4402-a003-4d5ffde5bf51
+                stepCounter: fbad8a10-f2ef-4c2f-bcb1-f65552d12333
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5928aba9-a103-477c-a59c-e4a5f7998fa6
+          stepCounter: 037476f5-efcc-46bd-b1b9-dda5a662d735
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: dim_currency_rate_key
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2c381891-4f7b-4f8d-9b22-8f138f510fcd
+                stepCounter: 9a6330ea-b3c7-4636-84dd-074de907ea95
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 92fd5a67-aa0d-4487-b6b6-a927734083dc
+          stepCounter: 037476f5-efcc-46bd-b1b9-dda5a662d735
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: dim_product_key
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aa04ac05-dbbf-4fa1-b15f-feced5bc6553
+                stepCounter: 58a9816d-f8d8-4e67-9208-08a13092bb34
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d94c5400-0d80-4be9-b4d8-c212d3fa126a
+          stepCounter: 037476f5-efcc-46bd-b1b9-dda5a662d735
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: dim_order_date_key
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 01f2b343-31de-4776-acf6-8b8af1e655f4
+                stepCounter: 345e87d3-64df-4756-8cd6-30b48db99ebc
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          stage_order_details_traders_north: 1865a283-ee3e-4812-b740-10552548788e
+          dim_customer: fbad8a10-f2ef-4c2f-bcb1-f65552d12333
+          dim_currency_rate: 9a6330ea-b3c7-4636-84dd-074de907ea95
+          dim_product: 58a9816d-f8d8-4e67-9208-08a13092bb34
+          dim_order_date: 345e87d3-64df-4756-8cd6-30b48db99ebc
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DV_STG
+            nodeName: stage_order_details_traders_north
+          - locationName: DM_DIM
+            nodeName: dim_customer
+          - locationName: DM_DIM
+            nodeName: dim_currency_rate
+          - locationName: DM_DIM
+            nodeName: dim_product
+          - locationName: DM_DIM
+            nodeName: dim_order_date
+        join:
+          joinCondition: |-
+            FROM {{ ref('DV_STG', 'stage_order_details_traders_north') }} "stage_order_details_traders_north"
+            JOIN {{ ref('DM_DIM', 'dim_customer') }} "dim_customer" ON stage_order_details_traders_north.dim_customer_key = dim_customer.dim_customer_key
+            JOIN {{ ref('DM_DIM', 'dim_currency_rate') }} "dim_currency_rate" ON stage_order_details_traders_north.dim_currency_rate_key = dim_currency_rate.dim_currency_rate_key
+            JOIN {{ ref('DM_DIM', 'dim_product') }} "dim_product" ON stage_order_details_traders_north.dim_product_key = dim_product.dim_product_key
+            JOIN {{ ref('DM_DIM', 'dim_order_date') }} "dim_order_date" ON stage_order_details_traders_north.dim_order_date_key = dim_order_date.dim_order_date_key
+        name: fact_order_detail
+        noLinkRefs: []
+  name: fact_order_detail
+  overrideSQL: false
+  schema: ""
+  sqlType: Fact
+  type: sql
+  version: 1
+type: Node
