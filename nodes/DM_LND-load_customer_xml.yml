@@ -1,0 +1,161 @@
+fileVersion: 1
+id: 08674c78-a7d8-487f-b15b-9b8ddf02c1cc
+name: load_customer_xml
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "Load node for load_customer_xml"
+  isMultisource: false
+  locationName: DM_LND
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 72e53c25-b399-493c-af9c-c9ee8b9de864
+          stepCounter: 08674c78-a7d8-487f-b15b-9b8ddf02c1cc
+        config: {}
+        dataType: NUMBER(6,0)
+        defaultValue: ""
+        description: ""
+        name: code
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 72e53c25-b399-493c-af9c-c9ee8b9de864
+                stepCounter: bd8fbd7f-f669-44b5-a585-62051f6c6ad8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7cfc8dd8-6b9a-4730-8d38-e68229440bd7
+          stepCounter: 08674c78-a7d8-487f-b15b-9b8ddf02c1cc
+        config: {}
+        dataType: VARCHAR(45)
+        defaultValue: ""
+        description: ""
+        name: name
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7cfc8dd8-6b9a-4730-8d38-e68229440bd7
+                stepCounter: bd8fbd7f-f669-44b5-a585-62051f6c6ad8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 585f214c-1e02-4411-aa9c-35db5dd52b42
+          stepCounter: 08674c78-a7d8-487f-b15b-9b8ddf02c1cc
+        config: {}
+        dataType: VARCHAR(20)
+        defaultValue: ""
+        description: ""
+        name: cat_code
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 585f214c-1e02-4411-aa9c-35db5dd52b42
+                stepCounter: bd8fbd7f-f669-44b5-a585-62051f6c6ad8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2a8d55d3-9822-44c2-b7a4-60e0d4e25e98
+          stepCounter: 08674c78-a7d8-487f-b15b-9b8ddf02c1cc
+        config: {}
+        dataType: VARCHAR(20)
+        defaultValue: ""
+        description: ""
+        name: grp_code
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2a8d55d3-9822-44c2-b7a4-60e0d4e25e98
+                stepCounter: bd8fbd7f-f669-44b5-a585-62051f6c6ad8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d24cc125-1d01-4d03-afe8-92235554c047
+          stepCounter: 08674c78-a7d8-487f-b15b-9b8ddf02c1cc
+        config: {}
+        dataType: CHAR(20)
+        defaultValue: ""
+        description: ""
+        name: subgrp
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d24cc125-1d01-4d03-afe8-92235554c047
+                stepCounter: bd8fbd7f-f669-44b5-a585-62051f6c6ad8
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5a879678-cf5f-45fb-9576-156d9c2ac216
+          stepCounter: 08674c78-a7d8-487f-b15b-9b8ddf02c1cc
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: source_sales
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5a879678-cf5f-45fb-9576-156d9c2ac216
+                stepCounter: bd8fbd7f-f669-44b5-a585-62051f6c6ad8
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          customer_xml: bd8fbd7f-f669-44b5-a585-62051f6c6ad8
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: customer_xml
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'customer_xml') }} "customer_xml"
+        name: load_customer_xml
+        noLinkRefs: []
+  name: load_customer_xml
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
