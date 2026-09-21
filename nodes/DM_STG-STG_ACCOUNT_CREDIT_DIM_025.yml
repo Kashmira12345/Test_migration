@@ -1,0 +1,101 @@
+fileVersion: 1
+id: cfabbc67-ee1a-4390-8dfc-234c54eb7318
+name: STG_ACCOUNT_CREDIT_DIM_025
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "STG_ACCOUNT_CREDIT_DIM_025"
+  isMultisource: false
+  locationName: DM_STG
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6afbb668-8119-4873-a890-1a539871dbcb
+          stepCounter: cfabbc67-ee1a-4390-8dfc-234c54eb7318
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ACCOUNT_CREDIT_SK
+        name: ACCOUNT_CREDIT_SK
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "SCHEMA_003.ACCOUNT_CREDIT_DIM_SEQ.NEXTVAL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3f1a2fa3-887b-4d5a-b680-cca4c832d5ff
+          stepCounter: cfabbc67-ee1a-4390-8dfc-234c54eb7318
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: dml_action_type_cd
+        name: dml_action_type_cd
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "'I'"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 98b9f195-8c75-4285-a7d6-8757bbe558ac
+          stepCounter: cfabbc67-ee1a-4390-8dfc-234c54eb7318
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: Target_Primary_Key
+        name: Target_Primary_Key
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 98b9f195-8c75-4285-a7d6-8757bbe558ac
+                stepCounter: 84e484d5-3b15-4e6d-8d32-4f2e0a0be1b5
+            transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STG_ACCOUNT_CREDIT_DIM_010: 84e484d5-3b15-4e6d-8d32-4f2e0a0be1b5
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DM_STG
+            nodeName: STG_ACCOUNT_CREDIT_DIM_010
+        join:
+          joinCondition: |-
+            FROM insertions_source_data AS source_data
+            LEFT OUTER JOIN STG_ACCOUNT_CREDIT_DIM_010 STG_ACCOUNT_CREDIT_DIM_010.Target_Primary_Key = source_data.Source_Primary_Key
+            WHERE (STG_ACCOUNT_CREDIT_DIM_010.Target_Primary_Key IS NULL)
+                OR (NOT STG_ACCOUNT_CREDIT_DIM_010.Target_Primary_Key IS NULL
+                AND ((STG_ACCOUNT_CREDIT_DIM_010.CHKSUM_STR <> source_data.CHKSUM_STR)))
+        name: STG_ACCOUNT_CREDIT_DIM_025
+        noLinkRefs: []
+  name: STG_ACCOUNT_CREDIT_DIM_025
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

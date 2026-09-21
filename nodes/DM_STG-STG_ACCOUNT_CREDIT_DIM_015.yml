@@ -1,0 +1,146 @@
+fileVersion: 1
+id: 425fe570-3446-451f-9f8f-127d428a6b24
+name: STG_ACCOUNT_CREDIT_DIM_015
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "STG_ACCOUNT_CREDIT_DIM_015"
+  isMultisource: false
+  locationName: DM_STG
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f65e137d-835b-4523-9a1f-ae31754858f0
+          stepCounter: 425fe570-3446-451f-9f8f-127d428a6b24
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: sys_exp_ts
+        name: sys_exp_ts
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d65419b7-727c-48bc-b1a7-fe99fce316b5
+          stepCounter: 425fe570-3446-451f-9f8f-127d428a6b24
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: sys_eff_ts
+        name: sys_eff_ts
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "'to_timestamp_ntz(convert_timezone(UTC,current_timestamp()))'"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: db41d3c7-2cda-419d-b236-692c8bb78152
+          stepCounter: 425fe570-3446-451f-9f8f-127d428a6b24
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: CURR_FLG
+        name: CURR_FLG
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "'Y'"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5aabc357-4e7a-49ed-adb6-fe939c972cd0
+          stepCounter: 425fe570-3446-451f-9f8f-127d428a6b24
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: load_ts
+        name: load_ts
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "'to_timestamp_ntz(convert_timezone(UTC,current_timestamp()))'"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa087c4d-00aa-420e-9644-135b061b072d
+          stepCounter: 425fe570-3446-451f-9f8f-127d428a6b24
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: dbt_scd_id
+        name: dbt_scd_id
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "MD5(COALESCE(CAST(ACCOUNT_CREDIT_INTG_ID AS VARCHAR), '') || '|' || COALESCE(CAST(TO_TIMESTAMP_NTZ(CURRENT_TIMESTAMP() AT TIME ZONE 'UTC') AS VARCHAR), ''))"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a4066530-bedb-4427-ba98-a6d130f9af57
+          stepCounter: 425fe570-3446-451f-9f8f-127d428a6b24
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: Source_Primary_Key
+        name: Source_Primary_Key
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "ACCOUNT_CREDIT_INTG_ID"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: |-
+            FROM snapshot_query
+        name: STG_ACCOUNT_CREDIT_DIM_015
+        noLinkRefs: []
+  name: STG_ACCOUNT_CREDIT_DIM_015
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
