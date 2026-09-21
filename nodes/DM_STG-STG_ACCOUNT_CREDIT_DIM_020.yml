@@ -1,0 +1,56 @@
+fileVersion: 1
+id: 8bd7dd0a-7311-450e-bc56-2cfaa7937696
+name: STG_ACCOUNT_CREDIT_DIM_020
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "STG_ACCOUNT_CREDIT_DIM_020"
+  isMultisource: false
+  locationName: DM_STG
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a4066530-bedb-4427-ba98-a6d130f9af57
+          stepCounter: 8bd7dd0a-7311-450e-bc56-2cfaa7937696
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: Source_Primary_Key
+        name: Source_Primary_Key
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "ACCOUNT_CREDIT_INTG_ID"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: |-
+            FROM snapshot_query
+        name: STG_ACCOUNT_CREDIT_DIM_020
+        noLinkRefs: []
+  name: STG_ACCOUNT_CREDIT_DIM_020
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

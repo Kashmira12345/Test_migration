@@ -1,0 +1,60 @@
+fileVersion: 1
+id: 84e484d5-3b15-4e6d-8d32-4f2e0a0be1b5
+name: STG_ACCOUNT_CREDIT_DIM_010
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "STG_ACCOUNT_CREDIT_DIM_010"
+  isMultisource: false
+  locationName: DM_STG
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 98b9f195-8c75-4285-a7d6-8757bbe558ac
+          stepCounter: 84e484d5-3b15-4e6d-8d32-4f2e0a0be1b5
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: Target_Primary_Key
+        name: Target_Primary_Key
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "ACCOUNT_CREDIT_INTG_ID"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: |-
+            FROM SCHEMA_003.ACCOUNT_CREDIT_DIM
+            WHERE source_system_nm = 'SOURCE_SYSTEM_003'
+                AND instance_nm = 'INSTANCE_004'
+                AND CURR_FLG = 'Y'
+                AND sys_exp_ts IS NULL
+        name: STG_ACCOUNT_CREDIT_DIM_010
+        noLinkRefs: []
+  name: STG_ACCOUNT_CREDIT_DIM_010
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

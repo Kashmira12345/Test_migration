@@ -1,0 +1,190 @@
+fileVersion: 1
+id: 6c093aea-524d-4100-beeb-3326bab73cb8
+name: STG_ACCOUNT_CREDIT_DIM_035
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "STG_ACCOUNT_CREDIT_DIM_035"
+  isMultisource: false
+  locationName: DM_STG
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d65419b7-727c-48bc-b1a7-fe99fce316b5
+          stepCounter: 6c093aea-524d-4100-beeb-3326bab73cb8
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: sys_eff_ts
+        name: sys_eff_ts
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: db41d3c7-2cda-419d-b236-692c8bb78152
+          stepCounter: 6c093aea-524d-4100-beeb-3326bab73cb8
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: CURR_FLG
+        name: CURR_FLG
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "'N'"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6afbb668-8119-4873-a890-1a539871dbcb
+          stepCounter: 6c093aea-524d-4100-beeb-3326bab73cb8
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ACCOUNT_CREDIT_SK
+        name: ACCOUNT_CREDIT_SK
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3f1a2fa3-887b-4d5a-b680-cca4c832d5ff
+          stepCounter: 6c093aea-524d-4100-beeb-3326bab73cb8
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: dml_action_type_cd
+        name: dml_action_type_cd
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "'D'"
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5aabc357-4e7a-49ed-adb6-fe939c972cd0
+          stepCounter: 6c093aea-524d-4100-beeb-3326bab73cb8
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: load_ts
+        name: load_ts
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 98b9f195-8c75-4285-a7d6-8757bbe558ac
+          stepCounter: 6c093aea-524d-4100-beeb-3326bab73cb8
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: Target_Primary_Key
+        name: Target_Primary_Key
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 98b9f195-8c75-4285-a7d6-8757bbe558ac
+                stepCounter: 8bd7dd0a-7311-450e-bc56-2cfaa7937696
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa087c4d-00aa-420e-9644-135b061b072d
+          stepCounter: 6c093aea-524d-4100-beeb-3326bab73cb8
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: dbt_scd_id
+        name: dbt_scd_id
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83c5ffdd-3cda-4917-b44e-a283f247f02b
+          stepCounter: 6c093aea-524d-4100-beeb-3326bab73cb8
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: SYS_EXP_TS
+        name: SYS_EXP_TS
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "'to_timestamp_ntz(convert_timezone(UTC,current_timestamp()))'"
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STG_ACCOUNT_CREDIT_DIM_020: 8bd7dd0a-7311-450e-bc56-2cfaa7937696
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DM_STG
+            nodeName: STG_ACCOUNT_CREDIT_DIM_020
+        join:
+          joinCondition: |-
+            FROM snapshotted_data
+            LEFT JOIN STG_ACCOUNT_CREDIT_DIM_020 STG_ACCOUNT_CREDIT_DIM_020
+              ON snapshotted_data.Target_Primary_Key = STG_ACCOUNT_CREDIT_DIM_020.Source_Primary_Key
+            WHERE STG_ACCOUNT_CREDIT_DIM_020.Source_Primary_Key IS NULL
+        name: STG_ACCOUNT_CREDIT_DIM_035
+        noLinkRefs: []
+  name: STG_ACCOUNT_CREDIT_DIM_035
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
