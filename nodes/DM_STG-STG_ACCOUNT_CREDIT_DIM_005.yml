@@ -10,7 +10,7 @@ operation:
     truncateBefore: true
   database: ""
   deployEnabled: true
-  description: "STG_ACCOUNT_CREDIT_DIM_005"
+  description: STG_ACCOUNT_CREDIT_DIM_005--snapshot_query
   isMultisource: false
   locationName: DM_STG
   materializationType: table
@@ -51,7 +51,7 @@ operation:
         primaryKey: false
         sourceColumnReferences:
           - columnReferences: []
-            transform: "TRIM(TTCCOM100525.T_CMID)"
+            transform: TRIM(TTCCOM100525.T_CMID)
         uniqueKey: false
       - acceptedValues:
           strictMatch: true
@@ -87,7 +87,7 @@ operation:
         primaryKey: false
         sourceColumnReferences:
           - columnReferences: []
-            transform: "COALESCE(CUSTOMER_DIM.CUSTOMER_SK, '99999')"
+            transform: COALESCE(CUSTOMER_DIM.CUSTOMER_SK, '99999')
         uniqueKey: false
       - acceptedValues:
           strictMatch: true
@@ -105,7 +105,7 @@ operation:
         primaryKey: false
         sourceColumnReferences:
           - columnReferences: []
-            transform: "TRIM(TTCCOM100525.T_NAMA)"
+            transform: TRIM(TTCCOM100525.T_NAMA)
         uniqueKey: false
       - acceptedValues:
           strictMatch: true
@@ -177,7 +177,7 @@ operation:
         primaryKey: false
         sourceColumnReferences:
           - columnReferences: []
-            transform: "CONCAT_WS('~', TRIM(TTCCOM100525.t_bpid), '525', 'SOURCE_SYSTEM_003', 'INSTANCE_004')"
+            transform: CONCAT_WS('~', TRIM(TTCCOM100525.t_bpid), '525', 'SOURCE_SYSTEM_003', 'INSTANCE_004')
         uniqueKey: false
       - acceptedValues:
           strictMatch: true
@@ -213,7 +213,7 @@ operation:
         primaryKey: false
         sourceColumnReferences:
           - columnReferences: []
-            transform: "HASH(TRIM(TTCCOM100525.T_BPID), TRIM(TTCCOM100525.T_NAMA), TRIM(TTCCOM100525.T_CMID), TRIM(TTCCOM112525.T_CCUR), TRIM(ROUND(TTCCOM112525.T_CRLR, 2)))"
+            transform: HASH(TRIM(TTCCOM100525.T_BPID), TRIM(TTCCOM100525.T_NAMA), TRIM(TTCCOM100525.T_CMID), TRIM(TTCCOM112525.T_CCUR), TRIM(ROUND(TTCCOM112525.T_CRLR, 2)))
         uniqueKey: false
       - acceptedValues:
           strictMatch: true
@@ -231,7 +231,7 @@ operation:
         primaryKey: false
         sourceColumnReferences:
           - columnReferences: []
-            transform: "TRIM(ROUND(TTCCOM112525.T_CRLR, 2))"
+            transform: TRIM(ROUND(TTCCOM112525.T_CRLR, 2))
         uniqueKey: false
       - acceptedValues:
           strictMatch: true
@@ -249,7 +249,7 @@ operation:
         primaryKey: false
         sourceColumnReferences:
           - columnReferences: []
-            transform: "(CASE WHEN TRIM(TTCMCS064525.T_ACTN) = 1 THEN 'Always hold (Credit)' WHEN TRIM(TTCMCS064525.T_ACTN) = 2 THEN 'Never Credit Hold' WHEN TRIM(TTCMCS064525.T_ACTN) = 3 THEN 'Check Credit' WHEN TRIM(TTCMCS064525.T_ACTN) = 4 THEN 'Always Hold (Overdue Inv)' ELSE NULL END)"
+            transform: (CASE WHEN TRIM(TTCMCS064525.T_ACTN) = 1 THEN 'Always hold (Credit)' WHEN TRIM(TTCMCS064525.T_ACTN) = 2 THEN 'Never Credit Hold' WHEN TRIM(TTCMCS064525.T_ACTN) = 3 THEN 'Check Credit' WHEN TRIM(TTCMCS064525.T_ACTN) = 4 THEN 'Always Hold (Overdue Inv)' ELSE NULL END)
         uniqueKey: false
       - acceptedValues:
           strictMatch: true
@@ -267,7 +267,7 @@ operation:
         primaryKey: false
         sourceColumnReferences:
           - columnReferences: []
-            transform: "TRIM(TTCCOM112525.T_CCUR)"
+            transform: TRIM(TTCCOM112525.T_CCUR)
         uniqueKey: false
       - acceptedValues:
           strictMatch: true
@@ -321,7 +321,7 @@ operation:
         primaryKey: false
         sourceColumnReferences:
           - columnReferences: []
-            transform: "TRIM(TTCCOM100525.T_BPID)"
+            transform: TRIM(TTCCOM100525.T_BPID)
         uniqueKey: false
       - acceptedValues:
           strictMatch: true

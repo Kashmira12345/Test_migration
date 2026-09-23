@@ -10,7 +10,7 @@ operation:
     truncateBefore: true
   database: ""
   deployEnabled: true
-  description: "STG_ACCOUNT_CREDIT_DIM_015"
+  description: STG_ACCOUNT_CREDIT_DIM_015--insertions_source_data
   isMultisource: false
   locationName: DM_STG
   materializationType: table
@@ -105,7 +105,7 @@ operation:
         primaryKey: false
         sourceColumnReferences:
           - columnReferences: []
-            transform: "MD5(COALESCE(CAST(ACCOUNT_CREDIT_INTG_ID AS VARCHAR), '') || '|' || COALESCE(CAST(TO_TIMESTAMP_NTZ(CURRENT_TIMESTAMP() AT TIME ZONE 'UTC') AS VARCHAR), ''))"
+            transform: MD5(COALESCE(CAST(ACCOUNT_CREDIT_INTG_ID AS VARCHAR), '') || '|' || COALESCE(CAST(TO_TIMESTAMP_NTZ(CURRENT_TIMESTAMP() AT TIME ZONE 'UTC') AS VARCHAR), ''))
         uniqueKey: false
       - acceptedValues:
           strictMatch: true
@@ -123,7 +123,7 @@ operation:
         primaryKey: false
         sourceColumnReferences:
           - columnReferences: []
-            transform: "ACCOUNT_CREDIT_INTG_ID"
+            transform: ACCOUNT_CREDIT_INTG_ID
         uniqueKey: false
     cteString: ""
     enabledColumnTestIDs: []
@@ -133,8 +133,7 @@ operation:
           customSQL: ""
         dependencies: []
         join:
-          joinCondition: |-
-            FROM snapshot_query
+          joinCondition: FROM snapshot_query
         name: STG_ACCOUNT_CREDIT_DIM_015
         noLinkRefs: []
   name: STG_ACCOUNT_CREDIT_DIM_015
